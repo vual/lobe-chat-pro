@@ -9,7 +9,7 @@
 
 ### 启动应用
 ```shell
-docker run -d -p 3010:3010  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:latest
+docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:latest
 ```
 
 ![image1](/images/image1.png)
