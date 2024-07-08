@@ -12,6 +12,7 @@
 docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:latest
 ```
 
+### 截图
 ![image1](/images/image1.png)
 ![image2](/images/image2.png)
 
