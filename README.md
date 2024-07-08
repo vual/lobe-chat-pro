@@ -1,7 +1,7 @@
 # lobe-chat-pro
 
 ### 介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，增加midjourney绘图面板，支持midjourney-proxy和midjourney-proxy-plus，支持大部分功能，包括InsightFace(AI换脸)。
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，增加midjourney绘图面板，更全面的参数配置，更好看的界面。支持midjourney-proxy和midjourney-proxy-plus，支持大部分功能，包括InsightFace(AI换脸)。
 - mj参数：
   - MIDJOURNEY_PROXY_URL：接口地址，支持/mj,/mj-fast,/mj-turbo,/mj-relax结尾的接口地址
   - MIDJOURNEY_API_KEY：接口密钥，支持Authorization Bearer或者mj-api-secret
