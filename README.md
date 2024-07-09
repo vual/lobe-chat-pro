@@ -6,6 +6,10 @@
   - MIDJOURNEY_PROXY_URL：接口地址，支持/mj,/mj-fast,/mj-turbo,/mj-relax结尾的接口地址
   - MIDJOURNEY_API_KEY：接口密钥，支持Authorization Bearer或者mj-api-secret
   - 也可以在用户端应用设置-》语言模型里设置midjourney接口地址和密钥。
+  
+### 版本介绍
+  版本号：latest
+  更新时间： 20240709，（每次都会合并最新的lobe-chat代码）
 
 ### 启动应用
 ```shell
