@@ -6,6 +6,9 @@
   - MIDJOURNEY_PROXY_URL：接口地址，支持/mj,/mj-fast,/mj-turbo,/mj-relax结尾的接口地址，如果都没填，则默认会自动拼上/mj结尾。
   - MIDJOURNEY_API_KEY：接口密钥，支持Authorization Bearer或者mj-api-secret
   - 也可以在用户端应用设置-》语言模型里设置midjourney接口地址和密钥。
+
+### 欢迎了解另一个项目[ChatGPT-Next-Web-Pro](https://github.com/vual/ChatGPT-Next-Web-Pro)
+  基于ChatGPT-Next-Web，扩展了更多实用功能。
   
 ### 版本介绍
   版本号：latest
