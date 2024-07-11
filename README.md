@@ -16,6 +16,7 @@
 ```shell
 docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:latest
 ```
+目前免费体验，后续会转成收费项目。
 
 ### 截图
 ![image1](/images/image1.png)
