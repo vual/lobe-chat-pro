@@ -14,7 +14,7 @@
     - 局部重绘: Vary (Region) 🖌
     - sref（风格一致性）
     - cref（角色一致性）
-    - 图片本地存储，如果配了s3存储，则优先存到s3，具体s3配置请看lobe-chat。
+  - 图片本地存储，如果配了s3存储，则优先存到s3，具体s3配置请看lobe-chat。
     
 - mj参数：
   - MIDJOURNEY_PROXY_URL：接口地址，支持/mj,/mj-fast,/mj-turbo,/mj-relax结尾的接口地址，如果都没填，则默认会自动拼上/mj结尾。
