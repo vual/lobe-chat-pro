@@ -21,9 +21,18 @@
   
   - 支持Dall-E-3画图
     - 填openai的接口和key。
-    
 
   - 图片本地存储，如果配了s3存储，则优先存到s3，具体s3配置请看lobe-chat。
+
+  - 增加suno支持：
+    - 实现灵感模式或定制模式。
+    - 支持音乐和视频播放。
+    - 支持续写。
+    - 支持下载音乐和视频。
+    - suno参数：
+      - SUNO_PROXY_URL：接口地址
+      - SUNO_API_KEY：接口密钥
+      - 也可以在用户端应用设置-》语言模型里设置suno接口地址和密钥。
 
 ### 欢迎了解另一个项目[ChatGPT-Next-Web-Pro](https://github.com/vual/ChatGPT-Next-Web-Pro)
   基于ChatGPT-Next-Web，扩展了更多实用功能。
@@ -32,8 +41,8 @@
   
 ### 版本介绍
   版本号：latest
-  更新时间： 2024.08.06
-  合并lobe-chat时间：2024.08.06
+  更新时间： 2024.08.12
+  合并lobe-chat时间：2024.08.12
 
 ### 启动应用
 ```shell
@@ -46,6 +55,7 @@ docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat
 ![img2](/images/img2.png)
 ![img3](/images/img3.png)
 ![img4](/images/img4.png)
+![img5](/images/img5.png)
 
 ### 交流
 微信：822784588
