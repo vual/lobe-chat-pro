@@ -6,10 +6,10 @@
 ### 推荐中转接口，[https://api.aiiai.top](https://api.aiiai.top)，免去繁杂配置，获取key就可以用。
   
 ### 版本介绍
-  版本号：latest
-  更新时间： 2024.08.12
-  合并lobe-chat时间：2024.08.12
-  演示站点：https://lobe.annyun.cn，需要自备key，或从上面的中转接口里获取。
+  - 版本号：latest
+  - 更新时间： 2024.08.12
+  - 合并lobe-chat时间：2024.08.12
+  - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
 - 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，增加绘图面板，更全面的参数配置，更好看的界面。
