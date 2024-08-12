@@ -1,6 +1,17 @@
 # lobe-chat-pro
 
-### 介绍
+### 欢迎了解另一个项目[ChatGPT-Next-Web-Pro](https://github.com/vual/ChatGPT-Next-Web-Pro)
+  基于ChatGPT-Next-Web，扩展了更多实用功能。
+
+### 推荐中转接口，[https://api.aiiai.top](https://api.aiiai.top)，免去繁杂配置，获取key就可以用。
+  
+### 版本介绍
+  版本号：latest
+  更新时间： 2024.08.12
+  合并lobe-chat时间：2024.08.12
+  演示站点：https://lobe.annyun.cn，需要自备key，或从上面的中转接口里获取。
+
+### 项目介绍
 - 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，增加绘图面板，更全面的参数配置，更好看的界面。
   - 支持midjourney-proxy
   - 支持midjourney-proxy-plus，目前已支持大部分功能：
@@ -18,7 +29,7 @@
     - MIDJOURNEY_PROXY_URL：接口地址，支持/mj,/mj-fast,/mj-turbo,/mj-relax结尾的接口地址，如果都没填，则默认会自动拼上/mj结尾。
     - MIDJOURNEY_API_KEY：接口密钥，支持Authorization Bearer或者mj-api-secret
     - 也可以在用户端应用设置-》语言模型里设置midjourney接口地址和密钥。
-  
+
   - 支持Dall-E-3画图
     - 填openai的接口和key。
 
@@ -33,18 +44,6 @@
       - SUNO_PROXY_URL：接口地址，首先api必须兼容https://github.com/SunoAI-API/Suno-API，然后可能需要加上 /suno，比如：https://ai.aiiai.top/suno
       - SUNO_API_KEY：接口密钥
       - 也可以在用户端应用设置-》语言模型里设置suno接口地址和密钥。
-    
-
-### 欢迎了解另一个项目[ChatGPT-Next-Web-Pro](https://github.com/vual/ChatGPT-Next-Web-Pro)
-  基于ChatGPT-Next-Web，扩展了更多实用功能。
-
-### 推荐中转接口，[https://api.aiiai.top](https://api.aiiai.top)，免去繁杂配置，获取key就可以用。
-  
-### 版本介绍
-  版本号：latest
-  更新时间： 2024.08.12
-  合并lobe-chat时间：2024.08.12
-  演示站点：https://lobe.annyun.cn，需要自备key，或从上面的中转接口里获取。
 
 ### 启动应用
 ```shell
