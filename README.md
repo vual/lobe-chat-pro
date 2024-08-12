@@ -30,10 +30,10 @@
     - 支持续写。
     - 支持下载音乐和视频。
     - suno参数：
-      - SUNO_PROXY_URL：接口地址
+      - SUNO_PROXY_URL：接口地址，首先api比如兼容https://github.com/SunoAI-API/Suno-API，然后可能需要加上 /suno，比如：https://api.aiiai.top/suno
       - SUNO_API_KEY：接口密钥
       - 也可以在用户端应用设置-》语言模型里设置suno接口地址和密钥。
-    - 使用的api格式是https://github.com/SunoAI-API/Suno-API
+    
 
 ### 欢迎了解另一个项目[ChatGPT-Next-Web-Pro](https://github.com/vual/ChatGPT-Next-Web-Pro)
   基于ChatGPT-Next-Web，扩展了更多实用功能。
