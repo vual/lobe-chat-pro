@@ -12,7 +12,8 @@
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，增加绘图面板，更全面的参数配置，更好看的界面。
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)
+- 增加绘图面板，更全面的参数配置，更好看的界面, midjourney、dall-e3、stable-diffusion(待实现)。
   - 支持midjourney-proxy
   - 支持midjourney-proxy-plus，目前已支持大部分功能：
     - Imagine（文生图）
@@ -35,15 +36,15 @@
 
   - 图片本地存储，如果配了s3存储，则优先存到s3，具体s3配置请看lobe-chat。
 
-  - 增加suno支持：
-    - 实现灵感模式或定制模式。
-    - 支持音乐和视频播放。
-    - 支持续写。
-    - 支持下载音乐和视频。
-    - suno参数：
-      - SUNO_PROXY_URL：接口地址，首先api必须兼容https://github.com/SunoAI-API/Suno-API，然后可能需要加上 /suno，比如：https://api.aiiai.top/suno
-      - SUNO_API_KEY：接口密钥
-      - 也可以在用户端应用设置-》语言模型里设置suno接口地址和密钥。
+- 增加suno支持：
+  - 实现灵感模式或定制模式。
+  - 支持音乐和视频播放。
+  - 支持续写。
+  - 支持下载音乐和视频。
+  - suno参数：
+    - SUNO_PROXY_URL：接口地址，首先api必须兼容[Suno-API](https://github.com/SunoAI-API/Suno-API)，然后可能需要加上 /suno，比如：https://api.aiiai.top/suno
+    - SUNO_API_KEY：接口密钥
+    - 也可以在用户端应用设置-》语言模型里设置suno接口地址和密钥。
 
 ### 启动应用
 ```shell
