@@ -44,6 +44,7 @@
   版本号：latest
   更新时间： 2024.08.12
   合并lobe-chat时间：2024.08.12
+  演示站点：https://lobe.annyun.cn，需要自备key，或从上面的中转接口里获取。
 
 ### 启动应用
 ```shell
