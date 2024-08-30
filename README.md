@@ -7,15 +7,15 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2024.08.24
-  - 合并lobe-chat时间：2024.08.24
+  - 更新时间： 2024.08.30
+  - 合并lobe-chat时间：2024.08.30
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
 - 基于[lobe-chat](https://github.com/lobehub/lobe-chat)
-- 增加绘图面板，更全面的参数配置，更好看的界面, midjourney、dall-e-3、stable-diffusion(待实现)。
-  - 支持midjourney-proxy
-  - 支持midjourney-proxy-plus，目前已支持大部分功能：
+- **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、stable-diffusion(待实现)。
+  - **支持midjourney-proxy**
+  - **支持midjourney-proxy-plus**，目前已支持大部分功能：
     - Imagine（文生图）
     - Imagine（图生图）
     - Blend（图片混合）
@@ -31,12 +31,15 @@
     - MIDJOURNEY_API_KEY：接口密钥，支持Authorization Bearer或者mj-api-secret
     - 也可以在用户端应用设置-》语言模型里设置midjourney接口地址和密钥。
 
-  - 支持Dall-E-3画图
+  - **支持Dall-E-3画图**
     - 填openai的接口和key。
+    
+  - **支持Flux模型画图**
+    - 切换到Dall-E页签，模型选择flux模型，目前支持的是走Dall-E-3的接口格式，填openai的接口和key。
 
   - 图片本地存储，如果配了s3存储，则优先存到s3，具体s3配置请看lobe-chat。
 
-- 增加suno支持：
+- **增加suno支持**：
   - 实现灵感模式或定制模式。
   - 支持音乐和视频播放。
   - 支持续写。
