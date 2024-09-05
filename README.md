@@ -48,7 +48,7 @@
     - SUNO_PROXY_URL：接口地址，首先api必须兼容[Suno-API](https://github.com/SunoAI-API/Suno-API)，然后可能需要加上 /suno，比如：https://api.aiiai.top/suno
     - SUNO_API_KEY：接口密钥
     - 也可以在用户端应用设置-》语言模型里设置suno接口地址和密钥。
-- 
+
 - **增加支持luma视频生成**
   - 支持扩展视频和下载视频。
   - luma参数：
