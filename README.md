@@ -12,7 +12,7 @@
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码。
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
