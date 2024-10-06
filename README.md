@@ -55,6 +55,10 @@
     - LUMA_API_KEY：接口密钥
     - 也可以在用户端应用设置-》语言模型里设置luma接口地址和密钥。
 
+### 开发计划
+- 1.【开发ing】后台管理（包含用户登录注册、充值扣费、聊天记录管理）。
+- 2.【计划】ideogram、runway、viggle。
+
 ### 启动应用
 ```shell
 docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:latest
