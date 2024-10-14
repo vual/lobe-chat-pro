@@ -7,11 +7,11 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2024.10.06
+  - 更新时间： 2024.10.14
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.10.06
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.10.14
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -55,9 +55,16 @@
     - LUMA_API_KEY：接口密钥
     - 也可以在用户端应用设置-》语言模型里设置luma接口地址和密钥。
 
+- **增加支持runway视频生成**
+  - 支持扩展视频和下载视频。
+  - runway参数：
+    - RUNWAY_PROXY_URL：接口地址，接口地址可能需要加上 /runway，比如：https://api.aiiai.top/runway
+    - RUNWAY_API_KEY：接口密钥
+    - 也可以在用户端应用设置-》语言模型里设置runway接口地址和密钥。
+
 ### 开发计划
 - 1.【开发ing】后台管理（包含用户登录注册、充值扣费、聊天记录管理）。
-- 2.【计划】ideogram、runway、viggle。
+- 2.【计划】ideogram、viggle。
 
 ### 启动应用
 ```shell
@@ -74,5 +81,5 @@ docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat
 ![img6](/images/img6.png)
 
 ### 交流
-微信：822784588
-
+- 微信：822784588
+- 添加微信进群
