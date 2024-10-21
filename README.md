@@ -3,7 +3,7 @@
 ### 欢迎了解另一个项目[ChatGPT-Next-Web-Pro](https://github.com/vual/ChatGPT-Next-Web-Pro)
   基于ChatGPT-Next-Web，扩展了更多实用功能。
 
-### 推荐中转接口，[api.aiiai.top](https://api.aiiai.top/register?aff=B4fi)，免去繁杂配置，获取key就可以用。
+### 推荐中转接口，[ai.aiiai.top](https://ai.aiiai.top/register?aff=B4fi)，免去繁杂配置，获取key就可以用。
   
 ### 版本介绍
   - 版本号：latest
@@ -44,21 +44,21 @@
   - 支持续写。
   - 支持下载音乐和视频。
   - suno参数：
-    - SUNO_PROXY_URL：接口地址，首先api必须兼容[Suno-API](https://github.com/SunoAI-API/Suno-API)，然后可能需要加上 /suno，比如：https://api.aiiai.top/suno
+    - SUNO_PROXY_URL：接口地址，首先api必须兼容[Suno-API](https://github.com/SunoAI-API/Suno-API)，然后可能需要加上 /suno，比如：https://ai.aiiai.top/suno
     - SUNO_API_KEY：接口密钥
     - 也可以在用户端应用设置-》语言模型里设置suno接口地址和密钥。
 
 - **增加支持luma视频生成**
   - 支持扩展视频和下载视频。
   - luma参数：
-    - LUMA_PROXY_URL：接口地址，接口地址可能需要加上 /luma，比如：https://api.aiiai.top/luma
+    - LUMA_PROXY_URL：接口地址，接口地址可能需要加上 /luma，比如：https://ai.aiiai.top/luma
     - LUMA_API_KEY：接口密钥
     - 也可以在用户端应用设置-》语言模型里设置luma接口地址和密钥。
 
 - **增加支持runway视频生成**
   - 支持扩展视频和下载视频。
   - runway参数：
-    - RUNWAY_PROXY_URL：接口地址，接口地址可能需要加上 /runway，比如：https://api.aiiai.top/runway
+    - RUNWAY_PROXY_URL：接口地址，接口地址可能需要加上 /runway，比如：https://ai.aiiai.top/runway
     - RUNWAY_API_KEY：接口密钥
     - 也可以在用户端应用设置-》语言模型里设置runway接口地址和密钥。
 
