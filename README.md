@@ -7,11 +7,11 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2024.11.06
+  - 更新时间： 2024.11.12
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.11.06
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.11.12
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -44,23 +44,30 @@
   - 支持续写。
   - 支持下载音乐和视频。
   - suno参数：
-    - SUNO_PROXY_URL：接口地址，首先api必须兼容[Suno-API](https://github.com/SunoAI-API/Suno-API)，然后可能需要加上 /suno，比如：https://ai.aiiai.top/suno
+    - SUNO_PROXY_URL：接口地址，首先api必须兼容[Suno-API](https://github.com/SunoAI-API/Suno-API)，然后中转接口地址可能需要加上 /suno，比如：https://ai.aiiai.top/suno
     - SUNO_API_KEY：接口密钥
     - 也可以在用户端应用设置-》语言模型里设置suno接口地址和密钥。
 
 - **增加支持luma视频生成**
   - 支持扩展视频和下载视频。
   - luma参数：
-    - LUMA_PROXY_URL：接口地址，接口地址可能需要加上 /luma，比如：https://ai.aiiai.top/luma
+    - LUMA_PROXY_URL：接口地址，中转接口地址可能需要加上 /luma，比如：https://ai.aiiai.top/luma
     - LUMA_API_KEY：接口密钥
     - 也可以在用户端应用设置-》语言模型里设置luma接口地址和密钥。
 
 - **增加支持runway视频生成**
   - 支持扩展视频和下载视频。
   - runway参数：
-    - RUNWAY_PROXY_URL：接口地址，接口地址可能需要加上 /runway，比如：https://ai.aiiai.top/runway
+    - RUNWAY_PROXY_URL：接口地址，中转接口地址可能需要加上 /runway，比如：https://ai.aiiai.top/runway
     - RUNWAY_API_KEY：接口密钥
     - 也可以在用户端应用设置-》语言模型里设置runway接口地址和密钥。
+
+- **增加支持Kling(快手可灵)视频生成**
+  - 支持下载视频。
+  - kling参数：
+    - KLING_PROXY_URL：接口地址，中转接口地址可能需要加上 /kling，比如：https://ai.aiiai.top/kling/v1, 也支持快手官方接口：https://api.klingai.com/v1
+    - KLING_API_KEY：接口密钥，支持快手官方密钥，填写格式：${AccessKey}@${SecretKey}, 比如 abcxvsdfs@sefsefsege
+    - 也可以在用户端应用设置-》语言模型里设置Kling接口地址和密钥，写法同上。
 
 ### 开发计划
 - 1.【开发ing】后台管理（包含用户登录注册、充值扣费、聊天记录管理）。
