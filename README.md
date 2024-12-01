@@ -7,11 +7,11 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2024.11.23
+  - 更新时间： 2024.12.01
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.11.23
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.12.01
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -68,6 +68,12 @@
     - KLING_PROXY_URL：接口地址，中转接口地址可能需要加上 /kling，比如：https://ai.aiiai.top/kling/v1, 也支持快手官方接口：https://api.klingai.com/v1
     - KLING_API_KEY：接口密钥，支持快手官方密钥，填写格式：${AccessKey}@${SecretKey}, 比如 abcxvsdfs@sefsefsege
     - 也可以在用户端应用设置-》语言模型里设置Kling接口地址和密钥，写法同上。
+
+- **支持登录注册**
+  - 用户登录注册
+  - 账户管理
+  - 个人信息查看更新
+  - 充值、兑换和消费记录查询
 
 ### 开发计划
 - 1.【开发ing】后台管理（包含用户登录注册、充值扣费、聊天记录管理）。
