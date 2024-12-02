@@ -7,11 +7,11 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2024.12.01
+  - 更新时间： 2024.12.02
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.12.01
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.12.02
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -58,7 +58,7 @@
 - **增加支持runway视频生成**
   - 支持扩展视频和下载视频。
   - runway参数：
-    - RUNWAY_PROXY_URL：接口地址，中转接口地址可能需要加上 /runway，比如：https://ai.aiiai.top/runway
+    - RUNWAY_PROXY_URL：接口地址，支持官方api接口，需要拼上 /v1，中转接口地址可能需要加上 /runwayml/v1，比如：https://ai.aiiai.top/runwayml/v1
     - RUNWAY_API_KEY：接口密钥
     - 也可以在用户端应用设置-》语言模型里设置runway接口地址和密钥。
 
