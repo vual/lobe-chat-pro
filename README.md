@@ -7,11 +7,11 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2024.12.02
+  - 更新时间： 2024.12.16
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.12.02
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.12.16
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -74,6 +74,7 @@
   - 账户管理
   - 个人信息查看更新
   - 充值、兑换和消费记录查询
+  - 模型和价格
 
 ### 开发计划
 - 1.【开发ing】后台管理（包含用户登录注册、充值扣费、聊天记录管理）。
@@ -95,6 +96,7 @@ docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat
 ![img7](/images/img7.png)
 ![img8](/images/img8.png)
 ![img9](/images/img9.png)
+![img10](/images/img10.png)
 
 ### 交流
 - 微信：822784588
