@@ -93,9 +93,9 @@ docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat
 ![img4](/images/img4.png)
 ![img5](/images/img5.png)
 ![img6](/images/img6.png)
-![img7](/images/img7.png)
-![img8](/images/img8.png)
-![img9](/images/img9.png)
+![img7](/images/img7.jpg)
+![img8](/images/img8.jpg)
+![img9](/images/img9.jpg)
 ![img10](/images/img10.png)
 
 ### 交流
