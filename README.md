@@ -7,11 +7,11 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2024.12.16
+  - 更新时间： 2024.12.31
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.12.16
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2024.12.31
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -35,6 +35,12 @@
     
   - **支持Flux模型画图**
     - 切换到Dall-E页签，模型选择flux模型，目前支持的是走Dall-E-3的接口格式，填openai的接口和key。
+
+  **增加支持Kling(快手可灵)图片生成与AI试衣**
+  - kling参数：
+    - KLING_PROXY_URL：接口地址，中转接口地址可能需要加上 /kling，比如：https://ai.aiiai.top/kling/v1, 也支持快手官方接口：https://api.klingai.com/v1
+    - KLING_API_KEY：接口密钥，支持快手官方密钥，填写格式：${AccessKey}@${SecretKey}, 比如 abcxvsdfs@sefsefsege
+    - 也可以在用户端应用设置-》语言模型里设置Kling接口地址和密钥，写法同上。
 
   - 图片本地存储，如果配了s3存储，则优先存到s3，具体s3配置请看lobe-chat。
 
