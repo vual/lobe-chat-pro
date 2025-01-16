@@ -92,6 +92,22 @@ docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat
 ```
 启动后，访问：http://{启动机器的ip}:3210
 
+### 服务端数据库版启动
+```shell
+# 下载docker-compose.yml
+curl -o docker-compose.yml https://raw.githubusercontent.com/vual/lobe-chat-pro/refs/tags/0.1.0/docker/docker-compose.yml
+# 编辑docker-compose.yml，按需修改里面的环境变量参数
+vi docker-compose.yml
+# 拉取镜像并启动
+docker-compose pull
+# 启动
+docker-compose up -d
+```
+
+启动后，
+用户端：http://{启动机器的ip}:3210，
+管理端：http://{启动机器的ip}:8888， 账号：admin，密码：123456
+
 ### 截图
 ![img1](/images/img1.png)
 ![img2](/images/img2.png)
