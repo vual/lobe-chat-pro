@@ -36,8 +36,7 @@
   - **支持Flux模型画图**
     - 切换到Dall-E页签，模型选择flux模型，目前支持的是走Dall-E-3的接口格式，填openai的接口和key。
 
-  **增加支持Kling(快手可灵)图片生成与AI试衣**
-  - kling参数：
+  - **增加支持Kling(快手可灵)图片生成与AI试衣**
     - KLING_PROXY_URL：接口地址，中转接口地址可能需要加上 /kling，比如：https://ai.aiiai.top/kling/v1, 也支持快手官方接口：https://api.klingai.com/v1
     - KLING_API_KEY：接口密钥，支持快手官方密钥，填写格式：${AccessKey}@${SecretKey}, 比如 abcxvsdfs@sefsefsege
     - 也可以在用户端应用设置-》语言模型里设置Kling接口地址和密钥，写法同上。
