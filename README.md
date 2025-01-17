@@ -7,11 +7,11 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2025.01.16
+  - 更新时间： 2025.01.17
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.01.16
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.01.17
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -93,20 +93,26 @@ docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat
 启动后，访问：http://{启动机器的ip}:3210
 
 ### 服务端数据库版启动
+1. 下载docker-compose.yml
 ```shell
-# 下载docker-compose.yml
-curl -o docker-compose.yml https://raw.githubusercontent.com/vual/lobe-chat-pro/refs/tags/0.1.0/docker/docker-compose.yml
-# 编辑docker-compose.yml，按需修改里面的环境变量参数
+curl -o docker-compose.yml https://raw.githubusercontent.com/vual/lobe-chat-pro/refs/heads/main/docker/docker-compose.yml
+```
+2. 编辑docker-compose.yml，按需修改里面的环境变量参数
+```shell
 vi docker-compose.yml
-# 拉取镜像并启动
+```
+3. 拉取镜像
+```shell
 docker-compose pull
-# 启动
+```
+4. 启动容器
+```shell
 docker-compose up -d
 ```
 
 启动后，
-用户端：http://{启动机器的ip}:3210，
-管理端：http://{启动机器的ip}:8888， 账号：admin，密码：123456
+- 用户端：http://{启动机器的ip}:3210，
+- 管理端：http://{启动机器的ip}:8888， 账号：admin，密码：123456
 
 ### 截图
 ![img1](/images/img1.png)
