@@ -3,6 +3,7 @@
 ### 欢迎了解另一个项目[ChatGPT-Next-Web-Pro](https://github.com/vual/ChatGPT-Next-Web-Pro)
   基于ChatGPT-Next-Web，扩展了更多实用功能。
 
+### 基于new-api的开源项目[aiiai-api](https://github.com/vual/aiiai-api)
 ### 推荐中转接口，[ai.aiiai.top](https://ai.aiiai.top)，免去繁杂配置，获取key就可以用。
   
 ### 版本介绍
