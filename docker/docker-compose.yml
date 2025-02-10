@@ -183,7 +183,7 @@ services:
     environment:
       APP_URL: https://lobe.example.com/ # 填写你的域名，比如：https://lobe.annyun.cn/
       KEY_VAULTS_SECRET: oO9BsZkXALbZPPG6hETSwXyxXarWFr/FNSWzlGHi2u4= # 随机生成，长度为32，可以用 openssl rand -base64 32
-      DATABASE_URL: postgresql//postgres:annyun.123456@postgresql:5432/lobe-chat-pro #不要改
+      DATABASE_URL: postgresql://postgres:annyun.123456@postgresql:5432/lobe-chat-pro #不要改
       NEXT_AUTH_SECRET: alaC+e98ceP0iMuRmB7cR9joXB4+jnodVwLzsTsagX8= # 随机生成，长度为32，可以用 openssl rand -base64 32
       NEXT_AUTH_SSO_PROVIDERS: annyun # 不要改
       NEXTAUTH_URL: https://lobe.example.com/api/auth # 填写你的域名 + /api/auth
