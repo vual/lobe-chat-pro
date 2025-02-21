@@ -4,15 +4,15 @@
   基于ChatGPT-Next-Web，扩展了更多实用功能。
 
 ### 基于new-api的开源项目[aiiai-api](https://github.com/vual/aiiai-api)
-### 推荐中转接口，[ai.aiiai.top](https://ai.aiiai.top)，免去繁杂配置，获取key就可以用。
+### 推荐中转接口，[api.annyun.cn](https://api.annyun.cn/)，免去繁杂配置，获取key就可以用。
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2025.01.17
+  - 更新时间： 2025.02.21
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.01.17
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.02.21
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -87,13 +87,15 @@
 - 1.【开发ing】后台管理（包含用户登录注册、充值扣费、聊天记录管理）。
 - 2.【计划】ideogram、viggle。
 
-### 启动应用
+### 纯前端启动应用（浏览器端默认使用pglite数据库）
 ```shell
 docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:latest
 ```
 启动后，访问：http://{启动机器的ip}:3210
 
-### 服务端数据库版启动
+如果需要导出以前localstore里的数据，[参考方案](https://github.com/lobehub/lobe-chat/issues/5131)
+
+### 带后台管理版启动（服务端数据库版）
 1. 下载docker-compose.yml
 ```shell
 curl -o docker-compose.yml https://raw.githubusercontent.com/vual/lobe-chat-pro/refs/heads/main/docker/docker-compose.yml
