@@ -1,54 +1,12 @@
 name: lobe-chat-pro-database
 services:
-  postgresql:
-    image: pgvector/pgvector:pg16
-    container_name: lobe-postgres
-    ports:
-      - '5432:5432'
-    volumes:
-      - '/data/annyun-lobe/postgresql/data:/var/lib/postgresql/data'
-    environment:
-      - 'POSTGRES_DB=lobe-chat-pro'
-      - 'POSTGRES_PASSWORD=annyun.123456'
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U postgres']
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    restart: always
-
-  minio:
-    image: minio/minio
-    container_name: lobe-minio
-    ports:
-      - '9000:9000'
-      - '9001:9001'
-    volumes:
-      - '/data/annyun-lobe/s3_data:/etc/minio/data'
-    environment:
-      - 'MINIO_ROOT_USER=admin'
-      - 'MINIO_ROOT_PASSWORD=annyun.123456'
-      - 'MINIO_DOMAIN=lobe-s3-api.example.com'
-      - 'MINIO_API_CORS_ALLOW_ORIGIN=https://lobe.example.com' # Your LobeChat's domain name.
-    restart: always
-    command: >
-      server /etc/minio/data --address ":9000" --console-address ":9001"
-
-  # 后台管理的web服务
-  annyun-lobe-admin-web:
-    container_name: annyun-lobe-admin-web
-    image: registry.cn-hangzhou.aliyuncs.com/ann-chat/annyun-lobe-admin-web:latest
-    restart: unless-stopped
-    ports:
-      - 8888:80 # 映射端口，如果8888被占用了，则可以改成其它的，比如8899:80，只能改前面的前面那个，后面的80是容器内部的，不能改
-    environment:
-      VITE_IS_MICRO: false
-  # 后台管理的server服务
+  # 后台管理
   annyun-lobe-admin:
     container_name: annyun-lobe-admin
     image: registry.cn-hangzhou.aliyuncs.com/ann-chat/annyun-lobe-admin:latest
     restart: always
     ports:
+      - 8888:80
       - 9999:9999 # 映射端口，如果9999被占用了，则可以改成其它的，比如9988:9999，只能改前面的前面那个，后面的9999是容器内部的，不能改
     environment:
       # 本项目授权码，必填，加微信 822784588 获取
@@ -171,6 +129,40 @@ services:
       - /data/annyun-lobe/redis/data:/data
       - /data/annyun-lobe/redis/logs:/logs
       - /data/annyun-lobe/redis/redis.conf:/usr/local/etc/redis/redis.conf
+
+  postgresql:
+    image: pgvector/pgvector:pg16
+    container_name: lobe-postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - '/data/annyun-lobe/postgresql/data:/var/lib/postgresql/data'
+    environment:
+      - 'POSTGRES_DB=lobe-chat-pro'
+      - 'POSTGRES_PASSWORD=annyun.123456'
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U postgres' ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  minio:
+    image: minio/minio
+    container_name: lobe-minio
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    volumes:
+      - '/data/annyun-lobe/s3_data:/etc/minio/data'
+    environment:
+      - 'MINIO_ROOT_USER=admin'
+      - 'MINIO_ROOT_PASSWORD=annyun.123456'
+      - 'MINIO_DOMAIN=lobe-s3-api.example.com'
+      - 'MINIO_API_CORS_ALLOW_ORIGIN=https://lobe.example.com' # Your LobeChat's domain name.
+    restart: always
+    command: >
+      server /etc/minio/data --address ":9000" --console-address ":9001"
 
   lobe:
     image: registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro-database:latest
