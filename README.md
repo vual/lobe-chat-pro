@@ -113,7 +113,7 @@ vi .env
 ```shell
 docker-compose pull
 ```
-5 启动容器
+5. 启动容器
 ```shell
 docker-compose up -d
 ```
