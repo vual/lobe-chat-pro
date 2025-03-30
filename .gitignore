@@ -40,8 +40,6 @@ dev
 .idea
 
 # docker-compose env files
-.env
-
 *.key
 *.key.pub
 

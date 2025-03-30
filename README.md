@@ -8,11 +8,11 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2025.02.27
+  - 更新时间： 2025.03.30
   - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.02.27
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.03.27
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -82,10 +82,12 @@
   - 充值、兑换和消费记录查询
   - 模型和价格管理
   - 微信支付、易支付、虎皮椒支付
+  - 聊天记录、画图记录、音乐记录、视频记录管理。
+  - 通知公告
 
 ### 开发计划
-- 1.【开发ing】后台管理（包含用户登录注册、充值扣费、聊天记录管理）。
-- 2.【计划】ideogram、viggle。
+- 1.【计划】数字人。
+- 1.【计划】发现页展示用户创作的图片、音乐、视频。
 
 ### 纯前端启动应用（浏览器端默认使用pglite数据库）
 ```shell
@@ -96,19 +98,23 @@ docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat
 如果需要导出以前localstore里的数据，[参考方案](https://github.com/lobehub/lobe-chat/issues/5131)
 
 ### 带后台管理版启动（服务端数据库版）
-1. 下载docker-compose.yml
+1. 下载docker-compose.yml, 国内下载不了的话，可以手动复制内容。
 ```shell
 curl -o docker-compose.yml https://raw.githubusercontent.com/vual/lobe-chat-pro/refs/heads/main/docker/docker-compose.yml
 ```
-2. 编辑docker-compose.yml，按需修改里面的环境变量参数
+2. 下载.env，国内下载不了的话，可以手动复制内容。
 ```shell
-vi docker-compose.yml
+curl -o .env https://raw.githubusercontent.com/vual/lobe-chat-pro/refs/heads/main/docker/.env
 ```
-3. 拉取镜像
+3. 编辑.env，按说明修改里面的环境变量参数，如果需要修改端口，可以编辑docker-compose.yml里的ports参数，只能修改冒号前面的数字。
+```shell
+vi .env
+```
+4. 拉取镜像
 ```shell
 docker-compose pull
 ```
-4. 启动容器
+5 启动容器
 ```shell
 docker-compose up -d
 ```
@@ -116,6 +122,14 @@ docker-compose up -d
 启动后，
 - 用户端：http://{启动机器的ip}:3210，
 - 管理端：http://{启动机器的ip}:8888， 账号：admin，密码：123456
+
+### 配置域名转发
+- 端口3210，用户端
+- 端口8888，管理端
+- 端口9000，minio
+
+### 其它
+- 如果使用minio，则启动后，需要登录进去手动创建bucket，bucket名字为annyun-lobe，如果你改了bucket名称，则改成实际的。
 
 ### 截图
 ![img1](/images/img1.png)
@@ -125,8 +139,8 @@ docker-compose up -d
 ![img5](/images/img5.png)
 ![img6](/images/img6.png)
 ![img7](/images/img7.jpg)
-![img8](/images/img8.jpg)
-![img9](/images/img9.jpg)
+![img8](/images/img8.png)
+![img9](/images/img9.png)
 ![img10](/images/img10.png)
 
 ### 交流

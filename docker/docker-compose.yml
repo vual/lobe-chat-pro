@@ -7,113 +7,9 @@ services:
     restart: always
     ports:
       - 8888:80 # 管理端端口，默认8888，如果被占用了，则改成其他的，比如8889:80
-    environment:
-      # 本项目授权码，必填，加微信 822784588 获取
-      AUTHORIZE_CODE: xxxxxxxx
-      #----------以下参数一般不改动，也可以不去掉前面的#号，程序里默认值就是对应的值，如果遇到端口冲突或者你清楚这些配置并想改成其它的，再根据实际情况改动
-      # redis的连接地址，一般情况不要改，如果你要连自己已经存在的redis，则根据实际情况填IP或容器名称
-      #ANNYUN_REDIS_HOST: annyun-redis
-      # redis端口，一般不改，如果改了ANNYUN_REDIS_HOST，且对应的redis端口不是6379，则改成实际的端口
-      #ANNYUN_REDIS_PORT: 6379
-      # redis使用的数据库索引，一般不改，如果改了ANNYUN_REDIS_HOST，怕跟别的项目冲突，则改成其它的
-      #ANNYUN_REDIS_DATABASE: 9
-      # redis密码，一般不改，如果设置了redis密码，则需要填
-      #ANNYUN_REDIS_PASSWORD:
-      # 数据库连接地址，一般不改
-      #ANNYUN_DATABASE_HOST: postgresql
-      # 数据库端口，一般不改，如果改了postgresql的端口，则改成实际的端口
-      #ANNYUN_DATABASE_PORT: 5432
-      # mysql用户名，一般不改
-      #ANNYUN_DATABASE_USERNAME: postgres
-      # 数据库密码，一般不改，如果改了postgresql的密码，则改成实际的
-      #ANNYUN_DATABASE_PASSWORD: annyun.123456
-      #----------以上参数一般不改动，也可以不去掉前面的#号，程序里默认值就是对应的值，如果遇到端口冲突或者你清楚这些配置并想改成其它的，再根据实际情况改动
-      #----------以下是自定义配置，根据需要进行修改
-      #----------邮件发送配置----------
-      # 邮件发送配置，SMTP 服务器地址
-      #SPRING_MAIL_HOST:
-      # 邮件发送配置，端口号465、587、994，已知qq邮箱465，hotmail邮箱587，163邮箱994
-      #SPRING_MAIL_PORT: 465
-      # 安全协议，smtp、smtps，默认 smtps，已知qq邮箱或者是163邮箱需要设置成smtps，hotmail邮箱smtp，其他请自测
-      #SPRING_MAIL_PROTOCOL: smtps
-      # 邮件发送配置，发送者邮箱，已开通POP3/SMTP服务的邮箱
-      #SPRING_MAIL_USERNAME:
-      # 邮件发送配置，配置邮箱密码或者授权码，有些邮箱是填密码，邮箱邮箱只能填授权码，具体在自己邮箱设置里看
-      #SPRING_MAIL_PASSWORD:
-      # 邮件发送配置，发送者名称，用户收到邮件显示的名称，比如：Lobe-Chat-Pro
-      #SPRING_MAIL_FROM:
-      # 邮件发送配置，邮箱白名单，可以设置允许注册的邮箱后缀，多个请用英文逗号分割，比如：qq.com,163.com,hotmail.com
-      #MAIL_WHITE_LIST:
-      #----------邮件发送配置----------
-      #----------短信发送配置----------
-      # 阿里云短信发送配置，短信发送模板id
-      #SMS_TEMPLATE_ID:
-      # 阿里云短信发送配置，accesskey
-      #SMS_ACCESSKEY:
-      # 阿里云短信发送配置，secretkey
-      #SMS_SECRETKEY:
-      # 阿里云短信发送配置，短信签名，签名必须是字母，汉字可能会报错。
-      #SMS_SIGN_NAME:
-      #----------短信发送配置----------
-      #----------微信公众号配置----------
-      # 微信公众号配置，公众号appId
-      #WX_MP_CONFIGS_APP_ID:
-      # 微信公众号配置，公众号密钥，即公众号的开发者密码
-      #WX_MP_CONFIGS_SECRET:
-      # 微信公众号配置，公众号token
-      #WX_MP_CONFIGS_TOKEN:
-      # 微信公众号配置，公众号aeskey
-      #WX_MP_CONFIGS_AESKEY:
-      # 微信公众号配置，用户关注公众号时，发送给用户授权登录的地址，即用户聊天前端的地址，比如：https://ai.annyun.cn
-      #WX_MP_CONFIGS_WEB_CLIENT_URL:
-      # 微信公众号配置，关注就直接登录，默认false，如果只需要让用户关注就登录，不需要获取用户头像昵称等信息，则设成true
-      #WX_MP_CONFIGS_DIRECT_LOGIN: false
-      #----------微信公众号配置----------
-      #----------微信支付配置----------
-      # 微信支付配置，关联的公众号或者小程序appId
-      #WX_PAY_APP_ID:
-      # 微信支付配置，微信商户号
-      #WX_PAY_MCH_ID:
-      # 微信支付配置，微信支付api v3 key
-      #WX_PAY_APIV3_KEY:
-      # 微信支付配置，微信支付证书序列号
-      #WX_PAY_CERT_SERIAL_NO:
-      # 微信支付配置，微信支付证书apiclient_key.pem存放路径，请放在 /data/annyun-lobe/cert/ 目录下
-      #WX_PAY_PRIVATE_KEY_PATH: /data/annyun-lobe/cert/apiclient_key.pem
-      # 微信支付配置，微信支付证书apiclient_cert.pem存放路径，请放在 /data/annyun/cert/ 目录下
-      #WX_PAY_PRIVATE_CERT_PATH: /data/annyun-lobe/cert/apiclient_cert.pem
-      # 微信支付配置，微信支付回调地址, 即后端管理的地址，比如：https://admin.annyun.cn
-      #WX_PAY_NOTIFY_URL:
-      #----------微信支付配置----------
-      #----------易支付配置----------
-      # 易支付配置，商户id
-      #EASY_PAY_PID:
-      # 易支付配置，密钥
-      #EASY_PAY_KEY:
-      # 易支付配置，api创建支付订单的接口地址，完整的接口地址，比如https://xxx.cn/mapi.php
-      #EASY_PAY_API_URL:
-      # 易支付配置，支付结果通知回调地址，即后端管理的地址，比如：https://admin.annyun.cn
-      #EASY_PAY_NOTIFY_URL:
-      # 易支付配置，页面跳转通知地址，可以不填，可以填聊天前端地址，比如：https://ai.annyun.cn
-      #EASY_PAY_RETURN_URL:
-      # 易支付配置，支付设备，默认pc，有些易支付平台需要传jump，才会返回支付链接，
-      #EASY_PAY_DEVICE: pc
-      #----------易支付配置----------
-      #----------虎皮椒支付配置----------
-      # 虎皮椒微信配置
-      #HPJ_PAY_WX_APP_ID:
-      #HPJ_PAY_WX_APP_SECRET:
-      #HPJ_PAY_WX_API_URL: https://api.xunhupay.com/payment/do.html
-      # 虎皮椒支付宝配置
-      #HPJ_PAY_ZFB_APP_ID:
-      #HPJ_PAY_ZFB_APP_SECRET:
-      #HPJ_PAY_ZFB_API_URL: https://api.dpweixin.com/payment/do.html
-      # 虎皮椒支付，回调通知地址，即后端管理的地址，比如：https://admin.annyun.cn
-      #HPJ_PAY_NOTIFY_URL:
-      #----------虎皮椒支付配置----------
-      #----------其它配置----------
-      # 如果需要禁用注册，则设成 true，配合lobe里的DISABLE_LOGIN_TAB=2一起使用
-      #ANNYUN_DISABLE_REGISTER: false
+      - 9999:9999
+    env_file:
+      - .env
     volumes:
       - /data/annyun-lobe/:/data/annyun-lobe/
   # redis，如果你需要连已经部署了redis，这一块可以去掉，然后修改annyun-admin底下对应redis的环境变量
@@ -136,9 +32,8 @@ services:
       - '5432:5432'
     volumes:
       - '/data/annyun-lobe/postgresql/data:/var/lib/postgresql/data'
-    environment:
-      - 'POSTGRES_DB=lobe-chat-pro'
-      - 'POSTGRES_PASSWORD=annyun.123456'
+    env_file:
+      - .env
     healthcheck:
       test: [ 'CMD-SHELL', 'pg_isready -U postgres' ]
       interval: 5s
@@ -146,6 +41,7 @@ services:
       retries: 5
     restart: always
 
+  # oss存储，如果不用自建minio，则这一块可以去掉。
   minio:
     image: minio/minio
     container_name: lobe-minio
@@ -154,15 +50,13 @@ services:
       - '9001:9001'
     volumes:
       - '/data/annyun-lobe/s3_data:/etc/minio/data'
-    environment:
-      - 'MINIO_ROOT_USER=admin'
-      - 'MINIO_ROOT_PASSWORD=annyun.123456'
-      - 'MINIO_DOMAIN=lobe-s3-api.example.com'
-      - 'MINIO_API_CORS_ALLOW_ORIGIN=https://lobe.example.com' # Your LobeChat's domain name.
+    env_file:
+      - .env
     restart: always
     command: >
       server /etc/minio/data --address ":9000" --console-address ":9001"
 
+  # lobe-chat-pro
   lobe:
     image: registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro-database:latest
     container_name: lobe-chat-pro-database
@@ -170,19 +64,8 @@ services:
       - '3210:3210'
     depends_on:
       - postgresql
-      - minio
-    environment:
-      APP_URL: https://lobe.example.com/ # 填写你的域名，比如：https://lobe.annyun.cn/
-      KEY_VAULTS_SECRET: oO9BsZkXALbZPPG6hETSwXyxXarWFr/FNSWzlGHi2u4= # 随机生成，长度为32，可以用 openssl rand -base64 32
-      DATABASE_URL: postgresql://postgres:annyun.123456@postgresql:5432/lobe-chat-pro #不要改
-      NEXT_AUTH_SECRET: alaC+e98ceP0iMuRmB7cR9joXB4+jnodVwLzsTsagX8= # 随机生成，长度为32，可以用 openssl rand -base64 32
-      NEXTAUTH_URL: https://lobe.example.com/api/auth # 填写你的域名 + /api/auth
-      S3_ACCESS_KEY_ID: admin # minio的账号，或者其他oss的key
-      S3_SECRET_ACCESS_KEY: annyun.123456 # minio的密码，或者其他oss的secret
-      S3_ENDPOINT: https://lobe-s3-api.example.com # minio的域名，或者其他oss的域名
-      S3_BUCKET: annyun-lobe # minio的bucket，或者其他oss的bucket
-      S3_PUBLIC_DOMAIN: https://lobe-s3-api.example.com # minio的域名，或者其他oss的域名
-      S3_ENABLE_PATH_STYLE: 1
+    env_file:
+      - .env
     restart: always
 
 volumes:
