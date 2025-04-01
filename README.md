@@ -85,6 +85,13 @@
   - 聊天记录、画图记录、音乐记录、视频记录管理。
   - 通知公告
 
+-  **对接fastgpt和dify知识库**，dify需要安装一个插件：OpenAI Compatible Dify App，把应用的接口转成openai适配接口：
+  - 1.先在平台管理里建一个平台，平台名称随意，接口格式选择openai，接口地址那边填fastgpt的根地址，dify可以不用填。
+  - 2.然后在模型管理里建模型，模型名称对应fastgpt或diyf的端点名称里建的知识库应用名称，dify需要填写path，dify插件提供的地址类似: https://x4iq144hgqsox49d.ai-plugin.io/chat/completions, path填: /chat/completions
+  - 3.接着在apikey新增fastgpt对应的知识库的apikey，或dify端点里填的apikey，并选择适用模型为第2步建的模型, dify还需要填写接口地址，类似: https://x4iq144hgqsox49d.ai-plugin.io
+  - 4.用户端就可以用第2步建的模型，跟知识库对话了。
+
+
 ### 开发计划
 - 1.【计划】发现页展示用户创作的图片、音乐、视频。
 
