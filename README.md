@@ -9,7 +9,8 @@
 ### 版本介绍
   - 版本号：latest
   - 更新时间： 2025.04.11
-  - 演示站点：https://lobe.annyun.cn ，需要自备key，或从上面的中转接口里获取。
+  - 演示站点：https://lobe.annyun.cn ，也可以可以关注公众号：AnnYun_AI, 或扫下方二维码，一键登录即可体验。充值入口：我的-》账户管理-》充值消费。
+    ![gongzhonghao](/images/gongzhonghao.jpg)
 
 ### 项目介绍
 - 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.04.11
