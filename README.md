@@ -8,14 +8,14 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2025.04.11
+  - 更新时间： 2025.04.28
   - 演示站点：https://lobe.annyun.cn ，也可以可以关注公众号：AnnYun_AI, 或扫下方二维码，一键登录即可体验。充值入口：我的-》账户管理-》充值消费。
 
 ![gongzhonghao](/images/gongzhonghao.jpg)
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.04.11
-- **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、dall-e-3、Flux、stable-diffusion(待实现)。
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.04.28
+- **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、Kling、dall-e-3、gpt-image-1、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
     - Imagine（文生图）
@@ -28,13 +28,16 @@
     - 局部重绘: Vary (Region) 🖌
     - sref（风格一致性）
     - cref（角色一致性）
+    - 支持V7模型
   - mj参数：
     - MIDJOURNEY_PROXY_URL：接口地址，支持/mj,/mj-fast,/mj-turbo,/mj-relax结尾的接口地址，如果都没填，则默认会自动拼上/mj结尾。
     - MIDJOURNEY_API_KEY：接口密钥，支持Authorization Bearer或者mj-api-secret
     - 也可以在用户端应用设置-》语言模型里设置midjourney接口地址和密钥。
 
-  - **支持Dall-E-3画图**
+  - **支持OpenAI画图模型**
     - 填openai的接口和key。
+    - 支持Dall-E-3模型。
+    - 支持gpt-image-1模型。
     
   - **支持Flux模型画图**
     - 切换到Dall-E页签，模型选择flux模型，目前支持的是走Dall-E-3的接口格式，填openai的接口和key。
@@ -83,6 +86,7 @@
   - 个人信息查看更新
   - 充值、兑换和消费记录查询
   - 模型和价格管理，可以按token或者按次数设置模型价格
+  - 用户只要充值即可使用所有模型，支持消费失败不扣费
   - 微信支付、易支付、虎皮椒支付
   - 聊天记录、画图记录、音乐记录、视频记录管理。
   - 通知公告
@@ -100,6 +104,7 @@
 
 ### 开发计划
 - 1.【计划】发现页展示用户创作的图片、音乐、视频。
+- 2.【计划】增加数字人视频合成。
 
 ### 纯前端启动应用（浏览器端默认使用pglite数据库）
 ```shell
