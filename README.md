@@ -8,13 +8,13 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2025.04.28
+  - 更新时间： 2025.05.08
   - 演示站点：https://lobe.annyun.cn ，也可以可以关注公众号：AnnYun_AI, 或扫下方二维码，一键登录即可体验。充值入口：我的-》账户管理-》充值消费。
 
 ![gongzhonghao](/images/gongzhonghao.jpg)
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.04.28
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.05.08
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、Kling、dall-e-3、gpt-image-1、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -37,7 +37,7 @@
   - **支持OpenAI画图模型**
     - 填openai的接口和key。
     - 支持Dall-E-3模型。
-    - 支持gpt-image-1模型。
+    - ***支持gpt-image-1模型，支持对任意图片进行局部重绘，包括生成的以及自己上次的图片***。
     
   - **支持Flux模型画图**
     - 切换到Dall-E页签，模型选择flux模型，目前支持的是走Dall-E-3的接口格式，填openai的接口和key。
@@ -100,6 +100,9 @@
 - **完美适配移动端**
   - 1.支持手机端浏览器。
   - 2.支持公众号一键登录，充值时支持在公众号环境里直接拉起微信支付。
+
+- **其它**
+  - 1.重做了局部重绘组件，支持选择颜色，支持选择画笔和画笔大小，支持矩形，支持套索等。
 
 
 ### 开发计划
