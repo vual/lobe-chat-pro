@@ -8,13 +8,13 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2025.05.08
+  - 更新时间： 2025.05.13
   - 演示站点：https://lobe.annyun.cn ，也可以可以关注公众号：AnnYun_AI, 或扫下方二维码，一键登录即可体验。充值入口：我的-》账户管理-》充值消费。
 
 ![gongzhonghao](/images/gongzhonghao.jpg)
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.05.08
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.05.13
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、Kling、dall-e-3、gpt-image-1、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -80,14 +80,16 @@
     - KLING_API_KEY：接口密钥，支持快手官方密钥，填写格式：${AccessKey}@${SecretKey}, 比如 abcxvsdfs@sefsefsege
     - 也可以在用户端应用设置-》语言模型里设置Kling接口地址和密钥，写法同上。
 
-- **支持登录注册**
+- **支持后台管理**
   - 用户登录注册
-  - 账户管理
-  - 个人信息查看更新
-  - 充值、兑换和消费记录查询
-  - 模型和价格管理，可以按token或者按次数设置模型价格
-  - 用户只要充值即可使用所有模型，支持消费失败不扣费
+  - 用户管理，支持用户分组，不同分组设置不同倍率
+  - 个人信息管理
   - 微信支付、易支付、虎皮椒支付
+  - 充值、兑换、消费，消费失败不扣费
+  - 订单管理
+  - 消费记录查询
+  - 平台、模型和价格管理，可以按token或者按次数设置模型价格
+  - 用户只要充值即可使用所有模型
   - 聊天记录、画图记录、音乐记录、视频记录管理。
   - 通知公告
 
