@@ -8,13 +8,14 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2025.05.13
-  - 演示站点：https://lobe.annyun.cn ，也可以可以关注公众号：AnnYun_AI, 或扫下方二维码，一键登录即可体验。充值入口：我的-》账户管理-》充值消费。
+  - 更新时间： 2025.05.16
+  - 演示站点：https://lobe.annyun.cn ，手机端可以关注公众号：AnnYun_AI(或扫下方二维码)，一键登录即可体验。充值入口：我的-》账户管理-》充值消费。
+  - 管理端：https://lobea.annyun.cn,  演示账号：annyun  密码：123456
 
 ![gongzhonghao](/images/gongzhonghao.jpg)
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.05.13
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.05.16
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、Kling、dall-e-3、gpt-image-1、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -74,6 +75,10 @@
     - 也可以在用户端应用设置-》语言模型里设置runway接口地址和密钥。
 
 - **增加支持Kling(快手可灵)视频生成**
+  - 支持文生视频，
+  - 支持图生视频，
+  - 支持特效视频
+  - 支持延长视频
   - 支持下载视频。
   - kling参数：
     - KLING_PROXY_URL：接口地址，中转接口地址可能需要加上 /kling，比如：https://ai.aiiai.top/kling/v1, 也支持快手官方接口：https://api.klingai.com/v1
@@ -120,26 +125,10 @@ docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat
 如果需要导出以前localstore里的数据，[参考方案](https://github.com/lobehub/lobe-chat/issues/5131)
 
 ### 带后台管理版启动（服务端数据库版）
-1. 下载docker-compose.yml, 国内下载不了的话，可以手动复制内容。
-```shell
-curl -o docker-compose.yml https://raw.githubusercontent.com/vual/lobe-chat-pro/refs/heads/main/docker/docker-compose.yml
-```
-2. 下载.env，国内下载不了的话，可以手动复制内容。
-```shell
-curl -o .env https://raw.githubusercontent.com/vual/lobe-chat-pro/refs/heads/main/docker/.env
-```
-3. 编辑.env，按说明修改里面的环境变量参数，如果需要修改端口，可以编辑docker-compose.yml里的ports参数，只能修改冒号前面的数字。
-```shell
-vi .env
-```
-4. 拉取镜像
-```shell
-docker-compose pull
-```
-5. 启动容器
-```shell
-docker-compose up -d
-```
+- 详细部署方式：
+  - [部署服务](./docs/database-deploy.md)
+  - [微信公众号和支付](./docs/微信公众号和支付.md)
+  - [Nginx](./docs/nginx.md)
 
 启动后，
 - 用户端：http://{启动机器的ip}:3210，
