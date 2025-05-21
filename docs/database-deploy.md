@@ -42,6 +42,3 @@ docker-compose up -d
 ```shell
 docker-compose down
 ```
-
-8. ***其它***
-  - minio的bucket需要登录到minio手动创建。
