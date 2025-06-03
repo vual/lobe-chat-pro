@@ -76,8 +76,6 @@ services:
     environment:
       - 'SEARXNG_SETTINGS_FILE=/etc/searxng/settings.yml'
     restart: always
-    networks:
-      - lobe-network
     env_file:
       - .env
 
