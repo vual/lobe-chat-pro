@@ -8,14 +8,14 @@
   
 ### 版本介绍
   - 版本号：latest
-  - 更新时间： 2025.05.21
+  - 更新时间： 2025.06.11
   - 演示站点：https://lobe.annyun.cn ，手机端可以关注公众号：AnnYun_AI(或扫下方二维码)，一键登录即可体验。充值入口：我的-》账户管理-》充值消费。
   - 管理端：https://lobea.annyun.cn,  演示账号：annyun  密码：123456
 
 ![gongzhonghao](/images/gongzhonghao.jpg)
 
 ### 项目介绍
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.05.21
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.06.11
 - **增加绘图面板**，更全面的参数配置，更好看的界面, midjourney、Kling、dall-e-3、gpt-image-1、Flux、stable-diffusion(待实现)。
   - **支持midjourney-proxy**
   - **支持midjourney-proxy-plus**，目前已支持大部分功能：
@@ -91,7 +91,8 @@
   - 用户管理，支持用户分组，不同分组设置不同倍率
   - 个人信息管理
   - 微信支付、易支付、虎皮椒支付
-  - 充值、兑换、消费，消费失败不扣费
+  - 充值、兑换、消费、退款，消费失败不扣费
+  - 注册赠送额度，在系统管理-参数管理里配置赠送额度，1元=500000token
   - 订单管理
   - 消费记录查询
   - 平台、模型和价格管理，可以按token或者按次数设置模型价格
@@ -112,10 +113,11 @@
 - **其它**
   - 1.重做了局部重绘组件，支持选择颜色，支持选择画笔和画笔大小，支持矩形，支持套索等。
   - 2.支持修改应用名称和LOGO。
+  - 3.支持用户把创作的图片、音乐、视频发布到公共空间，在发现页可以查看所有人分享的作品。
 
 
 ### 开发计划
-- 1.【计划】发现页展示用户创作的图片、音乐、视频。
+- 1.【已完成】发现页展示用户创作的图片、音乐、视频。
 - 2.【计划】增加数字人视频合成。
 
 ### 纯前端启动应用（浏览器端默认使用pglite数据库）
@@ -172,6 +174,7 @@ docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat
 ![img25](/images/img25.png)
 ![img26](/images/img26.png)
 ![img27](/images/img27.png)
+![img28](/images/img28.png)
 
 ### 交流
 - 微信：822784588
