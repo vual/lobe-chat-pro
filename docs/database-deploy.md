@@ -47,3 +47,6 @@ docker-compose up -d
 ```shell
 docker-compose down
 ```
+
+9***其它***
+- minio的bucket需要在服务启动完成后，登录到minio手动创建，登录地址：http://{启动机器的ip}:9001，默认用户名：admin，默认密码：annyun.123456，如果你改过了env里的账号和密码，就以实际为准。
