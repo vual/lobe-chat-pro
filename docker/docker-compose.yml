@@ -12,6 +12,9 @@ services:
       - .env
     volumes:
       - /data/annyun-lobe/:/data/annyun-lobe/
+    networks:
+      - annyun-lobe-network
+
   # redis，如果你需要连已经部署了redis，这一块可以去掉，然后修改annyun-admin底下对应redis的环境变量
   annyun-redis:
     container_name: annyun-redis
@@ -24,6 +27,8 @@ services:
       - /data/annyun-lobe/redis/data:/data
       - /data/annyun-lobe/redis/logs:/logs
       - /data/annyun-lobe/redis/redis.conf:/usr/local/etc/redis/redis.conf
+    networks:
+      - annyun-lobe-network
 
   postgresql:
     image: pgvector/pgvector:pg17
@@ -40,6 +45,8 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+    networks:
+      - annyun-lobe-network
 
   # oss存储，如果不用自建minio，则这一块可以去掉。
   minio:
@@ -55,6 +62,8 @@ services:
     restart: always
     command: >
       server /etc/minio/data --address ":${MINIO_PORT}" --console-address ":9001"
+    networks:
+      - annyun-lobe-network
 
   searxng:
     image: searxng/searxng
@@ -66,6 +75,8 @@ services:
     restart: always
     env_file:
       - .env
+    networks:
+      - annyun-lobe-network
 
   # lobe-chat-pro
   lobe:
@@ -78,9 +89,15 @@ services:
     env_file:
       - .env
     restart: always
+    networks:
+      - annyun-lobe-network
 
 volumes:
   data:
     driver: local
   s3_data:
     driver: local
+
+networks:
+  annyun-lobe-network:
+    driver: bridge
