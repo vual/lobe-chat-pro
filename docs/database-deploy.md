@@ -6,7 +6,7 @@ curl -o docker-compose.yml https://raw.githubusercontent.com/vual/lobe-chat-pro/
 
 2. ***下载searxng-settings.yml***，国内下载不了的话，可以手动复制内容，文件在本项目docker目录下。
 ```shell
-curl -o .env https://raw.githubusercontent.com/vual/lobe-chat-pro/refs/heads/main/docker/searxng-settings.yml
+curl -o searxng-settings.yml https://raw.githubusercontent.com/vual/lobe-chat-pro/refs/heads/main/docker/searxng-settings.yml
 ```
 
 2. ***下载.env***，国内下载不了的话，可以手动复制内容，文件在本项目docker目录下。
