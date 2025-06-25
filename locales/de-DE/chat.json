@@ -1,0 +1,276 @@
+{
+  "ModelSwitch": {
+    "title": "Modell"
+  },
+  "agentDefaultMessage": "Hallo, ich bin **{{name}}**. Du kannst sofort mit mir sprechen oder zu den [Assistenteneinstellungen]({{url}}) gehen, um meine Informationen zu vervollständigen.",
+  "agentDefaultMessageWithSystemRole": "Hallo, ich bin **{{name}}**, {{systemRole}}. Lass uns chatten!",
+  "agentDefaultMessageWithoutEdit": "Hallo, ich bin **{{name}}**. Lassen Sie uns ins Gespräch kommen!",
+  "agents": "Assistent",
+  "artifact": {
+    "generating": "Wird generiert",
+    "inThread": "In Unterthemen kann nicht angezeigt werden, bitte wechseln Sie zum Hauptdiskussionsbereich.",
+    "thinking": "Denken",
+    "thought": "Denkenprozess",
+    "unknownTitle": "Unbenanntes Werk"
+  },
+  "backToBottom": "Zurück zum Ende",
+  "chatList": {
+    "longMessageDetail": "Details anzeigen"
+  },
+  "clearCurrentMessages": "Aktuelle Nachrichten löschen",
+  "confirmClearCurrentMessages": "Möchtest du wirklich die aktuellen Nachrichten löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+  "confirmRemoveSessionItemAlert": "Möchtest du diesen Assistenten wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+  "confirmRemoveSessionSuccess": "Hilfe wurde erfolgreich entfernt",
+  "defaultAgent": "Standardassistent",
+  "defaultList": "Standardliste",
+  "defaultSession": "Standardassistent",
+  "duplicateSession": {
+    "loading": "Kopieren läuft...",
+    "success": "Kopieren erfolgreich",
+    "title": "{{title}} Kopie"
+  },
+  "duplicateTitle": "{{title}} Kopie",
+  "emptyAgent": "Kein Assistent verfügbar",
+  "extendParams": {
+    "disableContextCaching": {
+      "desc": "Die Kosten für die Generierung einer einzelnen Konversation können um bis zu 90 % gesenkt werden, die Reaktionsgeschwindigkeit wird um das Vierfache erhöht (<1>Mehr erfahren</1>). Wenn aktiviert, wird die Begrenzung der Anzahl historischer Nachrichten automatisch deaktiviert.",
+      "title": "Kontext-Caching aktivieren"
+    },
+    "enableReasoning": {
+      "desc": "Basierend auf den Einschränkungen des Claude Thinking-Mechanismus (<1>Mehr erfahren</1>), wird bei Aktivierung die Begrenzung der Anzahl historischer Nachrichten automatisch deaktiviert.",
+      "title": "Tiefes Denken aktivieren"
+    },
+    "reasoningBudgetToken": {
+      "title": "Token für Denkaufwand"
+    },
+    "reasoningEffort": {
+      "title": "Argumentationsstärke"
+    },
+    "title": "Modell Erweiterungsfunktionen"
+  },
+  "history": {
+    "title": "Der Assistent wird nur die letzten {{count}} Nachrichten speichern"
+  },
+  "historyRange": "Verlaufsbereich",
+  "historySummary": "Zusammenfassung historischer Nachrichten",
+  "inbox": {
+    "desc": "Aktiviere das Gehirncluster und entfache den Funken des Denkens. Dein intelligenter Assistent, der mit dir über alles kommuniziert.",
+    "title": "Lass uns plaudern"
+  },
+  "input": {
+    "addAi": "Fügen Sie eine AI-Nachricht hinzu",
+    "addUser": "Fügen Sie eine Benutzer-Nachricht hinzu",
+    "more": "Mehr",
+    "send": "Senden",
+    "sendWithCmdEnter": "Mit {{meta}} + Eingabetaste senden",
+    "sendWithEnter": "Mit Eingabetaste senden",
+    "stop": "Stoppen",
+    "warp": "Zeilenumbruch"
+  },
+  "intentUnderstanding": {
+    "title": "Verstehe und analysiere gerade Ihre Absicht..."
+  },
+  "knowledgeBase": {
+    "all": "Alle Inhalte",
+    "allFiles": "Alle Dateien",
+    "allKnowledgeBases": "Alle Wissensdatenbanken",
+    "disabled": "Der aktuelle Bereitstellungsmodus unterstützt keine Dialoge mit der Wissensdatenbank. Bitte wechseln Sie zur Bereitstellung mit einer Serverdatenbank oder nutzen Sie den {{cloud}}-Dienst.",
+    "library": {
+      "action": {
+        "add": "Hinzufügen",
+        "detail": "Details",
+        "remove": "Entfernen"
+      },
+      "title": "Datei/Wissensdatenbank"
+    },
+    "relativeFilesOrKnowledgeBases": "Verwandte Dateien/Wissensdatenbanken",
+    "title": "Wissensdatenbank",
+    "uploadGuide": "Hochgeladene Dateien können in der „Wissensdatenbank“ eingesehen werden.",
+    "viewMore": "Mehr anzeigen"
+  },
+  "messageAction": {
+    "delAndRegenerate": "Löschen und neu generieren",
+    "deleteDisabledByThreads": "Es gibt Unterthemen, die Löschung ist nicht möglich.",
+    "regenerate": "Neu generieren"
+  },
+  "messages": {
+    "modelCard": {
+      "credit": "Punkte",
+      "creditPricing": "Preisgestaltung",
+      "creditTooltip": "Zur Vereinfachung der Zählung rechnen wir 1$ als 1M Punkte um, zum Beispiel werden $3/M Tokens als 3 Punkte/token umgerechnet",
+      "pricing": {
+        "inputCachedTokens": "Zwischengespeicherte Eingabe {{amount}}/Punkte · ${{amount}}/M",
+        "inputCharts": "${{amount}}/M Zeichen",
+        "inputMinutes": "${{amount}}/Minute",
+        "inputTokens": "Eingabe {{amount}}/Punkte · ${{amount}}/M",
+        "outputTokens": "Ausgabe {{amount}}/Punkte · ${{amount}}/M",
+        "writeCacheInputTokens": "Cache-Eingabe schreiben {{amount}}/Punkte · ${{amount}}/M"
+      }
+    },
+    "tokenDetails": {
+      "average": "Durchschnittspreis",
+      "input": "Eingabe",
+      "inputAudio": "Audioeingabe",
+      "inputCached": "Eingabe zwischengespeichert",
+      "inputCitation": "Eingabe zitieren",
+      "inputText": "Text-Eingabe",
+      "inputTitle": "Eingabedetails",
+      "inputUncached": "Eingabe nicht zwischengespeichert",
+      "inputWriteCached": "Eingabe Cache schreiben",
+      "output": "Ausgabe",
+      "outputAudio": "Audioausgabe",
+      "outputText": "Text-Ausgabe",
+      "outputTitle": "Ausgabedetails",
+      "reasoning": "Tiefes Denken",
+      "speed": {
+        "tps": {
+          "title": "TPS",
+          "tooltip": "Tokens pro Sekunde, TPS. Bezieht sich auf die durchschnittliche Geschwindigkeit, mit der AI-Inhalte generiert werden (Token/Sekunde), und beginnt mit der Berechnung, nachdem das erste Token empfangen wurde."
+        },
+        "ttft": {
+          "title": "TTFT",
+          "tooltip": "Zeit bis zum ersten Token, TTFT. Bezieht sich auf das Zeitintervall von dem Moment, in dem Sie eine Nachricht senden, bis der Client das erste Token erhält."
+        }
+      },
+      "title": "Generierungsdetails",
+      "total": "Gesamter Verbrauch"
+    }
+  },
+  "newAgent": "Neuer Assistent",
+  "pin": "Anheften",
+  "pinOff": "Anheften aufheben",
+  "rag": {
+    "referenceChunks": "Referenzstücke",
+    "userQuery": {
+      "actions": {
+        "delete": "Abfrage löschen",
+        "regenerate": "Abfrage neu generieren"
+      }
+    }
+  },
+  "regenerate": "Neu generieren",
+  "roleAndArchive": "Rolle und Archiv",
+  "search": {
+    "grounding": {
+      "searchQueries": "Suchbegriffe",
+      "title": "Es wurden {{count}} Ergebnisse gefunden"
+    },
+    "mode": {
+      "auto": {
+        "desc": "Intelligente Beurteilung, ob eine Suche basierend auf dem Gesprächsinhalt erforderlich ist",
+        "title": "Intelligente Vernetzung"
+      },
+      "off": {
+        "desc": "Verwendet nur das Grundwissen des Modells, ohne Netzsuche",
+        "title": "Vernetzung deaktivieren"
+      },
+      "on": {
+        "desc": "Führt kontinuierlich Netzsuchen durch, um die neuesten Informationen zu erhalten",
+        "title": "Immer vernetzt"
+      },
+      "useModelBuiltin": "Verwenden Sie die integrierte Suchmaschine des Modells"
+    },
+    "searchModel": {
+      "desc": "Das aktuelle Modell unterstützt keine Funktionsaufrufe, daher muss es mit einem Modell kombiniert werden, das Funktionsaufrufe unterstützt, um online zu suchen",
+      "title": "Suchunterstützungsmodell"
+    },
+    "title": "Netzwerksuche"
+  },
+  "searchAgentPlaceholder": "Suchassistent...",
+  "sendPlaceholder": "Chat-Nachricht eingeben...",
+  "sessionGroup": {
+    "config": "Gruppenkonfiguration",
+    "confirmRemoveGroupAlert": "Die Gruppe wird bald gelöscht. Nach dem Löschen werden die Assistenten in die Standardliste verschoben. Bitte bestätigen Sie Ihre Aktion.",
+    "createAgentSuccess": "Assistent erfolgreich erstellt",
+    "createGroup": "Neue Gruppe erstellen",
+    "createSuccess": "Erstellung erfolgreich",
+    "creatingAgent": "Assistent wird erstellt...",
+    "inputPlaceholder": "Geben Sie den Gruppennamen ein...",
+    "moveGroup": "In Gruppe verschieben",
+    "newGroup": "Neue Gruppe",
+    "rename": "Gruppe umbenennen",
+    "renameSuccess": "Umbenennung erfolgreich",
+    "sortSuccess": "Sortierung erfolgreich aktualisiert",
+    "sorting": "Gruppensortierung wird aktualisiert...",
+    "tooLong": "Gruppenname muss zwischen 1 und 20 Zeichen lang sein"
+  },
+  "shareModal": {
+    "copy": "Kopieren",
+    "download": "Screenshot herunterladen",
+    "downloadFile": "Datei herunterladen",
+    "exportTitle": "Standardtitel",
+    "imageType": "Bildformat",
+    "includeTool": "Plugin-Nachricht einfügen",
+    "includeUser": "Benutzernachricht einfügen",
+    "screenshot": "Screenshot",
+    "settings": "Exporteinstellungen",
+    "text": "Text",
+    "withBackground": "Mit Hintergrundbild",
+    "withFooter": "Mit Fußzeile",
+    "withPluginInfo": "Mit Plugin-Informationen",
+    "withRole": "Nachrichtenrolle einfügen",
+    "withSystemRole": "Mit Assistentenrolle"
+  },
+  "stt": {
+    "action": "Spracheingabe",
+    "loading": "Erkenne...",
+    "prettifying": "Verschönern..."
+  },
+  "thread": {
+    "divider": "Unterthema",
+    "threadMessageCount": "{{messageCount}} Nachrichten",
+    "title": "Unterthema"
+  },
+  "tokenDetails": {
+    "chats": "Chats",
+    "historySummary": "Historische Zusammenfassung",
+    "rest": "Verbleibend",
+    "systemRole": "Systemrolle",
+    "title": "Kontextdetails",
+    "tools": "Werkzeuge",
+    "total": "Insgesamt",
+    "used": "Verwendet"
+  },
+  "tokenTag": {
+    "overload": "Überlastung",
+    "remained": "Verbleibend",
+    "used": "Verwendet"
+  },
+  "topic": {
+    "checkOpenNewTopic": "Soll ein neues Thema eröffnet werden?",
+    "checkSaveCurrentMessages": "Möchten Sie die aktuelle Konversation als Thema speichern?",
+    "openNewTopic": "Neues Thema öffnen",
+    "saveCurrentMessages": "Aktuelle Unterhaltung als Thema speichern"
+  },
+  "translate": {
+    "action": "Übersetzen",
+    "clear": "Übersetzung löschen"
+  },
+  "tts": {
+    "action": "Sprachausgabe",
+    "clear": "Sprachausgabe löschen"
+  },
+  "updateAgent": "Assistenteninformationen aktualisieren",
+  "upload": {
+    "action": {
+      "fileUpload": "Datei hochladen",
+      "folderUpload": "Ordner hochladen",
+      "imageDisabled": "Das aktuelle Modell unterstützt keine visuelle Erkennung. Bitte wechseln Sie das Modell, um diese Funktion zu nutzen.",
+      "imageUpload": "Bild hochladen",
+      "tooltip": "Hochladen"
+    },
+    "clientMode": {
+      "actionFiletip": "Datei hochladen",
+      "actionTooltip": "Hochladen",
+      "disabled": "Das aktuelle Modell unterstützt keine visuelle Erkennung und Dateianalyse. Bitte wechseln Sie das Modell, um diese Funktionen zu nutzen."
+    },
+    "preview": {
+      "prepareTasks": "Vorbereitung der Teile...",
+      "status": {
+        "pending": "Vorbereitung des Uploads...",
+        "processing": "Datei wird verarbeitet..."
+      }
+    }
+  },
+  "zenMode": "Fokusmodus"
+}

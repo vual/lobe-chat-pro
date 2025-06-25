@@ -130,9 +130,9 @@ docker run -d -p 3210:3210  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat
 
 ### 带后台管理版启动（服务端数据库版）
 - 详细部署方式：
-  - [部署服务](./docs/database-deploy.md)
-  - [微信公众号和支付](./docs/微信公众号和支付.md)
-  - [Nginx](./docs/nginx.md)
+  - [部署服务](docs-with-backend/database-deploy.md)
+  - [微信公众号和支付](docs-with-backend/微信公众号和支付.md)
+  - [Nginx](docs-with-backend/nginx.md)
 
 启动后，
 - 用户端：http://{启动机器的ip}:3210，

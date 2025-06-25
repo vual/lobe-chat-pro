@@ -1,0 +1,276 @@
+{
+  "ModelSwitch": {
+    "title": "Modelo"
+  },
+  "agentDefaultMessage": "Olá, eu sou **{{name}}**, você pode começar a conversar comigo agora ou ir para [Configurações do Assistente]({{url}}) para completar minhas informações.",
+  "agentDefaultMessageWithSystemRole": "Olá, eu sou **{{name}}**, {{systemRole}}, vamos conversar!",
+  "agentDefaultMessageWithoutEdit": "Olá, sou o **{{name}}**, vamos começar a conversa!",
+  "agents": "Assistente",
+  "artifact": {
+    "generating": "Gerando",
+    "inThread": "Não é possível visualizar no subtópico, por favor, mude para a área de conversa principal.",
+    "thinking": "Pensando",
+    "thought": "Processo de pensamento",
+    "unknownTitle": "Obra sem título"
+  },
+  "backToBottom": "Voltar para o início",
+  "chatList": {
+    "longMessageDetail": "Ver detalhes"
+  },
+  "clearCurrentMessages": "Limpar mensagens atuais",
+  "confirmClearCurrentMessages": "Você está prestes a limpar as mensagens desta sessão. Depois de limpar, não será possível recuperá-las. Por favor, confirme sua ação.",
+  "confirmRemoveSessionItemAlert": "Você está prestes a remover este assistente. Depois de remover, não será possível recuperá-lo. Por favor, confirme sua ação.",
+  "confirmRemoveSessionSuccess": "Sessão removida com sucesso",
+  "defaultAgent": "Assistente Padrão",
+  "defaultList": "Lista padrão",
+  "defaultSession": "Sessão Padrão",
+  "duplicateSession": {
+    "loading": "Copiando...",
+    "success": "Cópia bem-sucedida",
+    "title": "{{title}} Cópia"
+  },
+  "duplicateTitle": "{{title}} Cópia",
+  "emptyAgent": "Sem assistente disponível",
+  "extendParams": {
+    "disableContextCaching": {
+      "desc": "O custo de geração de uma única conversa pode ser reduzido em até 90%, com um aumento de 4 vezes na velocidade de resposta (<1>Saiba mais</1>). Ao ativar, o limite de mensagens históricas será desativado automaticamente.",
+      "title": "Ativar cache de contexto"
+    },
+    "enableReasoning": {
+      "desc": "Baseado nas restrições do mecanismo Claude Thinking (<1>Saiba mais</1>), ao ativar, o limite de mensagens históricas será desativado automaticamente.",
+      "title": "Ativar Pensamento Profundo"
+    },
+    "reasoningBudgetToken": {
+      "title": "Token de Consumo de Pensamento"
+    },
+    "reasoningEffort": {
+      "title": "Intensidade de Raciocínio"
+    },
+    "title": "Funcionalidade de Extensão do Modelo"
+  },
+  "history": {
+    "title": "O assistente lembrará apenas das últimas {{count}} mensagens"
+  },
+  "historyRange": "Intervalo de Histórico",
+  "historySummary": "Resumo das mensagens históricas",
+  "inbox": {
+    "desc": "Ative o cluster cerebral, inspire faíscas de pensamento. Seu assistente inteligente, aqui para conversar sobre tudo.",
+    "title": "Conversa Aleatória"
+  },
+  "input": {
+    "addAi": "Adicionar uma mensagem de IA",
+    "addUser": "Adicionar uma mensagem de usuário",
+    "more": "mais",
+    "send": "Enviar",
+    "sendWithCmdEnter": "Pressione {{meta}} + Enter para enviar",
+    "sendWithEnter": "Pressione Enter para enviar",
+    "stop": "Parar",
+    "warp": "Quebrar linha"
+  },
+  "intentUnderstanding": {
+    "title": "Entendendo e analisando sua intenção..."
+  },
+  "knowledgeBase": {
+    "all": "Todo conteúdo",
+    "allFiles": "Todos os arquivos",
+    "allKnowledgeBases": "Todos os bancos de conhecimento",
+    "disabled": "O modo de implantação atual não suporta diálogos com a base de conhecimento. Para utilizá-lo, por favor, mude para a implantação do banco de dados no servidor ou utilize o serviço {{cloud}}.",
+    "library": {
+      "action": {
+        "add": "Adicionar",
+        "detail": "Detalhes",
+        "remove": "Remover"
+      },
+      "title": "Arquivo/Banco de Conhecimento"
+    },
+    "relativeFilesOrKnowledgeBases": "Arquivos/Bancos de Conhecimento relacionados",
+    "title": "Banco de Conhecimento",
+    "uploadGuide": "Os arquivos enviados podem ser visualizados em 'Banco de Conhecimento'.",
+    "viewMore": "Ver mais"
+  },
+  "messageAction": {
+    "delAndRegenerate": "Excluir e Regenerar",
+    "deleteDisabledByThreads": "Existem subtópicos, não é possível deletar.",
+    "regenerate": "Regenerar"
+  },
+  "messages": {
+    "modelCard": {
+      "credit": "Créditos",
+      "creditPricing": "Precificação",
+      "creditTooltip": "Para facilitar a contagem, consideramos 1$ como 1M créditos, por exemplo, $3/M tokens se converte em 3 créditos/token",
+      "pricing": {
+        "inputCachedTokens": "Entrada em cache {{amount}}/créditos · ${{amount}}/M",
+        "inputCharts": "${{amount}}/M caracteres",
+        "inputMinutes": "${{amount}}/minuto",
+        "inputTokens": "Entrada {{amount}}/créditos · ${{amount}}/M",
+        "outputTokens": "Saída {{amount}}/créditos · ${{amount}}/M",
+        "writeCacheInputTokens": "Cache de entrada de escrita {{amount}}/pontos · ${{amount}}/M"
+      }
+    },
+    "tokenDetails": {
+      "average": "Preço médio",
+      "input": "Entrada",
+      "inputAudio": "Entrada de áudio",
+      "inputCached": "Entrada em cache",
+      "inputCitation": "Citação de entrada",
+      "inputText": "Entrada de texto",
+      "inputTitle": "Detalhes da entrada",
+      "inputUncached": "Entrada não cacheada",
+      "inputWriteCached": "Entrada de cache de escrita",
+      "output": "Saída",
+      "outputAudio": "Saída de áudio",
+      "outputText": "Saída de texto",
+      "outputTitle": "Detalhes da saída",
+      "reasoning": "Raciocínio profundo",
+      "speed": {
+        "tps": {
+          "title": "TPS",
+          "tooltip": "Tokens Por Segundo, TPS. Refere-se à velocidade média de geração de conteúdo pela IA (Token/segundo), começando a contagem após o recebimento do primeiro Token."
+        },
+        "ttft": {
+          "title": "TTFT",
+          "tooltip": "Tempo Para o Primeiro Token, TTFT. Refere-se ao intervalo de tempo desde que você envia a mensagem até que o cliente receba o primeiro Token."
+        }
+      },
+      "title": "Detalhes da geração",
+      "total": "Total consumido"
+    }
+  },
+  "newAgent": "Novo Assistente",
+  "pin": "Fixar",
+  "pinOff": "Desafixar",
+  "rag": {
+    "referenceChunks": "Referências",
+    "userQuery": {
+      "actions": {
+        "delete": "Excluir reescrita de Query",
+        "regenerate": "Regenerar Query"
+      }
+    }
+  },
+  "regenerate": "Regenerar",
+  "roleAndArchive": "Função e Arquivo",
+  "search": {
+    "grounding": {
+      "searchQueries": "Palavras-chave de pesquisa",
+      "title": "Foram encontrados {{count}} resultados"
+    },
+    "mode": {
+      "auto": {
+        "desc": "Determina inteligentemente se é necessário pesquisar com base no conteúdo da conversa",
+        "title": "Conexão Inteligente"
+      },
+      "off": {
+        "desc": "Usa apenas o conhecimento básico do modelo, sem realizar pesquisas na web",
+        "title": "Desativar Conexão"
+      },
+      "on": {
+        "desc": "Realiza pesquisas contínuas na web para obter informações atualizadas",
+        "title": "Sempre Conectado"
+      },
+      "useModelBuiltin": "Usar o mecanismo de busca embutido no modelo"
+    },
+    "searchModel": {
+      "desc": "O modelo atual não suporta chamadas de função, portanto, é necessário combiná-lo com um modelo que suporte chamadas de função para realizar buscas na internet",
+      "title": "Modelo de busca auxiliar"
+    },
+    "title": "Pesquisa Conectada"
+  },
+  "searchAgentPlaceholder": "Assistente de busca...",
+  "sendPlaceholder": "Digite a mensagem...",
+  "sessionGroup": {
+    "config": "Gerenciar grupos",
+    "confirmRemoveGroupAlert": "Você está prestes a excluir este grupo. Após a exclusão, os assistentes deste grupo serão movidos para a lista padrão. Por favor, confirme sua operação.",
+    "createAgentSuccess": "Assistente criado com sucesso",
+    "createGroup": "Criar novo grupo",
+    "createSuccess": "Criado com sucesso",
+    "creatingAgent": "Criando assistente...",
+    "inputPlaceholder": "Digite o nome do grupo...",
+    "moveGroup": "Mover para o grupo",
+    "newGroup": "Novo grupo",
+    "rename": "Renomear grupo",
+    "renameSuccess": "Renomeado com sucesso",
+    "sortSuccess": "Reordenação bem-sucedida",
+    "sorting": "Atualizando ordenação do grupo...",
+    "tooLong": "O nome do grupo deve ter entre 1 e 20 caracteres"
+  },
+  "shareModal": {
+    "copy": "Copiar",
+    "download": "Baixar Captura de Tela",
+    "downloadFile": "Baixar arquivo",
+    "exportTitle": "Título padrão",
+    "imageType": "Tipo de Imagem",
+    "includeTool": "Incluir mensagens de ferramentas",
+    "includeUser": "Incluir mensagens de usuários",
+    "screenshot": "Captura de Tela",
+    "settings": "Configurações de Exportação",
+    "text": "Texto",
+    "withBackground": "Com Imagem de Fundo",
+    "withFooter": "Com Rodapé",
+    "withPluginInfo": "Com Informações do Plugin",
+    "withRole": "Incluir papel da mensagem",
+    "withSystemRole": "Com Função do Assistente"
+  },
+  "stt": {
+    "action": "Entrada de Voz",
+    "loading": "Reconhecendo...",
+    "prettifying": "Embelezando..."
+  },
+  "thread": {
+    "divider": "Subtópico",
+    "threadMessageCount": "{{messageCount}} mensagens",
+    "title": "Subtópico"
+  },
+  "tokenDetails": {
+    "chats": "Mensagens de bate-papo",
+    "historySummary": "Resumo Histórico",
+    "rest": "Restante disponível",
+    "systemRole": "Configuração de papel do sistema",
+    "title": "Detalhes do Token",
+    "tools": "Configuração de plug-ins",
+    "total": "Total disponível",
+    "used": "Total utilizado"
+  },
+  "tokenTag": {
+    "overload": "Limite Excedido",
+    "remained": "Restante",
+    "used": "Usado"
+  },
+  "topic": {
+    "checkOpenNewTopic": "Deseja abrir um novo tópico?",
+    "checkSaveCurrentMessages": "Salvar a conversa atual como tópico?",
+    "openNewTopic": "Abrir Novo Tópico",
+    "saveCurrentMessages": "Salvar Mensagens Atuais como Tópico"
+  },
+  "translate": {
+    "action": "Traduzir",
+    "clear": "Limpar Tradução"
+  },
+  "tts": {
+    "action": "Leitura de Voz",
+    "clear": "Limpar Leitura"
+  },
+  "updateAgent": "Atualizar Informações do Assistente",
+  "upload": {
+    "action": {
+      "fileUpload": "Enviar arquivo",
+      "folderUpload": "Enviar pasta",
+      "imageDisabled": "O modelo atual não suporta reconhecimento visual, por favor, mude de modelo antes de usar",
+      "imageUpload": "Enviar imagem",
+      "tooltip": "Enviar"
+    },
+    "clientMode": {
+      "actionFiletip": "Enviar arquivo",
+      "actionTooltip": "Enviar",
+      "disabled": "O modelo atual não suporta reconhecimento visual e análise de arquivos, por favor, mude de modelo antes de usar"
+    },
+    "preview": {
+      "prepareTasks": "Preparando partes...",
+      "status": {
+        "pending": "Preparando para upload...",
+        "processing": "Processando arquivo..."
+      }
+    }
+  },
+  "zenMode": "Modo de Foco"
+}

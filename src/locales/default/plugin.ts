@@ -1,0 +1,302 @@
+export default {
+  confirm: '确定',
+  debug: {
+    arguments: '调用参数',
+    function_call: '函数调用',
+    off: '关闭调试',
+    on: '查看插件调用信息',
+    payload: '插件载荷',
+    pluginState: '插件 State',
+    response: '返回结果',
+    title: '插件详情',
+    tool_call: '工具调用请求',
+  },
+  detailModal: {
+    info: {
+      description: 'API 描述',
+      name: 'API 名称',
+    },
+    tabs: {
+      info: '插件能力',
+      manifest: '安装文件',
+      settings: '设置',
+    },
+    title: '插件详情',
+  },
+  dev: {
+    confirmDeleteDevPlugin: '即将删除该本地插件，删除后将无法找回，是否删除该插件？',
+    customParams: {
+      useProxy: {
+        label: '通过代理安装（如遇到跨域访问错误，可尝试开启该选项后重新安装）',
+      },
+    },
+    deleteSuccess: '插件删除成功',
+    manifest: {
+      identifier: {
+        desc: '插件的唯一标识',
+        label: '标识符',
+      },
+      mode: {
+        mcp: 'MCP 插件',
+        mcpExp: '实验性',
+        url: '在线链接',
+      },
+      name: {
+        desc: '插件标题',
+        label: '标题',
+        placeholder: '搜索引擎',
+      },
+    },
+    mcp: {
+      args: {
+        desc: '传递给执行命令的参数列表，一般在这里输入 MCP 服务器名称，或启动脚本路径',
+        label: '命令参数',
+        placeholder: '例如：mcp-hello-world',
+        required: '请输入启动参数',
+      },
+      avatar: {
+        label: '插件图标',
+      },
+      command: {
+        desc: '用于启动 MCP STDIO Server 的可执行文件或脚本',
+        label: '命令',
+        placeholder: '例如：npx / uv / docker 等',
+        required: '请输入启动命令',
+      },
+      desc: {
+        desc: '添加插件的描述说明',
+        label: '插件描述',
+        placeholder: '补充该插件的使用说明和场景等信息',
+      },
+      endpoint: {
+        desc: '输入你的 MCP Streamable HTTP Server 的地址',
+        label: 'MCP Endpoint URL',
+      },
+      env: {
+        add: '新增一行',
+        desc: '输入你的 MCP Server 所需要的环境变量',
+        duplicateKeyError: '字段键必须唯一',
+        formValidationFailed: '表单验证失败，请检查参数格式',
+        keyRequired: '字段键不能为空',
+        label: 'MCP Server 环境变量',
+        stringifyError: '无法序列化参数，请检查参数格式',
+      },
+      identifier: {
+        desc: '为你的 MCP 插件指定一个名称，需要使用英文字符',
+        invalid: '标识符只能包含字母、数字、连字符和下划线',
+        label: 'MCP 插件名称',
+        placeholder: '例如：my-mcp-plugin',
+        required: '请输入 MCP 服务标识符',
+      },
+      previewManifest: '预览插件描述文件',
+      quickImport: '快速导入 JSON 配置',
+      quickImportError: {
+        empty: '输入内容不能为空',
+        invalidJson: '无效的 JSON 格式',
+        invalidStructure: 'JSON 格式无效',
+      },
+      stdioNotSupported: '当前环境不支持 stdio 类型的 MCP 插件',
+      testConnection: '测试连接',
+      testConnectionTip: '测试连接成功后 MCP 插件才可以被正常使用',
+      type: {
+        desc: '选择 MCP 插件的通信方式，网页版只支持 Streamable HTTP',
+        httpFeature1: '兼容网页版与桌面端',
+        httpFeature2: '连接远程 MCP 服务器, 无需额外安装配置',
+        httpShortDesc: '基于流式 HTTP 的通信协议',
+        label: 'MCP 插件类型',
+        stdioFeature1: '更低的通信延迟, 适合本地执行',
+        stdioFeature2: '需在本地安装运行 MCP 服务器',
+        stdioNotAvailable: 'STDIO 模式仅在桌面版可用',
+        stdioShortDesc: '基于标准输入输出的通信协议',
+        title: 'MCP 插件类型',
+      },
+      url: {
+        desc: '输入你的 MCP Server Streamable HTTP 地址，不支持 SSE 模式',
+        invalid: '请输入有效的 URL 地址',
+        label: 'Streamable HTTP Endpoint URL',
+        required: '请输入 MCP 服务 URL',
+      },
+    },
+    meta: {
+      author: {
+        desc: '插件的作者',
+        label: '作者',
+      },
+      avatar: {
+        desc: '插件的图标，可以使用 Emoji，也可以使用 URL',
+        label: '图标',
+      },
+      description: {
+        desc: '插件描述',
+        label: '描述',
+        placeholder: '查询搜索引擎获取信息',
+      },
+      formFieldRequired: '该字段为必填项',
+      homepage: {
+        desc: '插件的首页',
+        label: '首页',
+      },
+      identifier: {
+        desc: '插件的唯一标识，将从 manifest 中自动识别',
+        errorDuplicate: '标识符和已有插件重复，请修改标识符',
+        label: '标识符',
+        pattenErrorMessage: '只能输入英文字符、数字 、- 和_ 这两个符号',
+      },
+      lobe: '{{appName}} 插件',
+      manifest: {
+        desc: '{{appName}}将会通过该链接安装插件',
+        label: '插件描述文件 (Manifest) URL',
+        preview: '预览 Manifest',
+        refresh: '刷新',
+      },
+      openai: 'OpenAI 插件',
+      title: {
+        desc: '插件标题',
+        label: '标题',
+        placeholder: '搜索引擎',
+      },
+    },
+    metaConfig: '插件元信息配置',
+    modalDesc:
+      '添加自定义插件后，可用于插件开发验证，也可直接在会话中使用。插件开发请参考<1>开发文档↗</>',
+    openai: {
+      importUrl: '从 URL 链接导入',
+      schema: 'Schema',
+    },
+    preview: {
+      api: {
+        noParams: '该工具没有参数',
+        noResults: '未找到符合搜索条件的 API',
+        params: '参数:',
+        searchPlaceholder: '搜索工具...',
+      },
+      card: '预览插件展示效果',
+      desc: '预览插件描述',
+      empty: {
+        desc: '完成配置后，将能够在此处预览插件支持的工具能力',
+        title: '配置插件后开始预览',
+      },
+      title: '插件名称预览',
+    },
+    save: '安装插件',
+    saveSuccess: '插件设置保存成功',
+    tabs: {
+      manifest: '功能描述清单 (Manifest)',
+      meta: '插件元信息',
+    },
+    title: {
+      create: '添加自定义插件',
+      edit: '编辑自定义插件',
+    },
+    type: {
+      lobe: '{{appName}} 插件',
+      openai: 'OpenAI 插件',
+    },
+    update: '更新',
+    updateSuccess: '插件设置更新成功',
+  },
+  error: {
+    fetchError: '请求该 manifest 链接失败，请确保链接的有效性，并检查链接是否允许跨域访问',
+    installError: '插件 {{name}} 安装失败',
+    manifestInvalid: 'manifest 不符合规范，校验结果: \n\n {{error}}',
+    noManifest: '描述文件不存在',
+    openAPIInvalid: 'OpenAPI 解析失败，错误: \n\n {{error}}',
+    reinstallError: '插件 {{name}} 刷新失败',
+    testConnectionFailed: '获取 Manifest 失败: {{error}}',
+    urlError: '该链接没有返回 JSON 格式的内容, 请确保是有效的链接',
+  },
+  inspector: {
+    args: '查看参数列表',
+    pluginRender: '查看插件界面',
+  },
+  list: {
+    item: {
+      'deprecated.title': '已删除',
+      'local.config': '配置',
+      'local.title': '自定义',
+    },
+  },
+  loading: {
+    content: '调用插件中...',
+    plugin: '插件运行中...',
+  },
+  localSystem: {
+    apiName: {
+      listLocalFiles: '查看文件列表',
+      moveLocalFiles: '移动文件',
+      readLocalFile: '读取文件内容',
+      renameLocalFile: '重命名',
+      searchLocalFiles: '搜索文件',
+      writeLocalFile: '写入文件',
+    },
+    title: '本地文件',
+  },
+  pluginList: '插件列表',
+  search: {
+    apiName: {
+      crawlMultiPages: '读取多个页面内容',
+      crawlSinglePage: '读取页面内容',
+      search: '搜索页面',
+    },
+    config: {
+      addKey: '添加秘钥',
+      close: '删除',
+      confirm: '已完成配置并重试',
+    },
+    crawPages: {
+      crawling: '链接识别中',
+      detail: {
+        preview: '预览',
+        raw: '原始文本',
+        tooLong: '文本内容过长，对话上下文仅保留前 {{characters}} 字符，超过部分不计入会话上下文',
+      },
+      meta: {
+        crawler: '抓取模式',
+        words: '字符数',
+      },
+    },
+    searchxng: {
+      baseURL: '请输入',
+      description: '请输入 SearchXNG 的网址，即可开始联网搜索',
+      keyPlaceholder: '请输入秘钥',
+      title: '配置 SearchXNG 搜索引擎',
+      unconfiguredDesc: '请联系管理员完成 SearchXNG 搜索引擎配置，即可开始联网搜索',
+      unconfiguredTitle: '暂未配置 SearchXNG 搜索引擎',
+    },
+    title: '联网搜索',
+  },
+  setting: '插件设置',
+  settings: {
+    indexUrl: {
+      title: '市场索引',
+      tooltip: '暂不支持在线编辑，请通过部署时环境变量进行设置',
+    },
+    modalDesc: '配置插件市场的地址后，可以使用自定义的插件市场',
+    title: '设置插件市场',
+  },
+  showInPortal: '请在工作区中查看详情',
+  store: {
+    actions: {
+      confirmUninstall: '即将卸载该插件，卸载后将清除该插件配置，请确认你的操作',
+      detail: '详情',
+      install: '安装',
+      manifest: '编辑安装文件',
+      settings: '设置',
+      uninstall: '卸载',
+    },
+    communityPlugin: '三方社区',
+    customPlugin: '自定义',
+    empty: '暂无已安装插件',
+    installAllPlugins: '安装全部',
+    networkError: '获取插件商店失败，请检测网络连接后重试',
+    placeholder: '搜索插件名称介绍或关键词...',
+    releasedAt: '发布于 {{createdAt}}',
+    tabs: {
+      all: '全部',
+      installed: '已安装',
+    },
+    title: '插件商店',
+  },
+  unknownError: '未知错误',
+  unknownPlugin: '未知插件',
+};

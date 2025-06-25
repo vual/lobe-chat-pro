@@ -1,0 +1,540 @@
+{
+  "about": {
+    "title": "Hakkında"
+  },
+  "agentTab": {
+    "chat": "Sohbet Tercihi",
+    "meta": "Asistan Bilgisi",
+    "modal": "Model Ayarları",
+    "opening": "Açılış Ayarları",
+    "plugin": "Eklenti Ayarları",
+    "prompt": "Karakter Ayarları",
+    "tts": "Metin Okuma Hizmeti"
+  },
+  "analytics": {
+    "telemetry": {
+      "desc": "{{appName}} genel kullanıcı deneyimini geliştirmemize yardımcı olmak için telemetri verilerini göndermeyi seçerek katkıda bulunabilirsiniz.",
+      "title": "Anonim Kullanım Verileri Gönder"
+    },
+    "title": "Analitik"
+  },
+  "danger": {
+    "clear": {
+      "action": "Temizle",
+      "confirm": "Tüm sohbet verilerini temizlemeyi onaylıyor musunuz?",
+      "desc": "Bu, oturum verilerini, asistanı, dosyaları, mesajları, eklentileri vb. temizleyecektir.",
+      "success": "Tüm oturum mesajları temizlendi",
+      "title": "Tüm Oturum Mesajlarını Temizle"
+    },
+    "reset": {
+      "action": "Sıfırla",
+      "confirm": "Tüm ayarları sıfırlamayı onaylıyor musunuz?",
+      "currentVersion": "Geçerli Sürüm",
+      "desc": "Tüm ayarları varsayılan değerlere sıfırlar",
+      "success": "Tüm ayarlar sıfırlandı",
+      "title": "Tüm Ayarları Sıfırla"
+    }
+  },
+  "header": {
+    "desc": "Tercihler ve model ayarları.",
+    "global": "Genel Ayarlar",
+    "session": "Oturum Ayarları",
+    "sessionDesc": "Karakter ayarları ve oturum tercihleri.",
+    "sessionWithName": "Oturum Ayarları · {{name}}",
+    "title": "Ayarlar"
+  },
+  "hotkey": {
+    "conflicts": "Mevcut kısayol tuşlarıyla çakışıyor",
+    "group": {
+      "conversation": "Sohbet",
+      "essential": "Temel"
+    },
+    "invalidCombination": "Kısayol tuşu en az bir modifiye tuşu (Ctrl, Alt, Shift) ve bir normal tuş içermelidir",
+    "record": "Kısayol tuşunu kaydetmek için tuşa basın",
+    "reset": "Varsayılan kısayol tuşlarına sıfırla",
+    "title": "Kısayollar"
+  },
+  "llm": {
+    "aesGcm": "Anahtarınız ve vekil adresiniz <1>AES-GCM</1> şifreleme algoritması kullanılarak şifrelenecektir",
+    "apiKey": {
+      "desc": "Lütfen {{name}} API Anahtarınızı girin",
+      "placeholder": "{{name}} API Anahtarı",
+      "title": "API Anahtarı"
+    },
+    "checker": {
+      "button": "Kontrol Et",
+      "desc": "API Anahtarı ve vekil adresinin doğru şekilde doldurulup doldurulmadığını test eder",
+      "pass": "Kontrol Başarılı",
+      "title": "Bağlantı Kontrolü"
+    },
+    "customModelCards": {
+      "addNew": "{{id}} modelini oluştur ve ekle",
+      "config": "Modeli Yapılandır",
+      "confirmDelete": "Özel modeli silmek üzeresiniz, silindikten sonra geri alınamaz, lütfen dikkatli olun.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Azure OpenAI'da gerçekleştirilen istek alanı",
+          "placeholder": "Azure'daki model dağıtım adını girin",
+          "title": "Model Dağıtım Adı"
+        },
+        "displayName": {
+          "placeholder": "ChatGPT, GPT-4 vb. gibi modelin görüntü adını girin",
+          "title": "Model Görüntü Adı"
+        },
+        "files": {
+          "extra": "Mevcut dosya yükleme uygulaması yalnızca bir Hack çözümüdür ve yalnızca kendi denemeleriniz için geçerlidir. Tam dosya yükleme yeteneği için lütfen sonraki uygulamaları bekleyin.",
+          "title": "Dosya Yükleme Desteği"
+        },
+        "functionCall": {
+          "extra": "Bu yapılandırma yalnızca uygulamadaki işlev çağırma yeteneğini açacaktır; işlev çağırmanın desteklenip desteklenmediği tamamen modele bağlıdır, lütfen bu modelin işlev çağırma yeteneğini kendiniz test edin.",
+          "title": "Fonksiyon Çağrısını Destekle"
+        },
+        "id": {
+          "extra": "Model etiketi olarak görüntülenecektir",
+          "placeholder": "Örneğin gpt-4-turbo-preview veya claude-2.1 gibi bir model kimliği girin",
+          "title": "Model Kimliği"
+        },
+        "modalTitle": "Özel Model Yapılandırması",
+        "tokens": {
+          "title": "Maksimum token sayısı"
+        },
+        "vision": {
+          "extra": "Bu yapılandırma yalnızca uygulamadaki resim yükleme yapılandırmasını açacaktır; tanıma desteği tamamen modele bağlıdır, lütfen bu modelin görsel tanıma yeteneğini kendiniz test edin.",
+          "title": "Görüntü Tanımayı Destekle"
+        }
+      }
+    },
+    "fetchOnClient": {
+      "desc": "İstemci tarafından alınan veri: Tarayıcı, doğrudan oturum isteği gönderir ve yanıt hızını artırabilir.",
+      "title": "İstemci Tarafından Veri Alımı"
+    },
+    "fetcher": {
+      "clear": "Alınan modeli temizle",
+      "fetch": "Modelleri Al",
+      "fetching": "Modelleri alınıyor...",
+      "latestTime": "Son güncelleme zamanı: {{time}}",
+      "noLatestTime": "Liste henüz alınamadı"
+    },
+    "helpDoc": "Yardım Belgeleri",
+    "modelList": {
+      "desc": "Görüntülenecek modeli seçin, seçilen model model listesinde görüntülenecektir",
+      "placeholder": "Lütfen listeden bir model seçin",
+      "title": "Model Listesi",
+      "total": "Toplam {{count}} model kullanılabilir"
+    },
+    "proxyUrl": {
+      "desc": "Varsayılan adres dışında, http(s):// içermelidir",
+      "title": "API Proxy Adresi"
+    },
+    "waitingForMore": "Daha fazla model eklenmesi planlanıyor"
+  },
+  "plugin": {
+    "addTooltip": "Eklenti Ekle",
+    "clearDeprecated": "Kullanım Dışı Eklentileri Kaldır",
+    "empty": "Henüz eklenti yok, <1>Eklenti Mağazası</1>'nı keşfetmekten çekinmeyin",
+    "installStatus": {
+      "deprecated": "Kaldırıldı"
+    },
+    "settings": {
+      "hint": "Açıklamaya dayalı olarak aşağıdaki yapılandırmaları doldurun",
+      "title": "{{id}} Eklenti Yapılandırması",
+      "tooltip": "Eklenti Yapılandırması"
+    },
+    "store": "Eklenti Mağazası"
+  },
+  "settingAgent": {
+    "avatar": {
+      "title": "Avatar"
+    },
+    "backgroundColor": {
+      "title": "Arka Plan Rengi"
+    },
+    "description": {
+      "desc": "Asistanınızı basitçe tanıtın, karakter ayarı olarak kullanılmaz",
+      "placeholder": "Asistan açıklamasını girin",
+      "title": "Asistan Açıklaması"
+    },
+    "name": {
+      "placeholder": "Asistan adını girin",
+      "title": "Ad"
+    },
+    "prompt": {
+      "placeholder": "Prompt girin",
+      "title": "Rol Ayarı"
+    },
+    "submit": "Asistan bilgilerini güncelle",
+    "tag": {
+      "desc": "Asistan etiketleri, asistan pazarında gösterilecektir",
+      "placeholder": "Etiket girin",
+      "title": "Etiket"
+    },
+    "title": "Asistan Bilgileri"
+  },
+  "settingAppearance": {
+    "neutralColor": {
+      "desc": "Farklı renk eğilimlerine sahip gri tonları özelleştirme",
+      "title": "Nötr Renk"
+    },
+    "preview": {
+      "title": "Renk Paleti"
+    },
+    "primaryColor": {
+      "desc": "Özelleştirilebilir tema rengi",
+      "title": "Tema Rengi"
+    },
+    "title": "Uygulama Görünümü"
+  },
+  "settingChat": {
+    "autoCreateTopicThreshold": {
+      "desc": "Mevcut mesaj sayısı bu değeri aştığında otomatik olarak bir konu oluşturulur",
+      "title": "Mesaj Sınırı"
+    },
+    "chatStyleType": {
+      "title": "Sohbet Pencere Stili",
+      "type": {
+        "chat": "Konuşma Modu",
+        "docs": "Belge Modu"
+      }
+    },
+    "compressThreshold": {
+      "desc": "Sıkıştırılmamış geçmiş mesajlar bu değeri aştığında sıkıştırma uygulanır",
+      "title": "Geçmiş Mesaj Uzunluğu Sıkıştırma Eşiği"
+    },
+    "enableAutoCreateTopic": {
+      "desc": "Sohbet sırasında otomatik olarak bir konu oluşturup oluşturmayacağınız, yalnızca geçici konularda etkilidir",
+      "title": "Otomatik Konu Oluştur"
+    },
+    "enableCompressHistory": {
+      "title": "Geçmiş mesajların otomatik özetini aç"
+    },
+    "enableHistoryCount": {
+      "alias": "Sınırsız",
+      "limited": "Yalnızca {{number}} konuşma mesajını içerir",
+      "setlimited": "Kullanılan mesaj sayısı",
+      "title": "Geçmiş Mesaj Sayısı Sınırlama",
+      "unlimited": "Sınırsız geçmiş mesaj sayısı"
+    },
+    "historyCount": {
+      "desc": "Her istekle taşınan tarihsel mesaj sayısı",
+      "title": "Eklenen Geçmiş Mesaj Sayısı"
+    },
+    "inputTemplate": {
+      "desc": "Kullanıcının son mesajı bu şablona doldurulur",
+      "placeholder": "Ön işleme şablonu {{text}}, gerçek zamanlı giriş bilgileri ile değiştirilir",
+      "title": "Kullanıcı Girişi Ön İşleme"
+    },
+    "submit": "Sohbet tercihlerini güncelle",
+    "title": "Sohbet Ayarları"
+  },
+  "settingChatAppearance": {
+    "fontSize": {
+      "desc": "Sohbet içeriğinin yazı tipi boyutu",
+      "marks": {
+        "normal": "Standart"
+      },
+      "title": "Yazı Tipi Boyutu"
+    },
+    "highlighterTheme": {
+      "title": "Kod Vurgulama Teması"
+    },
+    "mermaidTheme": {
+      "title": "Deniz Kızı Teması"
+    },
+    "title": "Sohbet Görünümü",
+    "transitionMode": {
+      "desc": "Sohbet mesajlarının geçiş animasyonu",
+      "options": {
+        "fadeIn": "Solma",
+        "none": {
+          "desc": "Bu, modelin yanıt çıktısına bağlıdır, lütfen kendiniz test edin.",
+          "value": "Yok"
+        },
+        "smooth": "Yumuşak"
+      },
+      "title": "Geçiş Animasyonu"
+    }
+  },
+  "settingCommon": {
+    "lang": {
+      "autoMode": "Sistemi Takip Et",
+      "title": "Dil"
+    },
+    "themeMode": {
+      "auto": "Otomatik",
+      "dark": "Karanlık",
+      "light": "Açık",
+      "title": "Tema"
+    },
+    "title": "Genel Ayarlar"
+  },
+  "settingModel": {
+    "enableMaxTokens": {
+      "title": "Max Token Sınırlamasını Etkinleştir"
+    },
+    "enableReasoningEffort": {
+      "title": "Akıl Yürütme Gücü Ayarını Etkinleştir"
+    },
+    "frequencyPenalty": {
+      "desc": "Değer ne kadar büyükse, kelime dağarcığı o kadar zengin ve çeşitli olur; değer ne kadar düşükse, kelimeler o kadar sade ve basit olur.",
+      "title": "Kelime Zenginliği"
+    },
+    "maxTokens": {
+      "desc": "Her etkileşim için kullanılan maksimum token sayısı",
+      "title": "Max Token Sınırlaması"
+    },
+    "model": {
+      "desc": "{{provider}} Model",
+      "title": "Model"
+    },
+    "params": {
+      "title": "Gelişmiş Parametreler"
+    },
+    "presencePenalty": {
+      "desc": "Değer ne kadar büyükse, farklı ifade biçimlerine yönelme eğilimi artar, kavram tekrarından kaçınılır; değer ne kadar küçükse, tekrar eden kavramlar veya anlatımlar kullanma eğilimi artar, ifade daha tutarlı olur.",
+      "title": "İfade Çeşitliliği"
+    },
+    "reasoningEffort": {
+      "desc": "Değer ne kadar yüksekse, akıl yürütme yeteneği o kadar güçlü olur, ancak yanıt süresi ve Token tüketimi artabilir",
+      "options": {
+        "high": "Yüksek",
+        "low": "Düşük",
+        "medium": "Orta"
+      },
+      "title": "Akıl Yürütme Gücü"
+    },
+    "submit": "Model ayarlarını güncelle",
+    "temperature": {
+      "desc": "Değer ne kadar büyükse, cevap o kadar yaratıcı ve hayal gücü dolu olur; değer ne kadar küçükse, cevap o kadar titizdir.",
+      "title": "Yaratıcılık Aktifliği",
+      "warning": "Yaratıcılık aktifliği değeri çok büyükse, çıktı bozulabilir."
+    },
+    "title": "Model Ayarları",
+    "topP": {
+      "desc": "Ne kadar olasılığı dikkate alır, değer ne kadar büyükse, daha fazla olası cevabı kabul eder; değer ne kadar küçükse, en olası cevabı seçme eğilimindedir. Yaratıcılık aktifliği ile birlikte değiştirilmesi önerilmez.",
+      "title": "Düşünce Açıklığı"
+    }
+  },
+  "settingOpening": {
+    "openingMessage": {
+      "desc": "Sohbet açıldığında gösterilecek açılış mesajı, asistanın işlevlerini tanıtmak için kullanılır",
+      "placeholder": "Merhaba, ben Özelleştirilmiş Asistan, hemen benimle sohbet edebilirsiniz veya Asistan Ayarları'na giderek bilgimi tamamlayabilirsiniz.",
+      "title": "Açılış Mesajı"
+    },
+    "openingQuestions": {
+      "desc": "Sohbetin başlangıcında gösterilecek yönlendirici sorular",
+      "empty": "Henüz soru yok",
+      "placeholder": "Soruyu girin",
+      "repeat": "Soru zaten mevcut",
+      "title": "Açılış Soruları"
+    },
+    "title": "Açılış Ayarları"
+  },
+  "settingPlugin": {
+    "title": "Eklenti Listesi"
+  },
+  "settingSystem": {
+    "accessCode": {
+      "desc": "Yönetici tarafından şifreleme erişimi etkinleştirildi",
+      "placeholder": "Erişim şifresini girin",
+      "title": "Erişim Şifresi"
+    },
+    "oauth": {
+      "info": {
+        "desc": "Oturum açıldı",
+        "title": "Hesap Bilgisi"
+      },
+      "signin": {
+        "action": "Oturum aç",
+        "desc": "Uygulamayı kilidini açmak için SSO ile oturum açın",
+        "title": "Hesaba Giriş Yap"
+      },
+      "signout": {
+        "action": "Oturumu kapat",
+        "confirm": "Çıkış yapmak istediğinize emin misiniz?",
+        "success": "Oturum kapatma başarılı"
+      }
+    },
+    "title": "Sistem Ayarları"
+  },
+  "settingTTS": {
+    "openai": {
+      "sttModel": "OpenAI Konuşmadan Metne Modeli",
+      "title": "OpenAI",
+      "ttsModel": "OpenAI Metin Seslendirme Modeli"
+    },
+    "showAllLocaleVoice": {
+      "desc": "Kapalıysa, yalnızca mevcut dildeki sesler görüntülenir",
+      "title": "Tüm Yerel Sesleri Göster"
+    },
+    "stt": "Konuşmadan Metne Ayarlar",
+    "sttAutoStop": {
+      "desc": "Kapalıysa, konuşmadan metni otomatik olarak sona ermez ve manuel olarak durdurmak için tıklamanız gerekir",
+      "title": "Otomatik Durdur Konuşmadan Metin"
+    },
+    "sttLocale": {
+      "desc": "Konuşmadan metin dilini, bu seçenek konuşmadan metin tanıma doğruluğunu artırabilir",
+      "title": "Konuşmadan Metin Dil"
+    },
+    "sttService": {
+      "desc": "'Tarayıcı' yerel konuşmadan metin hizmeti olduğundan",
+      "title": "Konuşmadan Metin Hizmeti"
+    },
+    "submit": "Ses hizmetini güncelle",
+    "title": "Konuşma Hizmeti",
+    "tts": "Metin Seslendirme Ayarlar",
+    "ttsService": {
+      "desc": "OpenAI metin seslendirme hizmetini kullanıyorsanız, OpenAI model hizmetinin etkin olduğundan emin olun",
+      "title": "Metin Seslendirme Hizmeti"
+    },
+    "voice": {
+      "desc": "Mevcut asistan için bir ses seçin, farklı TTS hizmetleri farklı sesleri destekler",
+      "preview": "Ses Önizlemesi",
+      "title": "Metin Seslendirme"
+    }
+  },
+  "storage": {
+    "actions": {
+      "export": {
+        "button": "Dışa Aktar",
+        "exportType": {
+          "agent": "Yardımcı Ayarlarını Dışa Aktar",
+          "agentWithMessage": "Yardımcı ve Mesajları Dışa Aktar",
+          "all": "Küresel Ayarları ve Tüm Yardımcı Verilerini Dışa Aktar",
+          "allAgent": "Tüm Yardımcı Ayarlarını Dışa Aktar",
+          "allAgentWithMessage": "Tüm Yardımcıları ve Mesajları Dışa Aktar",
+          "globalSetting": "Küresel Ayarları Dışa Aktar"
+        },
+        "title": "Veri Dışa Aktar"
+      },
+      "import": {
+        "button": "İçe Aktar",
+        "title": "Veri İçe Aktar"
+      },
+      "title": "Gelişmiş İşlemler"
+    },
+    "desc": "Mevcut tarayıcıdaki depolama kullanımı",
+    "embeddings": {
+      "used": "Vektör Depolama"
+    },
+    "title": "Veri Depolama",
+    "used": "Depolama Kullanımı"
+  },
+  "submitAgentModal": {
+    "button": "Asistan Gönder",
+    "identifier": "Asistan Kimliği",
+    "metaMiss": "Lütfen göndermeden önce asistan bilgilerini tamamlayın. Bu, ad, açıklama ve etiketleri içermelidir.",
+    "placeholder": "Asistan için benzersiz bir kimlik girin, örneğin web-geliştirme",
+    "tooltips": "Asistan pazarına paylaşın"
+  },
+  "submitFooter": {
+    "reset": "Sıfırla",
+    "submit": "Kaydet",
+    "unSaved": "Kaydedilmemiş değişiklikler",
+    "unSavedWarning": "Şu anda kaydedilmemiş değişiklikler var"
+  },
+  "sync": {
+    "device": {
+      "deviceName": {
+        "hint": "Kolay tanımlama için isim ekleyin",
+        "placeholder": "Lütfen cihaz adını girin",
+        "title": "Cihaz Adı"
+      },
+      "title": "Cihaz Bilgisi",
+      "unknownBrowser": "Bilinmeyen Tarayıcı",
+      "unknownOS": "Bilinmeyen Sistem"
+    },
+    "warning": {
+      "tip": "WebRTC'nin uzun bir topluluk beta testinden sonra, genel veri senkronizasyon ihtiyaçlarını kararlı bir şekilde karşılayamayabileceği uyarısı. Lütfen <1> sinyal sunucusunu dağıtın </1> ve ardından kullanın."
+    },
+    "webrtc": {
+      "channelName": {
+        "desc": "WebRTC bu adı kullanarak senkronizasyon kanalı oluşturacak, kanal adının benzersiz olduğundan emin olun",
+        "placeholder": "Lütfen senkronizasyon kanalı adını girin",
+        "shuffle": "Rastgele Oluştur",
+        "title": "Senkronizasyon Kanalı Adı"
+      },
+      "channelPassword": {
+        "desc": "Kanalın gizliliğini sağlamak için şifre ekleyin, sadece doğru şifre girildiğinde cihaz kanala katılabilir",
+        "placeholder": "Lütfen senkronizasyon kanalı şifresini girin",
+        "title": "Senkronizasyon Kanalı Şifresi"
+      },
+      "desc": "Gerçek zamanlı, noktadan noktaya veri iletişimi, senkronizasyon için cihazların aynı anda çevrimiçi olması gerekir",
+      "enabled": {
+        "invalid": "Lütfen sinyal sunucusu ve senkronizasyon kanal adını girerek etkinleştirin",
+        "title": "Senkronizasyonu Etkinleştir"
+      },
+      "signaling": {
+        "desc": "WebRTC senkronizasyon için bu adresi kullanacak",
+        "placeholder": "Lütfen sinyal sunucusu adresini girin",
+        "title": "Sinyal Sunucusu"
+      },
+      "title": "WebRTC Senkronizasyonu"
+    }
+  },
+  "systemAgent": {
+    "agentMeta": {
+      "label": "Asistan Meta Veri Oluşturma Modeli",
+      "modelDesc": "Asistan adı, açıklaması, avatar ve etiket oluşturmak için belirlenen model",
+      "title": "Asistan Bilgilerini Otomatik Oluştur"
+    },
+    "customPrompt": {
+      "addPrompt": "Özel İpucu Ekle",
+      "desc": "Doldurduğunuzda, sistem asistanı içerik oluştururken özel ipucunu kullanacaktır",
+      "placeholder": "Lütfen özel ipucu kelimelerini girin",
+      "title": "Özel İpucu"
+    },
+    "helpInfo": "Yeni bir asistan oluşturduğunuzda, varsayılan asistan ayarları ön ayar olarak kullanılacaktır.",
+    "historyCompress": {
+      "label": "Oturum Geçmişi Modeli",
+      "modelDesc": "Oturum geçmişini sıkıştırmak için kullanılan modeli belirtin",
+      "title": "Oturum Geçmişini Otomatik Olarak Özetle"
+    },
+    "queryRewrite": {
+      "label": "Soru Yeniden Yazım Modeli",
+      "modelDesc": "Kullanıcı sorularını optimize etmek için kullanılan model",
+      "title": "Bilgi Tabanı Soru Yeniden Yazımı"
+    },
+    "thread": {
+      "label": "Alt konu adlandırma modeli",
+      "modelDesc": "Alt konuların otomatik olarak yeniden adlandırılması için kullanılan model",
+      "title": "Alt konu otomatik adlandırma"
+    },
+    "title": "Sistem Asistanı",
+    "topic": {
+      "label": "Konu Adlandırma Modeli",
+      "modelDesc": "Konuların otomatik olarak yeniden adlandırılması için belirlenen model",
+      "title": "Konu Otomatik Adlandırma"
+    },
+    "translation": {
+      "label": "Çeviri Modeli",
+      "modelDesc": "Çeviri için belirlenen model",
+      "title": "Çeviri Asistanı Ayarları"
+    }
+  },
+  "tab": {
+    "about": "Hakkında",
+    "agent": "Varsayılan Asistan",
+    "common": "Genel Ayarlar",
+    "experiment": "Deney",
+    "hotkey": "Kısayollar",
+    "llm": "Modeller",
+    "provider": "Yapay Zeka Hizmet Sağlayıcısı",
+    "storage": "Veri Depolama",
+    "sync": "Bulut Senkronizasyonu",
+    "system-agent": "Sistem Asistanı",
+    "tts": "Metin Seslendirme"
+  },
+  "tools": {
+    "builtins": {
+      "groupName": "Dahili Araçlar"
+    },
+    "disabled": "Mevcut model fonksiyon çağrılarını desteklemez, eklenti kullanılamaz",
+    "plugins": {
+      "enabled": "Etkin: {{num}}",
+      "groupName": "Eklentiler",
+      "noEnabled": "Etkin eklenti yok",
+      "store": "Eklenti Mağazası"
+    },
+    "title": "Uzantı Araçları"
+  }
+}

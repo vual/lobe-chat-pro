@@ -1,0 +1,82 @@
+{
+  "dalle": {
+    "autoGenerate": "Otomatik Oluştur",
+    "downloading": "DallE3 tarafından oluşturulan resim bağlantıları sadece 1 saat geçerlidir, resim yerel olarak önbelleğe alınıyor...",
+    "generate": "Oluştur",
+    "generating": "Oluşturuluyor...",
+    "images": "Görseller:",
+    "prompt": "İpucu"
+  },
+  "localFiles": {
+    "file": "Dosya",
+    "folder": "Klasör",
+    "open": "Aç",
+    "openFile": "Dosyayı Aç",
+    "openFolder": "Klasörü Aç",
+    "read": {
+      "more": "Daha Fazla Göster"
+    },
+    "readFile": "Dosyayı Oku",
+    "readFileError": "Dosya okunamadı, lütfen dosya yolunu kontrol edin",
+    "readFiles": "Dosyaları Oku",
+    "readFilesError": "Dosyalar okunamadı, lütfen dosya yolunu kontrol edin"
+  },
+  "search": {
+    "createNewSearch": "Yeni bir arama kaydı oluştur",
+    "emptyResult": "Sonuç bulunamadı, lütfen anahtar kelimeleri değiştirip tekrar deneyin",
+    "genAiMessage": "Yardımcı mesaj oluştur",
+    "includedTooltip": "Mevcut arama sonuçları oturumun bağlamına dahil edilecektir",
+    "keywords": "Anahtar kelimeler:",
+    "scoreTooltip": "İlgililik puanı, bu puan ne kadar yüksekse, sorgu anahtar kelimesiyle o kadar ilgili demektir",
+    "searchBar": {
+      "button": "Ara",
+      "placeholder": "Anahtar kelime",
+      "tooltip": "Arama sonuçları yeniden alınacak ve yeni bir özet mesajı oluşturulacaktır"
+    },
+    "searchCategory": {
+      "placeholder": "Kategori Ara",
+      "title": "Kategori Ara:",
+      "value": {
+        "files": "Dosyalar",
+        "general": "Genel",
+        "images": "Görüntüler",
+        "it": "Bilgi Teknolojisi",
+        "map": "Harita",
+        "music": "Müzik",
+        "news": "Haberler",
+        "science": "Bilim",
+        "social_media": "Sosyal Medya",
+        "videos": "Videolar"
+      }
+    },
+    "searchEngine": {
+      "placeholder": "Arama Motoru",
+      "title": "Arama Motoru:"
+    },
+    "searchResult": "Arama sayısı:",
+    "searchTimeRange": {
+      "title": "Zaman Aralığı:",
+      "value": {
+        "anytime": "Herhangi bir zaman",
+        "day": "Bir gün içinde",
+        "month": "Bir ay içinde",
+        "week": "Bir hafta içinde",
+        "year": "Bir yıl içinde"
+      }
+    },
+    "summary": "Özet",
+    "summaryTooltip": "Mevcut içeriği özetle",
+    "viewMoreResults": "Daha fazla {{results}} sonuç görüntüle"
+  },
+  "updateArgs": {
+    "duplicateKeyError": "Alan anahtarları benzersiz olmalıdır",
+    "form": {
+      "add": "Bir Öğe Ekle",
+      "key": "Alan Anahtarı",
+      "value": "Alan Değeri"
+    },
+    "formValidationFailed": "Form doğrulaması başarısız oldu, lütfen parametre formatını kontrol edin",
+    "keyRequired": "Alan anahtarı boş olamaz",
+    "stringifyError": "Parametre seri hale getirilemedi, lütfen parametre formatını kontrol edin"
+  }
+}

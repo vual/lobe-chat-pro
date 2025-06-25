@@ -1,0 +1,31 @@
+import { DeepPartial } from 'utility-types';
+
+import { LOBE_URL_IMPORT_NAME } from '@/const/url';
+import { UserSettings } from '@/types/user/settings';
+import { withBasePath } from '@/utils/basePath';
+
+class ShareService {
+  /**
+   * Creates a share settings URL with the provided settings.
+   * @param settings - The settings object to be encoded in the URL.
+   * @returns The share settings URL.
+   */
+  public createShareSettingsUrl = (settings: DeepPartial<UserSettings>) => {
+    return withBasePath(`/?${LOBE_URL_IMPORT_NAME}=${encodeURI(JSON.stringify(settings))}`);
+  };
+
+  /**
+   * Decode share settings from search params
+   * @param settings
+   * @returns
+   */
+  decodeShareSettings = (settings: string) => {
+    try {
+      return { data: JSON.parse(settings) as DeepPartial<UserSettings> };
+    } catch (e) {
+      return { message: JSON.stringify(e) };
+    }
+  };
+}
+
+export const shareService = new ShareService();

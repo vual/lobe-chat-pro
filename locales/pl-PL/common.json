@@ -1,0 +1,368 @@
+{
+  "about": "O nas",
+  "advanceSettings": "Zaawansowane ustawienia",
+  "alert": {
+    "cloud": {
+      "action": "Darmowa wersja próbna",
+      "desc": "Dla wszystkich zarejestrowanych użytkowników mamy {{credit}} bezpłatnych punktów obliczeniowych, gotowych do użycia bez konieczności skomplikowanej konfiguracji. Wsparcie dla nieograniczonej historii rozmów i globalnej synchronizacji w chmurze. Czekają na Ciebie zaawansowane funkcje do odkrycia.",
+      "descOnMobile": "Dla wszystkich zarejestrowanych użytkowników oferujemy {{credit}} bezpłatnych punktów obliczeniowych, gotowych do użycia bez konieczności skomplikowanej konfiguracji.",
+      "title": "Witaj w {{name}}"
+    }
+  },
+  "appLoading": {
+    "appIdle": "Zarządzanie uruchomieniem",
+    "appInitializing": "Aplikacja się uruchamia...",
+    "failed": "Przykro nam, inicjalizacja aplikacji nie powiodła się, proszę sprawdzić szczegóły, aby znaleźć przyczynę.",
+    "finished": "Inicjalizacja bazy danych zakończona",
+    "goToChat": "Ładowanie strony czatu...",
+    "initAuth": "Inicjalizacja usługi autoryzacji...",
+    "initUser": "Inicjalizacja stanu użytkownika...",
+    "initializing": "Inicjalizacja bazy danych PGlite...",
+    "loadingDependencies": "Inicjalizacja zależności...",
+    "loadingWasm": "Ładowanie modułu WASM...",
+    "migrating": "Wykonywanie migracji tabeli danych...",
+    "ready": "Baza danych jest gotowa",
+    "showDetail": "Zobacz szczegóły"
+  },
+  "autoGenerate": "Automatyczne generowanie",
+  "autoGenerateTooltip": "Automatyczne uzupełnianie opisu asystenta na podstawie sugestii",
+  "autoGenerateTooltipDisabled": "Proszę wprowadzić słowo kluczowe przed użyciem funkcji automatycznego uzupełniania",
+  "back": "Powrót",
+  "batchDelete": "Usuń wiele",
+  "blog": "Blog produktowy",
+  "branching": "Utwórz podtemat",
+  "branchingDisable": "Funkcja „podtemat” jest dostępna tylko w wersji serwerowej. Aby skorzystać z tej funkcji, przełącz się na tryb wdrożenia serwera lub użyj LobeChat Cloud.",
+  "cancel": "Anuluj",
+  "changelog": "Dziennik zmian",
+  "clientDB": {
+    "autoInit": {
+      "title": "Inicjalizacja bazy danych PGlite"
+    },
+    "error": {
+      "desc": "Przykro nam, wystąpił błąd podczas inicjalizacji bazy danych Pglite. Proszę kliknąć przycisk, aby spróbować ponownie. Jeśli błąd powtarza się po wielokrotnych próbach, proszę <1>zgłosić problem</1>, a my jak najszybciej pomożemy w rozwiązaniu.",
+      "detail": "Powód błędu: [{{type}}] {{message}}. Szczegóły poniżej:",
+      "detailTitle": "Powód błędu",
+      "report": "Zgłoś problem",
+      "retry": "Spróbuj ponownie",
+      "selfSolve": "Rozwiąż samodzielnie",
+      "title": "Błąd inicjalizacji bazy danych"
+    },
+    "initing": {
+      "error": "Wystąpił błąd, proszę spróbować ponownie",
+      "idle": "Oczekiwanie na inicjalizację...",
+      "initializing": "Inicjalizowanie...",
+      "loadingDependencies": "Ładowanie zależności...",
+      "loadingWasmModule": "Ładowanie modułu WASM...",
+      "migrating": "Wykonywanie migracji tabeli danych...",
+      "ready": "Baza danych gotowa"
+    },
+    "modal": {
+      "desc": "Włącz klienta bazy danych PGlite, aby trwale przechowywać dane czatu w przeglądarce i korzystać z zaawansowanych funkcji, takich jak baza wiedzy",
+      "enable": "Włącz teraz",
+      "features": {
+        "knowledgeBase": {
+          "desc": "Zgromadź swoją osobistą bazę wiedzy i łatwo rozpocznij rozmowę z asystentem (wkrótce dostępne)",
+          "title": "Wsparcie dla rozmów w bazie wiedzy, uruchomienie drugiego mózgu"
+        },
+        "localFirst": {
+          "desc": "Dane czatu są całkowicie przechowywane w przeglądarce, twoje dane są zawsze pod twoją kontrolą.",
+          "title": "Lokalnie najpierw, prywatność przede wszystkim"
+        },
+        "pglite": {
+          "desc": "Zbudowane na PGlite, natywne wsparcie dla zaawansowanych funkcji AI Native (wyszukiwanie wektorowe)",
+          "title": "Nowa generacja architektury przechowywania klienta"
+        }
+      },
+      "init": {
+        "desc": "Inicjalizacja bazy danych trwa, w zależności od jakości sieci może zająć od 5 do 30 sekund",
+        "title": "Inicjalizacja bazy danych PGlite"
+      },
+      "title": "Włącz bazę danych klienta"
+    },
+    "ready": {
+      "button": "Użyj teraz",
+      "desc": "Chcę użyć teraz",
+      "title": "Baza danych PGlite jest gotowa"
+    },
+    "solve": {
+      "backup": {
+        "backup": "Kopia zapasowa",
+        "backupSuccess": "Kopia zapasowa zakończona sukcesem",
+        "desc": "Eksportuj kluczowe dane z bieżącej bazy danych",
+        "export": "Eksportuj wszystkie dane",
+        "exportDesc": "Eksportowane dane będą zapisane w formacie JSON, co umożliwi późniejsze przywracanie lub analizę.",
+        "reset": {
+          "alert": "Ostrzeżenie",
+          "alertDesc": "Poniższe operacje mogą prowadzić do utraty danych. Upewnij się, że wykonałeś kopię zapasową ważnych danych przed kontynuowaniem.",
+          "button": "Całkowite zresetowanie bazy danych (usunięcie wszystkich danych)",
+          "confirm": {
+            "desc": "Ta operacja usunie wszystkie dane i nie będzie mogła być cofnięta, czy na pewno chcesz kontynuować?",
+            "title": "Potwierdź resetowanie bazy danych"
+          },
+          "desc": "Zresetuj bazę danych w przypadku nieodwracalnej migracji",
+          "title": "Resetowanie bazy danych"
+        },
+        "restore": "Przywróć",
+        "restoreSuccess": "Przywracanie zakończone sukcesem",
+        "title": "Kopia zapasowa danych"
+      },
+      "diagnosis": {
+        "createdAt": "Data utworzenia",
+        "migratedAt": "Data zakończenia migracji",
+        "sql": "Migracja SQL",
+        "title": "Stan migracji"
+      },
+      "repair": {
+        "desc": "Ręczne zarządzanie stanem migracji",
+        "runSQL": "Wykonaj niestandardowo",
+        "sql": {
+          "clear": "Wyczyść",
+          "desc": "Wykonaj niestandardowe zapytanie SQL, aby naprawić problemy z bazą danych",
+          "markFinished": "Oznacz jako zakończone",
+          "placeholder": "Wprowadź zapytanie SQL...",
+          "result": "Wynik wykonania",
+          "run": "Wykonaj",
+          "title": "Wykonawca SQL"
+        },
+        "title": "Kontrola migracji"
+      },
+      "tabs": {
+        "backup": "Kopia zapasowa i przywracanie",
+        "diagnosis": "Diagnostyka",
+        "repair": "Naprawa"
+      }
+    }
+  },
+  "close": "Zamknij",
+  "contact": "Skontaktuj się z nami",
+  "copy": "Kopiuj",
+  "copyFail": "Nie udało się skopiować",
+  "copySuccess": "Skopiowano pomyślnie",
+  "dataStatistics": {
+    "messages": "Wiadomości",
+    "sessions": "Sesje",
+    "today": "Dzisiaj",
+    "topics": "Tematy"
+  },
+  "defaultAgent": "Domyślny asystent",
+  "defaultSession": "Domyślna sesja",
+  "delete": "Usuń",
+  "document": "Dokumentacja",
+  "download": "Pobierz",
+  "duplicate": "Utwórz kopię",
+  "edit": "Edytuj",
+  "export": "Eksportuj ustawienia",
+  "exportType": {
+    "agent": "Eksportuj ustawienia asystenta",
+    "agentWithMessage": "Eksportuj ustawienia asystenta i wiadomości",
+    "all": "Eksportuj ustawienia globalne i wszystkie dane asystentów",
+    "allAgent": "Eksportuj wszystkie ustawienia asystentów",
+    "allAgentWithMessage": "Eksportuj wszystkie ustawienia asystentów i wiadomości",
+    "globalSetting": "Eksportuj ustawienia globalne"
+  },
+  "feedback": "Opinie i sugestie",
+  "follow": "Zaobserwuj nas na {{name}}",
+  "footer": {
+    "action": {
+      "feedback": "Podziel się swoją cenną opinią",
+      "star": "Dodaj gwiazdkę na GitHubie"
+    },
+    "and": "i",
+    "feedback": {
+      "action": "Podziel się opinią",
+      "desc": "Każdy twój pomysł i sugestia są dla nas bezcenne, nie możemy się doczekać, aby poznać twoją opinię! Skontaktuj się z nami, aby podzielić się opinią na temat funkcji produktu i doświadczeń z jego użytkowania, pomóż nam ulepszyć LobeChat.",
+      "title": "Podziel się swoją cenną opinią na GitHubie"
+    },
+    "later": "Później",
+    "star": {
+      "action": "Dodaj gwiazdkę",
+      "desc": "Jeśli podoba ci się nasz produkt i chcesz nas wesprzeć, czy mógłbyś dodać gwiazdkę na GitHubie? To małe działanie ma ogromne znaczenie dla nas i motywuje nas do ciągłego zapewniania ci wyjątkowego doświadczenia.",
+      "title": "Dodaj gwiazdkę na GitHubie"
+    },
+    "title": "Podoba ci się nasz produkt?"
+  },
+  "fullscreen": "Tryb pełnoekranowy",
+  "historyRange": "Zakres historii",
+  "importData": "Importuj dane",
+  "importModal": {
+    "error": {
+      "desc": "Przepraszamy, wystąpił błąd podczas importowania danych. Spróbuj ponownie zaimportować, lub <1>zgłoś problem</1>, a my postaramy się jak najszybciej rozwiązać problem.",
+      "title": "Import danych nie powiódł się"
+    },
+    "finish": {
+      "onlySettings": "Pomyślnie zaimportowano ustawienia systemowe",
+      "start": "Rozpocznij korzystanie",
+      "subTitle": "Dane zaimportowano pomyślnie. Czas trwania: {{duration}} sekund. Szczegóły importu:",
+      "title": "Zakończono import danych"
+    },
+    "loading": "Trwa import danych, proszę czekać...",
+    "preparing": "Przygotowywanie modułu importu danych...",
+    "result": {
+      "added": "Pomyślnie zaimportowano",
+      "errors": "Błędy importu",
+      "messages": "Wiadomości",
+      "sessionGroups": "Grupy sesji",
+      "sessions": "Sesje",
+      "skips": "Pominięcia duplikatów",
+      "topics": "Tematy",
+      "type": "Typ danych",
+      "update": "Aktualizacja rekordu"
+    },
+    "title": "Import danych",
+    "uploading": {
+      "desc": "Obecny plik jest duży, trwa wysyłanie...",
+      "restTime": "Pozostały czas",
+      "speed": "Prędkość wysyłania"
+    }
+  },
+  "importPreview": {
+    "confirmImport": "Potwierdź import",
+    "tables": {
+      "count": "Liczba rekordów",
+      "name": "Nazwa tabeli"
+    },
+    "title": "Podgląd importu danych",
+    "totalRecords": "Łącznie zaimportuje {{count}} rekordów",
+    "totalTables": "{{count}} tabel"
+  },
+  "information": "Społeczność i informacje",
+  "installPWA": "Zainstaluj aplikację przeglądarki",
+  "lang": {
+    "ar": "arabski",
+    "bg-BG": "bułgarski",
+    "bn": "Bengalski",
+    "cs-CZ": "Czeski",
+    "da-DK": "Duński",
+    "de-DE": "Niemiecki",
+    "el-GR": "Grecki",
+    "en": "Angielski",
+    "en-US": "Angielski (USA)",
+    "es-ES": "Hiszpański",
+    "fa-IR": "perski",
+    "fi-FI": "Fiński",
+    "fr-FR": "Francuski",
+    "hi-IN": "Hindi",
+    "hu-HU": "Węgierski",
+    "id-ID": "Indonezyjski",
+    "it-IT": "Włoski",
+    "ja-JP": "Japoński",
+    "ko-KR": "Koreański",
+    "nl-NL": "Holenderski",
+    "no-NO": "Norweski",
+    "pl-PL": "Polski",
+    "pt-BR": "Portugalski (Brazylia)",
+    "pt-PT": "Portugalski (Portugalia)",
+    "ro-RO": "Rumuński",
+    "ru-RU": "Rosyjski",
+    "sk-SK": "Słowacki",
+    "sr-RS": "Serbski",
+    "sv-SE": "Szwedzki",
+    "th-TH": "Tajski",
+    "tr-TR": "Turecki",
+    "uk-UA": "Ukraiński",
+    "vi-VN": "Wietnamski",
+    "zh": "Chiński uproszczony",
+    "zh-CN": "Chiński uproszczony",
+    "zh-TW": "Chiński tradycyjny"
+  },
+  "layoutInitializing": "Inicjowanie układu...",
+  "legal": "Oświadczenie prawne",
+  "loading": "Ładowanie...",
+  "mail": {
+    "business": "Współpraca biznesowa",
+    "support": "Wsparcie mailowe"
+  },
+  "oauth": "Logowanie SSO",
+  "officialSite": "Oficjalna strona internetowa",
+  "ok": "OK",
+  "password": "Hasło",
+  "pin": "Przypnij",
+  "pinOff": "Odepnij",
+  "privacy": "Polityka prywatności",
+  "regenerate": "Regeneruj",
+  "releaseNotes": "Szczegóły wersji",
+  "rename": "Zmień nazwę",
+  "reset": "Resetuj",
+  "retry": "Ponów",
+  "run": "Uruchom",
+  "save": "Zapisz",
+  "send": "Wyślij",
+  "setting": "Ustawienia",
+  "share": "Udostępnij",
+  "stop": "Zatrzymaj",
+  "sync": {
+    "actions": {
+      "settings": "Ustawienia synchronizacji",
+      "sync": "Synchronizuj teraz"
+    },
+    "awareness": {
+      "current": "Bieżące urządzenie"
+    },
+    "channel": "Kanał",
+    "disabled": {
+      "actions": {
+        "enable": "Włącz synchronizację chmurową",
+        "settings": "Konfiguruj parametry synchronizacji"
+      },
+      "desc": "Dane bieżącej sesji są przechowywane tylko w tej przeglądarce. Jeśli chcesz synchronizować dane między wieloma urządzeniami, skonfiguruj i włącz synchronizację chmurową.",
+      "title": "Synchronizacja danych wyłączona"
+    },
+    "enabled": {
+      "title": "Synchronizacja danych"
+    },
+    "status": {
+      "connecting": "Łączenie",
+      "disabled": "Synchronizacja wyłączona",
+      "ready": "Gotowy",
+      "synced": "Synchronizacja zakończona",
+      "syncing": "Synchronizacja w toku",
+      "unconnected": "Brak połączenia"
+    },
+    "title": "Stan synchronizacji",
+    "unconnected": {
+      "tip": "Błąd połączenia z serwerem sygnalizacyjnym, nie można nawiązać kanału komunikacyjnego punkt-punkt, sprawdź sieć i spróbuj ponownie"
+    }
+  },
+  "tab": {
+    "chat": "Czat",
+    "discover": "Odkryj",
+    "files": "Pliki",
+    "me": "ja",
+    "setting": "Ustawienia"
+  },
+  "telemetry": {
+    "allow": "Zezwalaj",
+    "deny": "Odmów",
+    "desc": "Chcemy anonimowo zbierać informacje o twoim użytkowaniu, aby pomóc nam ulepszyć LobeChat i zapewnić ci lepsze doświadczenia z naszym produktem. Możesz wyłączyć to w każdej chwili w „Ustawienia” - „O nas”.",
+    "learnMore": "Dowiedz się więcej",
+    "title": "Pomóż LobeChat stawać się lepszym"
+  },
+  "temp": "Tymczasowy",
+  "terms": "Warunki korzystania",
+  "update": "Aktualizuj",
+  "updateAgent": "Zaktualizuj informacje o agencie",
+  "upgradeVersion": {
+    "action": "Aktualizuj",
+    "hasNew": "Dostępna jest nowa aktualizacja",
+    "newVersion": "Dostępna jest nowa wersja: {{version}}"
+  },
+  "userPanel": {
+    "anonymousNickName": "Użytkownik Anonimowy",
+    "billing": "Zarządzanie rachunkami",
+    "cloud": "Wypróbuj {{name}}",
+    "community": "Wersja społeczności",
+    "data": "Przechowywanie danych",
+    "defaultNickname": "Użytkownik Wersji Społecznościowej",
+    "discord": "Wsparcie społeczności",
+    "docs": "Dokumentacja",
+    "email": "Wsparcie mailowe",
+    "feedback": "Opinie i sugestie",
+    "help": "Centrum pomocy",
+    "moveGuide": "Przenieś przycisk ustawień tutaj",
+    "plans": "Plan abonamentu",
+    "profile": "Zarządzanie kontem",
+    "setting": "Ustawienia aplikacji",
+    "usages": "Statystyki użycia"
+  },
+  "version": "Wersja"
+}

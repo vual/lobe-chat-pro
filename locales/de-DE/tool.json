@@ -1,0 +1,82 @@
+{
+  "dalle": {
+    "autoGenerate": "Automatisch generieren",
+    "downloading": "Die von DallE3 generierten Bildlinks sind nur 1 Stunde lang gültig. Das Bild wird lokal zwischengespeichert...",
+    "generate": "Generieren",
+    "generating": "Generiert",
+    "images": "Bilder:",
+    "prompt": "Hinweiswort"
+  },
+  "localFiles": {
+    "file": "Datei",
+    "folder": "Ordner",
+    "open": "Öffnen",
+    "openFile": "Datei öffnen",
+    "openFolder": "Ordner öffnen",
+    "read": {
+      "more": "Mehr anzeigen"
+    },
+    "readFile": "Datei lesen",
+    "readFileError": "Fehler beim Lesen der Datei, bitte überprüfen Sie den Dateipfad",
+    "readFiles": "Dateien lesen",
+    "readFilesError": "Fehler beim Lesen der Dateien, bitte überprüfen Sie den Dateipfad"
+  },
+  "search": {
+    "createNewSearch": "Neue Suchanfrage erstellen",
+    "emptyResult": "Keine Ergebnisse gefunden, bitte ändern Sie die Schlüsselwörter und versuchen Sie es erneut",
+    "genAiMessage": "Assistentnachricht erstellen",
+    "includedTooltip": "Die aktuellen Suchergebnisse werden in den Kontext der Sitzung aufgenommen",
+    "keywords": "Schlüsselwörter:",
+    "scoreTooltip": "Relevanzpunktzahl, je höher die Punktzahl, desto relevanter ist sie für die Suchanfrage",
+    "searchBar": {
+      "button": "Suchen",
+      "placeholder": "Schlüsselwörter",
+      "tooltip": "Die Suchergebnisse werden erneut abgerufen und eine neue Zusammenfassungsnachricht wird erstellt"
+    },
+    "searchCategory": {
+      "placeholder": "Kategorie suchen",
+      "title": "Kategorie suchen:",
+      "value": {
+        "files": "Dateien",
+        "general": "Allgemein",
+        "images": "Bilder",
+        "it": "Informationstechnologie",
+        "map": "Karten",
+        "music": "Musik",
+        "news": "Nachrichten",
+        "science": "Wissenschaft",
+        "social_media": "Soziale Medien",
+        "videos": "Videos"
+      }
+    },
+    "searchEngine": {
+      "placeholder": "Suchmaschine",
+      "title": "Suchmaschine:"
+    },
+    "searchResult": "Anzahl der Suchergebnisse:",
+    "searchTimeRange": {
+      "title": "Zeitspanne:",
+      "value": {
+        "anytime": "Keine Zeitbeschränkung",
+        "day": "Innerhalb eines Tages",
+        "month": "Innerhalb eines Monats",
+        "week": "Innerhalb einer Woche",
+        "year": "Innerhalb eines Jahres"
+      }
+    },
+    "summary": "Zusammenfassung",
+    "summaryTooltip": "Aktuellen Inhalt zusammenfassen",
+    "viewMoreResults": "Weitere {{results}} Ergebnisse anzeigen"
+  },
+  "updateArgs": {
+    "duplicateKeyError": "Feldschlüssel müssen eindeutig sein",
+    "form": {
+      "add": "Eintrag hinzufügen",
+      "key": "Feldschlüssel",
+      "value": "Feldwert"
+    },
+    "formValidationFailed": "Formularvalidierung fehlgeschlagen, bitte überprüfen Sie das Parameterformat",
+    "keyRequired": "Feldschlüssel darf nicht leer sein",
+    "stringifyError": "Parameter können nicht serialisiert werden, bitte überprüfen Sie das Parameterformat"
+  }
+}

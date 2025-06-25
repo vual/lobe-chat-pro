@@ -1,0 +1,127 @@
+{
+  "DragUpload": {
+    "dragDesc": "ここにファイルをドラッグ＆ドロップしてください。複数の画像のアップロードがサポートされています。",
+    "dragFileDesc": "ここに画像やファイルをドラッグ＆ドロップしてください。複数の画像やファイルのアップロードがサポートされています。",
+    "dragFileTitle": "ファイルをアップロード",
+    "dragTitle": "画像をアップロード"
+  },
+  "FileManager": {
+    "actions": {
+      "addToKnowledgeBase": "知識ベースに追加",
+      "addToOtherKnowledgeBase": "他の知識ベースに追加",
+      "batchChunking": "バッチ分割",
+      "chunking": "分割",
+      "chunkingTooltip": "ファイルを複数のテキストブロックに分割し、ベクトル化した後、意味検索やファイル対話に使用できます",
+      "chunkingUnsupported": "このファイルはチャンク分割をサポートしていません",
+      "confirmDelete": "このファイルを削除しようとしています。削除後は復元できませんので、操作を確認してください",
+      "confirmDeleteMultiFiles": "選択した {{count}} 個のファイルを削除しようとしています。削除後は復元できませんので、操作を確認してください",
+      "confirmRemoveFromKnowledgeBase": "選択した {{count}} 個のファイルを知識ベースから削除しようとしています。削除後もファイルはすべてのファイルで表示できますので、操作を確認してください",
+      "copyUrl": "リンクをコピー",
+      "copyUrlSuccess": "ファイルのアドレスがコピーされました",
+      "createChunkingTask": "準備中...",
+      "deleteSuccess": "ファイルが正常に削除されました",
+      "downloading": "ファイルをダウンロード中...",
+      "removeFromKnowledgeBase": "知識ベースから削除",
+      "removeFromKnowledgeBaseSuccess": "ファイルが正常に削除されました"
+    },
+    "bottom": "これ以上ありません",
+    "config": {
+      "showFilesInKnowledgeBase": "知識ベースの内容を表示"
+    },
+    "emptyStatus": {
+      "actions": {
+        "file": "ファイルをアップロード",
+        "folder": "フォルダーをアップロード",
+        "knowledgeBase": "新しい知識ベースを作成"
+      },
+      "or": "または",
+      "title": "ここにファイルまたはフォルダーをドラッグしてください"
+    },
+    "title": {
+      "createdAt": "作成日時",
+      "size": "サイズ",
+      "title": "ファイル"
+    },
+    "total": {
+      "fileCount": "合計 {{count}} 件",
+      "selectedCount": "選択済み {{count}} 件"
+    }
+  },
+  "FileParsingStatus": {
+    "chunks": {
+      "embeddingStatus": {
+        "empty": "テキストブロックはまだ完全にベクトル化されていません。これにより意味検索機能が使用できなくなります。検索品質を向上させるために、テキストブロックをベクトル化してください",
+        "error": "ベクトル化に失敗しました",
+        "errorResult": "ベクトル化に失敗しました。再試行する前に確認してください。失敗の理由：",
+        "processing": "テキストブロックをベクトル化中です。しばらくお待ちください",
+        "success": "現在のテキストブロックはすべてベクトル化されています"
+      },
+      "embeddings": "ベクトル化",
+      "status": {
+        "error": "分割に失敗しました",
+        "errorResult": "分割に失敗しました。再試行する前に確認してください。失敗の理由：",
+        "processing": "分割中",
+        "processingTip": "サーバーがテキストブロックを分割しています。ページを閉じても分割の進行には影響しません"
+      }
+    }
+  },
+  "GoBack": {
+    "back": "戻る"
+  },
+  "MaxTokenSlider": {
+    "unlimited": "無制限"
+  },
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "カスタムモデル、デフォルトでは関数呼び出しとビジョン認識の両方をサポートしています。上記機能の有効性を確認してください。",
+      "file": "このモデルはファイルのアップロードと認識をサポートしています。",
+      "functionCall": "このモデルは関数呼び出し（Function Call）をサポートしています。",
+      "imageOutput": "このモデルは画像生成をサポートしています",
+      "reasoning": "このモデルは深い思考をサポートしています",
+      "search": "このモデルはオンライン検索をサポートしています",
+      "tokens": "このモデルは1つのセッションあたり最大{{tokens}}トークンをサポートしています。",
+      "vision": "このモデルはビジョン認識をサポートしています。"
+    },
+    "removed": "選択されたモデルはリストから削除されました。選択を解除すると自動的に削除されます。"
+  },
+  "ModelSwitchPanel": {
+    "emptyModel": "有効なモデルがありません。設定に移動して有効にしてください。",
+    "emptyProvider": "有効なサービスプロバイダーがありません。設定に移動して有効にしてください。",
+    "goToSettings": "設定に移動",
+    "provider": "プロバイダー",
+    "title": "モデル"
+  },
+  "OllamaSetupGuide": {
+    "action": {
+      "close": "ヒントを閉じる",
+      "start": "インストールされ、実行中です。対話を開始します"
+    },
+    "cors": {
+      "description": "ブラウザのセキュリティ制限により、Ollamaを正常に使用するにはクロスオリジン設定が必要です。",
+      "linux": {
+        "env": "[Service] セクションに `Environment` を追加し、OLLAMA_ORIGINS 環境変数を設定します：",
+        "reboot": "systemdをリロードし、Ollamaを再起動します",
+        "systemd": "systemdを呼び出してollamaサービスを編集します："
+      },
+      "macos": "「ターミナル」アプリを開き、以下のコマンドを貼り付けてEnterを押して実行します",
+      "reboot": "実行が完了したらOllamaサービスを再起動してください",
+      "title": "Ollamaのクロスオリジンアクセスを許可する設定",
+      "windows": "Windowsでは、「コントロールパネル」をクリックし、システム環境変数を編集します。ユーザーアカウント用に「OLLAMA_ORIGINS」という名前の環境変数を新規作成し、値を * に設定して「OK/適用」をクリックして保存します"
+    },
+    "install": {
+      "description": "Ollamaが起動していることを確認してください。まだOllamaをダウンロードしていない場合は、公式サイト<1>からダウンロード</1>してください。",
+      "docker": "Dockerを使用することを好む場合、Ollamaは公式のDockerイメージも提供しています。以下のコマンドでプルできます：",
+      "linux": {
+        "command": "以下のコマンドでインストールします：",
+        "manual": "または、<1>Linux手動インストールガイド</1>を参照して自分でインストールすることもできます。"
+      },
+      "title": "ローカルにOllamaアプリをインストールして起動する",
+      "windowsTab": "Windows（プレビュー版)"
+    }
+  },
+  "Thinking": {
+    "thinking": "深く考えています...",
+    "thought": "深く考えました（所要時間 {{duration}} 秒）",
+    "thoughtWithDuration": "深く考えました"
+  }
+}

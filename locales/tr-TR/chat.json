@@ -1,0 +1,276 @@
+{
+  "ModelSwitch": {
+    "title": "Model Değiştir"
+  },
+  "agentDefaultMessage": "Merhaba, ben **{{name}}**. Hemen benimle konuşmaya başlayabilir veya [Asistan Ayarları]({{url}}) sayfasına giderek bilgilerimi güncelleyebilirsin.",
+  "agentDefaultMessageWithSystemRole": "Merhaba, Ben **{{name}}**, {{systemRole}}. Hemen sohbet etmeye başlayalım!",
+  "agentDefaultMessageWithoutEdit": "Merhaba, ben **{{name}}**. Konuşmaya başlayalım!",
+  "agents": "Asistan",
+  "artifact": {
+    "generating": "Üretiliyor",
+    "inThread": "Alt konu içinde görüntülenemiyor, lütfen ana konuşma alanına geçin",
+    "thinking": "Düşünülüyor",
+    "thought": "Düşünce Süreci",
+    "unknownTitle": "İsimsiz Eser"
+  },
+  "backToBottom": "En alta git",
+  "chatList": {
+    "longMessageDetail": "Detayları görüntüle"
+  },
+  "clearCurrentMessages": "Mevcut oturum mesajlarını temizle",
+  "confirmClearCurrentMessages": "Mevcut oturum mesajlarını temizlemek üzeresiniz. Temizlendikten sonra geri alınamazlar. Lütfen eyleminizi onaylayın.",
+  "confirmRemoveSessionItemAlert": "Bu asistanı silmek üzeresiniz. Silindikten sonra geri alınamaz. Lütfen eyleminizi onaylayın.",
+  "confirmRemoveSessionSuccess": "Oturum başarıyla kaldırıldı",
+  "defaultAgent": "Varsayılan Asistan",
+  "defaultList": "Varsayılan Liste",
+  "defaultSession": "Varsayılan Asistan",
+  "duplicateSession": {
+    "loading": "Kopyalanıyor...",
+    "success": "Kopyalama başarılı",
+    "title": "{{title}} Kopyası"
+  },
+  "duplicateTitle": "{{title}} Kopya",
+  "emptyAgent": "Asistan yok",
+  "extendParams": {
+    "disableContextCaching": {
+      "desc": "Tek bir diyalogun üretim maliyeti en fazla %90 oranında düşürülebilir, yanıt hızı 4 kat artar (<1>Daha fazla bilgi edinin</1>). Açıldığında, otomatik olarak geçmiş mesaj sayısı sınırı devre dışı bırakılacaktır.",
+      "title": "Bağlam önbelleğini aç"
+    },
+    "enableReasoning": {
+      "desc": "Claude Thinking mekanizmasına dayalı kısıtlamalar (<1>Daha fazla bilgi edinin</1>), açıldığında otomatik olarak geçmiş mesaj sayısı sınırı devre dışı bırakılacaktır.",
+      "title": "Derin Düşünmeyi Aç"
+    },
+    "reasoningBudgetToken": {
+      "title": "Düşünme Tüketim Tokeni"
+    },
+    "reasoningEffort": {
+      "title": "Akıl Yürütme Gücü"
+    },
+    "title": "Model Genişletme Özellikleri"
+  },
+  "history": {
+    "title": "Asistan yalnızca son {{count}} mesajı hatırlayacak"
+  },
+  "historyRange": "Geçmiş Aralığı",
+  "historySummary": "Tarihsel haber özeti",
+  "inbox": {
+    "desc": "Beyin fırtınasını başlatın ve yaratıcı düşünmeye başlayın. Sanal asistanınız burada, her konuda sizinle iletişim kurmak için hazır.",
+    "title": "Sohbet Et"
+  },
+  "input": {
+    "addAi": "Bir AI mesajı ekleyin",
+    "addUser": "Bir kullanıcı mesajı ekleyin",
+    "more": "Daha fazla",
+    "send": "Gönder",
+    "sendWithCmdEnter": "{{meta}} + Enter tuşuna basarak gönder",
+    "sendWithEnter": "Enter tuşuna basarak gönder",
+    "stop": "Dur",
+    "warp": "Satır atla"
+  },
+  "intentUnderstanding": {
+    "title": "Niyetinizi anlama ve analiz etme aşamasındayız..."
+  },
+  "knowledgeBase": {
+    "all": "Tüm İçerik",
+    "allFiles": "Tüm Dosyalar",
+    "allKnowledgeBases": "Tüm Bilgi Tabanları",
+    "disabled": "Mevcut dağıtım modu bilgi tabanı sohbetini desteklemiyor. Kullanmak istiyorsanız, lütfen sunucu veritabanı dağıtımına geçin veya {{cloud}} hizmetini kullanın.",
+    "library": {
+      "action": {
+        "add": "Ekle",
+        "detail": "Detay",
+        "remove": "Kaldır"
+      },
+      "title": "Dosya/Bilgi Tabanı"
+    },
+    "relativeFilesOrKnowledgeBases": "İlişkili Dosyalar/Bilgi Tabanları",
+    "title": "Bilgi Tabanı",
+    "uploadGuide": "Yüklenen dosyaları 'Bilgi Tabanı' içinde görebilirsiniz.",
+    "viewMore": "Daha Fazla Gör"
+  },
+  "messageAction": {
+    "delAndRegenerate": "Sil ve Yeniden Oluştur",
+    "deleteDisabledByThreads": "Alt konular mevcut, silinemez",
+    "regenerate": "Yeniden Oluştur"
+  },
+  "messages": {
+    "modelCard": {
+      "credit": "Kredi",
+      "creditPricing": "Fiyatlandırma",
+      "creditTooltip": "Hesaplamayı kolaylaştırmak için, 1$'ı 1M kredi olarak hesaplıyoruz; örneğin, $3/M token, 3 kredi/token olarak hesaplanır.",
+      "pricing": {
+        "inputCachedTokens": "Önceden yüklenmiş giriş {{amount}}/kredi · ${{amount}}/M",
+        "inputCharts": "${{amount}}/M karakter",
+        "inputMinutes": "${{amount}}/dakika",
+        "inputTokens": "Giriş {{amount}}/kredi · ${{amount}}/M",
+        "outputTokens": "Çıkış {{amount}}/kredi · ${{amount}}/M",
+        "writeCacheInputTokens": "Giriş yazma önbelleği {{amount}}/puan · ${{amount}}/M"
+      }
+    },
+    "tokenDetails": {
+      "average": "Ortalama birim fiyat",
+      "input": "Giriş",
+      "inputAudio": "Ses girişi",
+      "inputCached": "Önceden yüklenmiş giriş",
+      "inputCitation": "Giriş alıntısı",
+      "inputText": "Metin girişi",
+      "inputTitle": "Giriş detayları",
+      "inputUncached": "Önceden yüklenmemiş giriş",
+      "inputWriteCached": "Giriş önbelleği yazma",
+      "output": "Çıkış",
+      "outputAudio": "Ses çıkışı",
+      "outputText": "Metin çıkışı",
+      "outputTitle": "Çıkış detayları",
+      "reasoning": "Derin düşünme",
+      "speed": {
+        "tps": {
+          "title": "TPS",
+          "tooltip": "Token Başına Saniye, TPS. AI tarafından üretilen içeriğin ortalama hızını (Token/saniye) belirtir, ilk Token alındıktan sonra hesaplanmaya başlanır."
+        },
+        "ttft": {
+          "title": "TTFT",
+          "tooltip": "İlk Token'a Kadar Geçen Süre, TTFT. Mesajınızı göndermenizden, istemcinin ilk Token'ı almasına kadar geçen zaman aralığını belirtir."
+        }
+      },
+      "title": "Üretim detayları",
+      "total": "Toplam tüketim"
+    }
+  },
+  "newAgent": "Yeni Asistan",
+  "pin": "Pin",
+  "pinOff": "Unpin",
+  "rag": {
+    "referenceChunks": "Referans Parçaları",
+    "userQuery": {
+      "actions": {
+        "delete": "Sorguyu Sil",
+        "regenerate": "Sorguyu Yeniden Oluştur"
+      }
+    }
+  },
+  "regenerate": "Tekrarla",
+  "roleAndArchive": "Rol ve Arşiv",
+  "search": {
+    "grounding": {
+      "searchQueries": "Arama Anahtar Kelimeleri",
+      "title": "{{count}} sonuç bulundu"
+    },
+    "mode": {
+      "auto": {
+        "desc": "Sohbet içeriğine göre akıllıca arama gerekip gerekmediğini belirler",
+        "title": "Akıllı Bağlantı"
+      },
+      "off": {
+        "desc": "Sadece modelin temel bilgilerini kullanır, ağ araması yapmaz",
+        "title": "Bağlantıyı Kapat"
+      },
+      "on": {
+        "desc": "Sürekli ağ araması yaparak en güncel bilgileri alır",
+        "title": "Her Zaman Bağlantıda"
+      },
+      "useModelBuiltin": "Modelin yerleşik arama motorunu kullan"
+    },
+    "searchModel": {
+      "desc": "Mevcut model fonksiyon çağrısını desteklemiyor, bu nedenle çevrimiçi arama yapmak için fonksiyon çağrısını destekleyen bir model ile birlikte kullanılması gerekiyor",
+      "title": "Arama Yardımcı Modeli"
+    },
+    "title": "Ağ Araması"
+  },
+  "searchAgentPlaceholder": "Arama Asistanı...",
+  "sendPlaceholder": "Mesajınızı buraya yazın...",
+  "sessionGroup": {
+    "config": "Grup Yönetimi",
+    "confirmRemoveGroupAlert": "Bu grup silinecek, silindikten sonra bu grubun yardımcıları varsayılan listeye taşınacak, işleminizi onaylıyor musunuz?",
+    "createAgentSuccess": "Yardımcı oluşturuldu",
+    "createGroup": "Yeni Grup Ekle",
+    "createSuccess": "Oluşturma Başarılı",
+    "creatingAgent": "Yardımcı oluşturuluyor...",
+    "inputPlaceholder": "Grup adını girin...",
+    "moveGroup": "Gruba Taşı",
+    "newGroup": "Yeni Grup",
+    "rename": "Grup Adını Değiştir",
+    "renameSuccess": "Yeniden Adlandırma Başarılı",
+    "sortSuccess": "Yeniden sıralama başarılı",
+    "sorting": "Grup sıralaması güncelleniyor...",
+    "tooLong": "Grup adı 1-20 karakter arasında olmalıdır"
+  },
+  "shareModal": {
+    "copy": "Kopyala",
+    "download": "Ekran Görüntüsünü İndir",
+    "downloadFile": "Dosyayı İndir",
+    "exportTitle": "Varsayılan Başlık",
+    "imageType": "Format",
+    "includeTool": "Eklenti mesajını dahil et",
+    "includeUser": "Kullanıcı mesajını dahil et",
+    "screenshot": "Ekran Görüntüsü",
+    "settings": "Ayarlar",
+    "text": "Metin",
+    "withBackground": "Arka Plan",
+    "withFooter": "Footer",
+    "withPluginInfo": "Plugin Bilgileri",
+    "withRole": "Mesaj rolünü dahil et",
+    "withSystemRole": "Asistan Rol"
+  },
+  "stt": {
+    "action": "Ses Girişi",
+    "loading": "Tanımlanıyor...",
+    "prettifying": "İyileştiriliyor..."
+  },
+  "thread": {
+    "divider": "Alt konu",
+    "threadMessageCount": "{{messageCount}} mesaj",
+    "title": "Alt konu"
+  },
+  "tokenDetails": {
+    "chats": "Sohbetler",
+    "historySummary": "Tarih Özeti",
+    "rest": "Kalan",
+    "systemRole": "Sistem Rolü",
+    "title": "Bağlam Detayları",
+    "tools": "Araçlar",
+    "total": "Toplam",
+    "used": "Kullanılan"
+  },
+  "tokenTag": {
+    "overload": "Limit Aşıldı",
+    "remained": "Kalan",
+    "used": "Kullanılan"
+  },
+  "topic": {
+    "checkOpenNewTopic": "Yeni bir konu açılsın mı?",
+    "checkSaveCurrentMessages": "Mevcut sohbeti konu olarak kaydetmek istiyor musunuz?",
+    "openNewTopic": "Yeni Konu",
+    "saveCurrentMessages": "Mevcut oturumu konu olarak kaydet"
+  },
+  "translate": {
+    "action": "Çeviri",
+    "clear": "Çeviriyi Temizle"
+  },
+  "tts": {
+    "action": "Text-to-Speech",
+    "clear": "Clear Speech"
+  },
+  "updateAgent": "Asistan Bilgilerini Güncelle",
+  "upload": {
+    "action": {
+      "fileUpload": "Dosya Yükle",
+      "folderUpload": "Klasör Yükle",
+      "imageDisabled": "Mevcut model görsel tanımayı desteklemiyor, lütfen modeli değiştirin ve tekrar deneyin",
+      "imageUpload": "Görüntü Yükle",
+      "tooltip": "Yükle"
+    },
+    "clientMode": {
+      "actionFiletip": "Dosya Yükle",
+      "actionTooltip": "Yükle",
+      "disabled": "Mevcut model görsel tanımayı ve dosya analizini desteklemiyor, lütfen modeli değiştirin ve tekrar deneyin"
+    },
+    "preview": {
+      "prepareTasks": "Parçaları Hazırlıyor...",
+      "status": {
+        "pending": "Yüklemeye Hazırlanıyor...",
+        "processing": "Dosya İşleniyor..."
+      }
+    }
+  },
+  "zenMode": "Odak Modu"
+}

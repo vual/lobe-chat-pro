@@ -1,0 +1,127 @@
+{
+  "DragUpload": {
+    "dragDesc": "Dosyaları buraya sürükleyin, birden fazla resim yüklemeyi destekler.",
+    "dragFileDesc": "Resimleri ve dosyaları buraya sürükleyin, birden fazla resim ve dosya yüklemeyi destekler.",
+    "dragFileTitle": "Dosya Yükle",
+    "dragTitle": "Resim Yükle"
+  },
+  "FileManager": {
+    "actions": {
+      "addToKnowledgeBase": "Bilgi tabanına ekle",
+      "addToOtherKnowledgeBase": "Diğer bilgi tabanına ekle",
+      "batchChunking": "Toplu parçalara ayırma",
+      "chunking": "Parçalara ayırma",
+      "chunkingTooltip": "Dosyayı birden fazla metin parçasına ayırıp vektörleştirdikten sonra, anlamsal arama ve dosya diyalogları için kullanılabilir",
+      "chunkingUnsupported": "Bu dosya parça parça yüklemeyi desteklemiyor.",
+      "confirmDelete": "Bu dosya silinecek, silindikten sonra geri alınamaz, lütfen işleminizi onaylayın",
+      "confirmDeleteMultiFiles": "Seçilen {{count}} dosya silinecek, silindikten sonra geri alınamaz, lütfen işleminizi onaylayın",
+      "confirmRemoveFromKnowledgeBase": "Seçilen {{count}} dosya bilgi tabanından kaldırılacak, kaldırıldıktan sonra dosyalar tüm dosyalar arasında görüntülenebilir, lütfen işleminizi onaylayın",
+      "copyUrl": "Bağlantıyı kopyala",
+      "copyUrlSuccess": "Dosya adresi başarıyla kopyalandı",
+      "createChunkingTask": "Hazırlanıyor...",
+      "deleteSuccess": "Dosya başarıyla silindi",
+      "downloading": "Dosya indiriliyor...",
+      "removeFromKnowledgeBase": "Bilgi tabanından kaldır",
+      "removeFromKnowledgeBaseSuccess": "Dosya başarıyla kaldırıldı"
+    },
+    "bottom": "Artık sona geldik",
+    "config": {
+      "showFilesInKnowledgeBase": "Bilgi tabanındaki içeriği göster"
+    },
+    "emptyStatus": {
+      "actions": {
+        "file": "Dosya yükle",
+        "folder": "Klasör yükle",
+        "knowledgeBase": "Yeni bilgi tabanı oluştur"
+      },
+      "or": "veya",
+      "title": "Dosyayı veya klasörü buraya sürükleyin"
+    },
+    "title": {
+      "createdAt": "Oluşturulma zamanı",
+      "size": "Boyut",
+      "title": "Dosya"
+    },
+    "total": {
+      "fileCount": "Toplam {{count}} öğe",
+      "selectedCount": "Seçilen {{count}} öğe"
+    }
+  },
+  "FileParsingStatus": {
+    "chunks": {
+      "embeddingStatus": {
+        "empty": "Metin parçaları henüz tamamen vektörleştirilmedi, bu durum anlamsal arama işlevinin kullanılamamasına neden olabilir, arama kalitesini artırmak için lütfen metin parçalarını vektörleştirin",
+        "error": "Vektörleştirme başarısız oldu",
+        "errorResult": "Vektörleştirme başarısız oldu, lütfen kontrol edip tekrar deneyin. Başarısız olma nedeni:",
+        "processing": "Metin parçaları vektörleştiriliyor, lütfen bekleyin",
+        "success": "Mevcut metin parçaları tamamen vektörleştirildi"
+      },
+      "embeddings": "Vektörleştirme",
+      "status": {
+        "error": "Parçalara ayırma başarısız oldu",
+        "errorResult": "Parçalara ayırma başarısız oldu, lütfen kontrol edip tekrar deneyin. Başarısız olma nedeni:",
+        "processing": "Parçalara ayırma işlemi devam ediyor",
+        "processingTip": "Sunucu metin parçalarını ayırıyor, sayfayı kapatmak parçalama ilerlemesini etkilemez"
+      }
+    }
+  },
+  "GoBack": {
+    "back": "Geri dön"
+  },
+  "MaxTokenSlider": {
+    "unlimited": "Sınırsız"
+  },
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "Özel model, varsayılan olarak hem fonksiyon çağrısını hem de görüntü tanımayı destekler, yukarıdaki yeteneklerin kullanılabilirliğini doğrulamak için lütfen gerçek durumu kontrol edin",
+      "file": "Bu model dosya yükleme ve tanımayı destekler",
+      "functionCall": "Bu model fonksiyon çağrısını destekler",
+      "imageOutput": "Bu model resim oluşturmayı destekler",
+      "reasoning": "Bu model derin düşünmeyi destekler",
+      "search": "Bu model çevrimiçi aramayı destekler",
+      "tokens": "Bu model tek bir oturumda en fazla {{tokens}} Token destekler",
+      "vision": "Bu model görüntü tanımıyı destekler"
+    },
+    "removed": "Bu model listeden çıkarıldı, seçiminizi kaldırırsanız otomatik olarak kaldırılacaktır"
+  },
+  "ModelSwitchPanel": {
+    "emptyModel": "Etkinleştirilmiş model bulunmamaktadır, lütfen ayarlara giderek açın",
+    "emptyProvider": "Etkinleştirilmiş bir sağlayıcı yok, lütfen ayarlara gidin",
+    "goToSettings": "Ayrıntılara git",
+    "provider": "Sağlayıcı",
+    "title": "Model"
+  },
+  "OllamaSetupGuide": {
+    "action": {
+      "close": "Uyarıyı Kapat",
+      "start": "Yüklendi ve çalışıyor, sohbete başla"
+    },
+    "cors": {
+      "description": "Tarayıcı güvenlik kısıtlamaları nedeniyle, Ollama'yı düzgün bir şekilde kullanabilmek için çapraz alan yapılandırması yapmanız gerekmektedir.",
+      "linux": {
+        "env": "[Service] bölümüne `Environment` ekleyin ve OLLAMA_ORIGINS ortam değişkenini ekleyin:",
+        "reboot": "systemd'yi yeniden yükleyin ve Ollama'yı yeniden başlatın",
+        "systemd": "ollama hizmetini düzenlemek için systemd'yi çağırın:"
+      },
+      "macos": "Lütfen 'Terminal' uygulamasını açın, aşağıdaki komutu yapıştırın ve çalıştırmak için Enter tuşuna basın",
+      "reboot": "İşlem tamamlandıktan sonra Ollama hizmetini yeniden başlatın",
+      "title": "Ollama'nın çapraz alan erişimine izin vermek için yapılandırma",
+      "windows": "Windows'ta, 'Denetim Masası'na tıklayın ve sistem ortam değişkenlerini düzenleyin. Kullanıcı hesabınız için 'OLLAMA_ORIGINS' adında bir ortam değişkeni oluşturun, değeri * olarak ayarlayın ve 'Tamam/Uygula'ya tıklayarak kaydedin."
+    },
+    "install": {
+      "description": "Lütfen Ollama'nın açık olduğundan emin olun, eğer Ollama'yı indirmediyseniz, lütfen resmi web sitesinden <1>indirin</1>",
+      "docker": "Eğer Docker kullanmayı tercih ediyorsanız, Ollama'nın resmi Docker imajı da mevcuttur, aşağıdaki komutla çekebilirsiniz:",
+      "linux": {
+        "command": "Aşağıdaki komutla kurulum yapın:",
+        "manual": "Alternatif olarak, <1>Linux Manuel Kurulum Kılavuzu</1>'na başvurarak kendiniz de kurulum yapabilirsiniz."
+      },
+      "title": "Ollama uygulamasını yerel olarak kurun ve başlatın",
+      "windowsTab": "Windows (önizleme sürümü)"
+    }
+  },
+  "Thinking": {
+    "thinking": "Derin düşünme aşamasında...",
+    "thought": "Derinlemesine düşündüm (geçen süre {{duration}} saniye)",
+    "thoughtWithDuration": "Derinlemesine düşündüm"
+  }
+}

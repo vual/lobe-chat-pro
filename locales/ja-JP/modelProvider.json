@@ -1,0 +1,346 @@
+{
+  "azure": {
+    "azureApiVersion": {
+      "desc": "Azure の API バージョン、YYYY-MM-DD 形式に従う、[最新バージョン](https://learn.microsoft.com/zh-cn/azure/ai-services/openai/reference#chat-completions)を参照",
+      "fetch": "リストを取得",
+      "title": "Azure API Version"
+    },
+    "empty": "モデル ID を入力して最初のモデルを追加してください",
+    "endpoint": {
+      "desc": "Azure ポータルでリソースを確認する際に、「キーとエンドポイント」セクションでこの値を見つけることができます",
+      "placeholder": "https://docs-test-001.openai.azure.com",
+      "title": "Azure API アドレス"
+    },
+    "modelListPlaceholder": "展開したい OpenAI モデルを選択または追加してください",
+    "title": "Azure OpenAI",
+    "token": {
+      "desc": "Azure ポータルでリソースを確認する際に、「キーとエンドポイント」セクションでこの値を見つけることができます。KEY1 または KEY2 を使用できます",
+      "placeholder": "Azure API Key",
+      "title": "API Key"
+    }
+  },
+  "azureai": {
+    "azureApiVersion": {
+      "desc": "AzureのAPIバージョン。YYYY-MM-DD形式に従い、[最新バージョン](https://learn.microsoft.com/zh-cn/azure/ai-services/openai/reference#chat-completions)を参照してください。",
+      "fetch": "リストを取得",
+      "title": "Azure APIバージョン"
+    },
+    "endpoint": {
+      "desc": "Azure AIプロジェクトの概要からAzure AIモデル推論エンドポイントを見つけます。",
+      "placeholder": "https://ai-userxxxxxxxxxx.services.ai.azure.com/models",
+      "title": "Azure AIエンドポイント"
+    },
+    "title": "Azure OpenAI",
+    "token": {
+      "desc": "Azure AIプロジェクトの概要からAPIキーを見つけます。",
+      "placeholder": "Azureキー",
+      "title": "キー"
+    }
+  },
+  "bedrock": {
+    "accessKeyId": {
+      "desc": "AWS Access Key Id を入力してください",
+      "placeholder": "AWS Access Key Id",
+      "title": "AWS Access Key Id"
+    },
+    "checker": {
+      "desc": "AccessKeyId / SecretAccessKey が正しく入力されているかをテストします"
+    },
+    "region": {
+      "desc": "AWS リージョンを入力してください",
+      "placeholder": "AWS リージョン",
+      "title": "AWS リージョン"
+    },
+    "secretAccessKey": {
+      "desc": "AWS Secret Access Key を入力してください",
+      "placeholder": "AWS Secret Access Key",
+      "title": "AWS Secret Access Key"
+    },
+    "sessionToken": {
+      "desc": "AWS SSO/STSを使用している場合は、AWSセッショントークンを入力してください。",
+      "placeholder": "AWSセッショントークン",
+      "title": "AWSセッショントークン（オプション）"
+    },
+    "title": "Bedrock",
+    "unlock": {
+      "customRegion": "カスタムサービスリージョン",
+      "customSessionToken": "カスタムセッショントークン",
+      "description": "AWS AccessKeyId / SecretAccessKey を入力するとセッションを開始できます。アプリは認証情報を記録しません",
+      "title": "使用カスタム Bedrock 認証情報"
+    }
+  },
+  "cloudflare": {
+    "apiKey": {
+      "desc": "Cloudflare API Key を入力してください",
+      "placeholder": "Cloudflare API Key",
+      "title": "Cloudflare API Key"
+    },
+    "baseURLOrAccountID": {
+      "desc": "Cloudflare アカウント ID またはカスタム API アドレスを入力してください。",
+      "placeholder": "Cloudflare アカウント ID / カスタム API URL",
+      "title": "Cloudflare アカウント ID / API アドレス"
+    }
+  },
+  "createNewAiProvider": {
+    "apiKey": {
+      "placeholder": "あなたの API キーを入力してください",
+      "title": "API キー"
+    },
+    "basicTitle": "基本情報",
+    "configTitle": "設定情報",
+    "confirm": "新規作成",
+    "createSuccess": "新規作成に成功しました",
+    "description": {
+      "placeholder": "サービスプロバイダーの紹介（任意）",
+      "title": "サービスプロバイダーの紹介"
+    },
+    "id": {
+      "desc": "サービスプロバイダーの一意の識別子であり、作成後は変更できません",
+      "format": "数字、小文字のアルファベット、ハイフン（-）、およびアンダースコア（_）のみを含むことができます",
+      "placeholder": "小文字で入力してください（例: openai）。作成後は変更できません",
+      "required": "サービスプロバイダー ID を入力してください",
+      "title": "サービスプロバイダー ID"
+    },
+    "logo": {
+      "required": "正しいサービスプロバイダーのロゴをアップロードしてください",
+      "title": "サービスプロバイダーのロゴ"
+    },
+    "name": {
+      "placeholder": "サービスプロバイダーの表示名を入力してください",
+      "required": "サービスプロバイダー名を入力してください",
+      "title": "サービスプロバイダー名"
+    },
+    "proxyUrl": {
+      "required": "プロキシURLを入力してください",
+      "title": "プロキシアドレス"
+    },
+    "sdkType": {
+      "placeholder": "openai/anthropic/azureai/ollama/...",
+      "required": "SDK タイプを選択してください",
+      "title": "リクエスト形式"
+    },
+    "title": "カスタム AI サービスプロバイダーの作成"
+  },
+  "github": {
+    "personalAccessToken": {
+      "desc": "あなたのGithub PATを入力してください。[こちら](https://github.com/settings/tokens)をクリックして作成します",
+      "placeholder": "ghp_xxxxxx",
+      "title": "GitHub PAT"
+    }
+  },
+  "huggingface": {
+    "accessToken": {
+      "desc": "あなたの HuggingFace トークンを入力してください。 [こちら](https://huggingface.co/settings/tokens) をクリックして作成します。",
+      "placeholder": "hf_xxxxxxxxx",
+      "title": "HuggingFace トークン"
+    }
+  },
+  "list": {
+    "title": {
+      "disabled": "サービスプロバイダーは無効です",
+      "enabled": "サービスプロバイダーは有効です"
+    }
+  },
+  "menu": {
+    "addCustomProvider": "カスタムサービスプロバイダーを追加",
+    "all": "すべて",
+    "list": {
+      "disabled": "未使用",
+      "enabled": "使用中"
+    },
+    "notFound": "検索結果が見つかりません",
+    "searchProviders": "サービスプロバイダーを検索...",
+    "sort": "カスタムソート"
+  },
+  "ollama": {
+    "checker": {
+      "desc": "プロキシアドレスが正しく入力されているかをテストします",
+      "title": "連結性チェック"
+    },
+    "customModelName": {
+      "desc": "カスタムモデルを追加します。複数のモデルはカンマ（,）で区切ります",
+      "placeholder": "vicuna,llava,codellama,llama2:13b-text",
+      "title": "カスタムモデル名"
+    },
+    "download": {
+      "desc": "Ollamaはこのモデルをダウンロードしています。このページを閉じないでください。再ダウンロードすると中断したところから再開されます。",
+      "failed": "モデルのダウンロードに失敗しました。ネットワークまたはOllamaの設定を確認して再試行してください",
+      "remainingTime": "残り時間",
+      "speed": "ダウンロード速度",
+      "title": "モデル{{model}}をダウンロード中"
+    },
+    "endpoint": {
+      "desc": "http(s)://を含める必要があります。ローカルで特に指定がない場合は空白のままで構いません",
+      "title": "プロキシインターフェースアドレス"
+    },
+    "title": "Ollama",
+    "unlock": {
+      "cancel": "ダウンロードをキャンセル",
+      "confirm": "ダウンロード",
+      "description": "Ollamaモデルのラベルを入力して、セッションを続行してください。",
+      "downloaded": "{{completed}} / {{total}}",
+      "starting": "ダウンロードを開始しています...",
+      "title": "指定されたOllamaモデルをダウンロード"
+    }
+  },
+  "providerModels": {
+    "config": {
+      "aesGcm": "あなたのキーとプロキシアドレスなどは <1>AES-GCM</1> 暗号化アルゴリズムを使用して暗号化されます",
+      "apiKey": {
+        "desc": "あなたの {{name}} API キーを入力してください",
+        "placeholder": "{{name}} API キー",
+        "title": "API キー"
+      },
+      "baseURL": {
+        "desc": "http(s):// を含める必要があります",
+        "invalid": "有効なURLを入力してください",
+        "placeholder": "https://your-proxy-url.com/v1",
+        "title": "API プロキシアドレス"
+      },
+      "checker": {
+        "button": "チェック",
+        "desc": "API キーとプロキシアドレスが正しく入力されているかテストします",
+        "pass": "チェックに合格しました",
+        "title": "接続性チェック"
+      },
+      "fetchOnClient": {
+        "desc": "クライアントリクエストモードはブラウザから直接セッションリクエストを発起し、応答速度を向上させます",
+        "title": "クライアントリクエストモードを使用"
+      },
+      "helpDoc": "設定ガイド",
+      "responsesApi": {
+        "desc": "OpenAIの新世代リクエストフォーマット規格を採用し、チェーン思考などの高度な機能を解放します",
+        "title": "Responses API 規格の使用"
+      },
+      "waitingForMore": "さらに多くのモデルが <1>接続予定</1> です。お楽しみに"
+    },
+    "createNew": {
+      "title": "カスタム AI モデルの作成"
+    },
+    "item": {
+      "config": "モデルを設定",
+      "customModelCards": {
+        "addNew": "{{id}} モデルを作成して追加",
+        "confirmDelete": "このカスタムモデルを削除しようとしています。削除後は復元できませんので、慎重に操作してください。"
+      },
+      "delete": {
+        "confirm": "モデル {{displayName}} を削除してもよろしいですか？",
+        "success": "削除に成功しました",
+        "title": "モデルを削除"
+      },
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Azure OpenAI で実際にリクエストされるフィールド",
+          "placeholder": "Azure でのモデルデプロイ名を入力してください",
+          "title": "モデルデプロイ名"
+        },
+        "deployName": {
+          "extra": "リクエストを送信する際に、このフィールドがモデルIDとして使用されます。",
+          "placeholder": "モデルの実際のデプロイ名またはIDを入力してください。",
+          "title": "モデルデプロイ名"
+        },
+        "displayName": {
+          "placeholder": "モデルの表示名を入力してください（例: ChatGPT、GPT-4 など）",
+          "title": "モデル表示名"
+        },
+        "files": {
+          "extra": "現在のファイルアップロード実装は一つのハック手法に過ぎず、自己責任での試行に限られます。完全なファイルアップロード機能は今後の実装をお待ちください",
+          "title": "ファイルアップロードをサポート"
+        },
+        "functionCall": {
+          "extra": "この設定は、モデルがツールを使用する機能を有効にし、モデルにツールタイプのプラグインを追加できるようにします。ただし、実際にツールを使用できるかどうかはモデル自体に依存するため、使用可能性を自分でテストしてください",
+          "title": "ツール使用のサポート"
+        },
+        "id": {
+          "extra": "作成後は変更できません。AIを呼び出す際にモデルIDとして使用されます。",
+          "placeholder": "モデルIDを入力してください。例：gpt-4o または claude-3.5-sonnet",
+          "title": "モデル ID"
+        },
+        "modalTitle": "カスタムモデル設定",
+        "reasoning": {
+          "extra": "この設定は、モデルの深い思考能力を有効にするだけです。具体的な効果はモデル自体に依存しますので、このモデルが利用可能な深い思考能力を持っているかどうかはご自身でテストしてください。",
+          "title": "深い思考をサポート"
+        },
+        "tokens": {
+          "extra": "モデルがサポートする最大トークン数を設定する",
+          "title": "最大コンテキストウィンドウ",
+          "unlimited": "無制限"
+        },
+        "vision": {
+          "extra": "この設定はアプリ内の画像アップロード設定のみを有効にします。認識のサポートはモデル自体に依存しますので、そのモデルの視覚認識機能の可用性を自分でテストしてください",
+          "title": "視覚認識をサポート"
+        }
+      },
+      "pricing": {
+        "image": "${{amount}}/画像",
+        "inputCharts": "${{amount}}/M 文字",
+        "inputMinutes": "${{amount}}/分",
+        "inputTokens": "入力 ${{amount}}/M",
+        "outputTokens": "出力 ${{amount}}/M"
+      },
+      "releasedAt": "リリース日: {{releasedAt}}"
+    },
+    "list": {
+      "addNew": "モデルを追加",
+      "disabled": "無効",
+      "disabledActions": {
+        "showMore": "すべて表示"
+      },
+      "empty": {
+        "desc": "カスタムモデルを作成するか、モデルを取得してから使用を開始してください",
+        "title": "利用可能なモデルはありません"
+      },
+      "enabled": "有効",
+      "enabledActions": {
+        "disableAll": "すべて無効にする",
+        "enableAll": "すべて有効にする",
+        "sort": "カスタムモデルの並べ替え"
+      },
+      "enabledEmpty": "有効なモデルはありません。下のリストからお気に入りのモデルを有効にしてください〜",
+      "fetcher": {
+        "clear": "取得したモデルをクリア",
+        "fetch": "モデルリストを取得",
+        "fetching": "モデルリストを取得中...",
+        "latestTime": "最終更新日時：{{time}}",
+        "noLatestTime": "まだリストを取得していません"
+      },
+      "resetAll": {
+        "conform": "現在のモデルのすべての変更をリセットしてもよろしいですか？リセット後、現在のモデルリストはデフォルトの状態に戻ります",
+        "success": "リセットに成功しました",
+        "title": "すべての変更をリセット"
+      },
+      "search": "モデルを検索...",
+      "searchResult": "{{count}} 個のモデルが見つかりました",
+      "title": "モデルリスト",
+      "total": "利用可能なモデルは合計 {{count}} 件です"
+    },
+    "searchNotFound": "検索結果が見つかりませんでした"
+  },
+  "sortModal": {
+    "success": "ソートが更新されました",
+    "title": "カスタムソート",
+    "update": "更新"
+  },
+  "updateAiProvider": {
+    "confirmDelete": "この AI サービスプロバイダーを削除しようとしています。削除後は復元できません。削除してもよろしいですか？",
+    "deleteSuccess": "削除に成功しました",
+    "tooltip": "サービスプロバイダーの基本設定を更新",
+    "updateSuccess": "更新に成功しました"
+  },
+  "updateCustomAiProvider": {
+    "title": "カスタム AI プロバイダー設定の更新"
+  },
+  "vertexai": {
+    "apiKey": {
+      "desc": "あなたの Vertex AI キーを入力してください",
+      "placeholder": "{ \"type\": \"service_account\", \"project_id\": \"xxx\", \"private_key_id\": ... }",
+      "title": "Vertex AI キー"
+    }
+  },
+  "zeroone": {
+    "title": "01.AI 零一万物"
+  },
+  "zhipu": {
+    "title": "智谱"
+  }
+}

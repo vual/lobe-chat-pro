@@ -1,0 +1,82 @@
+{
+  "dalle": {
+    "autoGenerate": "Automatisch genereren",
+    "downloading": "De link naar de afbeelding gegenereerd door DallE3 is slechts 1 uur geldig. De afbeelding wordt lokaal in de cache opgeslagen...",
+    "generate": "Genereren",
+    "generating": "Bezig met genereren...",
+    "images": "Afbeeldingen:",
+    "prompt": "prompt"
+  },
+  "localFiles": {
+    "file": "Bestand",
+    "folder": "Map",
+    "open": "Openen",
+    "openFile": "Bestand openen",
+    "openFolder": "Map openen",
+    "read": {
+      "more": "Meer weergeven"
+    },
+    "readFile": "Bestand lezen",
+    "readFileError": "Fout bij het lezen van het bestand, controleer of het bestandspad correct is",
+    "readFiles": "Bestanden lezen",
+    "readFilesError": "Fout bij het lezen van bestanden, controleer of het bestandspad correct is"
+  },
+  "search": {
+    "createNewSearch": "Maak een nieuwe zoekopdracht",
+    "emptyResult": "Geen resultaten gevonden, pas alstublieft uw zoekwoorden aan en probeer het opnieuw",
+    "genAiMessage": "Maak assistentbericht",
+    "includedTooltip": "De huidige zoekresultaten worden opgenomen in de context van de sessie",
+    "keywords": "Zoekwoorden:",
+    "scoreTooltip": "Relevantie score, hoe hoger de score, hoe relevanter het is voor de zoekwoorden",
+    "searchBar": {
+      "button": "Zoeken",
+      "placeholder": "Zoekwoorden",
+      "tooltip": "De zoekresultaten worden opnieuw opgehaald en er wordt een nieuwe samenvattingsbericht aangemaakt"
+    },
+    "searchCategory": {
+      "placeholder": "Zoekcategorie",
+      "title": "Zoekcategorie:",
+      "value": {
+        "files": "Bestanden",
+        "general": "Algemeen",
+        "images": "Afbeeldingen",
+        "it": "Informatietechnologie",
+        "map": "Kaart",
+        "music": "Muziek",
+        "news": "Nieuws",
+        "science": "Wetenschap",
+        "social_media": "Sociale media",
+        "videos": "Video's"
+      }
+    },
+    "searchEngine": {
+      "placeholder": "Zoekmachine",
+      "title": "Zoekmachine:"
+    },
+    "searchResult": "Aantal zoekresultaten:",
+    "searchTimeRange": {
+      "title": "Tijdspanne:",
+      "value": {
+        "anytime": "Geen tijdslimiet",
+        "day": "Binnen een dag",
+        "month": "Binnen een maand",
+        "week": "Binnen een week",
+        "year": "Binnen een jaar"
+      }
+    },
+    "summary": "Samenvatting",
+    "summaryTooltip": "Samenvatting van de huidige inhoud",
+    "viewMoreResults": "Bekijk meer {{results}} resultaten"
+  },
+  "updateArgs": {
+    "duplicateKeyError": "Veldsleutel moet uniek zijn",
+    "form": {
+      "add": "Een item toevoegen",
+      "key": "Veldsleutel",
+      "value": "Veldwaarde"
+    },
+    "formValidationFailed": "Formuliervalidatie is mislukt, controleer het parameterformaat",
+    "keyRequired": "Veldsleutel mag niet leeg zijn",
+    "stringifyError": "Kan parameters niet serialiseren, controleer het parameterformaat"
+  }
+}
