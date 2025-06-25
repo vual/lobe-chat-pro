@@ -8,7 +8,10 @@
 
 ### 推荐中转接口，[api.annyun.cn](https://api.annyun.cn/)，免去繁杂配置，获取 key 就可以用。
 
-### 开源说明，本项目开源版本包含 lobe-chat 完整源码及增加的 midjourney 画图源码，并且会定期同步 lobe-chat 源码
+### 开源说明
+
+- 本项目开源版本包含 lobe-chat 完整源码及增加的 midjourney 画图源码，并且会定期同步 lobe-chat 源码
+- 开源仅供研究和学习使用，商业用途请遵守 lobe-chat 的开源协议。
 
 ### 版本介绍
 
