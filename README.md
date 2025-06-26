@@ -137,7 +137,7 @@
 docker run -d -p 3210:3210 registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:latest
 ```
 
-启动后，访问：http\://{启动机器的 ip}:3210
+启动后，访问：http://{启动机器的 ip}:3210
 
 如果需要导出以前 localstore 里的数据，[参考方案](https://github.com/lobehub/lobe-chat/issues/5131)
 
@@ -150,8 +150,8 @@ docker run -d -p 3210:3210 registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-
 
 启动后，
 
-- 用户端：http\://{启动机器的 ip}:3210，
-- 管理端：http\://{启动机器的 ip}:8888， 账号：admin，密码：123456
+- 用户端：http://{启动机器的 ip}:3210，
+- 管理端：http://{启动机器的 ip}:8888， 账号：admin，密码：123456
 
 ### 配置域名转发
 
