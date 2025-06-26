@@ -10,13 +10,12 @@
 
 ### 开源说明
 
-- 本项目开源版本包含 lobe-chat 完整源码及增加的 midjourney 画图源码，并且会定期同步 lobe-chat 源码
-- 开源仅供研究和学习使用，商业用途请遵守 lobe-chat 的开源协议。
+- 本项目开源版本包含 lobe-chat 完整源码及 midjourney 画图源码，并且会定期同步 lobe-chat 源码
 
 ### 版本介绍
 
 - 版本号：latest
-- 更新时间： 2025.06.25
+- 更新时间： 2025.06.26
 - 演示站点：<https://lobe.annyun.cn> ，手机端可以关注公众号：AnnYun_AI (或扫下方二维码)，一键登录即可体验。充值入口：我的 -》账户管理 -》充值消费。
 - 管理端：<https://lobea.annyun.cn>, 演示账号：annyun 密码：123456
 
@@ -24,7 +23,7 @@
 
 ### 项目介绍
 
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.06.25
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.06.26
 
 - **增加绘图面板**，更全面的参数配置，更好看的界面，midjourney、Kling、dall-e-3、gpt-image-1、Flux、stable-diffusion (待实现)。
   - **支持 midjourney-proxy**
