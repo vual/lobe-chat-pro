@@ -67,7 +67,7 @@
   - 支持续写。
   - 支持下载音乐和视频。
   - suno 参数：
-    - SUNO_PROXY_URL：接口地址，首先 api 必须兼容[Suno-API](https://github.com/SunoAI-API/Suno-API)，然后中转接口地址可能需要加上 /suno，比如：<https://ai.aiiai.top/suno>
+    - SUNO_PROXY_URL：接口地址，api 参考[suno-api](https://gpt-best.apifox.cn/api-290942843)，然后中转接口地址可能需要加上 /suno，比如：<https://ai.aiiai.top/suno>
     - SUNO_API_KEY：接口密钥
     - 也可以在用户端应用设置 -》语言模型里设置 suno 接口地址和密钥。
 
@@ -81,7 +81,7 @@
 - **增加支持 runway 视频生成**
   - 支持扩展视频和下载视频。
   - runway 参数：
-    - RUNWAY_PROXY_URL：接口地址，支持官方 api 接口，需要拼上 /v1，中转接口地址可能需要加上 /runwayml/v1，比如：<https://ai.aiiai.top/runwayml/v1>
+    - RUNWAY_PROXY_URL：接口地址，api 参考[runway-api](https://gpt-best.apifox.cn/api-234029137)，需要拼上 /v1，中转接口地址可能需要加上 /runwayml/v1，比如：<https://ai.aiiai.top/runwayml/v1>
     - RUNWAY_API_KEY：接口密钥
     - 也可以在用户端应用设置 -》语言模型里设置 runway 接口地址和密钥。
 
@@ -137,7 +137,7 @@
 docker run -d -p 3210:3210 registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:latest
 ```
 
-启动后，访问：http://{启动机器的 ip}:3210
+启动后，访问：http\://{启动机器的 ip}:3210
 
 如果需要导出以前 localstore 里的数据，[参考方案](https://github.com/lobehub/lobe-chat/issues/5131)
 
@@ -150,8 +150,8 @@ docker run -d -p 3210:3210 registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-
 
 启动后，
 
-- 用户端：http://{启动机器的 ip}:3210，
-- 管理端：http://{启动机器的 ip}:8888， 账号：admin，密码：123456
+- 用户端：http\://{启动机器的 ip}:3210，
+- 管理端：http\://{启动机器的 ip}:8888， 账号：admin，密码：123456
 
 ### 配置域名转发
 
