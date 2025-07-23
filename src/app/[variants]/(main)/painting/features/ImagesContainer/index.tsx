@@ -34,6 +34,7 @@ import { authSelectors } from '@/store/user/slices/auth/selectors';
 import { Painting } from '@/types/painting';
 
 import ImagesBox from './ImagesBox';
+import InpaintModal from './InpaintModal';
 
 const useStyles = createStyles(({ css }) => ({
   buttons: css`
@@ -194,6 +195,7 @@ const ImagesContainer = memo((props: { isMobile: boolean }) => {
   const { t } = useTranslation('painting');
   const [messageApi, contextHolder] = message.useMessage();
   const [showCustomZoomModal, setShowCustomZoomModal] = useState(false);
+  const [showInpaintModal, setShowInpaintModal] = useState(false);
   const [currentPainting, setCurrentPainting] = useState<Painting>({} as Painting);
   const [customId, setCustomId] = useState('');
   const [customZoom, setCustomZoom] = useState(1.8);
@@ -365,6 +367,10 @@ const ImagesContainer = memo((props: { isMobile: boolean }) => {
                                 setCurrentPainting(painting);
                                 setCustomId(bt.customId);
                                 setShowCustomZoomModal(true);
+                              } else if (bt.customId.includes('Inpaint')) {
+                                setCurrentPainting(painting);
+                                setCustomId(bt.customId);
+                                setShowInpaintModal(true);
                               } else {
                                 doAction(painting, { customId: bt.customId });
                               }
@@ -440,6 +446,14 @@ const ImagesContainer = memo((props: { isMobile: boolean }) => {
           value={customZoom}
         />
       </Modal>
+      {showInpaintModal && (
+        <InpaintModal
+          customId={customId}
+          doAction={doAction}
+          onClose={() => setShowInpaintModal(false)}
+          painting={currentPainting}
+        />
+      )}
     </>
   );
 });

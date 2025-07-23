@@ -10,6 +10,7 @@ import electron from './electron';
 import error from './error';
 import file from './file';
 import hotkey from './hotkey';
+import image from './image';
 import knowledgeBase from './knowledgeBase';
 import metadata from './metadata';
 import migration from './migration';
@@ -22,6 +23,7 @@ import portal from './portal';
 import providers from './providers';
 import ragEval from './ragEval';
 import setting from './setting';
+import subscription from './subscription';
 import thread from './thread';
 import tool from './tool';
 import topic from './topic';
@@ -40,6 +42,7 @@ const resources = {
   error,
   file,
   hotkey,
+  image,
   knowledgeBase,
   metadata,
   migration,
@@ -52,6 +55,7 @@ const resources = {
   providers,
   ragEval,
   setting,
+  subscription,
   thread,
   tool,
   topic,

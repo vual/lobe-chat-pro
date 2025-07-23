@@ -10,6 +10,7 @@ export enum SidebarTabKey {
   Chat = 'chat',
   Discover = 'discover',
   Files = 'files',
+  Image = 'image',
   Me = 'me',
   Painting = 'painting',
   Setting = 'settings',
@@ -32,6 +33,7 @@ export enum SettingsTabs {
   Hotkey = 'hotkey',
   LLM = 'llm',
   Provider = 'provider',
+  Proxy = 'proxy',
   Storage = 'storage',
   Sync = 'sync',
   SystemAgent = 'system-agent',
@@ -50,6 +52,8 @@ export interface SystemStatus {
   filePanelWidth: number;
   hidePWAInstaller?: boolean;
   hideThreadLimitAlert?: boolean;
+  imagePanelWidth: number;
+  imageTopicPanelWidth?: number;
   inputHeight: number;
   /**
    * 应用初始化时不启用 PGLite，只有当用户手动开启时才启用
@@ -66,6 +70,8 @@ export interface SystemStatus {
   showChatSideBar?: boolean;
   showFilePanel?: boolean;
   showHotkeyHelper?: boolean;
+  showImagePanel?: boolean;
+  showImageTopicPanel?: boolean;
   showPalettePanel?: boolean;
   showSessionPanel?: boolean;
   showSystemRole?: boolean;
@@ -106,6 +112,8 @@ export const INITIAL_STATUS = {
   filePanelWidth: 320,
   hidePWAInstaller: false,
   hideThreadLimitAlert: false,
+  imagePanelWidth: 320,
+  imageTopicPanelWidth: 80,
   inputHeight: 200,
   mobileShowTopic: false,
   paletteWidth: 400,
@@ -114,6 +122,8 @@ export const INITIAL_STATUS = {
   showChatSideBar: true,
   showFilePanel: true,
   showHotkeyHelper: false,
+  showImagePanel: true,
+  showImageTopicPanel: true,
   showPalettePanel: true,
   showSessionPanel: true,
   showSystemRole: false,
