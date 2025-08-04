@@ -50,7 +50,7 @@ services:
 
   # oss存储，如果不用自建minio，则这一块可以去掉。
   minio:
-    image: minio/minio
+    image: minio/minio:RELEASE.2025-04-22T22-12-26Z
     container_name: lobe-minio
     ports:
       - '${MINIO_PORT}:${MINIO_PORT}'
