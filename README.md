@@ -15,7 +15,7 @@
 ### 版本介绍
 
 - 版本号：latest
-- 更新时间： 2025.08.08
+- 更新时间： 2025.08.21
 - 演示站点：<https://lobe.annyun.cn> ，手机端可以关注公众号：AnnYun_AI (或扫下方二维码)，一键登录即可体验。充值入口：我的 -》账户管理 -》充值消费。
 - 管理端：<https://lobea.annyun.cn>, 演示账号：annyun 密码：123456
 
@@ -23,7 +23,7 @@
 
 ### 项目介绍
 
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.08.08
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.08.21
 
 - **增加绘图面板**，更全面的参数配置，更好看的界面，midjourney、Kling、dall-e-3、gpt-image-1、Flux、stable-diffusion (待实现)。
   - **支持 midjourney-proxy**
@@ -106,7 +106,7 @@
   - 用户登录注册
   - 用户管理，支持用户分组，不同分组设置不同倍率
   - 个人信息管理
-  - 微信支付、易支付、虎皮椒支付
+  - 微信支付、易支付、虎皮椒支付、stripe 支付
   - 充值、兑换、消费、退款，消费失败不扣费
   - 注册赠送额度，在系统管理 - 参数管理里配置赠送额度，1 元 = 500000token
   - 订单管理
