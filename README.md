@@ -25,7 +25,7 @@
 
 - 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.08.21
 
-- **增加绘图面板**，更全面的参数配置，更好看的界面，midjourney、Kling、dall-e-3、gpt-image-1、Flux、stable-diffusion (待实现)。
+- **增加绘图面板**，更全面的参数配置，更好看的界面，midjourney、Kling、dall-e-3、gpt-image-1、Flux。
   - **支持 midjourney-proxy**
 
   - **支持 midjourney-proxy-plus**，目前已支持大部分功能：
