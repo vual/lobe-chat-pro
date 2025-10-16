@@ -146,7 +146,7 @@ docker run -d -p 3210:3210 registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-
 
 如果需要导出以前 localstore 里的数据，[参考方案](https://github.com/lobehub/lobe-chat/issues/5131)
 
-### 带后台管理版启动（服务端数据库版）
+### 带后台管理版启动（服务端数据库版，需要授权，添加微信：822784588）
 
 - 详细部署方式：
   - [部署服务](docs-with-backend/database-deploy.md)
