@@ -15,7 +15,7 @@
 ### 版本介绍
 
 - 版本号：latest
-- 更新时间： 2025.09.27
+- 更新时间： 2025.10.25
 - 演示站点：<https://lobe.annyun.cn> ，手机端可以关注公众号：AnnYun-AI (或扫下方二维码)，一键登录即可体验。充值入口：我的 -》账户管理 -》充值消费。
 - 管理端：<https://lobea.annyun.cn>, 演示账号：annyun 密码：123456
 
@@ -23,7 +23,7 @@
 
 ### 项目介绍
 
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.09.27
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.10.25
 
 - **增加绘图面板**，更全面的参数配置，更好看的界面，midjourney、Kling、dall-e-3、gpt-image-1、Flux。
   - **支持 midjourney-proxy**
@@ -101,6 +101,8 @@
     - 也可以在用户端应用设置 -》语言模型里设置 Kling 接口地址和密钥，写法同上。
 
 - **增加支持 Veo3 (Google) 视频生成**
+- 
+- **增加支持 Sora2 (Openai) 视频生成**
 
 - **支持后台管理**
   - 用户登录注册
