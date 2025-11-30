@@ -6,7 +6,9 @@
 
 ### 基于 new-api 的开源项目[aiiai-api](https://github.com/vual/aiiai-api)
 
-### 推荐中转接口，[api.annyun.cn](https://api.annyun.cn/)，免去繁杂配置，获取 key 就可以用。
+### 推荐中转接口 1，[api.annyun.cn](https://api.annyun.cn/)，免去繁杂配置，获取 key 就可以用。
+
+### 推荐中转接口 2，[api.annyun.top](https://api.aiiai.top/register?aff=B4fi)，免去繁杂配置，获取 key 就可以用。
 
 ### 开源说明
 
