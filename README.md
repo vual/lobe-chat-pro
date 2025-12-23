@@ -17,7 +17,7 @@
 ### 版本介绍
 
 - 版本号：latest
-- 更新时间： 2025.12.06
+- 更新时间： 2025.12.23
 - 演示站点：<https://lobe.annyun.cn> ，手机端可以关注公众号：AnnYun-AI (或扫下方二维码)，一键登录即可体验。充值入口：我的 -》账户管理 -》充值消费。
 - 管理端：<https://lobea.annyun.cn>, 演示账号：annyun 密码：123456
 
@@ -25,7 +25,7 @@
 
 ### 项目介绍
 
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.12.06
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.12.23
 
 - **增加绘图面板**，更全面的参数配置，更好看的界面，midjourney、Kling、dall-e-3、gpt-image-1、Flux。
   - **支持 midjourney-proxy**
@@ -51,7 +51,7 @@
   - **支持 OpenAI 画图模型**
     - 填 openai 的接口和 key。
     - 支持 Dall-E-3 模型。
-    - **_支持 gpt-image-1 模型，支持对任意图片进行局部重绘，包括生成的以及自己上传的图片_**。
+    - **_支持 gpt-image-1 和 gpt-image-1.5 模型，支持对任意图片进行局部重绘，包括生成的以及自己上传的图片_**。
 
   - **支持 Flux 模型画图**
     - 切换到 Dall-E 页签，模型选择 flux 模型，目前支持的是走 Dall-E-3 的接口格式，填 openai 的接口和 key。
@@ -61,7 +61,7 @@
     - KLING_API_KEY：接口密钥，支持快手官方密钥，填写格式：${AccessKey}@${SecretKey}, 比如 abcxvsdfs\@sefsefsege
     - 也可以在用户端应用设置 -》语言模型里设置 Kling 接口地址和密钥，写法同上。
 
-  - **增加支持 Volcengine (火山引擎) 图片生成**
+  - **增加支持 Volcengine (doubao-seedream-4.5) 图片生成**
     - VOLCENGINE_API_KEY: 接口秘钥，
 
   - 图片本地存储，如果配了 s3 存储，则优先存到 s3，具体 s3 配置请看 lobe-chat。
@@ -143,7 +143,7 @@
 ### 开发计划
 
 - 1.【已完成】发现页展示用户创作的图片、音乐、视频。
-- 2.【计划】增加数字人视频合成。
+- 2.【doing】增加设计师模式的无限画布功能。
 
 ### 开源版本启动应用（浏览器端默认使用 pglite 数据库）
 
