@@ -18,8 +18,8 @@
 
 - 版本号：latest
 - 更新时间： 2025.12.23
-- 演示站点：<https://lobe.annyun.cn> ，手机端可以关注公众号：AnnYun-AI (或扫下方二维码)，一键登录即可体验。充值入口：我的 -》账户管理 -》充值消费。
-- 管理端：<https://lobea.annyun.cn>, 演示账号：annyun 密码：123456
+- 演示站点：<https://ai.annyun.cn> ，手机端可以关注公众号：AnnYun-AI (或扫下方二维码)，一键登录即可体验。充值入口：我的 -》账户管理 -》充值消费。
+- 管理端：<https://admin.annyun.cn>, 演示账号：annyun 密码：123456
 
 ![gongzhonghao](/images/gongzhonghao.jpg)
 
