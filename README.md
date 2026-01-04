@@ -17,7 +17,7 @@
 ### 版本介绍
 
 - 版本号：latest
-- 更新时间： 2025.12.23
+- 更新时间： 2026.01.04
 - 演示站点：<https://ai.annyun.cn> ，手机端可以关注公众号：AnnYun-AI (或扫下方二维码)，一键登录即可体验。充值入口：我的 -》账户管理 -》充值消费。
 - 管理端：<https://admin.annyun.cn>, 演示账号：annyun 密码：123456
 
@@ -25,7 +25,7 @@
 
 ### 项目介绍
 
-- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2025.12.23
+- 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码，最近同步时间： 2026.01.04
 
 - **增加绘图面板**，更全面的参数配置，更好看的界面，midjourney、Kling、dall-e-3、gpt-image-1、Flux。
   - **支持 midjourney-proxy**
@@ -143,7 +143,7 @@
 ### 开发计划
 
 - 1.【已完成】发现页展示用户创作的图片、音乐、视频。
-- 2.【doing】增加设计师模式的无限画布功能。
+- 2.【doing】增加设计师模式的无限画布功能。演示环境已经可以试用了。
 
 ### 开源版本启动应用（浏览器端默认使用 pglite 数据库）
 
