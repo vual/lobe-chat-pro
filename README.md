@@ -44,16 +44,15 @@
 
   ![img33](/images/img33.png)
 
-- ### 中转站特别版：
+- ### 中转站特别版，快速接入自己的中转站，支持 one-api, new-api, shell-api：
   - **轻量便捷**，画图、音乐、视频、无限画布，功能齐全，只是没有后台管理那些功能，直接把中转站当后台
-  - **多种中转站支持**，one-api, new-api, shell-api
   - **支持使用中转站用户直接登录**，可以登录，可以注册，也可以邀请用户注册，注册是直接注册中转站用户
-  - **登录后直接获取用户在中转站里的apikey**，获取令牌列表，支持切换，直接就可以开始聊天，免去手动填写apikey
+  - **登录后直接获取用户在中转站里的 apikey**，获取令牌列表，支持切换，直接就可以开始聊天，免去手动填写 apikey
   - **支持跳转到中转站的令牌管理页面**
   - **支持获取中转站通知**，用户登录后，直接弹窗展示通知。
   - **支持划转邀请奖励**，
-  - **支持手动添加apikey到本地**，本地添加的apikey和中转站里的apikey共存，随意切换
-  - **分登陆版和无需登录版本**，无需登录版本只能手动添加apikey到本地
+  - **支持手动添加 apikey 到本地**，本地添加的 apikey 和中转站里的 apikey 共存，随意切换
+  - **分登陆版和无需登录版本**，无需登录版本只能手动添加 apikey 到本地
 
   ![img35](/images/img35.png)
   ![img36](/images/img36.png)
@@ -87,43 +86,41 @@
 - ### 中转站特别版启动
   - #### 有登陆和注册的版本
   - 参数说明：
-    - AUTHORIZE_CODE=授权码，加微信：822784588，授权绑定中转站域名
-    - APP_URL=应用链接，如：https://client.annyun.cn
-    - NEXTAUTH_URL=登录交互链接，填 APP_URL 的值，拼上 /api/auth， 例如：https://client.annyun.cn/api/auth
-    - BACKEND_BASE_URL=中转站地址，例如：https://api.annyun.cn
-    - APP_CONFIG=应用配置，配置登录相关参数，参数包含： 
-    {"loginParams":{"addParams":{"agreement":true}, "captchaVerify":true}, "tokenPage":"/token", "tokenQueryPath": "/api/token?p=1&size=20"}， 
-    loginParams的登录相关参数，addParams是登录附加参数，会放到登录报文里，比如同意协议说明"agreement":true，
-    captchaVerify:true，是开启图形验证码，tokenPage是中转站的令牌页面路径，默认值 /token， tokenQueryPath是查询中转站令牌的请求路径，默认值 /api/token?p=1&size=20
-    - NEXT_AUTH_SECRET=登录密钥，随便填，例如：123456789X
-    - NEXT_AUTH_SSO_PROVIDERS=只能填annyun
+    - AUTHORIZE_CODE = 授权码，加微信：822784588，授权绑定中转站域名
+    - APP_URL = 应用链接，如：<https://client.annyun.cn>
+    - NEXTAUTH_URL = 登录交互链接，填 APP_URL 的值，拼上 /api/auth， 例如：<https://client.annyun.cn/api/auth>
+    - BACKEND_BASE_URL = 中转站地址，例如：<https://api.annyun.cn>
+    - APP_CONFIG = 应用配置，配置登录相关参数，参数包含：
+      {"loginParams":{"addParams":{"agreement":true}, "captchaVerify":true}, "tokenPage":"/token", "tokenQueryPath": "/api/token?p=1\&size=20"}，
+      loginParams 的登录相关参数，addParams 是登录附加参数，会放到登录报文里，比如同意协议说明 "agreement":true，
+      captchaVerify:true，是开启图形验证码，tokenPage 是中转站的令牌页面路径，默认值 /token， tokenQueryPath 是查询中转站令牌的请求路径，默认值 /api/token?p=1\&size=20
+    - NEXT_AUTH_SECRET = 登录密钥，随便填，例如：123456789X
+    - NEXT_AUTH_SSO_PROVIDERS = 只能填 annyun
     - KEY_VAULTS_SECRET=bed69c29a04b400fbc7bc3e2fa8d38dd
-    - 如果是1panel部署，参数值的单引号都去掉
-  
+    - 如果是 1panel 部署，参数值的单引号都去掉
+
   ```shell
   docker run -d -p 3210:3210 \
-  -e AUTHORIZE_CODE='授权码' \
-  -e APP_URL='https://client.annyun.cn' \
-  -e NEXTAUTH_URL='https://client.annyun.cn/api/auth' \
-  -e BACKEND_BASE_URL='https://api.annyun.cn' \
-  -e APP_CONFIG='{"loginParams":{"addParams":{"agreement":true}, "captchaVerify":false}, "tokenPage":"/token", "tokenQueryPath": "/api/token?p=1&size=20"}' \
-  -e NEXT_AUTH_SECRET='123456789X' \
-  -e NEXT_AUTH_SSO_PROVIDERS='annyun' \
-  -e KEY_VAULTS_SECRET='bed69c29a04b400fbc7bc3e2fa8d38dd' \
-  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:client
+    -e AUTHORIZE_CODE='授权码' \
+    -e APP_URL='https://client.annyun.cn' \
+    -e NEXTAUTH_URL='https://client.annyun.cn/api/auth' \
+    -e BACKEND_BASE_URL='https://api.annyun.cn' \
+    -e APP_CONFIG='{"loginParams":{"addParams":{"agreement":true}, "captchaVerify":false}, "tokenPage":"/token", "tokenQueryPath": "/api/token?p=1&size=20"}' \
+    -e NEXT_AUTH_SECRET='123456789X' \
+    -e NEXT_AUTH_SSO_PROVIDERS='annyun' \
+    -e KEY_VAULTS_SECRET='bed69c29a04b400fbc7bc3e2fa8d38dd' \
+    registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:client
   ```
-    
-      
   - #### 无需登陆和注册的版本
     - 镜像标签是 nologin
-      
+
   ```shell
-   docker run -d -p 3210:3210 \
-  -e AUTHORIZE_CODE='授权码' \
-  -e APP_URL='https://client.annyun.cn' \
-  registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:nologin
+  docker run -d -p 3210:3210 \
+    -e AUTHORIZE_CODE='授权码' \
+    -e APP_URL='https://client.annyun.cn' \
+    registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:nologin
   ```
-  
+
 - ### 开源版本启动应用
   - 包含 midjourney 画图，浏览器端默认使用 pglite 数据库
 
