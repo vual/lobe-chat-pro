@@ -45,7 +45,7 @@
   ![img33](/images/img33.png)
 
 - ### 中转站特别版，快速接入自己的中转站，支持 one-api, new-api, shell-api：
-  - **轻量便捷**，画图、音乐、视频、无限画布，功能齐全，只是没有后台管理那些功能，直接把中转站当后台
+  - **轻量便捷**，画图、音乐、视频、无限画布，功能齐全，只是没有后台管理那些功能，配置中转站地址，直接把中转站当后台
   - **支持使用中转站用户直接登录**，可以登录，可以注册，也可以邀请用户注册，注册是直接注册中转站用户
   - **登录后直接获取用户在中转站里的 apikey**，获取令牌列表，支持切换，直接就可以开始聊天，免去手动填写 apikey
   - **支持跳转到中转站的令牌管理页面**
@@ -90,6 +90,8 @@
   - 参数说明：
     - AUTHORIZE_CODE = 授权码，加微信：822784588，授权绑定中转站域名
     - APP_URL = 应用链接，如：<https://client.annyun.cn>
+    - APP_CUSTOM_NAME = 应用名称，如：LobeChatPro
+    - APP_CUSTOM_LOGO = 应用 LOGO，填https开头的图片地址
     - NEXTAUTH_URL = 登录交互链接，填 APP_URL 的值，拼上 /api/auth， 例如：<https://client.annyun.cn/api/auth>
     - BACKEND_BASE_URL = 中转站地址，例如：<https://api.annyun.cn>
     - APP_CONFIG = 应用配置，配置登录相关参数，参数包含：
@@ -115,6 +117,10 @@
   ```
   - #### 无需登陆和注册的版本
     - 镜像标签是 nologin
+    - AUTHORIZE_CODE = 授权码，加微信：822784588，授权绑定中转站域名
+    - APP_URL = 应用链接，如：<https://client.annyun.cn>
+    - APP_CUSTOM_NAME = 应用名称，如：LobeChatPro
+    - APP_CUSTOM_LOGO = 应用LOGO，填https开头的图片地址
 
   ```shell
   docker run -d -p 3210:3210 \
