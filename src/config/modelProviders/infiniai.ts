@@ -11,11 +11,6 @@ const InfiniAI: ModelProviderCard = {
       displayName: 'DeepSeek R1',
       enabled: true,
       id: 'deepseek-r1',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 65_536,
@@ -24,11 +19,6 @@ const InfiniAI: ModelProviderCard = {
       displayName: 'DeepSeek V3',
       enabled: true,
       id: 'deepseek-v3',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 65_536,
@@ -37,11 +27,6 @@ const InfiniAI: ModelProviderCard = {
       displayName: 'QwQ',
       enabled: true,
       id: 'qwq-32b',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -50,11 +35,6 @@ const InfiniAI: ModelProviderCard = {
       displayName: 'DeepSeek R1 Distill Qwen 32B',
       enabled: true,
       id: 'deepseek-r1-distill-qwen-32b',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -63,11 +43,6 @@ const InfiniAI: ModelProviderCard = {
       displayName: 'Qwen2.5 72B Instruct',
       enabled: true,
       id: 'qwen2.5-72b-instruct',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -76,11 +51,6 @@ const InfiniAI: ModelProviderCard = {
       displayName: 'Qwen2.5 32B Instruct',
       enabled: true,
       id: 'qwen2.5-32b-instruct',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -89,11 +59,6 @@ const InfiniAI: ModelProviderCard = {
       displayName: 'Qwen2.5 Coder 32B Instruct',
       enabled: true,
       id: 'qwen2.5-coder-32b-instruct',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -102,11 +67,6 @@ const InfiniAI: ModelProviderCard = {
       displayName: 'Qwen2.5 14B Instruct',
       enabled: true,
       id: 'qwen2.5-14b-instruct',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -115,53 +75,9 @@ const InfiniAI: ModelProviderCard = {
       displayName: 'Qwen2.5 7B Instruct',
       enabled: true,
       id: 'qwen2.5-7b-instruct',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
-    },
-    {
-      contextWindowTokens: 32_768,
-      description:
-        'Qwen2 是 Qwen 团队推出的新一代大型语言模型系列。它基于 Transformer 架构，并采用 SwiGLU 激活函数、注意力 QKV 偏置(attention QKV bias)、群组查询注意力(group query attention)、滑动窗口注意力(mixture of sliding window attention)与全注意力的混合等技术。此外，Qwen 团队还改进了适应多种自然语言和代码的分词器。',
-      displayName: 'Qwen 2 72B Instruct',
-      enabled: true,
-      id: 'qwen2-72b-instruct',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
-    },
-    {
-      contextWindowTokens: 32_768,
-      description:
-        'Qwen2 是 Qwen 团队推出的新一代大型语言模型系列。它基于 Transformer 架构，并采用 SwiGLU 激活函数、注意力 QKV 偏置(attention QKV bias)、群组查询注意力(group query attention)、滑动窗口注意力(mixture of sliding window attention)与全注意力的混合等技术。此外，Qwen 团队还改进了适应多种自然语言和代码的分词器。',
-      displayName: 'Qwen 2 7B Instruct',
-      enabled: true,
-      id: 'qwen2-7b-instruct',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
-    },
-    {
-      contextWindowTokens: 4096,
-      description:
-        'Yi-1.5 是 Yi 的升级版本。 它使用 500B Tokens 的高质量语料库在 Yi 上持续进行预训练，并在 3M 个多样化的微调样本上进行微调。',
-      displayName: 'Yi-1.5 34B Chat',
-      enabled: true,
-      id: 'yi-1.5-34b-chat',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
   ],
-  checkModel: 'qwen2.5-7b-instruct',
+  checkModel: 'qwen3-8b',
   description:
     '为应用开发者提供高性能、易上手、安全可靠的大模型服务，覆盖从大模型开发到大模型服务化部署的全流程。',
   id: 'infiniai',
@@ -169,6 +85,7 @@ const InfiniAI: ModelProviderCard = {
   modelsUrl: 'https://cloud.infini-ai.com/genstudio/model',
   name: 'InfiniAI',
   settings: {
+    disableBrowserRequest: true,
     proxyUrl: {
       placeholder: 'https://cloud.infini-ai.com/maas/v1',
     },

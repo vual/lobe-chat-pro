@@ -2,8 +2,17 @@
   "ai21": {
     "description": "AI21 Labs bouwt basismodellen en AI-systemen voor bedrijven, en versnelt de toepassing van generatieve AI in de productie."
   },
+  "ai302": {
+    "description": "302.AI is een pay-per-use AI-applicatieplatform dat de meest uitgebreide AI-API's en AI-online toepassingen op de markt biedt"
+  },
   "ai360": {
     "description": "360 AI is een AI-model- en serviceplatform gelanceerd door het bedrijf 360, dat verschillende geavanceerde modellen voor natuurlijke taalverwerking biedt, waaronder 360GPT2 Pro, 360GPT Pro, 360GPT Turbo en 360GPT Turbo Responsibility 8K. Deze modellen combineren grootschalige parameters en multimodale capaciteiten, en worden breed toegepast in tekstgeneratie, semantisch begrip, dialoogsystemen en codegeneratie. Met flexibele prijsstrategieën voldoet 360 AI aan diverse gebruikersbehoeften, ondersteunt het ontwikkelaars bij integratie en bevordert het de innovatie en ontwikkeling van intelligente toepassingen."
+  },
+  "aihubmix": {
+    "description": "AiHubMix biedt via een uniforme API-toegang tot diverse AI-modellen."
+  },
+  "akashchat": {
+    "description": "Akash is een vergunningvrije cloudbronnenmarkt met concurrerende prijzen in vergelijking met traditionele cloudproviders."
   },
   "anthropic": {
     "description": "Anthropic is een bedrijf dat zich richt op onderzoek en ontwikkeling van kunstmatige intelligentie, en biedt een reeks geavanceerde taalmodellen aan, zoals Claude 3.5 Sonnet, Claude 3 Sonnet, Claude 3 Opus en Claude 3 Haiku. Deze modellen bereiken een ideale balans tussen intelligentie, snelheid en kosten, en zijn geschikt voor een breed scala aan toepassingen, van bedrijfswerkbelasting tot snelle respons. Claude 3.5 Sonnet, als hun nieuwste model, presteert uitstekend in verschillende evaluaties, terwijl het een hoge kosteneffectiviteit behoudt."
@@ -20,11 +29,23 @@
   "bedrock": {
     "description": "Bedrock is een dienst van Amazon AWS die zich richt op het bieden van geavanceerde AI-taalmodellen en visuele modellen voor bedrijven. De modellenfamilie omvat de Claude-serie van Anthropic, de Llama 3.1-serie van Meta, en meer, met opties variërend van lichtgewicht tot hoge prestaties, en ondersteunt tekstgeneratie, dialogen, beeldverwerking en meer, geschikt voor bedrijfsapplicaties van verschillende schalen en behoeften."
   },
+  "bfl": {
+    "description": "Een toonaangevend, grensverleggend onderzoeksinstituut voor kunstmatige intelligentie dat de visuele infrastructuur van morgen opbouwt."
+  },
+  "cerebras": {
+    "description": "Cerebras is een AI-inferentieplatform gebaseerd op het speciale CS-3-systeem, ontworpen om 's werelds snelste, realtime reagerende en hoog-throughput LLM-diensten te leveren. Het is speciaal ontwikkeld om vertragingen te elimineren en complexe AI-workflows te versnellen, zoals realtime codegeneratie en agenttaken."
+  },
   "cloudflare": {
     "description": "Voer machine learning-modellen aan, aangedreven door serverloze GPU's, uit op het wereldwijde netwerk van Cloudflare."
   },
   "cohere": {
     "description": "Cohere biedt u de meest geavanceerde meertalige modellen, geavanceerde zoekfunctionaliteit en een op maat gemaakt AI-werkruimte voor moderne bedrijven - alles geïntegreerd in een veilig platform."
+  },
+  "cometapi": {
+    "description": "CometAPI is een serviceplatform dat diverse geavanceerde modelinterfaces aanbiedt, met ondersteuning voor OpenAI, Anthropic, Google en meer. Het is geschikt voor uiteenlopende ontwikkelings- en toepassingsbehoeften. Gebruikers kunnen flexibel het beste model en de beste prijs kiezen op basis van hun eigen behoeften, wat bijdraagt aan een verbeterde AI-ervaring."
+  },
+  "comfyui": {
+    "description": "Een krachtige open-source workflow-engine voor het genereren van afbeeldingen, video en audio. Ondersteunt geavanceerde modellen zoals SD, FLUX, Qwen, Hunyuan en WAN, en biedt mogelijkheden voor node-gebaseerde workflowbewerking en private implementatie."
   },
   "deepseek": {
     "description": "DeepSeek is een bedrijf dat zich richt op onderzoek en toepassing van kunstmatige intelligentietechnologie, en hun nieuwste model DeepSeek-V2.5 combineert algemene dialoog- en codeverwerkingscapaciteiten, met significante verbeteringen in het afstemmen op menselijke voorkeuren, schrijfopdrachten en het volgen van instructies."
@@ -80,6 +101,12 @@
   "moonshot": {
     "description": "Moonshot is een open platform gelanceerd door Beijing Dark Side Technology Co., Ltd., dat verschillende modellen voor natuurlijke taalverwerking biedt, met een breed toepassingsgebied, waaronder maar niet beperkt tot contentcreatie, academisch onderzoek, slimme aanbevelingen, medische diagnose, en ondersteunt lange tekstverwerking en complexe generatietaken."
   },
+  "nebius": {
+    "description": "Nebius biedt wereldwijde AI-innovators hoogwaardige infrastructuur door het bouwen van grootschalige GPU-clusters en een verticaal geïntegreerd cloudplatform."
+  },
+  "newapi": {
+    "description": "Open source platform voor het samenvoegen en uniform doorsturen van meerdere AI-diensten"
+  },
   "novita": {
     "description": "Novita AI is een platform dat API-diensten biedt voor verschillende grote taalmodellen en AI-beeldgeneratie, flexibel, betrouwbaar en kosteneffectief. Het ondersteunt de nieuwste open-source modellen zoals Llama3 en Mistral, en biedt een uitgebreide, gebruiksvriendelijke en automatisch schaalbare API-oplossing voor de ontwikkeling van generatieve AI-toepassingen, geschikt voor de snelle groei van AI-startups."
   },
@@ -88,6 +115,9 @@
   },
   "ollama": {
     "description": "De modellen van Ollama bestrijken een breed scala aan gebieden, waaronder codegeneratie, wiskundige berekeningen, meertalige verwerking en interactieve dialogen, en voldoen aan de diverse behoeften van bedrijfs- en lokale implementaties."
+  },
+  "ollamacloud": {
+    "description": "Ollama Cloud biedt officieel beheerde inferentiediensten, waarmee u direct toegang krijgt tot de Ollama-modelbibliotheek en ondersteuning voor OpenAI-compatibele interfaces."
   },
   "openai": {
     "description": "OpenAI is 's werelds toonaangevende onderzoeksinstituut op het gebied van kunstmatige intelligentie, wiens ontwikkelde modellen zoals de GPT-serie de grenzen van natuurlijke taalverwerking verleggen. OpenAI streeft ernaar verschillende industrieën te transformeren door middel van innovatieve en efficiënte AI-oplossingen. Hun producten bieden opmerkelijke prestaties en kosteneffectiviteit, en worden op grote schaal gebruikt in onderzoek, commercie en innovatieve toepassingen."
@@ -139,6 +169,9 @@
   },
   "v0": {
     "description": "v0 is een pair programming-assistent; je hoeft alleen je ideeën in natuurlijke taal te beschrijven, en het genereert code en gebruikersinterfaces (UI) voor je project."
+  },
+  "vercelaigateway": {
+    "description": "Vercel AI Gateway biedt een uniforme API voor toegang tot meer dan 100 modellen, waarmee u via één enkele endpoint modellen van verschillende aanbieders zoals OpenAI, Anthropic en Google kunt gebruiken. Ondersteunt budgetinstellingen, gebruiksmonitoring, verzoekbelastingbalancering en failover."
   },
   "vertexai": {
     "description": "De Gemini-serie van Google is zijn meest geavanceerde, algemene AI-modellen, ontwikkeld door Google DeepMind. Deze modellen zijn ontworpen voor multimodale toepassingen en ondersteunen naadloze begrip en verwerking van tekst, code, afbeeldingen, audio en video. Ze zijn geschikt voor verschillende omgevingen, van datacenters tot mobiele apparaten, en verbeteren aanzienlijk de efficiëntie en toepasbaarheid van AI-modellen."

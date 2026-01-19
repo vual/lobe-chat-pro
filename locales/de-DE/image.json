@@ -5,6 +5,9 @@
       "lock": "Seitenverhältnis sperren",
       "unlock": "Seitenverhältnis entsperren"
     },
+    "cfg": {
+      "label": "Führungsstärke"
+    },
     "header": {
       "desc": "Einfache Beschreibung, sofortige Kreation",
       "title": "Malerei"
@@ -26,6 +29,13 @@
     },
     "prompt": {
       "placeholder": "Beschreiben Sie den Inhalt, den Sie generieren möchten"
+    },
+    "quality": {
+      "label": "Bildqualität",
+      "options": {
+        "hd": "Hohe Auflösung",
+        "standard": "Standard"
+      }
     },
     "seed": {
       "label": "Seed",

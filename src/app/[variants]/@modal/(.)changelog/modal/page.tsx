@@ -14,6 +14,10 @@ const Page = async (props: DynamicLayoutProps) => {
   const hideDocs = serverFeatureFlags().hideDocs;
   if (hideDocs) return notFound();
 
+  if (typeof window === 'undefined') {
+    return <span />;
+  }
+
   const { locale, isMobile } = await RouteVariants.getVariantsFromProps(props);
 
   const changelogService = new ChangelogService();

@@ -1,10 +1,9 @@
+import { ModelParamsSchema, RuntimeImageGenParams, gptImage1ParamsSchema } from 'model-bank';
+import { AIImageModelCard } from 'model-bank';
 import { describe, expect, it, vi } from 'vitest';
 
-import { gptImage1ParamsSchema } from '@/config/paramsSchemas/openai/gpt-image-1';
-import { ModelParamsSchema, RuntimeImageGenParams } from '@/libs/standard-parameters/meta-schema';
 import { ImageStore } from '@/store/image';
 import { initialState } from '@/store/image/initialState';
-import { AIImageModelCard } from '@/types/aiModel';
 import { merge } from '@/utils/merge';
 
 import { imageGenerationConfigSelectors } from './selectors';

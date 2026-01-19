@@ -1,9 +1,9 @@
-import { beforeEach, describe, expect, it, vi, Mock } from 'vitest';
 import { InterceptRouteParams } from '@lobechat/electron-client-ipc';
+import { Mock, beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { AppBrowsersIdentifiers, BrowsersIdentifiers } from '@/appBrowsers';
 import type { App } from '@/core/App';
 import type { IpcClientEventSender } from '@/types/ipcClientEvent';
-import { BrowsersIdentifiers, AppBrowsersIdentifiers } from '@/appBrowsers';
 
 import BrowserWindowsCtr from '../BrowserWindowsCtr';
 
@@ -33,12 +33,14 @@ const mockApp = {
     closeWindow: mockCloseWindow,
     minimizeWindow: mockMinimizeWindow,
     maximizeWindow: mockMaximizeWindow,
-    retrieveByIdentifier: mockRetrieveByIdentifier.mockImplementation((identifier: AppBrowsersIdentifiers | string) => {
-      if (identifier === BrowsersIdentifiers.settings || identifier === 'some-other-window') {
-        return { show: mockShow };
-      }
-      return { show: mockShow }; // Default mock for other identifiers
-    }),
+    retrieveByIdentifier: mockRetrieveByIdentifier.mockImplementation(
+      (identifier: AppBrowsersIdentifiers | string) => {
+        if (identifier === BrowsersIdentifiers.settings || identifier === 'some-other-window') {
+          return { show: mockShow };
+        }
+        return { show: mockShow }; // Default mock for other identifiers
+      },
+    ),
   },
 } as unknown as App;
 
@@ -62,7 +64,7 @@ describe('BrowserWindowsCtr', () => {
     it('should show the settings window with the specified tab', async () => {
       const tab = 'appearance';
       const result = await browserWindowsCtr.openSettingsWindow(tab);
-      expect(mockShowSettingsWindowWithTab).toHaveBeenCalledWith(tab);
+      expect(mockShowSettingsWindowWithTab).toHaveBeenCalledWith({ tab });
       expect(result).toEqual({ success: true });
     });
 
@@ -104,7 +106,11 @@ describe('BrowserWindowsCtr', () => {
     const baseParams = { source: 'link-click' as const };
 
     it('should not intercept if no matching route is found', async () => {
-      const params: InterceptRouteParams = { ...baseParams, path: '/unknown/route', url: 'app://host/unknown/route' };
+      const params: InterceptRouteParams = {
+        ...baseParams,
+        path: '/unknown/route',
+        url: 'app://host/unknown/route',
+      };
       (findMatchingRoute as Mock).mockReturnValue(undefined);
       const result = await browserWindowsCtr.interceptRoute(params);
       expect(findMatchingRoute).toHaveBeenCalledWith(params.path);
@@ -112,9 +118,13 @@ describe('BrowserWindowsCtr', () => {
     });
 
     it('should show settings window if matched route target is settings', async () => {
-      const params: InterceptRouteParams = { ...baseParams, path: '/settings/common', url: 'app://host/settings/common' };
+      const params: InterceptRouteParams = {
+        ...baseParams,
+        path: '/settings/provider',
+        url: 'app://host/settings/provider?active=provider&provider=ollama',
+      };
       const matchedRoute = { targetWindow: BrowsersIdentifiers.settings, pathPrefix: '/settings' };
-      const subPath = 'common';
+      const subPath = 'provider';
       (findMatchingRoute as Mock).mockReturnValue(matchedRoute);
       (extractSubPath as Mock).mockReturnValue(subPath);
 
@@ -122,7 +132,10 @@ describe('BrowserWindowsCtr', () => {
 
       expect(findMatchingRoute).toHaveBeenCalledWith(params.path);
       expect(extractSubPath).toHaveBeenCalledWith(params.path, matchedRoute.pathPrefix);
-      expect(mockShowSettingsWindowWithTab).toHaveBeenCalledWith(subPath);
+      expect(mockShowSettingsWindowWithTab).toHaveBeenCalledWith({
+        searchParams: { active: 'provider', provider: 'ollama' },
+        tab: subPath,
+      });
       expect(result).toEqual({
         intercepted: true,
         path: params.path,
@@ -134,7 +147,11 @@ describe('BrowserWindowsCtr', () => {
     });
 
     it('should open target window if matched route target is not settings', async () => {
-      const params: InterceptRouteParams = { ...baseParams, path: '/other/page', url: 'app://host/other/page' };
+      const params: InterceptRouteParams = {
+        ...baseParams,
+        path: '/other/page',
+        url: 'app://host/other/page',
+      };
       const targetWindowIdentifier = 'some-other-window' as AppBrowsersIdentifiers;
       const matchedRoute = { targetWindow: targetWindowIdentifier, pathPrefix: '/other' };
       (findMatchingRoute as Mock).mockReturnValue(matchedRoute);
@@ -154,9 +171,13 @@ describe('BrowserWindowsCtr', () => {
     });
 
     it('should return error if processing route interception fails for settings', async () => {
-      const params: InterceptRouteParams = { ...baseParams, path: '/settings/general', url: 'app://host/settings/general' };
+      const params: InterceptRouteParams = {
+        ...baseParams,
+        path: '/settings',
+        url: 'app://host/settings?active=general',
+      };
       const matchedRoute = { targetWindow: BrowsersIdentifiers.settings, pathPrefix: '/settings' };
-      const subPath = 'general';
+      const subPath = undefined;
       const errorMessage = 'Processing error for settings';
       (findMatchingRoute as Mock).mockReturnValue(matchedRoute);
       (extractSubPath as Mock).mockReturnValue(subPath);
@@ -164,6 +185,10 @@ describe('BrowserWindowsCtr', () => {
 
       const result = await browserWindowsCtr.interceptRoute(params);
 
+      expect(mockShowSettingsWindowWithTab).toHaveBeenCalledWith({
+        searchParams: { active: 'general' },
+        tab: subPath,
+      });
       expect(result).toEqual({
         error: errorMessage,
         intercepted: false,
@@ -173,7 +198,11 @@ describe('BrowserWindowsCtr', () => {
     });
 
     it('should return error if processing route interception fails for other window', async () => {
-      const params: InterceptRouteParams = { ...baseParams, path: '/another/custom', url: 'app://host/another/custom' };
+      const params: InterceptRouteParams = {
+        ...baseParams,
+        path: '/another/custom',
+        url: 'app://host/another/custom',
+      };
       const targetWindowIdentifier = 'another-custom-window' as AppBrowsersIdentifiers;
       const matchedRoute = { targetWindow: targetWindowIdentifier, pathPrefix: '/another' };
       const errorMessage = 'Processing error for other window';
@@ -192,4 +221,4 @@ describe('BrowserWindowsCtr', () => {
       });
     });
   });
-}); 
+});

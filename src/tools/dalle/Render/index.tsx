@@ -1,10 +1,10 @@
+import { BuiltinRenderProps } from '@lobechat/types';
 import { ActionIcon, PreviewGroup } from '@lobehub/ui';
 import { Download } from 'lucide-react';
 import { memo, useRef } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import { fileService } from '@/services/file';
-import { BuiltinRenderProps } from '@/types/tool';
 import { DallEImageItem } from '@/types/tool/dalle';
 
 import GalleyGrid from './GalleyGrid';
@@ -25,6 +25,7 @@ const DallE = memo<BuiltinRenderProps<DallEImageItem[]>>(({ content, messageId }
     link.click();
   };
 
+  // @ts-ignore
   return (
     <Flexbox gap={16}>
       {/* 没想好工具条的作用 */}
@@ -41,7 +42,7 @@ const DallE = memo<BuiltinRenderProps<DallEImageItem[]>>(({ content, messageId }
             currentRef.current = current;
           },
           toolbarAddon: <ActionIcon color={'#fff'} icon={Download} onClick={handleDownload} />,
-        }}
+        } as any}
       >
         <GalleyGrid items={content.map((c) => ({ ...c, messageId }))} renderItem={ImageItem} />
       </PreviewGroup>

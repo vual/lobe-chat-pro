@@ -1,4 +1,9 @@
 {
+  "ArgsInput": {
+    "addArgument": "Aggiungi parametro",
+    "argumentPlaceholder": "Parametro {{index}}",
+    "enterFirstArgument": "Inserisci il primo parametro..."
+  },
   "DragUpload": {
     "dragDesc": "Trascina i file qui, supporta il caricamento di più immagini.",
     "dragFileDesc": "Trascina immagini e file qui, supporta il caricamento di più immagini e file.",
@@ -45,6 +50,10 @@
     "total": {
       "fileCount": "Totale {{count}} elementi",
       "selectedCount": "Selezionati {{count}} elementi"
+    },
+    "view": {
+      "list": "Vista elenco",
+      "masonry": "Vista griglia"
     }
   },
   "FileParsingStatus": {
@@ -67,6 +76,18 @@
   },
   "GoBack": {
     "back": "Indietro"
+  },
+  "HtmlPreview": {
+    "actions": {
+      "download": "Scarica",
+      "preview": "Anteprima"
+    },
+    "iframeTitle": "Anteprima HTML",
+    "mode": {
+      "code": "Codice",
+      "preview": "Anteprima"
+    },
+    "title": "Anteprima HTML"
   },
   "ImageUpload": {
     "actions": {
@@ -97,6 +118,7 @@
       "reasoning": "Questo modello supporta un pensiero profondo",
       "search": "Questo modello supporta la ricerca online",
       "tokens": "Questo modello supporta un massimo di {{tokens}} token per sessione.",
+      "video": "Questo modello supporta il riconoscimento video",
       "vision": "Questo modello supporta il riconoscimento visivo."
     },
     "removed": "Il modello non è più nella lista, verrà rimosso automaticamente se deselezionato"
@@ -125,6 +147,12 @@
     },
     "progress": {
       "uploadingWithCount": "{{completed}}/{{total}} caricati"
+    },
+    "validation": {
+      "fileSizeExceeded": "Dimensione del file superiore al limite consentito",
+      "fileSizeExceededDetail": "{{fileName}} ({{actualSize}}) supera la dimensione massima consentita di {{maxSize}}",
+      "fileSizeExceededMultiple": "{{count}} file superano la dimensione massima consentita di {{maxSize}}: {{fileList}}",
+      "imageCountExceeded": "Numero di immagini superiore al limite consentito"
     }
   },
   "OllamaSetupGuide": {

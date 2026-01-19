@@ -33,7 +33,8 @@ export default {
   blog: '产品博客',
   branching: '创建子话题',
   branchingDisable:
-    '「子话题」功能在当前模式下不可用，如需该功能，请切换到 Postgres/Pglite DB 模式或使用 LobeChat Cloud',
+    '「子话题」功能在当前模式下不可用，如需该功能，请切换到 Postgres/Pglite DB 模式或使用 LobeHub Cloud',
+  branchingRequiresSavedTopic: '当前话题未保存，保存后才可以使用子话题能力',
   cancel: '取消',
   changelog: '更新日志',
   clientDB: {
@@ -185,6 +186,13 @@ export default {
     title: '喜欢我们的产品？',
   },
   fullscreen: '全屏模式',
+  geminiImageChineseWarning: {
+    content: 'Nano Banana 使用中文有概率性生成图片失败。建议使用英文以获得更好的效果。',
+    continueGenerate: '继续生成',
+    continueSend: '继续发送',
+    doNotShowAgain: '不再提示',
+    title: '中文输入提示',
+  },
   historyRange: '历史范围',
   import: '导入',
   importData: '导入数据',
@@ -231,6 +239,7 @@ export default {
   },
   information: '社区与资讯',
   installPWA: '安装浏览器应用 (PWA)',
+  labs: '实验室',
   lang: {
     'ar': '阿拉伯语',
     'bg-BG': '保加利亚语',
@@ -324,6 +333,7 @@ export default {
     chat: '会话',
     discover: '发现',
     files: '文件',
+    knowledgeBase: '知识库',
     me: '我',
     painting: '绘图',
     setting: '设置',

@@ -1,14 +1,20 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix, typescript-sort-keys/interface */
 // Disable the auto sort key eslint rule to make the code more logic and readable
+import { LOADING_FLAT, MESSAGE_CANCEL_FLAT, isDesktop, isServerMode } from '@lobechat/const';
+import { knowledgeBaseQAPrompts } from '@lobechat/prompts';
+import {
+  ChatImageItem,
+  CreateMessageParams,
+  MessageSemanticSearchChunk,
+  SendMessageParams,
+  TraceEventType,
+  TraceNameMap,
+  UIChatMessage,
+} from '@lobechat/types';
 import { t } from 'i18next';
 import { produce } from 'immer';
-import { template } from 'lodash-es';
 import { StateCreator } from 'zustand/vanilla';
 
-import { LOADING_FLAT, MESSAGE_CANCEL_FLAT } from '@/const/message';
-import { TraceEventType, TraceNameMap } from '@/const/trace';
-import { isDesktop, isServerMode } from '@/const/version';
-import { knowledgeBaseQAPrompts } from '@/prompts/knowledgeBaseQA';
 import { chatService } from '@/services/chat';
 import { messageService } from '@/services/message';
 import { useAgentStore } from '@/store/agent';
@@ -16,15 +22,11 @@ import { agentChatConfigSelectors, agentSelectors } from '@/store/agent/selector
 import { getAgentStoreState } from '@/store/agent/store';
 import { aiModelSelectors, aiProviderSelectors } from '@/store/aiInfra';
 import { getAiInfraStoreState } from '@/store/aiInfra/store';
-import { chatHelpers } from '@/store/chat/helpers';
 import { ChatStore } from '@/store/chat/store';
 import { messageMapKey } from '@/store/chat/utils/messageMapKey';
 import { getFileStoreState } from '@/store/file/store';
 import { useSessionStore } from '@/store/session';
 import { WebBrowsingManifest } from '@/tools/web-browsing';
-import { ChatMessage, CreateMessageParams, SendMessageParams } from '@/types/message';
-import { ChatImageItem } from '@/types/message/image';
-import { MessageSemanticSearchChunk } from '@/types/rag';
 import { Action, setNamespace } from '@/utils/storeDebug';
 
 import { chatSelectors, topicSelectors } from '../../../selectors';
@@ -41,6 +43,10 @@ interface ProcessMessageParams {
   ragQuery?: string;
   threadId?: string;
   inPortalThread?: boolean;
+
+  groupId?: string;
+  agentId?: string;
+  agentConfig?: any; // Agent configuration for group chat agents
 }
 
 export interface AIGenerateAction {
@@ -70,7 +76,7 @@ export interface AIGenerateAction {
    * including preprocessing and postprocessing steps
    */
   internal_coreProcessMessage: (
-    messages: ChatMessage[],
+    messages: UIChatMessage[],
     parentId: string,
     params?: ProcessMessageParams,
   ) => Promise<void>;
@@ -78,7 +84,7 @@ export interface AIGenerateAction {
    * Retrieves an AI-generated chat message from the backend service
    */
   internal_fetchAIChatMessage: (input: {
-    messages: ChatMessage[];
+    messages: UIChatMessage[];
     messageId: string;
     params?: ProcessMessageParams;
     model: string;
@@ -95,7 +101,7 @@ export interface AIGenerateAction {
     id: string,
     params?: {
       traceId?: string;
-      messages?: ChatMessage[];
+      messages?: UIChatMessage[];
       threadId?: string;
       inPortalThread?: boolean;
     },
@@ -104,6 +110,11 @@ export interface AIGenerateAction {
    * Toggles the loading state for AI message generation, managing the UI feedback
    */
   internal_toggleChatLoading: (
+    loading: boolean,
+    id?: string,
+    action?: Action,
+  ) => AbortController | undefined;
+  internal_toggleMessageInToolsCalling: (
     loading: boolean,
     id?: string,
     action?: Action,
@@ -147,7 +158,13 @@ export const generateAIChat: StateCreator<
   },
 
   sendMessage: async ({ message, files, onlyAddUserMessage, isWelcomeQuestion }) => {
-    const { internal_coreProcessMessage, activeTopicId, activeId, activeThreadId } = get();
+    const {
+      internal_coreProcessMessage,
+      activeTopicId,
+      activeId,
+      activeThreadId,
+      sendMessageInServer,
+    } = get();
     if (!activeId) return;
 
     const fileIdList = files?.map((f) => f.id);
@@ -156,6 +173,10 @@ export const generateAIChat: StateCreator<
 
     // if message is empty or no files, then stop
     if (!message && !hasFile) return;
+
+    // router to server mode send message
+    if (isServerMode)
+      return sendMessageInServer({ message, files, onlyAddUserMessage, isWelcomeQuestion });
 
     set({ isCreatingMessage: true }, false, n('creatingMessage/start'));
 
@@ -320,7 +341,7 @@ export const generateAIChat: StateCreator<
 
       ragQueryId = queryId;
 
-      const lastMsg = messages.pop() as ChatMessage;
+      const lastMsg = messages.pop() as UIChatMessage;
 
       // 2. build the retrieve context messages
       const knowledgeBaseQAContext = knowledgeBaseQAPrompts({
@@ -371,9 +392,14 @@ export const generateAIChat: StateCreator<
       model,
       provider!,
     )(aiInfraStoreState);
+    const isModelBuiltinSearchInternal = aiModelSelectors.isModelBuiltinSearchInternal(
+      model,
+      provider!,
+    )(aiInfraStoreState);
     const useModelBuiltinSearch = agentChatConfigSelectors.useModelBuiltinSearch(agentStoreState);
     const useModelSearch =
-      (isProviderHasBuiltinSearch || isModelHasBuiltinSearch) && useModelBuiltinSearch;
+      ((isProviderHasBuiltinSearch || isModelHasBuiltinSearch) && useModelBuiltinSearch) ||
+      isModelBuiltinSearchInternal;
     const isAgentEnableSearch = agentChatConfigSelectors.isAgentEnableSearch(agentStoreState);
 
     if (isAgentEnableSearch && !useModelSearch && !isModelSupportToolUse) {
@@ -445,6 +471,7 @@ export const generateAIChat: StateCreator<
 
       // if it's the function call message, trigger the function method
       if (isToolsCalling) {
+        get().internal_toggleMessageInToolsCalling(true, assistantId);
         await refreshMessages();
         await triggerToolCalls(assistantId, {
           threadId: params?.threadId,
@@ -467,6 +494,7 @@ export const generateAIChat: StateCreator<
 
     // 5. if it's the function call message, trigger the function method
     if (isFunctionCall) {
+      get().internal_toggleMessageInToolsCalling(true, assistantId);
       await refreshMessages();
       await triggerToolCalls(assistantId, {
         threadId: params?.threadId,
@@ -525,49 +553,13 @@ export const generateAIChat: StateCreator<
       n('generateMessage(start)', { messageId, messages }),
     );
 
-    const agentConfig = agentSelectors.currentAgentConfig(getAgentStoreState());
+    const agentConfig =
+      params?.agentConfig || agentSelectors.currentAgentConfig(getAgentStoreState());
     const chatConfig = agentChatConfigSelectors.currentChatConfig(getAgentStoreState());
-
-    const compiler = template(chatConfig.inputTemplate, {
-      interpolate: /{{\s*(text)\s*}}/g,
-    });
 
     // ================================== //
     //   messages uniformly preprocess    //
     // ================================== //
-
-    // 1. slice messages with config
-    const historyCount = agentChatConfigSelectors.historyCount(getAgentStoreState());
-    const enableHistoryCount = agentChatConfigSelectors.enableHistoryCount(getAgentStoreState());
-
-    let preprocessMsgs = chatHelpers.getSlicedMessages(messages, {
-      includeNewUserMessage: true,
-      enableHistoryCount,
-      historyCount,
-    });
-
-    // 2. replace inputMessage template
-    preprocessMsgs = !chatConfig.inputTemplate
-      ? preprocessMsgs
-      : preprocessMsgs.map((m) => {
-          if (m.role === 'user') {
-            try {
-              return { ...m, content: compiler({ text: m.content }) };
-            } catch (error) {
-              console.error(error);
-
-              return m;
-            }
-          }
-
-          return m;
-        });
-
-    // 3. add systemRole
-    if (agentConfig.systemRole) {
-      preprocessMsgs.unshift({ content: agentConfig.systemRole, role: 'system' } as ChatMessage);
-    }
-
     // 4. handle max_tokens
     agentConfig.params.max_tokens = chatConfig.enableMaxTokens
       ? agentConfig.params.max_tokens
@@ -593,7 +585,7 @@ export const generateAIChat: StateCreator<
     await chatService.createAssistantMessageStream({
       abortController,
       params: {
-        messages: preprocessMsgs,
+        messages,
         model,
         provider,
         ...agentConfig.params,
@@ -788,7 +780,7 @@ export const generateAIChat: StateCreator<
 
     const currentMessage = chats[currentIndex];
 
-    let contextMessages: ChatMessage[] = [];
+    let contextMessages: UIChatMessage[] = [];
 
     switch (currentMessage.role) {
       case 'tool':
@@ -827,6 +819,9 @@ export const generateAIChat: StateCreator<
   // ----- Loading ------- //
   internal_toggleChatLoading: (loading, id, action) => {
     return get().internal_toggleLoadingArrays('chatLoadingIds', loading, id, action);
+  },
+  internal_toggleMessageInToolsCalling: (loading, id) => {
+    return get().internal_toggleLoadingArrays('messageInToolsCallingIds', loading, id);
   },
   internal_toggleChatReasoning: (loading, id, action) => {
     return get().internal_toggleLoadingArrays('reasoningLoadingIds', loading, id, action);

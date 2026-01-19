@@ -1,4 +1,9 @@
 export default {
+  ArgsInput: {
+    addArgument: '添加参数',
+    argumentPlaceholder: '参数 {{index}}',
+    enterFirstArgument: '输入第一个参数...',
+  },
   DragUpload: {
     dragDesc: '拖拽文件到这里，支持上传多个图片。',
     dragFileDesc: '拖拽图片和文件到这里，支持上传多个图片和文件。',
@@ -48,6 +53,10 @@ export default {
       fileCount: '共 {{count}} 项',
       selectedCount: '已选 {{count}} 项',
     },
+    view: {
+      list: '列表视图',
+      masonry: '网格视图',
+    },
   },
   FileParsingStatus: {
     chunks: {
@@ -69,6 +78,18 @@ export default {
   },
   GoBack: {
     back: '返回',
+  },
+  HtmlPreview: {
+    actions: {
+      download: '下载',
+      preview: '预览',
+    },
+    iframeTitle: 'HTML 预览',
+    mode: {
+      code: '代码',
+      preview: '预览',
+    },
+    title: 'HTML 预览',
   },
   ImageUpload: {
     actions: {
@@ -99,6 +120,7 @@ export default {
       reasoning: '该模型支持深度思考',
       search: '该模型支持联网搜索',
       tokens: '该模型单个会话最多支持 {{tokens}} Tokens',
+      video: '该模型支持视频识别',
       vision: '该模型支持视觉识别',
     },
     removed: '该模型不在列表中，若取消选中将会自动移除',
@@ -127,6 +149,14 @@ export default {
     },
     progress: {
       uploadingWithCount: '{{completed}}/{{total}} 已上传',
+    },
+    validation: {
+      fileSizeExceeded: 'File size exceeded limit',
+      fileSizeExceededDetail:
+        '{{fileName}} ({{actualSize}}) exceeds the maximum size limit of {{maxSize}}',
+      fileSizeExceededMultiple:
+        '{{count}} files exceed the maximum size limit of {{maxSize}}: {{fileList}}',
+      imageCountExceeded: 'Image count exceeded limit',
     },
   },
   OllamaSetupGuide: {

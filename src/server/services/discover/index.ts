@@ -1,22 +1,10 @@
-import { CategoryItem, CategoryListQuery, MarketSDK } from '@lobehub/market-sdk';
-import { CallReportRequest, InstallReportRequest } from '@lobehub/market-types';
-import dayjs from 'dayjs';
-import debug from 'debug';
-import matter from 'gray-matter';
-import { cloneDeep, countBy, isString, merge, uniq, uniqBy } from 'lodash-es';
-import urlJoin from 'url-join';
-
-import { LOBE_DEFAULT_MODEL_LIST } from '@/config/aiModels';
-import { DEFAULT_MODEL_PROVIDER_LIST } from '@/config/modelProviders';
 import {
+  CURRENT_VERSION,
   DEFAULT_DISCOVER_ASSISTANT_ITEM,
   DEFAULT_DISCOVER_PLUGIN_ITEM,
   DEFAULT_DISCOVER_PROVIDER_ITEM,
-} from '@/const/discover';
-import { CURRENT_VERSION, isDesktop } from '@/const/version';
-import { normalizeLocale } from '@/locales/resources';
-import { AssistantStore } from '@/server/modules/AssistantStore';
-import { PluginStore } from '@/server/modules/PluginStore';
+  isDesktop,
+} from '@lobechat/const';
 import {
   AssistantListResponse,
   AssistantQueryParams,
@@ -44,7 +32,23 @@ import {
   ProviderListResponse,
   ProviderQueryParams,
   ProviderSorts,
-} from '@/types/discover';
+} from '@lobechat/types';
+import {
+  getAudioInputUnitRate,
+  getTextInputUnitRate,
+  getTextOutputUnitRate,
+} from '@lobechat/utils';
+import { CategoryItem, CategoryListQuery, MarketSDK } from '@lobehub/market-sdk';
+import { CallReportRequest, InstallReportRequest } from '@lobehub/market-types';
+import dayjs from 'dayjs';
+import debug from 'debug';
+import matter from 'gray-matter';
+import { cloneDeep, countBy, isString, merge, uniq, uniqBy } from 'lodash-es';
+import urlJoin from 'url-join';
+
+import { normalizeLocale } from '@/locales/resources';
+import { AssistantStore } from '@/server/modules/AssistantStore';
+import { PluginStore } from '@/server/modules/PluginStore';
 
 const log = debug('lobe-server:discover');
 
@@ -462,19 +466,6 @@ export class DiscoverService {
     return result;
   };
 
-  getMcpIdentifiers = async (): Promise<IdentifiersResponse> => {
-    log('getMcpIdentifiers: fetching identifiers');
-    const result = await this.market.plugins.getPublishedIdentifiers({
-      cache: 'force-cache',
-      next: {
-        revalidate: CacheRevalidate.List,
-        tags: [CacheTag.Discover, CacheTag.MCP],
-      },
-    });
-    log('getMcpIdentifiers: returning %d identifiers', result.length);
-    return result;
-  };
-
   getMcpList = async (params: McpQueryParams = {}): Promise<McpListResponse> => {
     log('getMcpList: params=%O', params);
     const { locale } = params;
@@ -741,6 +732,10 @@ export class DiscoverService {
 
   private _getProviderList = async (): Promise<DiscoverProviderItem[]> => {
     log('_getProviderList: fetching provider list');
+    const [{ LOBE_DEFAULT_MODEL_LIST }, { DEFAULT_MODEL_PROVIDER_LIST }] = await Promise.all([
+      import('model-bank'),
+      import('@/config/modelProviders'),
+    ]);
     const result = DEFAULT_MODEL_PROVIDER_LIST.map((item) => {
       const models = uniq(
         LOBE_DEFAULT_MODEL_LIST.filter((m) => m.providerId === item.id).map((m) => m.id),
@@ -764,6 +759,7 @@ export class DiscoverService {
   }): Promise<DiscoverProviderDetail | undefined> => {
     log('getProviderDetail: params=%O', params);
     const { identifier, locale, withReadme } = params;
+    const { LOBE_DEFAULT_MODEL_LIST } = await import('model-bank');
     const all = await this._getProviderList();
     let provider = all.find((item) => item.identifier === identifier);
     if (!provider) {
@@ -899,6 +895,7 @@ export class DiscoverService {
 
   private _getRawModelList = async (): Promise<DiscoverModelItem[]> => {
     log('_getRawModelList: fetching raw model list');
+    const { LOBE_DEFAULT_MODEL_LIST } = await import('model-bank');
     const result = LOBE_DEFAULT_MODEL_LIST.map((item) => {
       const identifier = (item.id.split('/').at(-1) || item.id).toLowerCase();
       const providers = uniq(
@@ -991,6 +988,7 @@ export class DiscoverService {
   getModelCategories = async (params: CategoryListQuery = {}): Promise<CategoryItem[]> => {
     log('getModelCategories: params=%O', params);
     const { q } = params;
+    const { LOBE_DEFAULT_MODEL_LIST } = await import('model-bank');
     let list = LOBE_DEFAULT_MODEL_LIST;
     if (q) {
       const originalCount = list.length;
@@ -1024,6 +1022,10 @@ export class DiscoverService {
     identifier: string;
   }): Promise<DiscoverModelDetail | undefined> => {
     log('getModelDetail: params=%O', params);
+    const [{ LOBE_DEFAULT_MODEL_LIST }, { DEFAULT_MODEL_PROVIDER_LIST }] = await Promise.all([
+      import('model-bank'),
+      import('@/config/modelProviders'),
+    ]);
     const { identifier } = params;
     const all = await this._getModelList();
     let model = all.find((item) => item.identifier.toLowerCase() === identifier.toLowerCase());
@@ -1146,13 +1148,13 @@ export class DiscoverService {
           list = list.sort((a, b) => {
             if (order === 'asc') {
               return (
-                (a.pricing?.input || a.pricing?.audioInput || 0) -
-                (b.pricing?.input || b.pricing?.audioInput || 0)
+                (getTextInputUnitRate(a.pricing) || getAudioInputUnitRate(a.pricing) || 0) -
+                (getTextInputUnitRate(b.pricing) || getAudioInputUnitRate(b.pricing) || 0)
               );
             } else {
               return (
-                (b.pricing?.input || b.pricing?.audioInput || 0) -
-                (a.pricing?.input || a.pricing?.audioInput || 0)
+                (getTextInputUnitRate(b.pricing) || getAudioInputUnitRate(b.pricing) || 0) -
+                (getTextInputUnitRate(a.pricing) || getAudioInputUnitRate(a.pricing) || 0)
               );
             }
           });
@@ -1161,9 +1163,13 @@ export class DiscoverService {
         case ModelSorts.OutputPrice: {
           list = list.sort((a, b) => {
             if (order === 'asc') {
-              return (a.pricing?.output || 0) - (b.pricing?.output || 0);
+              return (
+                (getTextOutputUnitRate(a.pricing) || 0) - (getTextOutputUnitRate(b.pricing) || 0)
+              );
             } else {
-              return (b.pricing?.output || 0) - (a.pricing?.output || 0);
+              return (
+                (getTextOutputUnitRate(b.pricing) || 0) - (getTextOutputUnitRate(a.pricing) || 0)
+              );
             }
           });
           break;

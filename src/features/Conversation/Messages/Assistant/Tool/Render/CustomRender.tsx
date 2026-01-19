@@ -1,3 +1,4 @@
+import { UIChatMessage } from '@lobechat/types';
 import { ActionIcon } from '@lobehub/ui';
 import { App } from 'antd';
 import { Edit3Icon, PlayCircleIcon } from 'lucide-react';
@@ -6,10 +7,10 @@ import { memo, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import PluginResult from '@/features/Conversation/Messages/Assistant/Tool/Inspector/PluginResult';
 import PluginRender from '@/features/PluginsUI/Render';
 import { useChatStore } from '@/store/chat';
 import { chatSelectors } from '@/store/chat/selectors';
-import { ChatMessage } from '@/types/message';
 
 import Arguments from './Arguments';
 import KeyValueEditor from './KeyValueEditor';
@@ -23,7 +24,7 @@ const safeParseJson = (str: string): Record<string, any> => {
   }
 };
 
-interface CustomRenderProps extends ChatMessage {
+interface CustomRenderProps extends UIChatMessage {
   requestArgs?: string;
   setShowPluginRender: (value: boolean) => void;
   showPluginRender: boolean;
@@ -39,6 +40,7 @@ const CustomRender = memo<CustomRenderProps>(
     showPluginRender,
     setShowPluginRender,
     pluginError,
+    tool_call_id,
   }) => {
     const { t } = useTranslation(['tool', 'common']);
     const [loading] = useChatStore((s) => [chatSelectors.isPluginApiInvoking(id)(s)]);
@@ -80,9 +82,9 @@ const CustomRender = memo<CustomRenderProps>(
 
     if (loading) return <Arguments arguments={requestArgs} shine />;
 
-    return (
-      <Flexbox gap={12} id={id} width={'100%'}>
-        {showPluginRender ? (
+    if (showPluginRender)
+      return (
+        <Flexbox gap={12} id={id} width={'100%'}>
           <PluginRender
             arguments={plugin?.arguments}
             content={content}
@@ -94,37 +96,44 @@ const CustomRender = memo<CustomRenderProps>(
             pluginState={pluginState}
             type={plugin?.type}
           />
-        ) : isEditing ? (
-          <KeyValueEditor
-            initialValue={safeParseJson(requestArgs || '')}
-            onCancel={handleCancel}
-            onFinish={handleFinish}
-          />
-        ) : (
-          <Arguments
-            actions={
-              <>
-                <ActionIcon
-                  icon={Edit3Icon}
-                  onClick={() => {
-                    setIsEditing(true);
-                  }}
-                  size={'small'}
-                  title={t('edit', { ns: 'common' })}
-                />
-                <ActionIcon
-                  icon={PlayCircleIcon}
-                  onClick={async () => {
-                    await reInvokeToolMessage(id);
-                  }}
-                  size={'small'}
-                  title={t('run', { ns: 'common' })}
-                />
-              </>
-            }
-            arguments={requestArgs}
-          />
-        )}
+        </Flexbox>
+      );
+
+    if (isEditing)
+      return (
+        <KeyValueEditor
+          initialValue={safeParseJson(requestArgs || '')}
+          onCancel={handleCancel}
+          onFinish={handleFinish}
+        />
+      );
+
+    return (
+      <Flexbox gap={12} id={id} width={'100%'}>
+        <Arguments
+          actions={
+            <>
+              <ActionIcon
+                icon={Edit3Icon}
+                onClick={() => {
+                  setIsEditing(true);
+                }}
+                size={'small'}
+                title={t('edit', { ns: 'common' })}
+              />
+              <ActionIcon
+                icon={PlayCircleIcon}
+                onClick={async () => {
+                  await reInvokeToolMessage(id);
+                }}
+                size={'small'}
+                title={t('run', { ns: 'common' })}
+              />
+            </>
+          }
+          arguments={requestArgs}
+        />
+        {tool_call_id && <PluginResult toolCallId={tool_call_id} variant={'outlined'} />}
       </Flexbox>
     );
   },

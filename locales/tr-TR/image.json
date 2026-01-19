@@ -5,6 +5,9 @@
       "lock": "En boy oranını kilitle",
       "unlock": "En boy oranının kilidini aç"
     },
+    "cfg": {
+      "label": "Yönlendirme Gücü"
+    },
     "header": {
       "desc": "Basit açıklama, hemen yarat",
       "title": "Resim"
@@ -26,6 +29,13 @@
     },
     "prompt": {
       "placeholder": "Oluşturmak istediğiniz içeriği tanımlayın"
+    },
+    "quality": {
+      "label": "Görüntü Kalitesi",
+      "options": {
+        "hd": "Yüksek Çözünürlük",
+        "standard": "Standart"
+      }
     },
     "seed": {
       "label": "Tohum",

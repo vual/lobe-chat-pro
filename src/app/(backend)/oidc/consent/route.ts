@@ -1,8 +1,8 @@
+import { correctOIDCUrl, getUserAuth } from '@lobechat/utils/server';
 import debug from 'debug';
 import { NextRequest, NextResponse } from 'next/server';
 
 import { OIDCService } from '@/server/services/oidc';
-import { getUserAuth } from '@/utils/server/auth';
 
 const log = debug('lobe-oidc:consent');
 
@@ -113,20 +113,15 @@ export async function POST(request: NextRequest) {
     const internalRedirectUrlString = await oidcService.getInteractionResult(uid, result);
     log('OIDC Provider internal redirect URL string: %s', internalRedirectUrlString);
 
-    // // Construct the handoff URL
-    // const handoffUrl = new URL('/oauth/handoff', request.nextUrl.origin);
-    // // Set the original redirect URL as the 'target' query parameter (URL encoded)
-    // handoffUrl.searchParams.set('target', internalRedirectUrlString);
-    //
-    // log('Redirecting to handoff page: %s', handoffUrl.toString());
-    // // Redirect to the handoff page
-    // return NextResponse.redirect(handoffUrl.toString(), {
-    //   headers: request.headers, // Keep original headers if necessary
-    //   status: 303,
-    // });
+    let finalRedirectUrl;
+    try {
+      finalRedirectUrl = correctOIDCUrl(request, new URL(internalRedirectUrlString));
+    } catch {
+      finalRedirectUrl = new URL(internalRedirectUrlString);
+      log('Warning: Could not parse redirect URL, using as-is: %s', internalRedirectUrlString);
+    }
 
-    return NextResponse.redirect(internalRedirectUrlString, {
-      headers: request.headers,
+    return NextResponse.redirect(finalRedirectUrl, {
       status: 303,
     });
   } catch (error) {

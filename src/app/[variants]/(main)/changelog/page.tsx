@@ -35,6 +35,10 @@ const Page = async (props: DynamicLayoutProps) => {
   const hideDocs = serverFeatureFlags().hideDocs;
   if (hideDocs) return notFound();
 
+  if (typeof window === 'undefined') {
+    return <span />;
+  }
+
   const { isMobile, locale } = await RouteVariants.getVariantsFromProps(props);
   const { t } = await translation('metadata', locale);
   const changelogService = new ChangelogService();

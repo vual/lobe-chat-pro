@@ -1,17 +1,16 @@
 'use client';
 
 import { CheckCircleFilled } from '@ant-design/icons';
+import { ChatMessageError, TraceNameMap } from '@lobechat/types';
 import { Alert, Button, Highlighter } from '@lobehub/ui';
 import { useTheme } from 'antd-style';
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import { TraceNameMap } from '@/const/trace';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { useProviderName } from '@/hooks/useProviderName';
 import { chatService } from '@/services/chat';
-import { ChatMessageError } from '@/types/message';
 
 interface ConnectionCheckerProps {
   model: string;

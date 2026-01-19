@@ -6,12 +6,14 @@ import color from './color';
 import common from './common';
 import components from './components';
 import discover from './discover';
+import editor from './editor';
 import electron from './electron';
 import error from './error';
 import file from './file';
 import hotkey from './hotkey';
 import image from './image';
 import knowledgeBase from './knowledgeBase';
+import labs from './labs';
 import metadata from './metadata';
 import migration from './migration';
 import modelProvider from './modelProvider';
@@ -38,12 +40,14 @@ const resources = {
   common,
   components,
   discover,
+  editor,
   electron,
   error,
   file,
   hotkey,
   image,
   knowledgeBase,
+  labs,
   metadata,
   migration,
   modelProvider,

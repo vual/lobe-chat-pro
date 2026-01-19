@@ -1,14 +1,21 @@
 import { ChatModelCard, ModelProviderCard } from '@/types/llm';
 
 import Ai21Provider from './ai21';
+import Ai302Provider from './ai302';
 import Ai360Provider from './ai360';
+import AiHubMixProvider from './aihubmix';
+import AkashChatProvider from './akashchat';
 import AnthropicProvider from './anthropic';
 import AzureProvider from './azure';
 import AzureAIProvider from './azureai';
 import BaichuanProvider from './baichuan';
 import BedrockProvider from './bedrock';
+import BflProvider from './bfl';
+import CerebrasProvider from './cerebras';
 import CloudflareProvider from './cloudflare';
 import CohereProvider from './cohere';
+import CometAPIProvider from './cometapi';
+import ComfyUIProvider from './comfyui';
 import DeepSeekProvider from './deepseek';
 import FalProvider from './fal';
 import FireworksAIProvider from './fireworksai';
@@ -28,9 +35,12 @@ import MinimaxProvider from './minimax';
 import MistralProvider from './mistral';
 import ModelScopeProvider from './modelscope';
 import MoonshotProvider from './moonshot';
+import NebiusProvider from './nebius';
+import NewAPIProvider from './newapi';
 import NovitaProvider from './novita';
 import NvidiaProvider from './nvidia';
 import OllamaProvider from './ollama';
+import OllamaCloudProvider from './ollamacloud';
 import OpenAIProvider from './openai';
 import OpenRouterProvider from './openrouter';
 import PerplexityProvider from './perplexity';
@@ -48,6 +58,7 @@ import TencentcloudProvider from './tencentcloud';
 import TogetherAIProvider from './togetherai';
 import UpstageProvider from './upstage';
 import V0Provider from './v0';
+import VercelAIGatewayProvider from './vercelaigateway';
 import VertexAIProvider from './vertexai';
 import VLLMProvider from './vllm';
 import VolcengineProvider from './volcengine';
@@ -95,6 +106,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
   TaichuProvider.chatModels,
   CloudflareProvider.chatModels,
   Ai360Provider.chatModels,
+  AiHubMixProvider.chatModels,
   SiliconCloudProvider.chatModels,
   GiteeAIProvider.chatModels,
   UpstageProvider.chatModels,
@@ -109,6 +121,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
   Search1APIProvider.chatModels,
   InfiniAIProvider.chatModels,
   QiniuProvider.chatModels,
+  VercelAIGatewayProvider.chatModels,
 ].flat();
 
 export const DEFAULT_MODEL_PROVIDER_LIST = [
@@ -116,20 +129,27 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   { ...AzureProvider, chatModels: [] },
   AzureAIProvider,
   OllamaProvider,
+  OllamaCloudProvider,
   VLLMProvider,
+  ComfyUIProvider,
   XinferenceProvider,
   AnthropicProvider,
   BedrockProvider,
   GoogleProvider,
   VertexAIProvider,
   DeepSeekProvider,
-  HuggingFaceProvider,
+  MoonshotProvider,
+  AiHubMixProvider,
   OpenRouterProvider,
   FalProvider,
+  HuggingFaceProvider,
   CloudflareProvider,
   GithubProvider,
+  NewAPIProvider,
+  BflProvider,
   NovitaProvider,
   PPIOProvider,
+  Ai302Provider,
   NvidiaProvider,
   TogetherAIProvider,
   FireworksAIProvider,
@@ -154,7 +174,6 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   SparkProvider,
   SenseNovaProvider,
   StepfunProvider,
-  MoonshotProvider,
   BaichuanProvider,
   VolcengineProvider,
   MinimaxProvider,
@@ -166,7 +185,12 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   Ai360Provider,
   Search1APIProvider,
   InfiniAIProvider,
+  AkashChatProvider,
   QiniuProvider,
+  NebiusProvider,
+  CometAPIProvider,
+  VercelAIGatewayProvider,
+  CerebrasProvider,
   MidjourneyProvider,
 ];
 
@@ -180,14 +204,21 @@ export const isProviderDisableBrowserRequest = (id: string) => {
 };
 
 export { default as Ai21ProviderCard } from './ai21';
+export { default as Ai302ProviderCard } from './ai302';
 export { default as Ai360ProviderCard } from './ai360';
+export { default as AiHubMixProviderCard } from './aihubmix';
+export { default as AkashChatProviderCard } from './akashchat';
 export { default as AnthropicProviderCard } from './anthropic';
 export { default as AzureProviderCard } from './azure';
 export { default as AzureAIProviderCard } from './azureai';
 export { default as BaichuanProviderCard } from './baichuan';
 export { default as BedrockProviderCard } from './bedrock';
+export { default as BflProviderCard } from './bfl';
+export { default as CerebrasProviderCard } from './cerebras';
 export { default as CloudflareProviderCard } from './cloudflare';
 export { default as CohereProviderCard } from './cohere';
+export { default as CometAPIProviderCard } from './cometapi';
+export { default as ComfyUIProviderCard } from './comfyui';
 export { default as DeepSeekProviderCard } from './deepseek';
 export { default as FalProviderCard } from './fal';
 export { default as FireworksAIProviderCard } from './fireworksai';
@@ -208,9 +239,12 @@ export { default as MinimaxProviderCard } from './minimax';
 export { default as MistralProviderCard } from './mistral';
 export { default as ModelScopeProviderCard } from './modelscope';
 export { default as MoonshotProviderCard } from './moonshot';
+export { default as NebiusProviderCard } from './nebius';
+export { default as NewAPIProviderCard } from './newapi';
 export { default as NovitaProviderCard } from './novita';
 export { default as NvidiaProviderCard } from './nvidia';
 export { default as OllamaProviderCard } from './ollama';
+export { default as OllamaCloudProviderCard } from './ollamacloud';
 export { default as OpenAIProviderCard } from './openai';
 export { default as OpenRouterProviderCard } from './openrouter';
 export { default as PerplexityProviderCard } from './perplexity';
@@ -228,6 +262,7 @@ export { default as TencentCloudProviderCard } from './tencentcloud';
 export { default as TogetherAIProviderCard } from './togetherai';
 export { default as UpstageProviderCard } from './upstage';
 export { default as V0ProviderCard } from './v0';
+export { default as VercelAIGatewayProviderCard } from './vercelaigateway';
 export { default as VertexAIProviderCard } from './vertexai';
 export { default as VLLMProviderCard } from './vllm';
 export { default as VolcengineProviderCard } from './volcengine';

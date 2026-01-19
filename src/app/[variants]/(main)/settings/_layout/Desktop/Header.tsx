@@ -5,10 +5,15 @@ import { ChatHeader } from '@lobehub/ui/chat';
 import { Drawer, type DrawerProps } from 'antd';
 import { createStyles } from 'antd-style';
 import { Menu } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 import { ReactNode, memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import BrandWatermark from '@/components/BrandWatermark';
+import { useActiveSettingsKey } from '@/hooks/useActiveTabKey';
+import { useProviderName } from '@/hooks/useProviderName';
+import { SettingsTabs } from '@/store/global/initialState';
 
 const useStyles = createStyles(({ token, css }) => ({
   container: css`
@@ -26,12 +31,21 @@ const useStyles = createStyles(({ token, css }) => ({
 
 interface HeaderProps extends Pick<DrawerProps, 'getContainer'> {
   children: ReactNode;
-  title: ReactNode;
+  title?: ReactNode;
 }
 
 const Header = memo<HeaderProps>(({ children, getContainer, title }) => {
   const [open, setOpen] = useState(false);
   const { styles, theme } = useStyles();
+  const activeKey = useActiveSettingsKey();
+  const providerName = useProviderName(activeKey);
+
+  const search = useSearchParams();
+  const active = search.get('active');
+  const { t } = useTranslation('setting');
+
+  const isProvider = active === SettingsTabs.Provider;
+  const dynamicTitle = title ? title : isProvider ? providerName : t(`tab.${activeKey}`);
 
   return (
     <>
@@ -47,7 +61,7 @@ const Header = memo<HeaderProps>(({ children, getContainer, title }) => {
                   onClick={() => setOpen(true)}
                   size={{ blockSize: 32, size: 18 }}
                 />
-                {title}
+                {dynamicTitle}
               </Flexbox>
             }
           />

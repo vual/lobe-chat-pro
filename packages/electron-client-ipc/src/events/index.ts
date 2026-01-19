@@ -1,6 +1,7 @@
-import { LocalFilesDispatchEvents } from './localFile';
+import { LocalSystemDispatchEvents } from './localSystem';
 import { MenuDispatchEvents } from './menu';
 import { NotificationDispatchEvents } from './notification';
+import { ProtocolBroadcastEvents, ProtocolDispatchEvents } from './protocol';
 import { RemoteServerBroadcastEvents, RemoteServerDispatchEvents } from './remoteServer';
 import { DesktopSettingsDispatchEvents } from './settings';
 import { ShortcutDispatchEvents } from './shortcut';
@@ -18,14 +19,15 @@ export interface ClientDispatchEvents
   extends WindowsDispatchEvents,
     SystemDispatchEvents,
     MenuDispatchEvents,
-    LocalFilesDispatchEvents,
+    LocalSystemDispatchEvents,
     AutoUpdateDispatchEvents,
     ShortcutDispatchEvents,
     RemoteServerDispatchEvents,
     UploadFilesDispatchEvents,
     TrayDispatchEvents,
     DesktopSettingsDispatchEvents,
-    NotificationDispatchEvents {}
+    NotificationDispatchEvents,
+    ProtocolDispatchEvents {}
 
 export type ClientDispatchEventKey = keyof ClientDispatchEvents;
 
@@ -40,10 +42,13 @@ export type ClientEventReturnType<T extends ClientDispatchEventKey> = ReturnType
 export interface MainBroadcastEvents
   extends AutoUpdateBroadcastEvents,
     RemoteServerBroadcastEvents,
-    SystemBroadcastEvents {}
+    SystemBroadcastEvents,
+    ProtocolBroadcastEvents {}
 
 export type MainBroadcastEventKey = keyof MainBroadcastEvents;
 
 export type MainBroadcastParams<T extends MainBroadcastEventKey> = Parameters<
   MainBroadcastEvents[T]
 >[0];
+
+export type { OpenSettingsWindowOptions } from './windows';

@@ -1,6 +1,6 @@
 import { Form } from '@lobehub/ui';
 import type { FormItemProps } from '@lobehub/ui';
-import { Form as AntdForm, Switch } from 'antd';
+import { Form as AntdForm, Grid, Switch } from 'antd';
 import isEqual from 'fast-deep-equal';
 import Link from 'next/link';
 import { memo } from 'react';
@@ -11,8 +11,10 @@ import { agentChatConfigSelectors, agentSelectors } from '@/store/agent/selector
 import { aiModelSelectors, useAiInfraStore } from '@/store/aiInfra';
 
 import ContextCachingSwitch from './ContextCachingSwitch';
+import GPT5ReasoningEffortSlider from './GPT5ReasoningEffortSlider';
 import ReasoningEffortSlider from './ReasoningEffortSlider';
 import ReasoningTokenSlider from './ReasoningTokenSlider';
+import TextVerbositySlider from './TextVerbositySlider';
 import ThinkingBudgetSlider from './ThinkingBudgetSlider';
 import ThinkingSlider from './ThinkingSlider';
 
@@ -30,11 +32,21 @@ const ControlsForm = memo(() => {
 
   const modelExtendParams = useAiInfraStore(aiModelSelectors.modelExtendParams(model, provider));
 
+  const screens = Grid.useBreakpoint();
+  const isNarrow = !screens.sm;
+
+  const descWide = { display: 'inline-block', width: 300 } as const;
+  const descNarrow = {
+    display: 'block',
+    maxWidth: '100%',
+    whiteSpace: 'normal',
+  } as const;
+
   const items = [
     {
       children: <ContextCachingSwitch />,
       desc: (
-        <span style={{ display: 'inline-block', width: 300 }}>
+        <span style={isNarrow ? descNarrow : descWide}>
           <Trans i18nKey={'extendParams.disableContextCaching.desc'} ns={'chat'}>
             单条对话生成成本最高可降低 90%，响应速度提升 4 倍（
             <Link
@@ -48,13 +60,14 @@ const ControlsForm = memo(() => {
         </span>
       ),
       label: t('extendParams.disableContextCaching.title'),
+      layout: isNarrow ? 'vertical' : 'horizontal',
       minWidth: undefined,
       name: 'disableContextCaching',
     },
     {
       children: <Switch />,
       desc: (
-        <span style={{ display: 'inline-block', width: 300 }}>
+        <span style={isNarrow ? descNarrow : descWide}>
           <Trans i18nKey={'extendParams.enableReasoning.desc'} ns={'chat'}>
             基于 Claude Thinking 机制限制（
             <Link
@@ -70,11 +83,11 @@ const ControlsForm = memo(() => {
         </span>
       ),
       label: t('extendParams.enableReasoning.title'),
-      layout: 'horizontal',
+      layout: isNarrow ? 'vertical' : 'horizontal',
       minWidth: undefined,
       name: 'enableReasoning',
     },
-    enableReasoning && {
+    (enableReasoning || modelExtendParams?.includes('reasoningBudgetToken')) && {
       children: <ReasoningTokenSlider />,
       label: t('extendParams.reasoningBudgetToken.title'),
       layout: 'vertical',
@@ -96,15 +109,51 @@ const ControlsForm = memo(() => {
       },
     },
     {
+      children: <GPT5ReasoningEffortSlider />,
+      desc: 'reasoning_effort',
+      label: t('extendParams.reasoningEffort.title'),
+      layout: 'horizontal',
+      minWidth: undefined,
+      name: 'gpt5ReasoningEffort',
+      style: {
+        paddingBottom: 0,
+      },
+    },
+    {
+      children: <TextVerbositySlider />,
+      desc: 'text_verbosity',
+      label: t('extendParams.textVerbosity.title'),
+      layout: 'horizontal',
+      minWidth: undefined,
+      name: 'textVerbosity',
+      style: {
+        paddingBottom: 0,
+      },
+    },
+    {
       children: <ThinkingBudgetSlider />,
       label: t('extendParams.reasoningBudgetToken.title'),
       layout: 'vertical',
-      minWidth: 500,
+      minWidth: 460,
       name: 'thinkingBudget',
       style: {
         paddingBottom: 0,
       },
       tag: 'thinkingBudget',
+    },
+    {
+      children: <Switch />,
+      desc: isNarrow ? (
+        <span style={descNarrow}>{t('extendParams.urlContext.desc')}</span>
+      ) : (
+        t('extendParams.urlContext.desc')
+      ),
+      label: t('extendParams.urlContext.title'),
+      layout: isNarrow ? 'vertical' : 'horizontal',
+      minWidth: undefined,
+      name: 'urlContext',
+      style: isNarrow ? undefined : { width: 445 },
+      tag: 'urlContext',
     },
     {
       children: <ThinkingSlider />,

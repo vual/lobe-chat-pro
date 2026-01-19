@@ -1,8 +1,8 @@
+import { CreateMessageParams, UIChatMessage, UpdateMessageRAGParams } from '@lobechat/types';
 import { describe, expect, it, vi } from 'vitest';
 
 import { MessageModel } from '@/database/models/message';
 import { FileService } from '@/server/services/file';
-import { ChatMessage, CreateMessageParams } from '@/types/message';
 
 vi.mock('@/database/models/message', () => ({
   MessageModel: vi.fn(),
@@ -153,7 +153,7 @@ describe('messageRouter', () => {
       {
         id: 'msg1',
         meta: {},
-      } as ChatMessage,
+      } as UIChatMessage,
     ]);
     vi.mocked(MessageModel).mockImplementation(
       () =>
@@ -209,5 +209,34 @@ describe('messageRouter', () => {
 
     expect(mockUpdate).toHaveBeenCalledWith(input.id, input.value);
     expect(result).toEqual({ success: true });
+  });
+
+  it('should handle updateMessageRAG', async () => {
+    const mockUpdateRAG = vi.fn().mockResolvedValue(undefined);
+    vi.mocked(MessageModel).mockImplementation(
+      () =>
+        ({
+          updateMessageRAG: mockUpdateRAG,
+        }) as any,
+    );
+
+    const input = {
+      id: 'msg1',
+      value: { ragQueryId: 'q1', fileChunks: [{ id: 'c1', similarity: 0.9 }] },
+    } as {
+      id: string;
+      value: UpdateMessageRAGParams;
+    };
+
+    const ctx = {
+      messageModel: new MessageModel({} as any, 'user1'),
+    };
+
+    await ctx.messageModel.updateMessageRAG(input.id, input.value);
+
+    expect(mockUpdateRAG).toHaveBeenCalledWith('msg1', {
+      ragQueryId: 'q1',
+      fileChunks: [{ id: 'c1', similarity: 0.9 }],
+    });
   });
 });

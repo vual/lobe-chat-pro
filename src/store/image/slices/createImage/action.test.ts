@@ -54,6 +54,9 @@ describe('CreateImageAction', () => {
             provider: 'batch-provider',
             model: 'batch-model',
             config: { prompt: 'batch prompt' },
+            generations: [{}, {}, {}, {}], // 4 generations to match expected imageNum
+            createdAt: new Date(),
+            prompt: 'batch prompt',
           } as any,
         ],
       },
@@ -95,6 +98,9 @@ describe('CreateImageAction', () => {
 
       // Verify refresh was called
       expect(mockRefreshGenerationBatches).toHaveBeenCalled();
+
+      // Verify prompt is cleared after successful image creation
+      expect(result.current.parameters?.prompt).toBe('');
     });
 
     it('should create new topic when no active topic exists', async () => {
@@ -134,6 +140,9 @@ describe('CreateImageAction', () => {
         imageNum: 4,
         params: { prompt: 'test prompt', width: 1024, height: 1024 },
       });
+
+      // Verify prompt is cleared after successful image creation
+      expect(result.current.parameters?.prompt).toBe('');
     });
 
     it('should throw error when parameters is not initialized', async () => {
@@ -193,6 +202,9 @@ describe('CreateImageAction', () => {
 
       // The service should have been called before the error
       expect(mockImageService.createImage).toHaveBeenCalled();
+
+      // Verify prompt is NOT cleared when error occurs
+      expect(result.current.parameters?.prompt).toBe('test prompt');
     });
 
     it('should handle service error with new topic', async () => {
@@ -223,6 +235,37 @@ describe('CreateImageAction', () => {
       // Verify topic was created before the error
       expect(mockCreateGenerationTopic).toHaveBeenCalled();
       expect(mockSwitchGenerationTopic).toHaveBeenCalled();
+
+      // Verify prompt is NOT cleared when error occurs
+      expect(result.current.parameters?.prompt).toBe('test prompt');
+    });
+
+    it('should clear prompt input after successful image creation', async () => {
+      const mockRefreshGenerationBatches = vi.fn().mockResolvedValue(undefined);
+      const { result } = renderHook(() => useImageStore());
+
+      // Set initial prompt value
+      act(() => {
+        useImageStore.setState({
+          parameters: { prompt: 'detailed landscape artwork', width: 1024, height: 1024 },
+          refreshGenerationBatches: mockRefreshGenerationBatches,
+        });
+      });
+
+      // Verify initial prompt is set
+      expect(result.current.parameters?.prompt).toBe('detailed landscape artwork');
+
+      // Create image
+      await act(async () => {
+        await result.current.createImage();
+      });
+
+      // Verify prompt is cleared
+      expect(result.current.parameters?.prompt).toBe('');
+
+      // Verify other parameters remain unchanged
+      expect(result.current.parameters?.width).toBe(1024);
+      expect(result.current.parameters?.height).toBe(1024);
     });
   });
 
@@ -240,6 +283,10 @@ describe('CreateImageAction', () => {
         });
       });
 
+      // Get batch to verify imageNum uses batch.generations.length
+      const batch = result.current.generationBatchesMap['active-topic-id']?.[0];
+      const expectedImageNum = batch?.generations.length ?? 0;
+
       await act(async () => {
         await result.current.recreateImage('batch-id');
       });
@@ -250,12 +297,12 @@ describe('CreateImageAction', () => {
       // Verify batch removal
       expect(mockRemoveGenerationBatch).toHaveBeenCalledWith('batch-id', 'active-topic-id');
 
-      // Verify service call
+      // Verify service call uses batch.generations.length for imageNum
       expect(mockImageService.createImage).toHaveBeenCalledWith({
         generationTopicId: 'active-topic-id',
         provider: 'batch-provider',
         model: 'batch-model',
-        imageNum: 4,
+        imageNum: expectedImageNum,
         params: { prompt: 'batch prompt' },
       });
 

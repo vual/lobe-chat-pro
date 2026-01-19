@@ -69,7 +69,6 @@
   - 账号：annyun 密码：123456
 - **中转站特别版**: <https://client.annyun.cn/>
 
-
 ## 部署方式
 
 - ### 带后台管理版本（后台管理需要授权，添加微信：822784588）
@@ -91,7 +90,7 @@
     - AUTHORIZE_CODE = 授权码，加微信：822784588，授权绑定中转站域名
     - APP_URL = 应用链接，如：<https://client.annyun.cn>
     - APP_CUSTOM_NAME = 应用名称，如：LobeChatPro
-    - APP_CUSTOM_LOGO = 应用 LOGO，填https开头的图片地址
+    - APP_CUSTOM_LOGO = 应用 LOGO，填 https 开头的图片地址
     - NEXTAUTH_URL = 登录交互链接，填 APP_URL 的值，拼上 /api/auth， 例如：<https://client.annyun.cn/api/auth>
     - BACKEND_BASE_URL = 中转站地址，例如：<https://api.annyun.cn>
     - APP_CONFIG = 应用配置，配置登录相关参数，参数包含：
@@ -115,12 +114,13 @@
     -e KEY_VAULTS_SECRET='bed69c29a04b400fbc7bc3e2fa8d38dd' \
     registry.cn-hangzhou.aliyuncs.com/ann-chat/lobe-chat-pro:client
   ```
+
   - #### 无需登陆和注册的版本
     - 镜像标签是 nologin
     - AUTHORIZE_CODE = 授权码，加微信：822784588，授权绑定中转站域名
     - APP_URL = 应用链接，如：<https://client.annyun.cn>
     - APP_CUSTOM_NAME = 应用名称，如：LobeChatPro
-    - APP_CUSTOM_LOGO = 应用LOGO，填https开头的图片地址
+    - APP_CUSTOM_LOGO = 应用 LOGO，填 https 开头的图片地址
 
   ```shell
   docker run -d -p 3210:3210 \
@@ -154,11 +154,11 @@
 
 ## 其它说明
 
-- [其它说明](/Other.md)
+- [其它说明](./Other.md)
 
 ## 更多图片
 
-- [更多图片](/MoreImages.md)
+- [更多图片](./MoreImages.md)
 
 ## 交流
 

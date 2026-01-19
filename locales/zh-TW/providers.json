@@ -2,8 +2,17 @@
   "ai21": {
     "description": "AI21 Labs 為企業構建基礎模型和人工智慧系統，加速生成性人工智慧在生產中的應用。"
   },
+  "ai302": {
+    "description": "302.AI 是一個按需付費的 AI 應用平台，提供市面上最全的 AI API 和 AI 在線應用"
+  },
   "ai360": {
     "description": "360 AI 是 360 公司推出的 AI 模型和服務平台，提供多種先進的自然語言處理模型，包括 360GPT2 Pro、360GPT Pro、360GPT Turbo 和 360GPT Turbo Responsibility 8K。這些模型結合了大規模參數和多模態能力，廣泛應用於文本生成、語義理解、對話系統與代碼生成等領域。通過靈活的定價策略，360 AI 滿足多樣化用戶需求，支持開發者集成，推動智能化應用的革新和發展。"
+  },
+  "aihubmix": {
+    "description": "AiHubMix 透過統一的 API 介面提供對多種 AI 模型的存取。"
+  },
+  "akashchat": {
+    "description": "Akash 是一個無需許可的雲端資源市場，與傳統雲端供應商相比，其定價具有競爭力。"
   },
   "anthropic": {
     "description": "Anthropic 是一家專注於人工智慧研究和開發的公司，提供了一系列先進的語言模型，如 Claude 3.5 Sonnet、Claude 3 Sonnet、Claude 3 Opus 和 Claude 3 Haiku。這些模型在智能、速度和成本之間取得了理想的平衡，適用於從企業級工作負載到快速響應的各種應用場景。Claude 3.5 Sonnet 作為其最新模型，在多項評估中表現優異，同時保持了較高的性價比。"
@@ -20,11 +29,23 @@
   "bedrock": {
     "description": "Bedrock 是亞馬遜 AWS 提供的一項服務，專注於為企業提供先進的 AI 語言模型和視覺模型。其模型家族包括 Anthropic 的 Claude 系列、Meta 的 Llama 3.1 系列等，涵蓋從輕量級到高性能的多種選擇，支持文本生成、對話、圖像處理等多種任務，適用於不同規模和需求的企業應用。"
   },
+  "bfl": {
+    "description": "領先的尖端人工智慧研究實驗室，打造明日的視覺基礎建設。"
+  },
+  "cerebras": {
+    "description": "Cerebras 是一個基於其專用 CS-3 系統的 AI 推理平台，旨在提供全球最快、即時回應、高吞吐量的 LLM 服務，專為消除延遲並加速複雜的 AI 工作流程（如即時程式碼生成與代理任務）而設計。"
+  },
   "cloudflare": {
     "description": "在 Cloudflare 的全球網絡上運行由無伺服器 GPU 驅動的機器學習模型。"
   },
   "cohere": {
     "description": "Cohere 為您帶來最前沿的多語言模型、先進的檢索功能以及為現代企業量身定制的 AI 工作空間 — 一切都集成在一個安全的平台中。"
+  },
+  "cometapi": {
+    "description": "CometAPI 是一個提供多種前沿大型模型介面的服務平台，支援 OpenAI、Anthropic、Google 及更多，適合多樣化的開發和應用需求。使用者可根據自身需求靈活選擇最優的模型和價格，助力 AI 體驗的提升。"
+  },
+  "comfyui": {
+    "description": "強大的開源圖像、影片、音訊生成工作流程引擎，支援 SD、FLUX、Qwen、Hunyuan、WAN 等先進模型，提供節點化工作流程編輯與私有化部署能力"
   },
   "deepseek": {
     "description": "DeepSeek 是一家專注於人工智慧技術研究和應用的公司，其最新模型 DeepSeek-V2.5 融合了通用對話和代碼處理能力，並在人類偏好對齊、寫作任務和指令跟隨等方面實現了顯著提升。"
@@ -80,6 +101,12 @@
   "moonshot": {
     "description": "Moonshot 是由北京月之暗面科技有限公司推出的開源平台，提供多種自然語言處理模型，應用領域廣泛，包括但不限於內容創作、學術研究、智能推薦、醫療診斷等，支持長文本處理和複雜生成任務。"
   },
+  "nebius": {
+    "description": "Nebius 透過構建大規模GPU叢集及垂直整合的雲端平台，為全球AI創新者提供高效能基礎設施。"
+  },
+  "newapi": {
+    "description": "開源的多個 AI 服務聚合統一轉發平台"
+  },
   "novita": {
     "description": "Novita AI 是一個提供多種大語言模型與 AI 圖像生成的 API 服務的平台，靈活、可靠且具有成本效益。它支持 Llama3、Mistral 等最新的開源模型，並為生成式 AI 應用開發提供了全面、用戶友好且自動擴展的 API 解決方案，適合 AI 初創公司的快速發展。"
   },
@@ -88,6 +115,9 @@
   },
   "ollama": {
     "description": "Ollama 提供的模型廣泛涵蓋代碼生成、數學運算、多語種處理和對話互動等領域，支持企業級和本地化部署的多樣化需求。"
+  },
+  "ollamacloud": {
+    "description": "Ollama Cloud 提供官方託管的推理服務，開箱即用地存取 Ollama 模型庫，並支援 OpenAI 相容介面。"
   },
   "openai": {
     "description": "OpenAI 是全球領先的人工智慧研究機構，其開發的模型如 GPT 系列推動了自然語言處理的前沿。OpenAI 致力於透過創新和高效的 AI 解決方案改變多個行業。他們的產品具有顯著的性能和經濟性，廣泛用於研究、商業和創新應用。"
@@ -139,6 +169,9 @@
   },
   "v0": {
     "description": "v0 是一個配對程式設計助手，你只需用自然語言描述想法，它就能為你的專案生成程式碼和使用者介面（UI）"
+  },
+  "vercelaigateway": {
+    "description": "Vercel AI Gateway 提供統一的 API 來存取 100 多個模型，透過單一端點即可使用 OpenAI、Anthropic、Google 等多個供應商的模型。支援預算設定、使用監控、請求負載平衡和故障轉移。"
   },
   "vertexai": {
     "description": "Google 的 Gemini 系列是其最先進、通用的 AI 模型，由 Google DeepMind 打造，專為多模態設計，支持文本、程式碼、圖像、音訊和視頻的無縫理解與處理。適用於從數據中心到行動裝置的多種環境，極大提升了 AI 模型的效率與應用廣泛性。"

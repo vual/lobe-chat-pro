@@ -1,13 +1,14 @@
+import { ClientSecretPayload } from '@lobechat/types';
 import { User } from 'next-auth';
 import { NextRequest } from 'next/server';
 
-import { JWTPayload, LOBE_CHAT_AUTH_HEADER, enableClerk, enableNextAuth } from '@/const/auth';
+import { LOBE_CHAT_AUTH_HEADER, enableClerk, enableNextAuth } from '@/const/auth';
 import { ClerkAuth, IClerkAuth } from '@/libs/clerk-auth';
 
 export interface AuthContext {
   authorizationHeader?: string | null;
   clerkAuth?: IClerkAuth;
-  jwtPayload?: JWTPayload | null;
+  jwtPayload?: ClientSecretPayload | null;
   nextAuth?: User;
   userId?: string | null;
 }
@@ -53,9 +54,9 @@ export const createEdgeContext = async (request: NextRequest): Promise<EdgeConte
 
   if (enableNextAuth) {
     try {
-      const { default: NextAuthEdge } = await import('@/libs/next-auth/edge');
+      const { default: NextAuth } = await import('@/libs/next-auth');
 
-      const session = await NextAuthEdge.auth();
+      const session = await NextAuth.auth();
       if (session && session?.user?.id) {
         auth = session.user;
         userId = session.user.id;

@@ -2,8 +2,17 @@
   "ai21": {
     "description": "AI21 Labs constrói modelos fundamentais e sistemas de inteligência artificial para empresas, acelerando a aplicação da inteligência artificial generativa na produção."
   },
+  "ai302": {
+    "description": "302.AI é uma plataforma de aplicativos de IA sob demanda, que oferece a API de IA mais completa do mercado e aplicações de IA online"
+  },
   "ai360": {
     "description": "360 AI é a plataforma de modelos e serviços de IA lançada pela empresa 360, oferecendo uma variedade de modelos avançados de processamento de linguagem natural, incluindo 360GPT2 Pro, 360GPT Pro, 360GPT Turbo e 360GPT Turbo Responsibility 8K. Esses modelos combinam grandes parâmetros e capacidades multimodais, sendo amplamente aplicados em geração de texto, compreensão semântica, sistemas de diálogo e geração de código. Com uma estratégia de preços flexível, a 360 AI atende a diversas necessidades dos usuários, apoiando a integração de desenvolvedores e promovendo a inovação e o desenvolvimento de aplicações inteligentes."
+  },
+  "aihubmix": {
+    "description": "AiHubMix oferece acesso a diversos modelos de IA por meio de uma API unificada."
+  },
+  "akashchat": {
+    "description": "Akash é um mercado de recursos em nuvem sem necessidade de permissão, com preços competitivos em comparação aos provedores tradicionais de nuvem."
   },
   "anthropic": {
     "description": "A Anthropic é uma empresa focada em pesquisa e desenvolvimento de inteligência artificial, oferecendo uma gama de modelos de linguagem avançados, como Claude 3.5 Sonnet, Claude 3 Sonnet, Claude 3 Opus e Claude 3 Haiku. Esses modelos alcançam um equilíbrio ideal entre inteligência, velocidade e custo, adequando-se a uma variedade de cenários de aplicação, desde cargas de trabalho empresariais até respostas rápidas. O Claude 3.5 Sonnet, como seu modelo mais recente, se destacou em várias avaliações, mantendo uma alta relação custo-benefício."
@@ -20,11 +29,23 @@
   "bedrock": {
     "description": "Bedrock é um serviço oferecido pela Amazon AWS, focado em fornecer modelos de linguagem e visão de IA avançados para empresas. Sua família de modelos inclui a série Claude da Anthropic, a série Llama 3.1 da Meta, entre outros, abrangendo uma variedade de opções, desde modelos leves até de alto desempenho, suportando geração de texto, diálogos, processamento de imagens e outras tarefas, adequando-se a aplicações empresariais de diferentes escalas e necessidades."
   },
+  "bfl": {
+    "description": "Laboratório de pesquisa em inteligência artificial de ponta, construindo a infraestrutura visual do amanhã."
+  },
+  "cerebras": {
+    "description": "Cerebras é uma plataforma de inferência de IA baseada em seu sistema dedicado CS-3, projetada para oferecer o serviço de LLM mais rápido do mundo, com resposta em tempo real e alta taxa de transferência. Foi desenvolvida para eliminar a latência e acelerar fluxos de trabalho complexos de IA, como geração de código em tempo real e tarefas de agentes."
+  },
   "cloudflare": {
     "description": "Execute modelos de aprendizado de máquina impulsionados por GPU sem servidor na rede global da Cloudflare."
   },
   "cohere": {
     "description": "Cohere traz para você os modelos multilíngues mais avançados, funcionalidades de busca sofisticadas e um espaço de trabalho de IA personalizado para empresas modernas — tudo integrado em uma plataforma segura."
+  },
+  "cometapi": {
+    "description": "CometAPI é uma plataforma de serviços que oferece diversas interfaces de modelos avançados, suportando OpenAI, Anthropic, Google e muito mais, adequada para necessidades variadas de desenvolvimento e aplicação. Os usuários podem escolher de forma flexível o modelo e preço ideais conforme suas necessidades, promovendo uma melhor experiência com IA."
+  },
+  "comfyui": {
+    "description": "Um poderoso mecanismo de fluxo de trabalho de código aberto para geração de imagens, vídeos e áudios, compatível com modelos avançados como SD, FLUX, Qwen, Hunyuan, WAN, oferecendo edição de fluxo de trabalho baseada em nós e capacidade de implantação privada."
   },
   "deepseek": {
     "description": "A DeepSeek é uma empresa focada em pesquisa e aplicação de tecnologia de inteligência artificial, cujo modelo mais recente, DeepSeek-V2.5, combina capacidades de diálogo geral e processamento de código, alcançando melhorias significativas em alinhamento com preferências humanas, tarefas de escrita e seguimento de instruções."
@@ -80,6 +101,12 @@
   "moonshot": {
     "description": "Moonshot é uma plataforma de código aberto lançada pela Beijing Dark Side Technology Co., Ltd., oferecendo uma variedade de modelos de processamento de linguagem natural, com ampla gama de aplicações, incluindo, mas não se limitando a, criação de conteúdo, pesquisa acadêmica, recomendações inteligentes e diagnósticos médicos, suportando processamento de textos longos e tarefas de geração complexas."
   },
+  "nebius": {
+    "description": "Nebius oferece infraestrutura de alto desempenho para inovadores em IA ao redor do mundo, construindo grandes clusters de GPU e uma plataforma de nuvem verticalmente integrada."
+  },
+  "newapi": {
+    "description": "Plataforma de agregação e encaminhamento unificado de múltiplos serviços de IA de código aberto"
+  },
   "novita": {
     "description": "Novita AI é uma plataforma que oferece uma variedade de modelos de linguagem de grande escala e serviços de geração de imagens de IA, sendo flexível, confiável e econômica. Suporta os mais recentes modelos de código aberto, como Llama3 e Mistral, e fornece soluções de API abrangentes, amigáveis ao usuário e escaláveis para o desenvolvimento de aplicações de IA, adequadas para o rápido crescimento de startups de IA."
   },
@@ -88,6 +115,9 @@
   },
   "ollama": {
     "description": "Os modelos oferecidos pela Ollama abrangem amplamente áreas como geração de código, operações matemáticas, processamento multilíngue e interações de diálogo, atendendo a diversas necessidades de implantação em nível empresarial e local."
+  },
+  "ollamacloud": {
+    "description": "Ollama Cloud oferece um serviço de inferência hospedado oficialmente, com acesso imediato à biblioteca de modelos Ollama e suporte à interface compatível com OpenAI."
   },
   "openai": {
     "description": "OpenAI é uma das principais instituições de pesquisa em inteligência artificial do mundo, cujos modelos, como a série GPT, estão na vanguarda do processamento de linguagem natural. A OpenAI se dedica a transformar vários setores por meio de soluções de IA inovadoras e eficientes. Seus produtos apresentam desempenho e custo-benefício significativos, sendo amplamente utilizados em pesquisa, negócios e aplicações inovadoras."
@@ -139,6 +169,9 @@
   },
   "v0": {
     "description": "v0 é um assistente de programação em par; basta descrever suas ideias em linguagem natural, e ele gerará código e interface de usuário (UI) para o seu projeto"
+  },
+  "vercelaigateway": {
+    "description": "O Vercel AI Gateway oferece uma API unificada para acessar mais de 100 modelos, permitindo o uso de modelos de vários provedores como OpenAI, Anthropic, Google, entre outros, através de um único endpoint. Suporta configuração de orçamento, monitoramento de uso, balanceamento de carga de requisições e failover."
   },
   "vertexai": {
     "description": "A série Gemini do Google é seu modelo de IA mais avançado e versátil, desenvolvido pelo Google DeepMind, projetado para ser multimodal, suportando compreensão e processamento sem costura de texto, código, imagens, áudio e vídeo. Adequado para uma variedade de ambientes, desde data centers até dispositivos móveis, aumentando significativamente a eficiência e a aplicabilidade dos modelos de IA."

@@ -1,7 +1,7 @@
 import { checkAuth } from '@/app/(backend)/middleware/auth';
-import { getLLMConfig } from '@/config/llm';
-import { ChatCompletionErrorPayload } from '@/libs/model-runtime';
-import apiKeyManager from '@/server/modules/AgentRuntime/apiKeyManager';
+import { getLLMConfig } from '@/envs/llm';
+import { ChatCompletionErrorPayload } from '@lobechat/model-runtime';
+import apiKeyManager from '@/server/modules/ModelRuntime/apiKeyManager';
 import { ChatErrorType } from '@/types/fetch';
 import { createErrorResponse } from '@/utils/errorResponse';
 import { getTracePayload } from '@/utils/trace';

@@ -1,7 +1,8 @@
-import { JWTPayload } from '@/const/auth';
+import { LobeChatDatabase } from '@lobechat/database';
+import { ClientSecretPayload } from '@lobechat/types';
+
 import { AsyncTaskModel } from '@/database/models/asyncTask';
 import { FileModel } from '@/database/models/file';
-import { serverDB } from '@/database/server';
 import { ChunkContentParams, ContentChunk } from '@/server/modules/ContentChunk';
 import { createAsyncCaller } from '@/server/routers/async';
 import {
@@ -17,7 +18,7 @@ export class ChunkService {
   private fileModel: FileModel;
   private asyncTaskModel: AsyncTaskModel;
 
-  constructor(userId: string) {
+  constructor(serverDB: LobeChatDatabase, userId: string) {
     this.userId = userId;
 
     this.chunkClient = new ContentChunk();
@@ -30,7 +31,7 @@ export class ChunkService {
     return this.chunkClient.chunkContent(params);
   }
 
-  async asyncEmbeddingFileChunks(fileId: string, payload: JWTPayload) {
+  async asyncEmbeddingFileChunks(fileId: string, payload: ClientSecretPayload) {
     const result = await this.fileModel.findById(fileId);
 
     if (!result) return;
@@ -66,7 +67,7 @@ export class ChunkService {
   /**
    * parse file to chunks with async task
    */
-  async asyncParseFileToChunks(fileId: string, payload: JWTPayload, skipExist?: boolean) {
+  async asyncParseFileToChunks(fileId: string, payload: ClientSecretPayload, skipExist?: boolean) {
     const result = await this.fileModel.findById(fileId);
 
     if (!result) return;

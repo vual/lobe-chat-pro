@@ -26,7 +26,7 @@ beforeEach(async () => {
 
   // 创建测试数据
   await clientDB.transaction(async (tx) => {
-    await tx.insert(users).values({ id: userId });
+    await tx.insert(users).values({ id: userId }).onConflictDoNothing();
     await tx.insert(sessions).values({ id: sessionId, userId });
     await tx.insert(topics).values({ ...mockTopic, sessionId, userId });
   });
@@ -64,7 +64,7 @@ describe('TopicService', () => {
     // Example for getTopics
     it('should query topics with given parameters', async () => {
       // Setup
-      const queryParams = { sessionId };
+      const queryParams = { containerId: sessionId };
 
       // Execute
       const data = await topicService.getTopics(queryParams);

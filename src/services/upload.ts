@@ -1,15 +1,15 @@
+import { isDesktop, isServerMode } from '@lobechat/const';
+import { parseDataUri } from '@lobechat/model-runtime';
+import { uuid } from '@lobechat/utils';
 import dayjs from 'dayjs';
 import { sha256 } from 'js-sha256';
 
-import { fileEnv } from '@/config/file';
-import { isDesktop, isServerMode } from '@/const/version';
-import { parseDataUri } from '@/libs/model-runtime/utils/uriParser';
-import { edgeClient } from '@/libs/trpc/client';
+import { fileEnv } from '@/envs/file';
+import { lambdaClient } from '@/libs/trpc/client';
 import { API_ENDPOINTS } from '@/services/_url';
 import { clientS3Storage } from '@/services/file/ClientS3';
 import { FileMetadata, UploadBase64ToS3Result } from '@/types/files';
 import { FileUploadState, FileUploadStatus } from '@/types/files/upload';
-import { uuid } from '@/utils/uuid';
 
 export const UPLOAD_NETWORK_ERROR = 'NetWorkError';
 
@@ -84,7 +84,7 @@ class UploadService {
 
     // upload to client s3
     // 客户端上传逻辑
-    if (!skipCheckFileType && !file.type.startsWith('image')) {
+    if (!skipCheckFileType && !file.type.startsWith('image') && !file.type.startsWith('video')) {
       onNotSupported?.();
       return { data: undefined as unknown as FileMetadata, success: false };
     }
@@ -264,7 +264,7 @@ class UploadService {
     // 生成文件路径元数据
     const { date, dirname, filename, pathname } = generateFilePathMetadata(file.name, options);
 
-    const preSignUrl = await edgeClient.upload.createS3PreSignedUrl.mutate({ pathname });
+    const preSignUrl = await lambdaClient.upload.createS3PreSignedUrl.mutate({ pathname });
 
     return {
       date,

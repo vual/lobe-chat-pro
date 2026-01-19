@@ -51,34 +51,34 @@ exports[`settingsSelectors > currentSettings > should merge DEFAULT_SETTINGS and
 exports[`settingsSelectors > currentSystemAgent > should merge DEFAULT_SYSTEM_AGENT_CONFIG and s.settings.systemAgent correctly 1`] = `
 {
   "agentMeta": {
-    "model": "gpt-4.1-mini",
+    "model": "gpt-5-mini",
     "provider": "openai",
   },
   "enableAutoReply": true,
   "generationTopic": {
-    "model": "gpt-4.1-mini",
+    "model": "gpt-5-mini",
     "provider": "openai",
   },
   "historyCompress": {
-    "model": "gpt-4.1-mini",
+    "model": "gpt-5-mini",
     "provider": "openai",
   },
   "queryRewrite": {
     "enabled": true,
-    "model": "gpt-4.1-mini",
+    "model": "gpt-5-mini",
     "provider": "openai",
   },
   "replyMessage": "Custom auto reply",
   "thread": {
-    "model": "gpt-4.1-mini",
+    "model": "gpt-5-mini",
     "provider": "openai",
   },
   "topic": {
-    "model": "gpt-4.1-mini",
+    "model": "gpt-5-mini",
     "provider": "openai",
   },
   "translation": {
-    "model": "gpt-4.1-mini",
+    "model": "gpt-5-mini",
     "provider": "openai",
   },
 }
@@ -112,10 +112,11 @@ exports[`settingsSelectors > defaultAgent > should merge DEFAULT_AGENT and s.set
       "enableCompressHistory": true,
       "enableHistoryCount": true,
       "enableReasoning": false,
+      "enableStreaming": true,
       "historyCount": 20,
       "reasoningBudgetToken": 1024,
       "searchFCModel": {
-        "model": "gpt-4.1-mini",
+        "model": "gpt-5-mini",
         "provider": "openai",
       },
       "searchMode": "off",
@@ -156,10 +157,11 @@ exports[`settingsSelectors > defaultAgentConfig > should merge DEFAULT_AGENT_CON
     "enableCompressHistory": true,
     "enableHistoryCount": true,
     "enableReasoning": false,
+    "enableStreaming": true,
     "historyCount": 20,
     "reasoningBudgetToken": 1024,
     "searchFCModel": {
-      "model": "gpt-4.1-mini",
+      "model": "gpt-5-mini",
       "provider": "openai",
     },
     "searchMode": "off",

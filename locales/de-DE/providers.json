@@ -2,8 +2,17 @@
   "ai21": {
     "description": "AI21 Labs entwickelt Basis-Modelle und KI-Systeme für Unternehmen und beschleunigt die Anwendung generativer KI in der Produktion."
   },
+  "ai302": {
+    "description": "302.AI ist eine On-Demand-KI-Anwendungsplattform, die die umfassendsten KI-APIs und KI-Online-Anwendungen auf dem Markt bietet"
+  },
   "ai360": {
     "description": "360 AI ist die von der 360 Company eingeführte Plattform für KI-Modelle und -Dienste, die eine Vielzahl fortschrittlicher Modelle zur Verarbeitung natürlicher Sprache anbietet, darunter 360GPT2 Pro, 360GPT Pro, 360GPT Turbo und 360GPT Turbo Responsibility 8K. Diese Modelle kombinieren große Parameter mit multimodalen Fähigkeiten und finden breite Anwendung in den Bereichen Textgenerierung, semantisches Verständnis, Dialogsysteme und Codegenerierung. Durch flexible Preisstrategien erfüllt 360 AI die vielfältigen Bedürfnisse der Nutzer, unterstützt Entwickler bei der Integration und fördert die Innovation und Entwicklung intelligenter Anwendungen."
+  },
+  "aihubmix": {
+    "description": "AiHubMix bietet über eine einheitliche API-Schnittstelle Zugriff auf verschiedene KI-Modelle."
+  },
+  "akashchat": {
+    "description": "Akash ist ein genehmigungsfreier Cloud-Ressourcenmarkt, dessen Preisgestaltung im Vergleich zu herkömmlichen Cloud-Anbietern wettbewerbsfähig ist."
   },
   "anthropic": {
     "description": "Anthropic ist ein Unternehmen, das sich auf Forschung und Entwicklung im Bereich der künstlichen Intelligenz spezialisiert hat und eine Reihe fortschrittlicher Sprachmodelle anbietet, darunter Claude 3.5 Sonnet, Claude 3 Sonnet, Claude 3 Opus und Claude 3 Haiku. Diese Modelle erreichen ein ideales Gleichgewicht zwischen Intelligenz, Geschwindigkeit und Kosten und sind für eine Vielzahl von Anwendungsszenarien geeignet, von unternehmensweiten Arbeitslasten bis hin zu schnellen Reaktionen. Claude 3.5 Sonnet, als neuestes Modell, hat in mehreren Bewertungen hervorragend abgeschnitten und bietet gleichzeitig ein hohes Preis-Leistungs-Verhältnis."
@@ -20,11 +29,23 @@
   "bedrock": {
     "description": "Bedrock ist ein Service von Amazon AWS, der sich darauf konzentriert, Unternehmen fortschrittliche KI-Sprach- und visuelle Modelle bereitzustellen. Die Modellfamilie umfasst die Claude-Serie von Anthropic, die Llama 3.1-Serie von Meta und mehr, und bietet eine Vielzahl von Optionen von leichtgewichtig bis hochleistungsfähig, die Textgenerierung, Dialoge, Bildverarbeitung und andere Aufgaben unterstützen und für Unternehmensanwendungen unterschiedlicher Größen und Anforderungen geeignet sind."
   },
+  "bfl": {
+    "description": "Ein führendes, hochmodernes Forschungslabor für künstliche Intelligenz, das die visuelle Infrastruktur von morgen aufbaut."
+  },
+  "cerebras": {
+    "description": "Cerebras ist eine KI-Inferenzplattform, die auf dem spezialisierten CS-3-System basiert. Sie wurde entwickelt, um weltweit die schnellsten, in Echtzeit reagierenden und hochdurchsatzfähigen LLM-Dienste bereitzustellen. Ziel ist es, Latenzen zu eliminieren und komplexe KI-Workflows wie die Echtzeit-Codegenerierung und Agentenaufgaben zu beschleunigen."
+  },
   "cloudflare": {
     "description": "Führen Sie von serverlosen GPUs betriebene Machine-Learning-Modelle im globalen Netzwerk von Cloudflare aus."
   },
   "cohere": {
     "description": "Cohere bringt Ihnen die fortschrittlichsten mehrsprachigen Modelle, leistungsstarke Suchfunktionen und einen maßgeschneiderten KI-Arbeitsbereich für moderne Unternehmen – alles integriert in einer sicheren Plattform."
+  },
+  "cometapi": {
+    "description": "CometAPI ist eine Serviceplattform, die verschiedene fortschrittliche Schnittstellen für große Modelle anbietet und OpenAI, Anthropic, Google und weitere unterstützt. Sie eignet sich für vielfältige Entwicklungs- und Anwendungsanforderungen. Nutzer können je nach Bedarf das optimale Modell und den besten Preis flexibel auswählen, um das KI-Erlebnis zu verbessern."
+  },
+  "comfyui": {
+    "description": "Leistungsstarke Open-Source-Engine für die Erstellung von Bildern, Videos und Audiodateien. Unterstützt fortschrittliche Modelle wie SD, FLUX, Qwen, Hunyuan und WAN. Bietet eine node-basierte Workflow-Bearbeitung sowie Möglichkeiten zur privaten Bereitstellung."
   },
   "deepseek": {
     "description": "DeepSeek ist ein Unternehmen, das sich auf die Forschung und Anwendung von KI-Technologien spezialisiert hat. Ihr neuestes Modell, DeepSeek-V2.5, kombiniert allgemeine Dialog- und Codeverarbeitungsfähigkeiten und hat signifikante Fortschritte in den Bereichen menschliche Präferenzanpassung, Schreibaufgaben und Befehlsbefolgung erzielt."
@@ -80,6 +101,12 @@
   "moonshot": {
     "description": "Moonshot ist eine Open-Source-Plattform, die von Beijing Dark Side Technology Co., Ltd. eingeführt wurde und eine Vielzahl von Modellen zur Verarbeitung natürlicher Sprache anbietet, die in vielen Bereichen Anwendung finden, darunter, aber nicht beschränkt auf, Inhaltserstellung, akademische Forschung, intelligente Empfehlungen und medizinische Diagnosen, und unterstützt die Verarbeitung langer Texte und komplexer Generierungsaufgaben."
   },
+  "nebius": {
+    "description": "Nebius bietet globalen KI-Innovatoren durch den Aufbau großflächiger GPU-Cluster und einer vertikal integrierten Cloud-Plattform leistungsstarke Infrastruktur."
+  },
+  "newapi": {
+    "description": "Open-Source-Plattform zur einheitlichen Weiterleitung mehrerer KI-Dienste"
+  },
   "novita": {
     "description": "Novita AI ist eine Plattform, die eine Vielzahl von großen Sprachmodellen und API-Diensten für die KI-Bilderzeugung anbietet, die flexibel, zuverlässig und kosteneffektiv ist. Sie unterstützt die neuesten Open-Source-Modelle wie Llama3 und Mistral und bietet umfassende, benutzerfreundliche und automatisch skalierbare API-Lösungen für die Entwicklung generativer KI-Anwendungen, die für das schnelle Wachstum von KI-Startups geeignet sind."
   },
@@ -88,6 +115,9 @@
   },
   "ollama": {
     "description": "Die von Ollama angebotenen Modelle decken ein breites Spektrum ab, darunter Code-Generierung, mathematische Berechnungen, mehrsprachige Verarbeitung und dialogbasierte Interaktionen, und unterstützen die vielfältigen Anforderungen an unternehmensgerechte und lokal angepasste Bereitstellungen."
+  },
+  "ollamacloud": {
+    "description": "Ollama Cloud bietet offiziell gehostete Inferenzdienste, mit sofortigem Zugriff auf die Ollama-Modellbibliothek und Unterstützung für OpenAI-kompatible Schnittstellen."
   },
   "openai": {
     "description": "OpenAI ist eine weltweit führende Forschungsinstitution im Bereich der künstlichen Intelligenz, deren entwickelte Modelle wie die GPT-Serie die Grenzen der Verarbeitung natürlicher Sprache vorantreiben. OpenAI setzt sich dafür ein, durch innovative und effiziente KI-Lösungen verschiedene Branchen zu transformieren. Ihre Produkte zeichnen sich durch herausragende Leistung und Wirtschaftlichkeit aus und finden breite Anwendung in Forschung, Wirtschaft und innovativen Anwendungen."
@@ -139,6 +169,9 @@
   },
   "v0": {
     "description": "v0 ist ein Pair-Programming-Assistent, bei dem Sie Ihre Ideen einfach in natürlicher Sprache beschreiben können, und er generiert Code und Benutzeroberflächen (UI) für Ihr Projekt."
+  },
+  "vercelaigateway": {
+    "description": "Vercel AI Gateway bietet eine einheitliche API zum Zugriff auf über 100 Modelle und ermöglicht die Nutzung von Modellen verschiedener Anbieter wie OpenAI, Anthropic und Google über einen einzigen Endpunkt. Unterstützt Budgeteinstellungen, Nutzungsüberwachung, Lastenausgleich und Failover."
   },
   "vertexai": {
     "description": "Die Gemini-Serie von Google ist das fortschrittlichste, universelle KI-Modell, das von Google DeepMind entwickelt wurde. Es ist speziell für multimodale Anwendungen konzipiert und unterstützt das nahtlose Verständnis und die Verarbeitung von Text, Code, Bildern, Audio und Video. Es eignet sich für eine Vielzahl von Umgebungen, von Rechenzentren bis hin zu mobilen Geräten, und verbessert erheblich die Effizienz und Anwendbarkeit von KI-Modellen."

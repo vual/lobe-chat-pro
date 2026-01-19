@@ -5,6 +5,9 @@
       "lock": "Vergrendel beeldverhouding",
       "unlock": "Ontgrendel beeldverhouding"
     },
+    "cfg": {
+      "label": "Leidende intensiteit"
+    },
     "header": {
       "desc": "Eenvoudige beschrijving, direct creëren",
       "title": "Schilderen"
@@ -26,6 +29,13 @@
     },
     "prompt": {
       "placeholder": "Beschrijf wat je wilt genereren"
+    },
+    "quality": {
+      "label": "Beeldkwaliteit",
+      "options": {
+        "hd": "Hoge resolutie",
+        "standard": "Standaard"
+      }
     },
     "seed": {
       "label": "Zaad",

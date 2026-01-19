@@ -1,12 +1,10 @@
+import { CURRENT_VERSION, isDesktop } from '@lobechat/const';
+import { ChatToolPayload, CheckMcpInstallResult, CustomPluginMetadata } from '@lobechat/types';
+import { isLocalOrPrivateUrl, safeParseJSON } from '@lobechat/utils';
 import { PluginManifest } from '@lobehub/market-sdk';
 import { CallReportRequest } from '@lobehub/market-types';
 
-import { CURRENT_VERSION, isDesktop } from '@/const/version';
 import { desktopClient, toolsClient } from '@/libs/trpc/client';
-import { ChatToolPayload } from '@/types/message';
-import { CheckMcpInstallResult } from '@/types/plugins';
-import { CustomPluginMetadata } from '@/types/tool/plugin';
-import { safeParseJSON } from '@/utils/safeParseJSON';
 
 import { discoverService } from './discover';
 
@@ -45,7 +43,7 @@ class MCPService {
 
     const data = {
       args,
-      env: plugin.settings,
+      env: plugin.settings || plugin.customParams?.mcp?.env,
       params: { ...plugin.customParams?.mcp, name: identifier } as any,
       toolName: apiName,
     };
@@ -103,7 +101,6 @@ class MCPService {
         errorCode,
         errorMessage,
         identifier,
-        inputParams,
         isCustomPlugin,
         metadata: {
           appVersion: CURRENT_VERSION,
@@ -112,7 +109,6 @@ class MCPService {
         },
         methodName: apiName,
         methodType: 'tool' as const,
-        outputResult: success ? result : undefined,
         requestSizeBytes,
         responseSizeBytes,
         sessionId: topicId,
@@ -141,6 +137,13 @@ class MCPService {
     },
     signal?: AbortSignal,
   ) {
+    // 如果是 Desktop 模式且 URL 是本地地址，使用 desktopClient
+    // 这样可以避免在生产环境中通过远程服务器访问用户本地服务
+    if (isDesktop && isLocalOrPrivateUrl(params.url)) {
+      return desktopClient.mcp.getStreamableMcpServerManifest.query(params, { signal });
+    }
+
+    // 否则使用 toolsClient（通过服务器中转）
     return toolsClient.mcp.getStreamableMcpServerManifest.query(params, { signal });
   }
 

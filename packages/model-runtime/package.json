@@ -1,0 +1,24 @@
+{
+  "name": "@lobechat/model-runtime",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./vertexai": "./src/providers/vertexai/index.ts"
+  },
+  "scripts": {
+    "test": "vitest",
+    "test:coverage": "vitest --coverage --silent='passed-only'",
+    "test:update": "vitest -u"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.862.0",
+    "@huggingface/inference": "^4.11.3",
+    "@lobechat/const": "workspace:*",
+    "@lobechat/types": "workspace:*",
+    "@lobechat/utils": "workspace:*",
+    "debug": "^4.4.1",
+    "model-bank": "workspace:*",
+    "openai": "^4.104.0"
+  }
+}

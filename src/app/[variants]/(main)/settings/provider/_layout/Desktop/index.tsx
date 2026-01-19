@@ -1,20 +1,26 @@
 import { PropsWithChildren } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import NProgress from '@/components/NProgress';
-
 import ProviderMenu from '../../ProviderMenu';
 import Container from './Container';
 
-const Layout = ({ children }: PropsWithChildren) => {
+const Layout = ({
+  children,
+  onProviderSelect,
+}: PropsWithChildren & {
+  onProviderSelect: (providerKey: string) => void;
+}) => {
   return (
-    <>
-      <NProgress />
-      <Flexbox horizontal width={'100%'}>
-        <ProviderMenu />
-        <Container>{children}</Container>
-      </Flexbox>
-    </>
+    <Flexbox
+      horizontal
+      style={{
+        maxHeight: '100vh',
+      }}
+      width={'100%'}
+    >
+      <ProviderMenu mobile={false} onProviderSelect={onProviderSelect} />
+      <Container>{children}</Container>
+    </Flexbox>
   );
 };
 export default Layout;

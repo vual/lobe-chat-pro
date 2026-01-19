@@ -2,9 +2,10 @@
   "ModelSwitch": {
     "title": "Model Değiştir"
   },
+  "active": "Aktif",
   "agentDefaultMessage": "Merhaba, ben **{{name}}**. Hemen benimle konuşmaya başlayabilir veya [Asistan Ayarları]({{url}}) sayfasına giderek bilgilerimi güncelleyebilirsin.",
-  "agentDefaultMessageWithSystemRole": "Merhaba, Ben **{{name}}**, {{systemRole}}. Hemen sohbet etmeye başlayalım!",
-  "agentDefaultMessageWithoutEdit": "Merhaba, ben **{{name}}**. Konuşmaya başlayalım!",
+  "agentDefaultMessageWithSystemRole": "Merhaba, ben **{{name}}**. Size nasıl yardımcı olabilirim?",
+  "agentDefaultMessageWithoutEdit": "Merhaba, ben **{{name}}**. Size nasıl yardımcı olabilirim?",
   "agents": "Asistan",
   "artifact": {
     "generating": "Üretiliyor",
@@ -13,17 +14,28 @@
     "thought": "Düşünce Süreci",
     "unknownTitle": "İsimsiz Eser"
   },
+  "availableAgents": "Kullanılabilir asistanlar",
   "backToBottom": "En alta git",
   "chatList": {
     "longMessageDetail": "Detayları görüntüle"
   },
   "clearCurrentMessages": "Mevcut oturum mesajlarını temizle",
   "confirmClearCurrentMessages": "Mevcut oturum mesajlarını temizlemek üzeresiniz. Temizlendikten sonra geri alınamazlar. Lütfen eyleminizi onaylayın.",
+  "confirmRemoveChatGroupItemAlert": "Bu Agent ekibi silinmek üzere, ancak ekip üyeleri etkilenmeyecek. Lütfen işleminizi onaylayın.",
+  "confirmRemoveGroupItemAlert": "Bu grubu silmek üzeresiniz; silindikten sonra bu gruba ait asistanlar varsayılan listeye taşınacaktır. Lütfen işlemi onaylayın.",
+  "confirmRemoveGroupSuccess": "Temsilci ekibi başarıyla silindi",
   "confirmRemoveSessionItemAlert": "Bu asistanı silmek üzeresiniz. Silindikten sonra geri alınamaz. Lütfen eyleminizi onaylayın.",
   "confirmRemoveSessionSuccess": "Oturum başarıyla kaldırıldı",
   "defaultAgent": "Varsayılan Asistan",
+  "defaultGroupChat": "Temsilci Ekibi",
   "defaultList": "Varsayılan Liste",
   "defaultSession": "Varsayılan Asistan",
+  "dm": {
+    "placeholder": "{{agentTitle}} ile olan özel mesajlarınız burada gösterilecek.",
+    "tooltip": "Özel mesaj gönder",
+    "visibleTo": "Yalnızca {{target}} tarafından görülebilir",
+    "you": "sen"
+  },
   "duplicateSession": {
     "loading": "Kopyalanıyor...",
     "success": "Kopyalama başarılı",
@@ -46,16 +58,68 @@
     "reasoningEffort": {
       "title": "Akıl Yürütme Gücü"
     },
+    "textVerbosity": {
+      "title": "Çıktı metninin ayrıntı düzeyi"
+    },
     "thinking": {
       "title": "Derin Düşünme Anahtarı"
     },
-    "title": "Model Genişletme Özellikleri"
+    "title": "Model Genişletme Özellikleri",
+    "urlContext": {
+      "desc": "Etkinleştirildiğinde, gerçek web sayfası bağlam içeriğini almak için web bağlantıları otomatik olarak çözümlenir",
+      "title": "Web Bağlantısı İçeriğini Çıkar"
+    }
   },
+  "group": {
+    "desc": "Birden fazla yapay zeka asistanıyla paylaşılan bir sohbet alanında işbirliği yapın.",
+    "memberTooltip": "Bu grupta {{count}} üye var",
+    "orchestratorThinking": "Yönetici düşünüyor...",
+    "removeMember": "Üyeyi Kaldır",
+    "title": "Grup"
+  },
+  "groupDescription": "Ekip Açıklaması",
+  "groupSidebar": {
+    "members": {
+      "addMember": "Üye Ekle",
+      "memberSettings": "Üye Ayarları",
+      "orchestrator": "Yönetici",
+      "orchestratorThinking": "Yönetici düşünüyor...",
+      "removeMember": "Üyeyi Kaldır",
+      "stopOrchestrator": "Düşünmeyi Durdur",
+      "triggerOrchestrator": "Grup Sohbetini Başlat"
+    },
+    "tabs": {
+      "host": "Sunucu",
+      "members": "Üyeler",
+      "role": "Ayarla"
+    }
+  },
+  "groupWizard": {
+    "chooseMembers": "Mevcut asistanları seçin...",
+    "createGroup": "Grup Oluştur",
+    "existingMembers": "Mevcut Agent'lar",
+    "groupMembers": "Bu asistanlar listenize de eklenecek",
+    "host": {
+      "description": "Ekibin kendi kendine çalışmasını sağlar",
+      "title": "Sunucuyu Etkinleştir",
+      "tooltip": "Eğer ekip sunucusu devre dışı bırakılırsa, üyelerin yanıt vermesi için onları manuel olarak @ ile etiketlemeniz gerekir"
+    },
+    "memberCount": "{{count}} üye",
+    "noMatchingTemplates": "Eşleşen şablon yok",
+    "noSelectedTemplates": "Şablon seçilmedi",
+    "noTemplateMembers": "Şablonda üye yok",
+    "noTemplates": "Kullanılabilir şablon yok",
+    "searchTemplates": "Şablonlarda ara...",
+    "title": "Temsilci Ekibi Oluştur",
+    "useTemplate": "Şablon Kullan"
+  },
+  "hideForYou": "Özel mesaj içeriği gizlendi, görüntülemek için ayarlardan 【Özel Mesaj İçeriğini Göster】 seçeneğini açın",
   "history": {
     "title": "Asistan yalnızca son {{count}} mesajı hatırlayacak"
   },
   "historyRange": "Geçmiş Aralığı",
   "historySummary": "Tarihsel haber özeti",
+  "inactive": "Etkin değil",
   "inbox": {
     "desc": "Beyin fırtınasını başlatın ve yaratıcı düşünmeye başlayın. Sanal asistanınız burada, her konuda sizinle iletişim kurmak için hazır.",
     "title": "Sohbet Et"
@@ -63,16 +127,20 @@
   "input": {
     "addAi": "Bir AI mesajı ekleyin",
     "addUser": "Bir kullanıcı mesajı ekleyin",
+    "disclaimer": "Yapay zeka da hata yapabilir, lütfen önemli bilgileri kontrol edin",
+    "errorMsg": "Mesaj gönderilemedi, lütfen ağı kontrol edip tekrar deneyin: {{errorMsg}}",
     "more": "Daha fazla",
     "send": "Gönder",
-    "sendWithCmdEnter": "{{meta}} + Enter tuşuna basarak gönder",
-    "sendWithEnter": "Enter tuşuna basarak gönder",
+    "sendWithCmdEnter": "<key/> tuşuna basarak gönder",
+    "sendWithEnter": "<key/> tuşuna basarak gönder",
     "stop": "Dur",
-    "warp": "Satır atla"
+    "warp": "Satır atla",
+    "warpWithKey": "<key/> tuşuna basarak satır sonu yap"
   },
   "intentUnderstanding": {
     "title": "Niyetinizi anlama ve analiz etme aşamasındayız..."
   },
+  "inviteMembers": "Üyeleri davet et",
   "knowledgeBase": {
     "all": "Tüm İçerik",
     "allFiles": "Tüm Dosyalar",
@@ -91,12 +159,29 @@
     "uploadGuide": "Yüklenen dosyaları 'Bilgi Tabanı' içinde görebilirsiniz.",
     "viewMore": "Daha Fazla Gör"
   },
+  "memberSelection": {
+    "addMember": "Üye Ekle",
+    "allMembers": "Tüm üyeler",
+    "createGroup": "Agent Ekibi Oluştur",
+    "noAvailableAgents": "Davet edilebilecek bir Agent yok",
+    "noSelectedAgents": "Henüz bir Agent seçilmedi",
+    "searchAgents": "Agent ara...",
+    "setInitialMembers": "Ekip üyelerini seç"
+  },
+  "members": "Üyeler",
+  "mention": {
+    "title": "Üyeleri Etiketle"
+  },
   "messageAction": {
     "delAndRegenerate": "Sil ve Yeniden Oluştur",
     "deleteDisabledByThreads": "Alt konular mevcut, silinemez",
     "regenerate": "Yeniden Oluştur"
   },
   "messages": {
+    "dm": {
+      "sentTo": "Sadece {{name}} tarafından görülebilir",
+      "title": "Özel Mesaj"
+    },
     "modelCard": {
       "credit": "Kredi",
       "creditPricing": "Fiyatlandırma",
@@ -122,6 +207,7 @@
       "inputWriteCached": "Giriş önbelleği yazma",
       "output": "Çıkış",
       "outputAudio": "Ses çıkışı",
+      "outputImage": "Görüntü Çıktısı",
       "outputText": "Metin çıkışı",
       "outputTitle": "Çıkış detayları",
       "reasoning": "Derin düşünme",
@@ -139,7 +225,21 @@
       "total": "Toplam tüketim"
     }
   },
+  "minimap": {
+    "jumpToMessage": "{{index}} numaralı mesaja atla",
+    "nextMessage": "Sonraki mesaj",
+    "previousMessage": "Önceki mesaj",
+    "senderAssistant": "Agent",
+    "senderUser": "Sen"
+  },
   "newAgent": "Yeni Asistan",
+  "newGroupChat": "Yeni Temsilci Ekibi",
+  "noAgentsYet": "Bu temsilci ekibinde henüz üye yok. Asistan davet etmek için + düğmesine tıklayın.",
+  "noAvailableAgents": "Davet edilebilecek üye yok",
+  "noMatchingAgents": "Eşleşen üye bulunamadı",
+  "noMembersYet": "Bu grupta henüz üye yok. Asistanı davet etmek için + düğmesine tıklayın.",
+  "noSelectedAgents": "Henüz üye seçilmedi",
+  "owner": "Grup sahibi",
   "pin": "Pin",
   "pinOff": "Unpin",
   "rag": {
@@ -180,12 +280,16 @@
     "title": "Ağ Araması"
   },
   "searchAgentPlaceholder": "Arama Asistanı...",
+  "searchAgents": "Arama asistanı...",
+  "selectedAgents": "Seçili Asistanlar",
   "sendPlaceholder": "Mesajınızı buraya yazın...",
   "sessionGroup": {
     "config": "Grup Yönetimi",
     "confirmRemoveGroupAlert": "Bu grup silinecek, silindikten sonra bu grubun yardımcıları varsayılan listeye taşınacak, işleminizi onaylıyor musunuz?",
     "createAgentSuccess": "Yardımcı oluşturuldu",
     "createGroup": "Yeni Grup Ekle",
+    "createGroupFailed": "Grup sohbeti oluşturulamadı",
+    "createGroupSuccess": "Grup sohbeti başarıyla oluşturuldu",
     "createSuccess": "Oluşturma Başarılı",
     "creatingAgent": "Yardımcı oluşturuluyor...",
     "inputPlaceholder": "Grup adını girin...",
@@ -200,11 +304,24 @@
   "shareModal": {
     "copy": "Kopyala",
     "download": "Ekran Görüntüsünü İndir",
+    "downloadError": "İndirme Başarısız",
     "downloadFile": "Dosyayı İndir",
+    "downloadPdf": "PDF İndir",
+    "downloadSuccess": "İndirme Başarılı",
+    "exportPdf": "PDF Olarak Dışa Aktar",
     "exportTitle": "Varsayılan Başlık",
+    "generatePdf": "PDF Oluştur",
+    "generatingPdf": "PDF Oluşturuluyor...",
     "imageType": "Format",
     "includeTool": "Eklenti mesajını dahil et",
     "includeUser": "Kullanıcı mesajını dahil et",
+    "loadingPdf": "PDF Yükleniyor...",
+    "noPdfData": "PDF Verisi Yok",
+    "pdf": "PDF",
+    "pdfErrorDescription": "PDF oluşturulurken bir hata oluştu, lütfen tekrar deneyin",
+    "pdfGenerationError": "PDF oluşturma başarısız oldu",
+    "pdfReady": "PDF Hazır",
+    "regeneratePdf": "PDF'yi Yeniden Oluştur",
     "screenshot": "Ekran Görüntüsü",
     "settings": "Ayarlar",
     "text": "Metin",
@@ -219,15 +336,26 @@
     "loading": "Tanımlanıyor...",
     "prettifying": "İyileştiriliyor..."
   },
+  "supervisor": {
+    "todoList": {
+      "allComplete": "Tüm görevler tamamlandı",
+      "title": "Görevler tamamlandı"
+    }
+  },
   "thread": {
     "divider": "Alt konu",
     "threadMessageCount": "{{messageCount}} mesaj",
     "title": "Alt konu"
   },
+  "toggleWideScreen": {
+    "off": "Geniş ekran modunu kapat",
+    "on": "Geniş ekran modunu aç"
+  },
   "tokenDetails": {
     "chats": "Sohbetler",
     "historySummary": "Tarih Özeti",
     "rest": "Kalan",
+    "supervisor": "Grup Yöneticisi",
     "systemRole": "Sistem Rolü",
     "title": "Bağlam Detayları",
     "tools": "Araçlar",
@@ -253,6 +381,7 @@
     "action": "Text-to-Speech",
     "clear": "Clear Speech"
   },
+  "untitledAgent": "Adsız Asistan",
   "updateAgent": "Asistan Bilgilerini Güncelle",
   "upload": {
     "action": {
@@ -265,7 +394,9 @@
     "clientMode": {
       "actionFiletip": "Dosya Yükle",
       "actionTooltip": "Yükle",
-      "disabled": "Mevcut model görsel tanımayı ve dosya analizini desteklemiyor, lütfen modeli değiştirin ve tekrar deneyin"
+      "disabled": "Mevcut model görsel tanımayı ve dosya analizini desteklemiyor, lütfen modeli değiştirin ve tekrar deneyin",
+      "fileNotSupported": "Tarayıcı modunda dosya yükleme desteklenmiyor, sadece resimler desteklenmektedir",
+      "visionNotSupported": "Seçili model görsel tanımayı desteklemiyor, lütfen başka bir modele geçiş yaparak kullanın"
     },
     "preview": {
       "prepareTasks": "Parçaları Hazırlıyor...",
@@ -273,7 +404,11 @@
         "pending": "Yüklemeye Hazırlanıyor...",
         "processing": "Dosya İşleniyor..."
       }
+    },
+    "validation": {
+      "videoSizeExceeded": "Video dosyası boyutu 20MB'ı geçemez, mevcut dosya boyutu {{actualSize}}"
     }
   },
+  "you": "sen",
   "zenMode": "Odak Modu"
 }

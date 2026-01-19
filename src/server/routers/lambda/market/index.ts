@@ -173,20 +173,6 @@ export const marketRouter = router({
       }
     }),
 
-  getMcpIdentifiers: marketProcedure.query(async ({ ctx }) => {
-    log('getMcpIdentifiers called');
-
-    try {
-      return await ctx.discoverService.getMcpIdentifiers();
-    } catch (error) {
-      log('Error fetching mcp identifiers: %O', error);
-      throw new TRPCError({
-        code: 'INTERNAL_SERVER_ERROR',
-        message: 'Failed to fetch mcp identifiers',
-      });
-    }
-  }),
-
   getMcpList: marketProcedure
     .input(
       z
@@ -554,17 +540,14 @@ export const marketRouter = router({
       z.object({
         callDurationMs: z.number(),
         clientId: z.string().optional(),
-        clientIp: z.string().optional(),
         customPluginInfo: z.any().optional(),
         errorCode: z.string().optional(),
         errorMessage: z.string().optional(),
         identifier: z.string(),
-        inputParams: z.any().optional(),
         isCustomPlugin: z.boolean().optional(),
         metadata: z.record(z.any()).optional(),
         methodName: z.string(),
         methodType: z.enum(['tool', 'prompt', 'resource']),
-        outputResult: z.any().optional(),
         platform: z.string().optional(),
         requestSizeBytes: z.number().optional(),
         responseSizeBytes: z.number().optional(),

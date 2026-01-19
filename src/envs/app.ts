@@ -32,7 +32,6 @@ export const getAppConfig = () => {
 
   return createEnv({
     client: {
-      NEXT_PUBLIC_BASE_PATH: z.string(),
       NEXT_PUBLIC_ENABLE_SENTRY: z.boolean(),
     },
     server: {
@@ -57,10 +56,9 @@ export const getAppConfig = () => {
 
       SSRF_ALLOW_PRIVATE_IP_ADDRESS: z.boolean().optional(),
       SSRF_ALLOW_IP_ADDRESS_LIST: z.string().optional(),
+      MARKET_BASE_URL: z.string().optional(),
     },
     runtimeEnv: {
-      NEXT_PUBLIC_BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH || '',
-
       // Sentry
       NEXT_PUBLIC_ENABLE_SENTRY: !!process.env.NEXT_PUBLIC_SENTRY_DSN,
 
@@ -91,6 +89,7 @@ export const getAppConfig = () => {
 
       SSRF_ALLOW_PRIVATE_IP_ADDRESS: process.env.SSRF_ALLOW_PRIVATE_IP_ADDRESS === '1',
       SSRF_ALLOW_IP_ADDRESS_LIST: process.env.SSRF_ALLOW_IP_ADDRESS_LIST,
+      MARKET_BASE_URL: process.env.MARKET_BASE_URL,
     },
   });
 };

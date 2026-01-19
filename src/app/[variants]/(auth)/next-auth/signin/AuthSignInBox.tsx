@@ -1,18 +1,18 @@
 'use client';
 
+import { BRANDING_NAME, DOCUMENTS_REFER_URL, PRIVACY_URL, TERMS_URL } from '@lobechat/const';
 import { Button, Text } from '@lobehub/ui';
-import { LobeChat } from '@lobehub/ui/brand';
+import { LobeHub } from '@lobehub/ui/brand';
 import { Col, Flex, Row, Skeleton } from 'antd';
 import { createStyles } from 'antd-style';
 import { AuthError } from 'next-auth';
 import { signIn } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import BrandWatermark from '@/components/BrandWatermark';
 import AuthIcons from '@/components/NextAuth/AuthIcons';
-import { DOCUMENTS_REFER_URL, PRIVACY_URL, TERMS_URL } from '@/const/url';
 import { useUserStore } from '@/store/user';
 
 const useStyles = createStyles(({ css, token }) => ({
@@ -70,6 +70,7 @@ export default memo(() => {
   const { styles } = useStyles();
   const { t } = useTranslation('clerk');
   const router = useRouter();
+  const [loadingProvider, setLoadingProvider] = useState<string | null>(null);
 
   const oAuthSSOProviders = useUserStore((s) => s.oAuthSSOProviders);
 
@@ -79,9 +80,11 @@ export default memo(() => {
   const callbackUrl = searchParams.get('callbackUrl') ?? '/';
 
   const handleSignIn = async (provider: string) => {
+    setLoadingProvider(provider);
     try {
       await signIn(provider, { redirectTo: callbackUrl });
     } catch (error) {
+      setLoadingProvider(null);
       // Signin can fail for a number of reasons, such as the user
       // not existing, or the user not having the correct role.
       // In some cases, you may want to redirect to a custom error
@@ -111,9 +114,9 @@ export default memo(() => {
           <div className={styles.text}>
             <Text as={'h4'} className={styles.title}>
               <div>
-                <LobeChat size={48} />
+                <LobeHub size={48} />
               </div>
-              {t('signIn.start.title', { applicationName: 'LobeChat' })}
+              {t('signIn.start.title', { applicationName: BRANDING_NAME })}
             </Text>
             <Text as={'p'} className={styles.description}>
               {t('signIn.start.subtitle')}
@@ -127,6 +130,7 @@ export default memo(() => {
                   className={styles.button}
                   icon={AuthIcons(provider, 16)}
                   key={provider}
+                  loading={loadingProvider === provider}
                   onClick={() => handleSignIn(provider)}
                 >
                   {provider}

@@ -1,4 +1,9 @@
 {
+  "ArgsInput": {
+    "addArgument": "Parametre ekle",
+    "argumentPlaceholder": "Parametre {{index}}",
+    "enterFirstArgument": "İlk parametreyi girin..."
+  },
   "DragUpload": {
     "dragDesc": "Dosyaları buraya sürükleyin, birden fazla resim yüklemeyi destekler.",
     "dragFileDesc": "Resimleri ve dosyaları buraya sürükleyin, birden fazla resim ve dosya yüklemeyi destekler.",
@@ -45,6 +50,10 @@
     "total": {
       "fileCount": "Toplam {{count}} öğe",
       "selectedCount": "Seçilen {{count}} öğe"
+    },
+    "view": {
+      "list": "Liste Görünümü",
+      "masonry": "Karo Görünümü"
     }
   },
   "FileParsingStatus": {
@@ -67,6 +76,18 @@
   },
   "GoBack": {
     "back": "Geri dön"
+  },
+  "HtmlPreview": {
+    "actions": {
+      "download": "İndir",
+      "preview": "Önizleme"
+    },
+    "iframeTitle": "HTML Önizlemesi",
+    "mode": {
+      "code": "Kod",
+      "preview": "Önizleme"
+    },
+    "title": "HTML Önizlemesi"
   },
   "ImageUpload": {
     "actions": {
@@ -97,6 +118,7 @@
       "reasoning": "Bu model derin düşünmeyi destekler",
       "search": "Bu model çevrimiçi aramayı destekler",
       "tokens": "Bu model tek bir oturumda en fazla {{tokens}} Token destekler",
+      "video": "Bu model video tanımayı destekler",
       "vision": "Bu model görüntü tanımıyı destekler"
     },
     "removed": "Bu model listeden çıkarıldı, seçiminizi kaldırırsanız otomatik olarak kaldırılacaktır"
@@ -125,6 +147,12 @@
     },
     "progress": {
       "uploadingWithCount": "{{completed}}/{{total}} yüklendi"
+    },
+    "validation": {
+      "fileSizeExceeded": "Dosya boyutu sınırı aşıldı",
+      "fileSizeExceededDetail": "{{fileName}} ({{actualSize}}) maksimum boyut sınırı olan {{maxSize}}'yi aşıyor",
+      "fileSizeExceededMultiple": "{{count}} dosya, maksimum boyut sınırı olan {{maxSize}}'yi aşıyor: {{fileList}}",
+      "imageCountExceeded": "Resim sayısı sınırı aşıldı"
     }
   },
   "OllamaSetupGuide": {

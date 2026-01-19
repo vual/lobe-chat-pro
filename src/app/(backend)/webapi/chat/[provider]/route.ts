@@ -1,27 +1,28 @@
-import { checkAuth } from '@/app/(backend)/middleware/auth';
 import {
   AGENT_RUNTIME_ERROR_SET,
-  AgentRuntime,
   ChatCompletionErrorPayload,
-} from '@/libs/model-runtime';
-import { createTraceOptions, initAgentRuntimeWithUserPayload } from '@/server/modules/AgentRuntime';
-import { ChatErrorType } from '@/types/fetch';
+  ModelRuntime,
+} from '@lobechat/model-runtime';
+import { ChatErrorType } from '@lobechat/types';
+
+import { checkAuth } from '@/app/(backend)/middleware/auth';
+import { createTraceOptions, initModelRuntimeWithUserPayload } from '@/server/modules/ModelRuntime';
 import { ChatStreamPayload } from '@/types/openai/chat';
 import { createErrorResponse } from '@/utils/errorResponse';
 import { getTracePayload } from '@/utils/trace';
 
-export const runtime = 'edge';
+export const maxDuration = 300;
 
 export const POST = checkAuth(async (req: Request, { params, jwtPayload, createRuntime }) => {
   const { provider } = await params;
 
   try {
     // ============  1. init chat model   ============ //
-    let agentRuntime: AgentRuntime;
+    let modelRuntime: ModelRuntime;
     if (createRuntime) {
-      agentRuntime = createRuntime(jwtPayload);
+      modelRuntime = createRuntime(jwtPayload);
     } else {
-      agentRuntime = await initAgentRuntimeWithUserPayload(provider, jwtPayload);
+      modelRuntime = await initModelRuntimeWithUserPayload(provider, jwtPayload);
     }
 
     // ============  2. create chat completion   ============ //
@@ -36,7 +37,7 @@ export const POST = checkAuth(async (req: Request, { params, jwtPayload, createR
       traceOptions = createTraceOptions(data, { provider, trace: tracePayload });
     }
 
-    return await agentRuntime.chat(data, {
+    return await modelRuntime.chat(data, {
       user: jwtPayload.userId,
       ...traceOptions,
       signal: req.signal,

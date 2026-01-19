@@ -1,0 +1,25 @@
+{
+  "name": "@lobechat/utils",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./server": "./src/server/index.ts",
+    "./client": "./src/client/index.ts",
+    "./object": "./src/object.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "test": "vitest",
+    "test:coverage": "vitest --coverage --silent='passed-only'"
+  },
+  "dependencies": {
+    "@lobechat/const": "workspace:*",
+    "@lobechat/types": "workspace:*",
+    "dayjs": "^1.11.18",
+    "dompurify": "^3.2.7"
+  },
+  "devDependencies": {
+    "vitest-canvas-mock": "^0.3.3"
+  }
+}

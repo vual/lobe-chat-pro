@@ -35,9 +35,16 @@
       "title": "重置所有设置"
     }
   },
+  "groupTab": {
+    "chat": "聊天",
+    "members": "成员",
+    "meta": "基本信息"
+  },
   "header": {
     "desc": "偏好与模型设置",
     "global": "全局设置",
+    "group": "团队设置",
+    "groupDesc": "管理 Agent 团队与聊天偏好",
     "session": "会话设置",
     "sessionDesc": "角色设定与会话偏好",
     "sessionWithName": "会话设置 · {{name}}",
@@ -45,14 +52,25 @@
   },
   "hotkey": {
     "conflicts": "与现有快捷键冲突",
+    "errors": {
+      "CONFLICT": "快捷键冲突：该快捷键已被其他功能占用",
+      "INVALID_FORMAT": "快捷键格式无效：请使用正确的格式（如 CommandOrControl+E）",
+      "INVALID_ID": "无效的快捷键ID",
+      "NO_MODIFIER": "快捷键必须包含修饰键（Ctrl、Alt、Shift等）",
+      "SYSTEM_OCCUPIED": "快捷键已被系统或其他应用程序占用",
+      "UNKNOWN": "更新失败：未知错误"
+    },
     "group": {
       "conversation": "会话",
+      "desktop": "桌面端",
       "essential": "基础"
     },
     "invalidCombination": "快捷键需要至少包含一个修饰键 (Ctrl, Alt, Shift) 和一个常规键",
     "record": "按下按键以录制快捷键",
     "reset": "重置为默认快捷键",
-    "title": "快捷键"
+    "title": "快捷键",
+    "updateError": "快捷键更新失败：网络或系统错误",
+    "updateSuccess": "快捷键更新成功"
   },
   "llm": {
     "aesGcm": "您的秘钥与代理地址等将使用 <1>AES-GCM</1> 加密算法进行加密",
@@ -128,6 +146,9 @@
     },
     "waitingForMore": "更多模型正在 <1>计划接入</1> 中，敬请期待"
   },
+  "message": {
+    "success": "更新成功"
+  },
   "plugin": {
     "addMCPPlugin": "添加 MCP 插件",
     "addTooltip": "自定义插件",
@@ -172,9 +193,20 @@
     "title": "助手信息"
   },
   "settingAppearance": {
+    "animationMode": {
+      "agile": "敏捷",
+      "desc": "选择应用程序的操作响应的动画速度",
+      "disabled": "关闭",
+      "elegant": "优雅",
+      "title": "响应动画"
+    },
     "neutralColor": {
       "desc": "不同色彩倾向的灰阶自定义",
       "title": "中性色"
+    },
+    "noAnimation": {
+      "desc": "禁用应用程序中的所有动画效果",
+      "title": "无动画模式"
     },
     "preview": {
       "title": "调色盘"
@@ -214,6 +246,10 @@
       "setlimited": "使用历史消息数",
       "title": "限制历史消息数",
       "unlimited": "不限历史消息数"
+    },
+    "enableStreaming": {
+      "desc": "启用流式输出以实时显示响应。禁用后仅显示完整响应。",
+      "title": "启用流式输出"
     },
     "historyCount": {
       "desc": "每次请求携带的消息数（包括最新编写的提问。每个提问和回答都计算1）",
@@ -267,6 +303,109 @@
       "title": "主题"
     },
     "title": "通用设置"
+  },
+  "settingGroup": {
+    "description": {
+      "placeholder": "请输入团队描述",
+      "title": "团队描述"
+    },
+    "name": {
+      "placeholder": "请输入团队名称",
+      "title": "团队名称"
+    },
+    "scene": {
+      "desc": "选择团队场景",
+      "options": {
+        "casual": "休闲",
+        "productive": "生产力"
+      },
+      "title": "团队场景"
+    },
+    "submit": "更新团队",
+    "systemPrompt": {
+      "placeholder": "请输入主持人系统提示词",
+      "title": "主持人系统提示词"
+    },
+    "title": "Agent 团队信息"
+  },
+  "settingGroupChat": {
+    "allowDM": {
+      "desc": "关闭后，你仍然可以主动向助手发送私信",
+      "title": "允许助手发送私信"
+    },
+    "enableSupervisor": {
+      "desc": "启用 Agent 团队主持人功能，主持人将管理团队对话流程",
+      "title": "启用主持人"
+    },
+    "maxResponseInRow": {
+      "desc": "选择成员可以连续回复多少条消息。设置为 0 则禁用此限制。",
+      "title": "连续回复消息数"
+    },
+    "model": {
+      "desc": "群成员发言不受影响。部分模型无法作为主持人模型使用。",
+      "title": "主持人模型"
+    },
+    "orchestratorTitle": "主持人设置",
+    "responseOrder": {
+      "desc": "代理将按照在聊天中设置的顺序进行回复",
+      "options": {
+        "natural": "自然",
+        "sequential": "顺序"
+      },
+      "placeholder": "选择回复顺序",
+      "title": "回复顺序"
+    },
+    "responseSpeed": {
+      "desc": "控制聊天的整体进行速度",
+      "options": {
+        "fast": "快速",
+        "medium": "中等",
+        "slow": "慢速"
+      },
+      "placeholder": "选择回复速度",
+      "title": "回复速度"
+    },
+    "revealDM": {
+      "desc": "使发送给其他成员的私信内容对你可见。",
+      "title": "显示私信内容"
+    },
+    "submit": "更新设置",
+    "systemPrompt": {
+      "desc": "群聊对话主持人的自定义系统提示词。这可能影响默认的主持人行为。",
+      "placeholder": "请输入自定义主持人系统提示词...",
+      "title": "主持人系统提示词"
+    },
+    "title": "聊天设置"
+  },
+  "settingGroupMembers": {
+    "addToGroup": "加入群组",
+    "availableAgents": "可用助手",
+    "createMember": "创建成员",
+    "defaultAgent": "自定义助手",
+    "disableHost": "关闭主持助手",
+    "edit": "编辑成员",
+    "empty": "该团队中暂无成员。点击 + 按钮添加成员。",
+    "enableHost": "启用主持助手",
+    "groupHost": "群主持",
+    "groupMembers": "群组成员",
+    "host": {
+      "description": "主持人在群组中时，群聊将自动化运行，适合发散性任务。",
+      "title": "主持人"
+    },
+    "noAvailableAgents": "暂无可用助手",
+    "noDescription": "暂无描述",
+    "noMembersInGroup": "群组暂无成员",
+    "owner": "你（所有者）",
+    "remove": "移除成员",
+    "removeFromGroup": "移出群组",
+    "you": "你"
+  },
+  "settingImage": {
+    "defaultCount": {
+      "desc": "设置图像生成面板在创建新任务时的默认图片数量。",
+      "label": "默认图片数量",
+      "title": "AI 绘画设置"
+    }
   },
   "settingModel": {
     "enableMaxTokens": {
@@ -523,6 +662,7 @@
     "common": "通用设置",
     "experiment": "实验",
     "hotkey": "快捷键",
+    "image": "AI 绘画",
     "llm": "语言模型",
     "provider": "AI 服务商",
     "proxy": "网络代理",

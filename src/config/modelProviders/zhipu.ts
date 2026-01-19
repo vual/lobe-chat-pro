@@ -1,21 +1,7 @@
 import { ModelProviderCard } from '@/types/llm';
 
-// ref :https://open.bigmodel.cn/dev/howuse/model
-// api https://open.bigmodel.cn/dev/api#language
-// ref :https://open.bigmodel.cn/modelcenter/square
 const ZhiPu: ModelProviderCard = {
   chatModels: [
-    {
-      contextWindowTokens: 16_384,
-      description: 'GLM-Zero-Preview具备强大的复杂推理能力，在逻辑推理、数学、编程等领域表现优异。',
-      displayName: 'GLM-Zero-Preview',
-      id: 'glm-zero-preview',
-      pricing: {
-        currency: 'CNY',
-        input: 10,
-        output: 10,
-      },
-    },
     {
       contextWindowTokens: 128_000,
       description: 'GLM-4-Flash 是处理简单任务的理想选择，速度最快且免费。',
@@ -23,11 +9,6 @@ const ZhiPu: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'glm-4-flash',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 128_000,
@@ -36,11 +17,6 @@ const ZhiPu: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'glm-4-flashx',
-      pricing: {
-        currency: 'CNY',
-        input: 0.1,
-        output: 0.1,
-      },
     },
     {
       contextWindowTokens: 1_024_000,
@@ -48,11 +24,6 @@ const ZhiPu: ModelProviderCard = {
       displayName: 'GLM-4-Long',
       functionCall: true,
       id: 'glm-4-long',
-      pricing: {
-        currency: 'CNY',
-        input: 1,
-        output: 1,
-      },
     },
     {
       contextWindowTokens: 128_000,
@@ -61,11 +32,6 @@ const ZhiPu: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'glm-4-air',
-      pricing: {
-        currency: 'CNY',
-        input: 1,
-        output: 1,
-      },
     },
     {
       contextWindowTokens: 8192,
@@ -74,24 +40,6 @@ const ZhiPu: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'glm-4-airx',
-      pricing: {
-        currency: 'CNY',
-        input: 10,
-        output: 10,
-      },
-    },
-    {
-      contextWindowTokens: 128_000,
-      description:
-        'GLM-4-AllTools 是一个多功能智能体模型，优化以支持复杂指令规划与工具调用，如网络浏览、代码解释和文本生成，适用于多任务执行。',
-      displayName: 'GLM-4-AllTools',
-      functionCall: true,
-      id: 'glm-4-alltools',
-      pricing: {
-        currency: 'CNY',
-        input: 100,
-        output: 100,
-      },
     },
     {
       contextWindowTokens: 128_000,
@@ -101,11 +49,6 @@ const ZhiPu: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'glm-4-plus',
-      pricing: {
-        currency: 'CNY',
-        input: 50,
-        output: 50,
-      },
     },
     {
       contextWindowTokens: 128_000,
@@ -113,11 +56,6 @@ const ZhiPu: ModelProviderCard = {
       displayName: 'GLM-4-0520',
       functionCall: true,
       id: 'glm-4-0520',
-      pricing: {
-        currency: 'CNY',
-        input: 100,
-        output: 100,
-      },
     },
     {
       contextWindowTokens: 128_000,
@@ -125,11 +63,6 @@ const ZhiPu: ModelProviderCard = {
       displayName: 'GLM-4',
       functionCall: true,
       id: 'glm-4',
-      pricing: {
-        currency: 'CNY',
-        input: 100,
-        output: 100,
-      },
     },
     {
       contextWindowTokens: 8192,
@@ -138,11 +71,6 @@ const ZhiPu: ModelProviderCard = {
       displayName: 'GLM-4V-Flash',
       enabled: true,
       id: 'glm-4v-flash',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
       releasedAt: '2024-12-09',
       vision: true,
     },
@@ -152,11 +80,6 @@ const ZhiPu: ModelProviderCard = {
       displayName: 'GLM-4V-Plus',
       enabled: true,
       id: 'glm-4v-plus',
-      pricing: {
-        currency: 'CNY',
-        input: 10,
-        output: 10,
-      },
       vision: true,
     },
     {
@@ -164,11 +87,6 @@ const ZhiPu: ModelProviderCard = {
       description: 'GLM-4V 提供强大的图像理解与推理能力，支持多种视觉任务。',
       displayName: 'GLM-4V',
       id: 'glm-4v',
-      pricing: {
-        currency: 'CNY',
-        input: 50,
-        output: 50,
-      },
       vision: true,
     },
     {
@@ -177,36 +95,21 @@ const ZhiPu: ModelProviderCard = {
         'CodeGeeX-4 是强大的AI编程助手，支持多种编程语言的智能问答与代码补全，提升开发效率。',
       displayName: 'CodeGeeX-4',
       id: 'codegeex-4',
-      pricing: {
-        currency: 'CNY',
-        input: 0.1,
-        output: 0.1,
-      },
     },
     {
       contextWindowTokens: 4096,
-      description: 'CharGLM-3 专为角色扮演与情感陪伴设计，支持超长多轮记忆与个性化对话，应用广泛。',
-      displayName: 'CharGLM-3',
-      id: 'charglm-3',
-      pricing: {
-        currency: 'CNY',
-        input: 15,
-        output: 15,
-      },
+      description: 'CharGLM-4 专为角色扮演与情感陪伴设计，支持超长多轮记忆与个性化对话，应用广泛。',
+      displayName: 'CharGLM-4',
+      id: 'charglm-4',
     },
     {
       contextWindowTokens: 8192,
       description: 'Emohaa 是心理模型，具备专业咨询能力，帮助用户理解情感问题。',
       displayName: 'Emohaa',
       id: 'emohaa',
-      pricing: {
-        currency: 'CNY',
-        input: 15,
-        output: 15,
-      },
     },
   ],
-  checkModel: 'glm-4-flash-250414',
+  checkModel: 'glm-4.5-flash',
   description:
     '智谱 AI 提供多模态与语言模型的开放平台，支持广泛的AI应用场景，包括文本处理、图像理解与编程辅助等。',
   id: 'zhipu',

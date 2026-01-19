@@ -1,4 +1,9 @@
 {
+  "ArgsInput": {
+    "addArgument": "Thêm tham số",
+    "argumentPlaceholder": "Tham số {{index}}",
+    "enterFirstArgument": "Nhập tham số đầu tiên..."
+  },
   "DragUpload": {
     "dragDesc": "Kéo và thả tệp vào đây, hỗ trợ tải lên nhiều hình ảnh.",
     "dragFileDesc": "Kéo và thả hình ảnh và tệp vào đây, hỗ trợ tải lên nhiều hình ảnh và tệp.",
@@ -45,6 +50,10 @@
     "total": {
       "fileCount": "Tổng cộng {{count}} mục",
       "selectedCount": "Đã chọn {{count}} mục"
+    },
+    "view": {
+      "list": "Chế độ danh sách",
+      "masonry": "Chế độ lưới"
     }
   },
   "FileParsingStatus": {
@@ -67,6 +76,18 @@
   },
   "GoBack": {
     "back": "Quay lại"
+  },
+  "HtmlPreview": {
+    "actions": {
+      "download": "Tải xuống",
+      "preview": "Xem trước"
+    },
+    "iframeTitle": "Xem trước HTML",
+    "mode": {
+      "code": "Mã",
+      "preview": "Xem trước"
+    },
+    "title": "Xem trước HTML"
   },
   "ImageUpload": {
     "actions": {
@@ -97,6 +118,7 @@
       "reasoning": "Mô hình này hỗ trợ tư duy sâu sắc",
       "search": "Mô hình này hỗ trợ tìm kiếm trực tuyến",
       "tokens": "Mỗi phiên của mô hình này hỗ trợ tối đa {{tokens}} Tokens",
+      "video": "Mô hình này hỗ trợ nhận dạng video",
       "vision": "Mô hình này hỗ trợ nhận diện hình ảnh"
     },
     "removed": "Mô hình này không còn trong danh sách, nếu bỏ chọn sẽ tự động xóa"
@@ -125,6 +147,12 @@
     },
     "progress": {
       "uploadingWithCount": "Đã tải lên {{completed}}/{{total}}"
+    },
+    "validation": {
+      "fileSizeExceeded": "Kích thước tệp vượt quá giới hạn",
+      "fileSizeExceededDetail": "{{fileName}} ({{actualSize}}) vượt quá kích thước tối đa cho phép là {{maxSize}}",
+      "fileSizeExceededMultiple": "{{count}} tệp vượt quá kích thước tối đa cho phép là {{maxSize}}: {{fileList}}",
+      "imageCountExceeded": "Số lượng hình ảnh vượt quá giới hạn"
     }
   },
   "OllamaSetupGuide": {

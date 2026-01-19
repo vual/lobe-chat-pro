@@ -1,16 +1,16 @@
 import isEqual from 'fast-deep-equal';
+import {
+  AiModelSortMap,
+  AiProviderModelListItem,
+  CreateAiModelParams,
+  ToggleAiModelEnableParams,
+} from 'model-bank';
 import { SWRResponse, mutate } from 'swr';
 import { StateCreator } from 'zustand/vanilla';
 
 import { useClientDataSWR } from '@/libs/swr';
 import { aiModelService } from '@/services/aiModel';
 import { AiInfraStore } from '@/store/aiInfra/store';
-import {
-  AiModelSortMap,
-  AiProviderModelListItem,
-  CreateAiModelParams,
-  ToggleAiModelEnableParams,
-} from '@/types/aiModel';
 
 const FETCH_AI_PROVIDER_MODEL_LIST_KEY = 'FETCH_AI_PROVIDER_MODELS';
 
@@ -79,7 +79,10 @@ export const createAiModelSlice: StateCreator<
           abilities: {
             files: model.files,
             functionCall: model.functionCall,
+            imageOutput: model.imageOutput,
             reasoning: model.reasoning,
+            search: model.search,
+            video: model.video,
             vision: model.vision,
           },
           enabled: model.enabled || false,

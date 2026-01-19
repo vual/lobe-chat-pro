@@ -35,9 +35,16 @@
       "title": "Đặt lại tất cả cài đặt"
     }
   },
+  "groupTab": {
+    "chat": "Trò chuyện",
+    "members": "Thành viên",
+    "meta": "Thông tin cơ bản"
+  },
   "header": {
     "desc": "Thiết lập Ưu tiên và Mô hình.",
     "global": "Cài đặt toàn cầu",
+    "group": "Cài đặt nhóm",
+    "groupDesc": "Quản lý nhóm Agent và tùy chọn trò chuyện",
     "session": "Cài đặt cuộc trò chuyện",
     "sessionDesc": "Thiết lập nhân vật và ưu tiên phiên hội thoại.",
     "sessionWithName": "Cài đặt cuộc trò chuyện · {{name}}",
@@ -45,14 +52,25 @@
   },
   "hotkey": {
     "conflicts": "Xung đột với phím tắt hiện có",
+    "errors": {
+      "CONFLICT": "Phím tắt bị trùng: Phím tắt này đã được chức năng khác sử dụng",
+      "INVALID_FORMAT": "Định dạng phím tắt không hợp lệ: Vui lòng sử dụng định dạng đúng (ví dụ CommandOrControl+E)",
+      "INVALID_ID": "ID phím tắt không hợp lệ",
+      "NO_MODIFIER": "Phím tắt phải bao gồm phím điều khiển (Ctrl, Alt, Shift, v.v.)",
+      "SYSTEM_OCCUPIED": "Phím tắt đã bị hệ thống hoặc ứng dụng khác chiếm dụng",
+      "UNKNOWN": "Cập nhật thất bại: Lỗi không xác định"
+    },
     "group": {
       "conversation": "Cuộc trò chuyện",
+      "desktop": "Phiên bản máy tính để bàn",
       "essential": "Cơ bản"
     },
     "invalidCombination": "Phím tắt cần ít nhất một phím sửa đổi (Ctrl, Alt, Shift) và một phím thông thường",
     "record": "Nhấn phím để ghi lại phím tắt",
     "reset": "Đặt lại thành phím tắt mặc định",
-    "title": "Phím tắt"
+    "title": "Phím tắt",
+    "updateError": "Cập nhật phím tắt thất bại: Lỗi mạng hoặc hệ thống",
+    "updateSuccess": "Cập nhật phím tắt thành công"
   },
   "llm": {
     "aesGcm": "Khóa và địa chỉ proxy của bạn sẽ được mã hóa bằng thuật toán mã hóa <1>AES-GCM</1>",
@@ -128,6 +146,9 @@
     },
     "waitingForMore": "Có thêm mô hình đang <1>được lên kế hoạch tích hợp</1>, hãy chờ đợi"
   },
+  "message": {
+    "success": "Cập nhật thành công"
+  },
   "plugin": {
     "addMCPPlugin": "Thêm plugin MCP",
     "addTooltip": "Thêm tiện ích",
@@ -172,9 +193,20 @@
     "title": "Thông tin trợ lý"
   },
   "settingAppearance": {
+    "animationMode": {
+      "agile": "Nhanh nhẹn",
+      "desc": "Chọn tốc độ hoạt ảnh phản hồi của ứng dụng",
+      "disabled": "Tắt",
+      "elegant": "Thanh lịch",
+      "title": "Hoạt ảnh phản hồi"
+    },
     "neutralColor": {
       "desc": "Tùy chỉnh thang độ xám với các xu hướng màu sắc khác nhau",
       "title": "Màu trung tính"
+    },
+    "noAnimation": {
+      "desc": "Vô hiệu hóa tất cả hiệu ứng hoạt ảnh trong ứng dụng",
+      "title": "Chế độ không hoạt ảnh"
     },
     "preview": {
       "title": "Bảng màu"
@@ -214,6 +246,10 @@
       "setlimited": "Thiết lập số lượng tin nhắn lịch sử",
       "title": "Giới hạn số lượng tin nhắn lịch sử",
       "unlimited": "Không giới hạn số lượng tin nhắn lịch sử"
+    },
+    "enableStreaming": {
+      "desc": "Bật phát trực tiếp để hiển thị phản hồi theo thời gian thực. Tắt sẽ chỉ hiển thị phản hồi đầy đủ.",
+      "title": "Bật phát trực tiếp"
     },
     "historyCount": {
       "desc": "Số lượng tin nhắn được gửi mỗi lần yêu cầu (bao gồm cả câu hỏi mới nhất. Mỗi câu hỏi và câu trả lời đều tính là 1)",
@@ -267,6 +303,109 @@
       "title": "Chủ đề"
     },
     "title": "Cài đặt chung"
+  },
+  "settingGroup": {
+    "description": {
+      "placeholder": "Vui lòng nhập mô tả nhóm",
+      "title": "Mô tả nhóm"
+    },
+    "name": {
+      "placeholder": "Vui lòng nhập tên nhóm",
+      "title": "Tên nhóm"
+    },
+    "scene": {
+      "desc": "Chọn ngữ cảnh nhóm",
+      "options": {
+        "casual": "Thư giãn",
+        "productive": "Năng suất"
+      },
+      "title": "Ngữ cảnh nhóm"
+    },
+    "submit": "Cập nhật nhóm",
+    "systemPrompt": {
+      "placeholder": "Vui lòng nhập từ khóa hệ thống cho người dẫn chương trình",
+      "title": "Từ khóa hệ thống người dẫn chương trình"
+    },
+    "title": "Thông tin nhóm Agent"
+  },
+  "settingGroupChat": {
+    "allowDM": {
+      "desc": "Sau khi tắt, bạn vẫn có thể chủ động gửi tin nhắn riêng cho trợ lý",
+      "title": "Cho phép trợ lý gửi tin nhắn riêng"
+    },
+    "enableSupervisor": {
+      "desc": "Bật chức năng người điều phối nhóm Agent, người điều phối sẽ quản lý luồng hội thoại của nhóm",
+      "title": "Bật người điều phối"
+    },
+    "maxResponseInRow": {
+      "desc": "Chọn số lượng tin nhắn thành viên có thể trả lời liên tiếp. Đặt là 0 để vô hiệu hóa giới hạn này.",
+      "title": "Số tin nhắn trả lời liên tiếp"
+    },
+    "model": {
+      "desc": "Phát ngôn của thành viên nhóm sẽ không bị ảnh hưởng. Một số mô hình không thể được sử dụng làm mô hình điều phối.",
+      "title": "Mô hình người dẫn chương trình"
+    },
+    "orchestratorTitle": "Cài đặt người dẫn chương trình",
+    "responseOrder": {
+      "desc": "Các Agent sẽ phản hồi theo thứ tự đã thiết lập trong cuộc trò chuyện",
+      "options": {
+        "natural": "Tự nhiên",
+        "sequential": "Tuần tự"
+      },
+      "placeholder": "Chọn thứ tự trả lời",
+      "title": "Thứ tự trả lời"
+    },
+    "responseSpeed": {
+      "desc": "Kiểm soát tốc độ tiến hành tổng thể của cuộc trò chuyện",
+      "options": {
+        "fast": "Nhanh",
+        "medium": "Trung bình",
+        "slow": "Chậm"
+      },
+      "placeholder": "Chọn tốc độ trả lời",
+      "title": "Tốc độ trả lời"
+    },
+    "revealDM": {
+      "desc": "Hiển thị nội dung tin nhắn riêng gửi cho các thành viên khác cho bạn xem.",
+      "title": "Hiển thị nội dung tin nhắn riêng"
+    },
+    "submit": "Cập nhật cài đặt",
+    "systemPrompt": {
+      "desc": "Từ khóa hệ thống tùy chỉnh cho người dẫn chương trình trong cuộc trò chuyện nhóm. Điều này có thể ảnh hưởng đến hành vi mặc định của người dẫn.",
+      "placeholder": "Vui lòng nhập từ khóa hệ thống người dẫn chương trình tùy chỉnh...",
+      "title": "Từ khóa hệ thống người dẫn chương trình"
+    },
+    "title": "Cài đặt trò chuyện"
+  },
+  "settingGroupMembers": {
+    "addToGroup": "Thêm vào nhóm",
+    "availableAgents": "Trợ lý có sẵn",
+    "createMember": "Tạo thành viên",
+    "defaultAgent": "Trợ lý tùy chỉnh",
+    "disableHost": "Tắt trợ lý chủ trì",
+    "edit": "Chỉnh sửa thành viên",
+    "empty": "Hiện chưa có thành viên nào trong nhóm. Nhấn nút + để thêm thành viên.",
+    "enableHost": "Bật trợ lý chủ trì",
+    "groupHost": "Chủ trì nhóm",
+    "groupMembers": "Thành viên nhóm",
+    "host": {
+      "description": "Khi chủ trì có mặt trong nhóm, trò chuyện nhóm sẽ được tự động hóa, phù hợp với các nhiệm vụ sáng tạo.",
+      "title": "Chủ trì"
+    },
+    "noAvailableAgents": "Không có trợ lý khả dụng",
+    "noDescription": "Chưa có mô tả",
+    "noMembersInGroup": "Nhóm chưa có thành viên",
+    "owner": "Bạn (chủ sở hữu)",
+    "remove": "Xóa thành viên",
+    "removeFromGroup": "Loại khỏi nhóm",
+    "you": "Bạn"
+  },
+  "settingImage": {
+    "defaultCount": {
+      "desc": "Thiết lập số lượng hình ảnh mặc định được tạo khi bắt đầu một tác vụ mới trong bảng tạo hình ảnh.",
+      "label": "Số lượng hình ảnh mặc định",
+      "title": "Cài đặt Vẽ AI"
+    }
   },
   "settingModel": {
     "enableMaxTokens": {
@@ -523,6 +662,7 @@
     "common": "Cài đặt chung",
     "experiment": "Thử nghiệm",
     "hotkey": "Phím tắt",
+    "image": "Vẽ AI",
     "llm": "Mô hình ngôn ngữ",
     "provider": "Nhà cung cấp AI",
     "proxy": "Mạng proxy",

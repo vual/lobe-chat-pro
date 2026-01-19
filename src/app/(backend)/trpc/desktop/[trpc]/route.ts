@@ -15,11 +15,16 @@ const handler = (req: NextRequest) =>
     endpoint: '/trpc/desktop',
 
     onError: ({ error, path, type }) => {
-      pino.info(`Error in tRPC handler (tools) on path: ${path}, type: ${type}`);
+      pino.info(`Error in tRPC handler (desktop) on path: ${path}, type: ${type}`);
       console.error(error);
     },
 
     req,
+    responseMeta({ ctx }) {
+      const headers = ctx?.resHeaders;
+
+      return { headers };
+    },
     router: desktopRouter,
   });
 

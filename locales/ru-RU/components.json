@@ -1,4 +1,9 @@
 {
+  "ArgsInput": {
+    "addArgument": "Добавить параметр",
+    "argumentPlaceholder": "Параметр {{index}}",
+    "enterFirstArgument": "Введите первый параметр..."
+  },
   "DragUpload": {
     "dragDesc": "Перетащите файлы сюда, поддерживается загрузка нескольких изображений.",
     "dragFileDesc": "Перетащите изображения и файлы сюда, поддерживается загрузка нескольких изображений и файлов.",
@@ -45,6 +50,10 @@
     "total": {
       "fileCount": "Всего {{count}} элементов",
       "selectedCount": "Выбрано {{count}} элементов"
+    },
+    "view": {
+      "list": "Список",
+      "masonry": "Сетка"
     }
   },
   "FileParsingStatus": {
@@ -67,6 +76,18 @@
   },
   "GoBack": {
     "back": "Назад"
+  },
+  "HtmlPreview": {
+    "actions": {
+      "download": "Скачать",
+      "preview": "Предпросмотр"
+    },
+    "iframeTitle": "Предпросмотр HTML",
+    "mode": {
+      "code": "Код",
+      "preview": "Предпросмотр"
+    },
+    "title": "Предпросмотр HTML"
   },
   "ImageUpload": {
     "actions": {
@@ -97,6 +118,7 @@
       "reasoning": "Эта модель поддерживает глубокое мышление",
       "search": "Эта модель поддерживает поиск в интернете",
       "tokens": "Эта модель поддерживает до {{tokens}} токенов в одной сессии",
+      "video": "Эта модель поддерживает распознавание видео",
       "vision": "Эта модель поддерживает распознавание изображений"
     },
     "removed": "Эта модель не находится в списке. Если вы ее отмените, она будет автоматически удалена"
@@ -125,6 +147,12 @@
     },
     "progress": {
       "uploadingWithCount": "{{completed}}/{{total}} загружено"
+    },
+    "validation": {
+      "fileSizeExceeded": "Превышен допустимый размер файла",
+      "fileSizeExceededDetail": "{{fileName}} ({{actualSize}}) превышает максимально допустимый размер {{maxSize}}",
+      "fileSizeExceededMultiple": "{{count}} файлов превышают максимально допустимый размер {{maxSize}}: {{fileList}}",
+      "imageCountExceeded": "Превышено допустимое количество изображений"
     }
   },
   "OllamaSetupGuide": {

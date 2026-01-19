@@ -3,10 +3,15 @@ import { StateCreator } from 'zustand/vanilla';
 import { ChatStore } from '@/store/chat/store';
 
 import { ChatDallEAction, dalleSlice } from './dalle';
-import { LocalFileAction, localFileSlice } from './localFile';
+import { ChatCodeInterpreterAction, codeInterpreterSlice } from './interpreter';
+import { LocalFileAction, localSystemSlice } from './localSystem';
 import { SearchAction, searchSlice } from './search';
 
-export interface ChatBuiltinToolAction extends ChatDallEAction, SearchAction, LocalFileAction {}
+export interface ChatBuiltinToolAction
+  extends ChatDallEAction,
+    SearchAction,
+    LocalFileAction,
+    ChatCodeInterpreterAction {}
 
 export const chatToolSlice: StateCreator<
   ChatStore,
@@ -16,5 +21,6 @@ export const chatToolSlice: StateCreator<
 > = (...params) => ({
   ...dalleSlice(...params),
   ...searchSlice(...params),
-  ...localFileSlice(...params),
+  ...localSystemSlice(...params),
+  ...codeInterpreterSlice(...params),
 });

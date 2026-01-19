@@ -2,8 +2,17 @@
   "ai21": {
     "description": "AI21 Labs, işletmeler için temel modeller ve yapay zeka sistemleri geliştirerek, üretimde jeneratif yapay zekanın uygulanmasını hızlandırır."
   },
+  "ai302": {
+    "description": "302.AI, talep üzerine ödeme yapılan bir yapay zeka uygulama platformudur ve piyasadaki en kapsamlı yapay zeka API'leri ile çevrimiçi yapay zeka uygulamalarını sunar"
+  },
   "ai360": {
     "description": "360 AI, 360 şirketi tarafından sunulan yapay zeka modeli ve hizmet platformudur. 360GPT2 Pro, 360GPT Pro, 360GPT Turbo ve 360GPT Turbo Responsibility 8K gibi çeşitli gelişmiş doğal dil işleme modelleri sunmaktadır. Bu modeller, büyük ölçekli parametreler ve çok modlu yetenekleri birleştirerek metin üretimi, anlamsal anlama, diyalog sistemleri ve kod üretimi gibi alanlarda geniş bir uygulama yelpazesine sahiptir. Esnek fiyatlandırma stratejileri ile 360 AI, çeşitli kullanıcı ihtiyaçlarını karşılamakta ve geliştiricilerin entegrasyonunu destekleyerek akıllı uygulamaların yenilik ve gelişimini teşvik etmektedir."
+  },
+  "aihubmix": {
+    "description": "AiHubMix, çeşitli yapay zeka modellerine tek bir API arayüzü üzerinden erişim sağlar."
+  },
+  "akashchat": {
+    "description": "Akash, geleneksel bulut sağlayıcılarına kıyasla rekabetçi fiyatlandırmaya sahip, izin gerektirmeyen bir bulut kaynakları pazar yeridir."
   },
   "anthropic": {
     "description": "Anthropic, yapay zeka araştırma ve geliştirmeye odaklanan bir şirkettir. Claude 3.5 Sonnet, Claude 3 Sonnet, Claude 3 Opus ve Claude 3 Haiku gibi bir dizi gelişmiş dil modeli sunmaktadır. Bu modeller, zeka, hız ve maliyet arasında ideal bir denge sağlamaktadır ve kurumsal düzeydeki iş yüklerinden hızlı yanıt gerektiren çeşitli uygulama senaryolarına kadar geniş bir yelpazede kullanılmaktadır. Claude 3.5 Sonnet, en son modeli olarak, birçok değerlendirmede mükemmel performans sergilemekte ve yüksek maliyet etkinliğini korumaktadır."
@@ -20,11 +29,23 @@
   "bedrock": {
     "description": "Bedrock, Amazon AWS tarafından sunulan bir hizmettir ve işletmelere gelişmiş yapay zeka dil modelleri ve görsel modeller sağlamaya odaklanmaktadır. Model ailesi, Anthropic'in Claude serisi, Meta'nın Llama 3.1 serisi gibi seçenekleri içermekte olup, metin üretimi, diyalog, görüntü işleme gibi çeşitli görevleri desteklemektedir. Farklı ölçek ve ihtiyaçlara uygun kurumsal uygulamalar için geniş bir yelpaze sunmaktadır."
   },
+  "bfl": {
+    "description": "Öncü bir ileri düzey yapay zeka araştırma laboratuvarı, yarının görsel altyapısını inşa ediyor."
+  },
+  "cerebras": {
+    "description": "Cerebras, özel CS-3 sistemi üzerine kurulu bir yapay zeka çıkarım platformudur. Gerçek zamanlı yanıtlar ve yüksek veri işleme kapasitesiyle dünyanın en hızlı LLM hizmetini sunmayı hedefler. Gecikmeleri ortadan kaldırmak ve gerçek zamanlı kod üretimi ile aracı görevler gibi karmaşık yapay zeka iş akışlarını hızlandırmak için tasarlanmıştır."
+  },
   "cloudflare": {
     "description": "Cloudflare'ın küresel ağı üzerinde sunucusuz GPU destekli makine öğrenimi modelleri çalıştırın."
   },
   "cohere": {
     "description": "Cohere, en son çok dilli modelleri, gelişmiş arama işlevselliğini ve modern işletmeler için özel olarak tasarlanmış AI çalışma alanını sunar - hepsi güvenli bir platformda entegre edilmiştir."
+  },
+  "cometapi": {
+    "description": "CometAPI, OpenAI, Anthropic, Google ve daha fazlasını destekleyen çeşitli ileri düzey büyük model arayüzleri sunan bir hizmet platformudur. Çeşitli geliştirme ve uygulama ihtiyaçlarına uygundur. Kullanıcılar, kendi ihtiyaçlarına göre en uygun modeli ve fiyatı esnek bir şekilde seçebilir, böylece yapay zeka deneyimini geliştirebilirler."
+  },
+  "comfyui": {
+    "description": "Güçlü bir açık kaynaklı görüntü, video ve ses üretim iş akışı motoru; SD, FLUX, Qwen, Hunyuan, WAN gibi ileri düzey modelleri destekler, düğüm tabanlı iş akışı düzenleme ve özelleştirilmiş dağıtım yetenekleri sunar."
   },
   "deepseek": {
     "description": "DeepSeek, yapay zeka teknolojisi araştırma ve uygulamalarına odaklanan bir şirkettir. En son modeli DeepSeek-V2.5, genel diyalog ve kod işleme yeteneklerini birleştirerek, insan tercihleriyle uyum, yazma görevleri ve talimat takibi gibi alanlarda önemli iyileştirmeler sağlamaktadır."
@@ -80,6 +101,12 @@
   "moonshot": {
     "description": "Moonshot, Beijing Yuezhi Anmian Technology Co., Ltd. tarafından sunulan açık kaynaklı bir platformdur. İçerik oluşturma, akademik araştırma, akıllı öneri, tıbbi teşhis gibi geniş bir uygulama alanına sahip çeşitli doğal dil işleme modelleri sunmaktadır. Uzun metin işleme ve karmaşık üretim görevlerini desteklemektedir."
   },
+  "nebius": {
+    "description": "Nebius, büyük ölçekli GPU kümeleri ve dikey entegre bulut platformları oluşturarak, dünya çapındaki yapay zeka yenilikçilerine yüksek performanslı altyapı sağlar."
+  },
+  "newapi": {
+    "description": "Açık kaynaklı çoklu AI hizmetlerini birleştiren ve yönlendiren platform"
+  },
   "novita": {
     "description": "Novita AI, çeşitli büyük dil modelleri ve yapay zeka görüntü üretimi API hizmetleri sunan bir platformdur. Esnek, güvenilir ve maliyet etkin bir yapıya sahiptir. Llama3, Mistral gibi en son açık kaynak modelleri desteklemekte ve üretken yapay zeka uygulama geliştirme için kapsamlı, kullanıcı dostu ve otomatik ölçeklenebilir API çözümleri sunmaktadır. Bu, yapay zeka girişimlerinin hızlı gelişimi için uygundur."
   },
@@ -88,6 +115,9 @@
   },
   "ollama": {
     "description": "Ollama'nın sunduğu modeller, kod üretimi, matematiksel işlemler, çok dilli işleme ve diyalog etkileşimi gibi alanları kapsamaktadır. Kurumsal düzeyde ve yerelleştirilmiş dağıtım için çeşitli ihtiyaçları desteklemektedir."
+  },
+  "ollamacloud": {
+    "description": "Ollama Cloud, resmi olarak barındırılan çıkarım hizmetleri sunar, kutudan çıkar çıkmaz Ollama model kütüphanesine erişim sağlar ve OpenAI uyumlu arayüzleri destekler."
   },
   "openai": {
     "description": "OpenAI, dünya çapında lider bir yapay zeka araştırma kuruluşudur. Geliştirdiği modeller, GPT serisi gibi, doğal dil işleme alanında öncü adımlar atmaktadır. OpenAI, yenilikçi ve etkili yapay zeka çözümleri ile birçok sektörü dönüştürmeyi hedeflemektedir. Ürünleri, belirgin performans ve maliyet etkinliği ile araştırma, ticaret ve yenilikçi uygulamalarda yaygın olarak kullanılmaktadır."
@@ -139,6 +169,9 @@
   },
   "v0": {
     "description": "v0, eşli programlama asistanıdır; sadece doğal dilde fikirlerinizi tanımlamanız yeterlidir, o da projeniz için kod ve kullanıcı arayüzü (UI) oluşturur"
+  },
+  "vercelaigateway": {
+    "description": "Vercel AI Gateway, 100'den fazla modele erişim sağlamak için birleşik bir API sunar; tek bir uç nokta üzerinden OpenAI, Anthropic, Google ve diğer sağlayıcıların modellerini kullanmanıza olanak tanır. Bütçe ayarları, kullanım izleme, istek yük dengeleme ve hata toleransı desteklenmektedir."
   },
   "vertexai": {
     "description": "Google'un Gemini serisi, Google DeepMind tarafından geliştirilen en gelişmiş ve genel amaçlı AI modelleridir. Çok modlu tasarım için özel olarak oluşturulmuş olup, metin, kod, görüntü, ses ve video gibi içeriklerin kesintisiz anlaşılması ve işlenmesini destekler. Veri merkezlerinden mobil cihazlara kadar çeşitli ortamlarda kullanılabilir, AI modellerinin verimliliğini ve uygulama kapsamını büyük ölçüde artırır."

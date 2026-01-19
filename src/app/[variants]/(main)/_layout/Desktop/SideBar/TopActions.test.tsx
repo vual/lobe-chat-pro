@@ -1,6 +1,7 @@
 import { act, cleanup, fireEvent, render, renderHook, screen } from '@testing-library/react';
 import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 
+import { DEFAULT_FEATURE_FLAGS, mapFeatureFlagsEnvToState } from '@/config/featureFlags';
 import { useGlobalStore } from '@/store/global';
 import { SidebarTabKey } from '@/store/global/initialState';
 import {
@@ -13,7 +14,13 @@ import { useSessionStore } from '@/store/session';
 import TopActions, { TopActionProps } from './TopActions';
 
 beforeAll(() => {
-  initServerConfigStore({ featureFlags: { market: true } });
+  initServerConfigStore({
+    featureFlags: {
+      ...mapFeatureFlagsEnvToState(DEFAULT_FEATURE_FLAGS),
+      showMarket: true,
+      showAiImage: true,
+    },
+  });
 });
 
 beforeEach(() => {
@@ -21,7 +28,13 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  createServerConfigStore().setState({ featureFlags: { market: true } });
+  createServerConfigStore().setState({
+    featureFlags: {
+      ...createServerConfigStore().getState().featureFlags,
+      showMarket: true,
+      showAiImage: true,
+    },
+  });
   cleanup();
 });
 
@@ -38,6 +51,7 @@ vi.mock('@lobehub/ui', () => ({
   ActionIcon: vi.fn(({ title }) => <div>{title}</div>),
   combineKeys: vi.fn((keys) => keys.join('+')),
   KeyMapEnum: { Alt: 'alt', Ctrl: 'ctrl', Shift: 'shift' },
+  Hotkey: vi.fn(({ keys = [] }) => <div>{keys}</div>),
 }));
 
 vi.mock('react-i18next', () => ({
@@ -55,16 +69,22 @@ const renderTopActions = (props: TopActionProps = {}) => {
 };
 
 describe('TopActions', () => {
-  it('should render Chat and Market by default', () => {
+  it('should render Chat, AI Image and Market by default', () => {
     renderTopActions();
 
     expect(screen.getByText('tab.chat')).toBeInTheDocument();
+    expect(screen.getByText('tab.aiImage')).toBeInTheDocument();
     expect(screen.getByText('tab.discover')).toBeInTheDocument();
   });
 
   it('should render only Chat icon when `-market` is set', () => {
     act(() => {
-      createServerConfigStore().setState({ featureFlags: { market: false } });
+      createServerConfigStore().setState({
+        featureFlags: {
+          ...createServerConfigStore().getState().featureFlags,
+          showMarket: false,
+        },
+      });
     });
 
     renderTopActions();
@@ -75,13 +95,34 @@ describe('TopActions', () => {
 
   it('should render File icon when `-knowledge_base` is set', () => {
     act(() => {
-      createServerConfigStore().setState({ featureFlags: { knowledge_base: false } });
+      createServerConfigStore().setState({
+        featureFlags: {
+          ...createServerConfigStore().getState().featureFlags,
+          enableKnowledgeBase: false,
+        },
+      });
     });
 
     renderTopActions();
 
     expect(screen.getByText('tab.chat')).toBeInTheDocument();
     expect(screen.queryByText('tab.files')).not.toBeInTheDocument();
+  });
+
+  it('should not render AI Image icon when ai_image is disabled', () => {
+    act(() => {
+      createServerConfigStore().setState({
+        featureFlags: {
+          ...createServerConfigStore().getState().featureFlags,
+          showAiImage: false,
+        },
+      });
+    });
+
+    renderTopActions();
+
+    expect(screen.getByText('tab.chat')).toBeInTheDocument();
+    expect(screen.queryByText('tab.aiImage')).not.toBeInTheDocument();
   });
 
   it('should switch back to previous active session', () => {

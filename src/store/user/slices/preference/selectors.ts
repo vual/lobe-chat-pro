@@ -1,5 +1,6 @@
-import { DEFAULT_PREFERENCE } from '@/const/user';
-import { UserStore } from '@/store/user';
+import { DEFAULT_PREFERENCE } from '@lobechat/const';
+
+import type { UserStore } from '@/store/user';
 
 const useCmdEnterToSend = (s: UserStore): boolean => s.preference.useCmdEnterToSend || false;
 const topicDisplayMode = (s: UserStore) =>
@@ -20,8 +21,10 @@ const shouldTriggerFileInKnowledgeBaseTip = (s: UserStore) =>
 const isPreferenceInit = (s: UserStore) => s.isUserStateInit;
 
 export const preferenceSelectors = {
+  enableGroupChat: (s: UserStore) => s.preference.enableGroupChat || false,
   hideSettingsMoveGuide,
   hideSyncAlert,
+  inputMarkdownRender: (s: UserStore) => !s.preference.disableInputMarkdownRender,
   isPreferenceInit,
   shouldTriggerFileInKnowledgeBaseTip,
   showUploadFileInKnowledgeBaseTip,

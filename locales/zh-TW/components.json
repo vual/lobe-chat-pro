@@ -1,4 +1,9 @@
 {
+  "ArgsInput": {
+    "addArgument": "新增參數",
+    "argumentPlaceholder": "參數 {{index}}",
+    "enterFirstArgument": "輸入第一個參數..."
+  },
   "DragUpload": {
     "dragDesc": "拖曳檔案到這裡，支援上傳多個圖片。",
     "dragFileDesc": "拖曳圖片和檔案到這裡，支援上傳多個圖片和檔案。",
@@ -45,6 +50,10 @@
     "total": {
       "fileCount": "共 {{count}} 項",
       "selectedCount": "已選 {{count}} 項"
+    },
+    "view": {
+      "list": "清單檢視",
+      "masonry": "網格檢視"
     }
   },
   "FileParsingStatus": {
@@ -67,6 +76,18 @@
   },
   "GoBack": {
     "back": "返回"
+  },
+  "HtmlPreview": {
+    "actions": {
+      "download": "下載",
+      "preview": "預覽"
+    },
+    "iframeTitle": "HTML 預覽",
+    "mode": {
+      "code": "程式碼",
+      "preview": "預覽"
+    },
+    "title": "HTML 預覽"
   },
   "ImageUpload": {
     "actions": {
@@ -97,6 +118,7 @@
       "reasoning": "該模型支持深度思考",
       "search": "該模型支援聯網搜尋",
       "tokens": "該模型單一會話最多支援 {{tokens}} Tokens",
+      "video": "該模型支援影片識別",
       "vision": "該模型支援視覺辨識"
     },
     "removed": "該模型不在清單中，若取消選取將會自動移除"
@@ -125,6 +147,12 @@
     },
     "progress": {
       "uploadingWithCount": "{{completed}}/{{total}} 已上傳"
+    },
+    "validation": {
+      "fileSizeExceeded": "檔案大小已超過限制",
+      "fileSizeExceededDetail": "{{fileName}}（{{actualSize}}）超過最大檔案大小限制 {{maxSize}}",
+      "fileSizeExceededMultiple": "{{count}} 個檔案超過最大檔案大小限制 {{maxSize}}：{{fileList}}",
+      "imageCountExceeded": "圖片數量已超出限制"
     }
   },
   "OllamaSetupGuide": {

@@ -2,7 +2,9 @@ import { useMemo } from 'react';
 
 import {
   Ai21ProviderCard,
+  Ai302ProviderCard,
   Ai360ProviderCard,
+  AkashChatProviderCard,
   AnthropicProviderCard,
   BaichuanProviderCard,
   CohereProviderCard,
@@ -21,6 +23,7 @@ import {
   MoonshotProviderCard,
   NovitaProviderCard,
   NvidiaProviderCard,
+  OllamaCloudProviderCard,
   OpenRouterProviderCard,
   PPIOProviderCard,
   PerplexityProviderCard,
@@ -112,6 +115,9 @@ export const useProviderList = (): ProviderItem[] => {
       GiteeAIProviderCard,
       PPIOProviderCard,
       InfiniAIProviderCard,
+      AkashChatProviderCard,
+      Ai302ProviderCard,
+      OllamaCloudProviderCard,
     ],
     [
       AzureProvider,

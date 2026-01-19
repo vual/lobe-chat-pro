@@ -7,11 +7,18 @@ import { useElectronStore } from '@/store/electron';
 import { useGlobalStore } from '@/store/global';
 
 export const useWatchThemeUpdate = () => {
-  const [systemAppearance, updateElectronAppState] = useElectronStore((s) => [
-    s.appState.systemAppearance,
-    s.updateElectronAppState,
+  const [isAppStateInit, systemAppearance, updateElectronAppState, isMac] = useElectronStore(
+    (s) => [
+      s.isAppStateInit,
+      s.appState.systemAppearance,
+      s.updateElectronAppState,
+      s.appState.isMac,
+    ],
+  );
+  const [switchThemeMode, switchLocale] = useGlobalStore((s) => [
+    s.switchThemeMode,
+    s.switchLocale,
   ]);
-  const switchThemeMode = useGlobalStore((s) => s.switchThemeMode);
 
   const theme = useTheme();
 
@@ -19,16 +26,21 @@ export const useWatchThemeUpdate = () => {
     switchThemeMode(themeMode, { skipBroadcast: true });
   });
 
+  useWatchBroadcast('localeChanged', ({ locale }) => {
+    switchLocale(locale as any, { skipBroadcast: true });
+  });
+
   useWatchBroadcast('systemThemeChanged', ({ themeMode }) => {
     updateElectronAppState({ systemAppearance: themeMode });
   });
 
   useEffect(() => {
+    if (!isAppStateInit || !isMac) return;
     document.documentElement.style.background = 'none';
 
     // https://x.com/alanblogsooo/status/1939208908993896684
     const isNotSameTheme = !systemAppearance ? true : theme.appearance !== systemAppearance;
 
     document.body.style.background = rgba(theme.colorBgLayout, isNotSameTheme ? 0.95 : 0.66);
-  }, [theme, systemAppearance]);
+  }, [theme, systemAppearance, isAppStateInit, isMac]);
 };

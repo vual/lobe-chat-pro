@@ -1,4 +1,9 @@
 {
+  "ArgsInput": {
+    "addArgument": "Добави параметър",
+    "argumentPlaceholder": "Параметър {{index}}",
+    "enterFirstArgument": "Въведете първия параметър..."
+  },
   "DragUpload": {
     "dragDesc": "Плъзнете файлове тук, поддържа качване на множество изображения.",
     "dragFileDesc": "Плъзнете изображения и файлове тук, поддържа качване на множество изображения и файлове.",
@@ -45,6 +50,10 @@
     "total": {
       "fileCount": "Общо {{count}} елемента",
       "selectedCount": "Избрани {{count}} елемента"
+    },
+    "view": {
+      "list": "Изглед като списък",
+      "masonry": "Изглед като мрежа"
     }
   },
   "FileParsingStatus": {
@@ -67,6 +76,18 @@
   },
   "GoBack": {
     "back": "Назад"
+  },
+  "HtmlPreview": {
+    "actions": {
+      "download": "Изтегляне",
+      "preview": "Преглед"
+    },
+    "iframeTitle": "HTML Преглед",
+    "mode": {
+      "code": "Код",
+      "preview": "Преглед"
+    },
+    "title": "HTML Преглед"
   },
   "ImageUpload": {
     "actions": {
@@ -97,6 +118,7 @@
       "reasoning": "Този модел поддържа дълбочинно мислене",
       "search": "Този модел поддържа търсене в мрежата",
       "tokens": "Този модел поддържа до {{tokens}} токена за една сесия",
+      "video": "Този модел поддържа разпознаване на видео",
       "vision": "Този модел поддържа визуално разпознаване"
     },
     "removed": "Този модел не се намира в списъка. Ако бъде отменен изборът, той ще бъде автоматично премахнат."
@@ -125,6 +147,12 @@
     },
     "progress": {
       "uploadingWithCount": "{{completed}}/{{total}} качени"
+    },
+    "validation": {
+      "fileSizeExceeded": "Превишен допустим размер на файла",
+      "fileSizeExceededDetail": "{{fileName}} ({{actualSize}}) надвишава максимално допустимия размер {{maxSize}}",
+      "fileSizeExceededMultiple": "{{count}} файла надвишават максимално допустимия размер {{maxSize}}: {{fileList}}",
+      "imageCountExceeded": "Надвишен е допустимият брой изображения"
     }
   },
   "OllamaSetupGuide": {

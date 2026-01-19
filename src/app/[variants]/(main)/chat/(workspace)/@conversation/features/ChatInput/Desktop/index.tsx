@@ -2,51 +2,16 @@
 
 import { memo } from 'react';
 
-import { ActionKeys } from '@/features/ChatInput/ActionBar/config';
-import DesktopChatInput, { FooterRender } from '@/features/ChatInput/Desktop';
-import { useGlobalStore } from '@/store/global';
-import { systemStatusSelectors } from '@/store/global/selectors';
+import { useSessionStore } from '@/store/session';
+import { sessionSelectors } from '@/store/session/selectors';
 
-import Footer from './Footer';
-import TextArea from './TextArea';
+import ClassicChatInput from './ClassicChat';
+import GroupChatInput from './GroupChat';
 
-const leftActions = [
-  'model',
-  'search',
-  'fileUpload',
-  'knowledgeBase',
-  'params',
-  'history',
-  'stt',
-  'tools',
-  'mainToken',
-] as ActionKeys[];
+const Desktop = memo((props: { targetMemberId?: string }) => {
+  const isGroupSession = useSessionStore(sessionSelectors.isCurrentSessionGroupSession);
 
-const rightActions = ['clear'] as ActionKeys[];
-
-const renderTextArea = (onSend: () => void) => <TextArea onSend={onSend} />;
-const renderFooter: FooterRender = ({ expand, onExpandChange }) => (
-  <Footer expand={expand} onExpandChange={onExpandChange} />
-);
-
-const Desktop = memo(() => {
-  const [inputHeight, updatePreference] = useGlobalStore((s) => [
-    systemStatusSelectors.inputHeight(s),
-    s.updateSystemStatus,
-  ]);
-
-  return (
-    <DesktopChatInput
-      inputHeight={inputHeight}
-      leftActions={leftActions}
-      onInputHeightChange={(height) => {
-        updatePreference({ inputHeight: height });
-      }}
-      renderFooter={renderFooter}
-      renderTextArea={renderTextArea}
-      rightActions={rightActions}
-    />
-  );
+  return isGroupSession ? <GroupChatInput {...props} /> : <ClassicChatInput />;
 });
 
 export default Desktop;

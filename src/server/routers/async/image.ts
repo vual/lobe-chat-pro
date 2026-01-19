@@ -1,15 +1,15 @@
+import { AgentRuntimeErrorType } from '@lobechat/model-runtime';
+import { AsyncTaskError, AsyncTaskErrorType, AsyncTaskStatus } from '@lobechat/types';
 import debug from 'debug';
+import { RuntimeImageGenParams } from 'model-bank';
 import { z } from 'zod';
 
 import { ASYNC_TASK_TIMEOUT, AsyncTaskModel } from '@/database/models/asyncTask';
 import { FileModel } from '@/database/models/file';
 import { GenerationModel } from '@/database/models/generation';
-import { AgentRuntimeErrorType } from '@/libs/model-runtime/error';
-import { RuntimeImageGenParams } from '@/libs/standard-parameters/meta-schema';
 import { asyncAuthedProcedure, asyncRouter as router } from '@/libs/trpc/async';
-import { initAgentRuntimeWithUserPayload } from '@/server/modules/AgentRuntime';
+import { initModelRuntimeWithUserPayload } from '@/server/modules/ModelRuntime';
 import { GenerationService } from '@/server/services/generation';
-import { AsyncTaskError, AsyncTaskErrorType, AsyncTaskStatus } from '@/types/asyncTask';
 
 const log = debug('lobe-image:async');
 
@@ -59,15 +59,79 @@ const checkAbortSignal = (signal: AbortSignal) => {
 
 /**
  * Categorizes errors into appropriate AsyncTaskErrorType
+ * Returns the original error message if available, otherwise returns the error type as message
+ * Client should handle localization based on errorType
  */
 const categorizeError = (
   error: any,
   isAborted: boolean,
 ): { errorMessage: string; errorType: AsyncTaskErrorType } => {
+  log('🔥🔥🔥 [ASYNC] categorizeError called:', {
+    errorMessage: error?.message,
+    errorName: error?.name,
+    errorStatus: error?.status,
+    errorType: error?.errorType,
+    fullError: JSON.stringify(error, null, 2),
+    isAborted,
+  });
+  // Handle Comfy UI errors
+  if (error.errorType === AgentRuntimeErrorType.ComfyUIServiceUnavailable) {
+    return {
+      errorMessage:
+        error.error?.message || error.message || AgentRuntimeErrorType.ComfyUIServiceUnavailable,
+      errorType: AsyncTaskErrorType.InvalidProviderAPIKey,
+    };
+  }
+
+  if (error.errorType === AgentRuntimeErrorType.ComfyUIBizError) {
+    return {
+      errorMessage: error.error?.message || error.message || AgentRuntimeErrorType.ComfyUIBizError,
+      errorType: AsyncTaskErrorType.ServerError,
+    };
+  }
+
+  if (error.errorType === AgentRuntimeErrorType.ComfyUIWorkflowError) {
+    return {
+      errorMessage:
+        error.error?.message || error.message || AgentRuntimeErrorType.ComfyUIWorkflowError,
+      errorType: AsyncTaskErrorType.ServerError,
+    };
+  }
+
+  if (error.errorType === AgentRuntimeErrorType.ComfyUIModelError) {
+    return {
+      errorMessage:
+        error.error?.message || error.message || AgentRuntimeErrorType.ComfyUIModelError,
+      errorType: AsyncTaskErrorType.ModelNotFound,
+    };
+  }
+
+  if (error.errorType === AgentRuntimeErrorType.ConnectionCheckFailed) {
+    return {
+      errorMessage: error.message || AgentRuntimeErrorType.ConnectionCheckFailed,
+      errorType: AsyncTaskErrorType.ServerError,
+    };
+  }
+
+  if (error.errorType === AgentRuntimeErrorType.PermissionDenied) {
+    return {
+      errorMessage: error.error?.message || error.message || AgentRuntimeErrorType.PermissionDenied,
+      errorType: AsyncTaskErrorType.InvalidProviderAPIKey,
+    };
+  }
+
+  if (error.errorType === AgentRuntimeErrorType.ModelNotFound) {
+    return {
+      errorMessage: error.error?.message || error.message || AgentRuntimeErrorType.ModelNotFound,
+      errorType: AsyncTaskErrorType.ModelNotFound,
+    };
+  }
+
   // FIXME: 401 的问题应该放到 agentRuntime 中处理会更好
   if (error.errorType === AgentRuntimeErrorType.InvalidProviderAPIKey || error?.status === 401) {
     return {
-      errorMessage: 'Invalid provider API key, please check your API key',
+      errorMessage:
+        error.error?.message || error.message || AgentRuntimeErrorType.InvalidProviderAPIKey,
       errorType: AsyncTaskErrorType.InvalidProviderAPIKey,
     };
   }
@@ -81,27 +145,27 @@ const categorizeError = (
 
   if (isAborted || error.message?.includes('aborted')) {
     return {
-      errorMessage: 'Image generation task timed out, please try again',
+      errorMessage: AsyncTaskErrorType.Timeout,
       errorType: AsyncTaskErrorType.Timeout,
     };
   }
 
   if (error.message?.includes('timeout') || error.name === 'TimeoutError') {
     return {
-      errorMessage: 'Image generation task timed out, please try again',
+      errorMessage: AsyncTaskErrorType.Timeout,
       errorType: AsyncTaskErrorType.Timeout,
     };
   }
 
   if (error.message?.includes('network') || error.name === 'NetworkError') {
     return {
-      errorMessage: error.message || 'Network error occurred during image generation',
+      errorMessage: error.message || AsyncTaskErrorType.ServerError,
       errorType: AsyncTaskErrorType.ServerError,
     };
   }
 
   return {
-    errorMessage: error.message || 'Unknown error occurred during image generation',
+    errorMessage: error.message || AsyncTaskErrorType.ServerError,
     errorType: AsyncTaskErrorType.ServerError,
   };
 };
@@ -112,7 +176,12 @@ export const imageRouter = router({
 
     log('Starting async image generation: %O', {
       generationId,
-      imageParams: { height: params.height, steps: params.steps, width: params.width },
+      imageParams: {
+        cfg: params.cfg,
+        height: params.height,
+        steps: params.steps,
+        width: params.width,
+      },
       model,
       prompt: params.prompt,
       provider,
@@ -129,13 +198,13 @@ export const imageRouter = router({
     try {
       const imageGenerationPromise = async (signal: AbortSignal) => {
         log('Initializing agent runtime for provider: %s', provider);
-        const agentRuntime = await initAgentRuntimeWithUserPayload(provider, ctx.jwtPayload);
+
+        const agentRuntime = await initModelRuntimeWithUserPayload(provider, ctx.jwtPayload);
 
         // Check if operation has been cancelled
         checkAbortSignal(signal);
-
         log('Agent runtime initialized, calling createImage');
-        const response = await agentRuntime.createImage({
+        const response = await agentRuntime.createImage!({
           model,
           params: params as unknown as RuntimeImageGenParams,
         });
@@ -144,6 +213,13 @@ export const imageRouter = router({
           log('Create image response is empty');
           throw new Error('Create image response is empty');
         }
+
+        log('Create image response: %O', {
+          ...response,
+          imageUrl: response.imageUrl?.startsWith('data:')
+            ? response.imageUrl.slice(0, IMAGE_URL_PREVIEW_LENGTH) + '...'
+            : response.imageUrl,
+        });
 
         // Check if operation has been cancelled
         checkAbortSignal(signal);
@@ -158,8 +234,24 @@ export const imageRouter = router({
 
         log('Transforming image for generation');
         const { imageUrl, width, height } = response;
-        const { image, thumbnailImage } =
-          await ctx.generationService.transformImageForGeneration(imageUrl);
+
+        // Extract ComfyUI authentication headers if provider is ComfyUI
+        let authHeaders: Record<string, string> | undefined;
+        if (provider === 'comfyui') {
+          // Use the public interface method to get auth headers
+          // This avoids accessing private members and exposing credentials
+          authHeaders = agentRuntime.getAuthHeaders();
+          if (authHeaders) {
+            log('Using authentication headers for ComfyUI image download');
+          } else {
+            log('No authentication configured for ComfyUI');
+          }
+        }
+
+        const { image, thumbnailImage } = await ctx.generationService.transformImageForGeneration(
+          imageUrl,
+          authHeaders,
+        );
 
         // Check if operation has been cancelled
         checkAbortSignal(signal);
@@ -188,6 +280,7 @@ export const imageRouter = router({
             metadata: {
               generationId,
               height: image.height,
+              path: uploadedImageUrl,
               width: image.width,
             },
             name: `${params.prompt.slice(0, FILENAME_MAX_LENGTH)}.${image.extension}`,

@@ -1,4 +1,9 @@
 {
+  "ArgsInput": {
+    "addArgument": "Añadir argumento",
+    "argumentPlaceholder": "Parámetro {{index}}",
+    "enterFirstArgument": "Introduce el primer parámetro..."
+  },
   "DragUpload": {
     "dragDesc": "Arrastra los archivos aquí, se admite la carga de múltiples imágenes.",
     "dragFileDesc": "Arrastra imágenes y archivos aquí, se admite la carga de múltiples imágenes y archivos.",
@@ -45,6 +50,10 @@
     "total": {
       "fileCount": "Total {{count}} elementos",
       "selectedCount": "Seleccionados {{count}} elementos"
+    },
+    "view": {
+      "list": "Vista de lista",
+      "masonry": "Vista de cuadrícula"
     }
   },
   "FileParsingStatus": {
@@ -67,6 +76,18 @@
   },
   "GoBack": {
     "back": "Regresar"
+  },
+  "HtmlPreview": {
+    "actions": {
+      "download": "Descargar",
+      "preview": "Vista previa"
+    },
+    "iframeTitle": "Vista previa HTML",
+    "mode": {
+      "code": "Código",
+      "preview": "Vista previa"
+    },
+    "title": "Vista previa HTML"
   },
   "ImageUpload": {
     "actions": {
@@ -97,6 +118,7 @@
       "reasoning": "Este modelo admite un pensamiento profundo",
       "search": "Este modelo admite búsqueda en línea",
       "tokens": "Este modelo admite un máximo de {{tokens}} tokens por sesión.",
+      "video": "Este modelo admite reconocimiento de video",
       "vision": "Este modelo admite el reconocimiento visual."
     },
     "removed": "El modelo no está en la lista, se eliminará automáticamente si se cancela la selección"
@@ -125,6 +147,12 @@
     },
     "progress": {
       "uploadingWithCount": "{{completed}}/{{total}} subidas"
+    },
+    "validation": {
+      "fileSizeExceeded": "El tamaño del archivo excede el límite",
+      "fileSizeExceededDetail": "{{fileName}} ({{actualSize}}) supera el tamaño máximo permitido de {{maxSize}}",
+      "fileSizeExceededMultiple": "{{count}} archivos superan el tamaño máximo permitido de {{maxSize}}: {{fileList}}",
+      "imageCountExceeded": "Se ha excedido el límite de imágenes"
     }
   },
   "OllamaSetupGuide": {

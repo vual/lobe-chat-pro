@@ -1,4 +1,9 @@
 {
+  "ArgsInput": {
+    "addArgument": "Argument toevoegen",
+    "argumentPlaceholder": "Argument {{index}}",
+    "enterFirstArgument": "Voer het eerste argument in..."
+  },
   "DragUpload": {
     "dragDesc": "Sleep bestanden hierheen om meerdere afbeeldingen te uploaden.",
     "dragFileDesc": "Sleep afbeeldingen en bestanden hierheen om meerdere afbeeldingen en bestanden te uploaden.",
@@ -45,6 +50,10 @@
     "total": {
       "fileCount": "Totaal {{count}} items",
       "selectedCount": "Geselecteerd {{count}} items"
+    },
+    "view": {
+      "list": "Lijstweergave",
+      "masonry": "Rasterweergave"
     }
   },
   "FileParsingStatus": {
@@ -67,6 +76,18 @@
   },
   "GoBack": {
     "back": "Terug"
+  },
+  "HtmlPreview": {
+    "actions": {
+      "download": "Downloaden",
+      "preview": "Voorbeeld"
+    },
+    "iframeTitle": "HTML Voorbeeld",
+    "mode": {
+      "code": "Code",
+      "preview": "Voorbeeld"
+    },
+    "title": "HTML Voorbeeld"
   },
   "ImageUpload": {
     "actions": {
@@ -97,6 +118,7 @@
       "reasoning": "Dit model ondersteunt diepgaand denken",
       "search": "Dit model ondersteunt online zoeken",
       "tokens": "This model supports up to {{tokens}} tokens in a single session.",
+      "video": "Dit model ondersteunt videoherkenning",
       "vision": "This model supports visual recognition."
     },
     "removed": "Dit model staat niet meer in de lijst. Als je het deselecteert, wordt het automatisch verwijderd."
@@ -125,6 +147,12 @@
     },
     "progress": {
       "uploadingWithCount": "{{completed}}/{{total}} geüpload"
+    },
+    "validation": {
+      "fileSizeExceeded": "Bestandsgrootte overschrijdt de limiet",
+      "fileSizeExceededDetail": "{{fileName}} ({{actualSize}}) overschrijdt de maximale grootte van {{maxSize}}",
+      "fileSizeExceededMultiple": "{{count}} bestanden overschrijden de maximale grootte van {{maxSize}}: {{fileList}}",
+      "imageCountExceeded": "Het aantal afbeeldingen overschrijdt de limiet"
     }
   },
   "OllamaSetupGuide": {

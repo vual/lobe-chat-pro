@@ -5,6 +5,9 @@ export default {
       lock: '锁定宽高比',
       unlock: '解锁宽高比',
     },
+    cfg: {
+      label: '引导强度',
+    },
     header: {
       desc: '简单描述，即刻创作',
       title: '绘画',
@@ -26,6 +29,13 @@ export default {
     },
     prompt: {
       placeholder: '描述你想要生成的内容',
+    },
+    quality: {
+      label: '图片质量',
+      options: {
+        hd: '高清',
+        standard: '标准',
+      },
     },
     seed: {
       label: '种子',

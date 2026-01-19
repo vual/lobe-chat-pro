@@ -1,6 +1,7 @@
 import { UploadFile } from 'antd';
 
-import { AgentRuntimeError, ModelProvider } from '@/libs/model-runtime';
+import { AgentRuntimeError } from '@lobechat/model-runtime';
+import { ModelProvider } from 'model-bank';
 import { createHeaderWithAuth, createPayloadWithKeyVaults } from '@/services/_auth';
 import { API_ENDPOINTS } from '@/services/_url';
 import { aiProviderSelectors, getAiInfraStoreState } from '@/store/aiInfra';

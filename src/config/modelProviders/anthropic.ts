@@ -1,6 +1,5 @@
 import { ModelProviderCard } from '@/types/llm';
 
-// ref: https://docs.anthropic.com/en/docs/about-claude/models#model-names
 const Anthropic: ModelProviderCard = {
   chatModels: [
     {
@@ -12,12 +11,6 @@ const Anthropic: ModelProviderCard = {
       functionCall: true,
       id: 'claude-opus-4-20250514',
       maxOutput: 32_000,
-      pricing: {
-        cachedInput: 7.5,
-        input: 30,
-        output: 150,
-        writeCacheInput: 37.5,
-      },
       releasedAt: '2025-05-14',
       vision: true,
     },
@@ -30,12 +23,6 @@ const Anthropic: ModelProviderCard = {
       functionCall: true,
       id: 'claude-sonnet-4-20250514',
       maxOutput: 64_000,
-      pricing: {
-        cachedInput: 1.5,
-        input: 6,
-        output: 30,
-        writeCacheInput: 7.5,
-      },
       releasedAt: '2025-05-14',
       vision: true,
     },
@@ -48,12 +35,6 @@ const Anthropic: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-7-sonnet-20250219',
       maxOutput: 64_000,
-      pricing: {
-        cachedInput: 0.1,
-        input: 1,
-        output: 5,
-        writeCacheInput: 1.25,
-      },
       releasedAt: '2025-02-24',
     },
     {
@@ -65,12 +46,6 @@ const Anthropic: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-5-haiku-20241022',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.1,
-        input: 1,
-        output: 5,
-        writeCacheInput: 1.25,
-      },
       releasedAt: '2024-11-05',
     },
     {
@@ -82,12 +57,6 @@ const Anthropic: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-5-sonnet-20241022',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.3,
-        input: 3,
-        output: 15,
-        writeCacheInput: 3.75,
-      },
       releasedAt: '2024-10-22',
       vision: true,
     },
@@ -99,12 +68,6 @@ const Anthropic: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-5-sonnet-20240620',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.3,
-        input: 3,
-        output: 15,
-        writeCacheInput: 3.75,
-      },
       releasedAt: '2024-06-20',
       vision: true,
     },
@@ -116,26 +79,7 @@ const Anthropic: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-haiku-20240307',
       maxOutput: 4096,
-      pricing: {
-        input: 0.25,
-        output: 1.25,
-      },
       releasedAt: '2024-03-07',
-      vision: true,
-    },
-    {
-      contextWindowTokens: 200_000,
-      description:
-        'Claude 3 Sonnet 在智能和速度方面为企业工作负载提供了理想的平衡。它以更低的价格提供最大效用，可靠且适合大规模部署。',
-      displayName: 'Claude 3 Sonnet',
-      functionCall: true,
-      id: 'claude-3-sonnet-20240229',
-      maxOutput: 4096,
-      pricing: {
-        input: 3,
-        output: 15,
-      },
-      releasedAt: '2024-02-29',
       vision: true,
     },
     {
@@ -147,38 +91,8 @@ const Anthropic: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-opus-20240229',
       maxOutput: 4096,
-      pricing: {
-        input: 15,
-        output: 75,
-      },
       releasedAt: '2024-02-29',
       vision: true,
-    },
-    {
-      contextWindowTokens: 200_000,
-      description:
-        'Claude 2 为企业提供了关键能力的进步，包括业界领先的 200K token 上下文、大幅降低模型幻觉的发生率、系统提示以及一个新的测试功能：工具调用。',
-      displayName: 'Claude 2.1',
-      id: 'claude-2.1',
-      maxOutput: 4096,
-      pricing: {
-        input: 8,
-        output: 24,
-      },
-      releasedAt: '2023-11-21',
-    },
-    {
-      contextWindowTokens: 100_000,
-      description:
-        'Claude 2 为企业提供了关键能力的进步，包括业界领先的 200K token 上下文、大幅降低模型幻觉的发生率、系统提示以及一个新的测试功能：工具调用。',
-      displayName: 'Claude 2.0',
-      id: 'claude-2.0',
-      maxOutput: 4096,
-      pricing: {
-        input: 8,
-        output: 24,
-      },
-      releasedAt: '2023-07-11',
     },
   ],
   checkModel: 'claude-3-haiku-20240307',

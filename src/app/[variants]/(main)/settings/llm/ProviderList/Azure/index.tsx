@@ -2,10 +2,10 @@
 
 import { AutoComplete, Input, InputPassword, Markdown } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
+import { ModelProvider } from 'model-bank';
 import { useTranslation } from 'react-i18next';
 
 import { AzureProviderCard } from '@/config/modelProviders';
-import { ModelProvider } from '@/libs/model-runtime';
 import { useUserStore } from '@/store/user';
 import { modelProviderSelectors } from '@/store/user/selectors';
 

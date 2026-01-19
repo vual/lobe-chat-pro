@@ -35,9 +35,16 @@
       "title": "Zresetuj wszystkie ustawienia"
     }
   },
+  "groupTab": {
+    "chat": "Czaty",
+    "members": "Członkowie",
+    "meta": "Informacje podstawowe"
+  },
   "header": {
     "desc": "Preferencje i ustawienia modelu.",
     "global": "Ustawienia globalne",
+    "group": "Ustawienia zespołu",
+    "groupDesc": "Zarządzaj zespołem Agentów i preferencjami czatu",
     "session": "Ustawienia sesji",
     "sessionDesc": "Ustawienia postaci i preferencje sesji.",
     "sessionWithName": "Ustawienia sesji · {{name}}",
@@ -45,14 +52,25 @@
   },
   "hotkey": {
     "conflicts": "Kolizja z istniejącymi skrótami klawiszowymi",
+    "errors": {
+      "CONFLICT": "Konflikt skrótu klawiszowego: ten skrót jest już używany przez inną funkcję",
+      "INVALID_FORMAT": "Nieprawidłowy format skrótu klawiszowego: użyj poprawnego formatu (np. CommandOrControl+E)",
+      "INVALID_ID": "Nieprawidłowy identyfikator skrótu klawiszowego",
+      "NO_MODIFIER": "Skrót klawiszowy musi zawierać klawisz modyfikujący (Ctrl, Alt, Shift itp.)",
+      "SYSTEM_OCCUPIED": "Skrót klawiszowy jest zajęty przez system lub inną aplikację",
+      "UNKNOWN": "Aktualizacja nie powiodła się: nieznany błąd"
+    },
     "group": {
       "conversation": "Rozmowa",
+      "desktop": "Pulpit",
       "essential": "Podstawowy"
     },
     "invalidCombination": "Skrót klawiszowy musi zawierać przynajmniej jeden klawisz modyfikujący (Ctrl, Alt, Shift) oraz jeden klawisz zwykły",
     "record": "Naciśnij klawisz, aby nagrać skrót klawiszowy",
     "reset": "Przywróć domyślne skróty klawiszowe",
-    "title": "Skróty klawiszowe"
+    "title": "Skróty klawiszowe",
+    "updateError": "Aktualizacja skrótu klawiszowego nie powiodła się: błąd sieci lub systemu",
+    "updateSuccess": "Skrót klawiszowy został pomyślnie zaktualizowany"
   },
   "llm": {
     "aesGcm": "Twój klucz, adres proxy i inne będą szyfrowane za pomocą algorytmu szyfrowania <1>AES-GCM</1>",
@@ -128,6 +146,9 @@
     },
     "waitingForMore": "Więcej modeli jest obecnie w <1>planach dołączenia</1>, prosimy o cierpliwość"
   },
+  "message": {
+    "success": "Pomyślnie zaktualizowano"
+  },
   "plugin": {
     "addMCPPlugin": "Dodaj wtyczkę MCP",
     "addTooltip": "Dodaj niestandardowy dodatek",
@@ -172,9 +193,20 @@
     "title": "Informacje o asystencie"
   },
   "settingAppearance": {
+    "animationMode": {
+      "agile": "Zwinny",
+      "desc": "Wybierz prędkość animacji reakcji aplikacji",
+      "disabled": "Wyłączone",
+      "elegant": "Elegancki",
+      "title": "Animacja reakcji"
+    },
     "neutralColor": {
       "desc": "Dostosowanie odcieni szarości w różnych kolorach",
       "title": "Kolor neutralny"
+    },
+    "noAnimation": {
+      "desc": "Wyłącz wszystkie efekty animacji w aplikacji",
+      "title": "Tryb bez animacji"
     },
     "preview": {
       "title": "Paleta kolorów"
@@ -214,6 +246,10 @@
       "setlimited": "Ustaw limit wiadomości historycznych",
       "title": "Ograniczenie liczby wiadomości w historii",
       "unlimited": "Bez limitu wiadomości w historii"
+    },
+    "enableStreaming": {
+      "desc": "Włącz strumieniowe wyświetlanie odpowiedzi w czasie rzeczywistym. Po wyłączeniu wyświetlana jest tylko pełna odpowiedź.",
+      "title": "Włącz strumieniowe wyświetlanie"
     },
     "historyCount": {
       "desc": "Liczba wiadomości przesyłanych w jednym żądaniu (obejmuje najnowsze pytania i odpowiedzi, gdzie każde pytanie i odpowiedź liczy się jako 1)",
@@ -267,6 +303,109 @@
       "title": "Motyw"
     },
     "title": "Ustawienia ogólne"
+  },
+  "settingGroup": {
+    "description": {
+      "placeholder": "Wprowadź opis zespołu",
+      "title": "Opis zespołu"
+    },
+    "name": {
+      "placeholder": "Wprowadź nazwę zespołu",
+      "title": "Nazwa zespołu"
+    },
+    "scene": {
+      "desc": "Wybierz scenariusz zespołu",
+      "options": {
+        "casual": "Nieformalny",
+        "productive": "Produktywność"
+      },
+      "title": "Scenariusz zespołu"
+    },
+    "submit": "Zaktualizuj zespół",
+    "systemPrompt": {
+      "placeholder": "Wprowadź systemową wskazówkę prowadzącego",
+      "title": "Systemowa wskazówka prowadzącego"
+    },
+    "title": "Informacje o zespole Agentów"
+  },
+  "settingGroupChat": {
+    "allowDM": {
+      "desc": "Po wyłączeniu nadal możesz samodzielnie wysyłać wiadomości prywatne do asystenta",
+      "title": "Zezwól asystentowi na wysyłanie wiadomości prywatnych"
+    },
+    "enableSupervisor": {
+      "desc": "Włącz funkcję moderatora zespołu Agentów — moderator będzie zarządzać przebiegiem rozmowy",
+      "title": "Włącz moderatora"
+    },
+    "maxResponseInRow": {
+      "desc": "Wybierz, ile wiadomości członek może odpowiedzieć z rzędu. Ustaw na 0, aby wyłączyć to ograniczenie.",
+      "title": "Liczba kolejnych odpowiedzi"
+    },
+    "model": {
+      "desc": "Wypowiedzi członków grupy nie będą ograniczane. Niektóre modele nie mogą być używane jako modele moderatora.",
+      "title": "Model prowadzącego"
+    },
+    "orchestratorTitle": "Ustawienia prowadzącego",
+    "responseOrder": {
+      "desc": "Agenci będą odpowiadać w ustalonej kolejności w czacie",
+      "options": {
+        "natural": "Naturalna",
+        "sequential": "Sekwencyjna"
+      },
+      "placeholder": "Wybierz kolejność odpowiedzi",
+      "title": "Kolejność odpowiedzi"
+    },
+    "responseSpeed": {
+      "desc": "Kontroluj ogólne tempo rozmowy",
+      "options": {
+        "fast": "Szybkie",
+        "medium": "Średnie",
+        "slow": "Wolne"
+      },
+      "placeholder": "Wybierz prędkość odpowiedzi",
+      "title": "Prędkość odpowiedzi"
+    },
+    "revealDM": {
+      "desc": "Umożliw wyświetlanie prywatnych wiadomości wysłanych do innych członków.",
+      "title": "Pokaż treść prywatnych wiadomości"
+    },
+    "submit": "Aktualizuj ustawienia",
+    "systemPrompt": {
+      "desc": "Niestandardowa systemowa wskazówka dla prowadzącego rozmowę w czacie grupowym. Może wpłynąć na domyślne zachowanie prowadzącego.",
+      "placeholder": "Wprowadź niestandardową systemową wskazówkę prowadzącego...",
+      "title": "Systemowa wskazówka prowadzącego"
+    },
+    "title": "Ustawienia czatu"
+  },
+  "settingGroupMembers": {
+    "addToGroup": "Dołącz do grupy",
+    "availableAgents": "Dostępni asystenci",
+    "createMember": "Utwórz członka",
+    "defaultAgent": "Niestandardowy asystent",
+    "disableHost": "Wyłącz asystenta gospodarza",
+    "edit": "Edytuj członka",
+    "empty": "Ten zespół nie ma jeszcze członków. Kliknij przycisk +, aby dodać członków.",
+    "enableHost": "Włącz asystenta gospodarza",
+    "groupHost": "Gospodarz grupy",
+    "groupMembers": "Członkowie grupy",
+    "host": {
+      "description": "Gdy gospodarz jest w grupie, czat grupowy działa automatycznie, co jest odpowiednie dla zadań twórczych.",
+      "title": "Gospodarz"
+    },
+    "noAvailableAgents": "Brak dostępnych asystentów",
+    "noDescription": "Brak opisu",
+    "noMembersInGroup": "Brak członków w grupie",
+    "owner": "Ty (właściciel)",
+    "remove": "Usuń członka",
+    "removeFromGroup": "Usuń z grupy",
+    "you": "Ty"
+  },
+  "settingImage": {
+    "defaultCount": {
+      "desc": "Ustaw domyślną liczbę obrazów generowanych podczas tworzenia nowego zadania.",
+      "label": "Domyślna liczba obrazów",
+      "title": "Ustawienia rysowania AI"
+    }
   },
   "settingModel": {
     "enableMaxTokens": {
@@ -523,6 +662,7 @@
     "common": "Ustawienia ogólne",
     "experiment": "Eksperyment",
     "hotkey": "Skróty klawiszowe",
+    "image": "Rysowanie AI",
     "llm": "Model językowy",
     "provider": "Dostawca usług AI",
     "proxy": "Proxy sieciowy",

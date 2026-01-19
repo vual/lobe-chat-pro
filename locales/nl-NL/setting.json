@@ -35,9 +35,16 @@
       "title": "Alle instellingen resetten"
     }
   },
+  "groupTab": {
+    "chat": "Chat",
+    "members": "Leden",
+    "meta": "Basisinformatie"
+  },
   "header": {
     "desc": "Voorkeuren en modelinstellingen.",
     "global": "Algemene instellingen",
+    "group": "Teaminstellingen",
+    "groupDesc": "Beheer Agent-teams en chatvoorkeuren",
     "session": "Sessie-instellingen",
     "sessionDesc": "Rolinstellingen en sessievoorkeuren.",
     "sessionWithName": "Sessie-instellingen · {{name}}",
@@ -45,14 +52,25 @@
   },
   "hotkey": {
     "conflicts": "Conflict met bestaande sneltoetsen",
+    "errors": {
+      "CONFLICT": "Sneltoetsconflict: deze sneltoets wordt al door een andere functie gebruikt",
+      "INVALID_FORMAT": "Ongeldig sneltoetsformaat: gebruik het juiste formaat (bijv. CommandOrControl+E)",
+      "INVALID_ID": "Ongeldige sneltoets-ID",
+      "NO_MODIFIER": "Sneltoets moet een modificatortoets bevatten (Ctrl, Alt, Shift, enz.)",
+      "SYSTEM_OCCUPIED": "Sneltoets wordt al door het systeem of een andere applicatie gebruikt",
+      "UNKNOWN": "Bijwerken mislukt: onbekende fout"
+    },
     "group": {
       "conversation": "Gesprek",
+      "desktop": "Desktop",
       "essential": "Essentieel"
     },
     "invalidCombination": "Sneltoets moet ten minste één modifier-toets (Ctrl, Alt, Shift) en één reguliere toets bevatten",
     "record": "Druk op een toets om de sneltoets op te nemen",
     "reset": "Reset naar standaard sneltoetsen",
-    "title": "Sneltoetsen"
+    "title": "Sneltoetsen",
+    "updateError": "Sneltoets bijwerken mislukt: netwerk- of systeemfout",
+    "updateSuccess": "Sneltoets succesvol bijgewerkt"
   },
   "llm": {
     "aesGcm": "Uw sleutel en proxy-adres zullen worden versleuteld met het <1>AES-GCM</1> encryptie-algoritme",
@@ -128,6 +146,9 @@
     },
     "waitingForMore": "Meer modellen worden <1>gepland om te worden toegevoegd</1>, dus blijf op de hoogte"
   },
+  "message": {
+    "success": "Succesvol bijgewerkt"
+  },
   "plugin": {
     "addMCPPlugin": "MCP-plug-in toevoegen",
     "addTooltip": "Voeg aangepaste plug-in toe",
@@ -172,9 +193,20 @@
     "title": "Assistentinformatie"
   },
   "settingAppearance": {
+    "animationMode": {
+      "agile": "Behendig",
+      "desc": "Kies de animatiesnelheid voor de reactietijd van de applicatie",
+      "disabled": "Uitgeschakeld",
+      "elegant": "Elegant",
+      "title": "Reactie-animatie"
+    },
     "neutralColor": {
       "desc": "Aangepaste grijstinten met verschillende kleurvoorkeuren",
       "title": "Neutrale kleur"
+    },
+    "noAnimation": {
+      "desc": "Schakel alle animatie-effecten in de applicatie uit",
+      "title": "Animatie uit modus"
     },
     "preview": {
       "title": "Kleurpalet"
@@ -214,6 +246,10 @@
       "setlimited": "Stel berichtengeschiedenis in",
       "title": "Berichtgeschiedenis beperken",
       "unlimited": "Onbeperkt aantal berichten in de geschiedenis"
+    },
+    "enableStreaming": {
+      "desc": "Schakel streaming-uitvoer in om reacties in realtime weer te geven. Als dit is uitgeschakeld, wordt alleen de volledige reactie weergegeven.",
+      "title": "Streaming-uitvoer inschakelen"
     },
     "historyCount": {
       "desc": "Aantal berichten dat bij elke aanvraag wordt meegenomen (inclusief de meest recente vraag. Elke vraag en antwoord tellen als 1)",
@@ -267,6 +303,109 @@
       "title": "Thema"
     },
     "title": "Algemene instellingen"
+  },
+  "settingGroup": {
+    "description": {
+      "placeholder": "Voer een teamomschrijving in",
+      "title": "Teamomschrijving"
+    },
+    "name": {
+      "placeholder": "Voer een teamnaam in",
+      "title": "Teamnaam"
+    },
+    "scene": {
+      "desc": "Selecteer de teamsituatie",
+      "options": {
+        "casual": "Informeel",
+        "productive": "Productief"
+      },
+      "title": "Teamsituatie"
+    },
+    "submit": "Team bijwerken",
+    "systemPrompt": {
+      "placeholder": "Voer de systeemopdracht van de host in",
+      "title": "Systeemopdracht van de host"
+    },
+    "title": "Agent Teaminformatie"
+  },
+  "settingGroupChat": {
+    "allowDM": {
+      "desc": "Wanneer uitgeschakeld, kun je nog steeds zelf privéberichten naar de assistent sturen",
+      "title": "Sta privéberichten van assistent toe"
+    },
+    "enableSupervisor": {
+      "desc": "Schakel de moderatorfunctie voor het Agent-team in. De moderator beheert het verloop van teamgesprekken.",
+      "title": "Moderator inschakelen"
+    },
+    "maxResponseInRow": {
+      "desc": "Kies hoeveel berichten een lid achter elkaar kan beantwoorden. Stel in op 0 om deze beperking uit te schakelen.",
+      "title": "Aantal opeenvolgende antwoorden"
+    },
+    "model": {
+      "desc": "De bijdragen van groepsleden worden niet beïnvloed. Sommige modellen kunnen niet als moderator worden gebruikt.",
+      "title": "Hostmodel"
+    },
+    "orchestratorTitle": "Hostinstellingen",
+    "responseOrder": {
+      "desc": "Agenten reageren in de volgorde die is ingesteld in de chat",
+      "options": {
+        "natural": "Natuurlijk",
+        "sequential": "Opeenvolgend"
+      },
+      "placeholder": "Kies de antwoordvolgorde",
+      "title": "Antwoordvolgorde"
+    },
+    "responseSpeed": {
+      "desc": "Beheer de algemene snelheid van het gesprek",
+      "options": {
+        "fast": "Snel",
+        "medium": "Gemiddeld",
+        "slow": "Langzaam"
+      },
+      "placeholder": "Kies de reactiesnelheid",
+      "title": "Reactiesnelheid"
+    },
+    "revealDM": {
+      "desc": "Maak privéberichten die naar andere leden zijn gestuurd zichtbaar voor jou.",
+      "title": "Privéberichten tonen"
+    },
+    "submit": "Instellingen bijwerken",
+    "systemPrompt": {
+      "desc": "Aangepaste systeemopdracht voor de host van de groepschat. Dit kan het standaardgedrag van de host beïnvloeden.",
+      "placeholder": "Voer een aangepaste systeemopdracht voor de host in...",
+      "title": "Systeemopdracht van de host"
+    },
+    "title": "Chatinstellingen"
+  },
+  "settingGroupMembers": {
+    "addToGroup": "Toevoegen aan groep",
+    "availableAgents": "Beschikbare assistenten",
+    "createMember": "Lid aanmaken",
+    "defaultAgent": "Aangepaste assistent",
+    "disableHost": "Host-assistent uitschakelen",
+    "edit": "Lid bewerken",
+    "empty": "Er zijn momenteel geen leden in dit team. Klik op de + knop om leden toe te voegen.",
+    "enableHost": "Host-assistent inschakelen",
+    "groupHost": "Groepshost",
+    "groupMembers": "Groepsleden",
+    "host": {
+      "description": "Wanneer de host in de groep is, wordt de groepschat automatisch beheerd, geschikt voor creatieve taken.",
+      "title": "Host"
+    },
+    "noAvailableAgents": "Geen beschikbare assistenten",
+    "noDescription": "Geen beschrijving",
+    "noMembersInGroup": "Geen leden in de groep",
+    "owner": "Jij (eigenaar)",
+    "remove": "Lid verwijderen",
+    "removeFromGroup": "Verwijderen uit groep",
+    "you": "Jij"
+  },
+  "settingImage": {
+    "defaultCount": {
+      "desc": "Stel het standaard aantal afbeeldingen in dat wordt gegenereerd wanneer een nieuwe taak wordt aangemaakt.",
+      "label": "Standaard aantal afbeeldingen",
+      "title": "AI Tekeninstellingen"
+    }
   },
   "settingModel": {
     "enableMaxTokens": {
@@ -523,6 +662,7 @@
     "common": "Algemene instellingen",
     "experiment": "Experiment",
     "hotkey": "Sneltoetsen",
+    "image": "AI Tekeningen",
     "llm": "Taalmodel",
     "provider": "AI-dienstverlener",
     "proxy": "Netwerkproxy",

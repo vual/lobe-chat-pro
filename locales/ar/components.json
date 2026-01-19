@@ -1,4 +1,9 @@
 {
+  "ArgsInput": {
+    "addArgument": "إضافة وسيط",
+    "argumentPlaceholder": "الوسيط {{index}}",
+    "enterFirstArgument": "أدخل الوسيط الأول..."
+  },
   "DragUpload": {
     "dragDesc": "اسحب الملفات هنا، يدعم تحميل عدة صور.",
     "dragFileDesc": "اسحب الصور والملفات هنا، يدعم تحميل عدة صور وملفات.",
@@ -45,6 +50,10 @@
     "total": {
       "fileCount": "إجمالي {{count}} عنصر",
       "selectedCount": "تم تحديد {{count}} عنصر"
+    },
+    "view": {
+      "list": "عرض القائمة",
+      "masonry": "عرض الشبكة"
     }
   },
   "FileParsingStatus": {
@@ -67,6 +76,18 @@
   },
   "GoBack": {
     "back": "عودة"
+  },
+  "HtmlPreview": {
+    "actions": {
+      "download": "تنزيل",
+      "preview": "معاينة"
+    },
+    "iframeTitle": "معاينة HTML",
+    "mode": {
+      "code": "رمز",
+      "preview": "معاينة"
+    },
+    "title": "معاينة HTML"
   },
   "ImageUpload": {
     "actions": {
@@ -97,6 +118,7 @@
       "reasoning": "يدعم هذا النموذج التفكير العميق",
       "search": "يدعم هذا النموذج البحث عبر الإنترنت",
       "tokens": "يدعم هذا النموذج حتى {{tokens}} رمزًا في جلسة واحدة",
+      "video": "هذا النموذج يدعم التعرف على الفيديو",
       "vision": "يدعم هذا النموذج التعرف البصري"
     },
     "removed": "هذا النموذج لم يعد متوفر في القائمة، سيتم إزالته تلقائيًا إذا تم إلغاء تحديده"
@@ -125,6 +147,12 @@
     },
     "progress": {
       "uploadingWithCount": "تم تحميل {{completed}} من أصل {{total}}"
+    },
+    "validation": {
+      "fileSizeExceeded": "تجاوز حجم الملف الحد المسموح",
+      "fileSizeExceededDetail": "{{fileName}} ({{actualSize}}) يتجاوز الحد الأقصى للحجم {{maxSize}}",
+      "fileSizeExceededMultiple": "{{count}} ملفات تتجاوز الحد الأقصى للحجم {{maxSize}}: {{fileList}}",
+      "imageCountExceeded": "تجاوز عدد الصور الحد المسموح"
     }
   },
   "OllamaSetupGuide": {
