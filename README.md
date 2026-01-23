@@ -54,13 +54,17 @@
   - **支持划转邀请奖励**，
   - **支持手动添加 apikey 到本地**，本地添加的 apikey 和中转站里的 apikey 共存，随意切换
   - **分登陆版和无需登录版本**，无需登录版本只能手动添加 apikey 到本地
+  - **支持禁用自定义baseUrl填写**，
+  - **支持跳链携带apikey**，跳链携带参数：?settings={"keyVaults":{"common":{"apiKey":"sk-xxxxxx"}}}
+  - **支持支持左边栏上面和下面添加自定义按钮**，详细参照[参数说明](./Parameters.md)
 
   ![img35](/images/img35.png)
   ![img36](/images/img36.png)
 
 - ### 其它：
   - 1. 支持修改应用名称和 LOGO。
-  - 2. 支持用户把创作的图片、音乐、视频发布到公共空间，在发现页可以查看所有人分享的作品。
+  - 2. 支持左边栏上面和下面添加自定义按钮，详细参照[参数说明](./Parameters.md)
+  - 3. 支持用户把创作的图片、音乐、视频发布到公共空间，在发现页可以查看所有人分享的作品。
 
 ## 体验站点
 
@@ -77,6 +81,7 @@
     - [部署服务](docs-with-backend/database-deploy.md)
     - [微信公众号和支付](docs-with-backend/微信公众号和支付.md)
     - [Nginx](docs-with-backend/nginx.md)
+    - [参数说明](./Parameters.md)
   - 启动后：
     - 用户端：http\://{启动机器的 ip}:3210，
     - 管理端：http\://{启动机器的 ip}:8888， 账号：admin，密码：123456
@@ -94,8 +99,7 @@
     - APP_CUSTOM_LOGO = 应用 LOGO，填 https 开头的图片地址
     - NEXTAUTH_URL = 登录交互链接，填 APP_URL 的值，拼上 /api/auth， 例如：<https://client.annyun.cn/api/auth>
     - BACKEND_BASE_URL = 中转站地址，例如：<https://api.annyun.cn>
-    - APP_CONFIG = 应用配置，配置登录相关参数，参数包含：
-      {"loginParams":{"addParams":{"agreement":true}, "captchaVerify":true}, "tokenPage":"/token", "tokenQueryPath": "/api/token?p=1\&size=20"}，
+    - APP_CONFIG = 应用配置相关参数，[参数说明](./Parameters.md)
       loginParams 的登录相关参数，addParams 是登录附加参数，会放到登录报文里，比如同意协议说明 "agreement":true，
       captchaVerify:true，是开启图形验证码，tokenPage 是中转站的令牌页面路径，默认值 /token， tokenQueryPath 是查询中转站令牌的请求路径，默认值 /api/token?p=1\&size=20
     - NEXT_AUTH_SECRET = 登录密钥，随便填，例如：123456789X
@@ -122,6 +126,7 @@
     - APP_URL = 应用链接，如：<https://client.annyun.cn>
     - APP_CUSTOM_NAME = 应用名称，如：LobeChatPro
     - APP_CUSTOM_LOGO = 应用 LOGO，填 https 开头的图片地址
+    - APP_CONFIG = 应用配置相关参数，[参数说明](./Parameters.md)
 
   ```shell
   docker run -d -p 3210:3210 \
