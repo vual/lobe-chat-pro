@@ -56,7 +56,7 @@
   - **支持手动添加 apikey 到本地**，本地添加的 apikey 和中转站里的 apikey 共存，随意切换
   - **分登陆版和无需登录版本**，无需登录版本只能手动添加 apikey 到本地
   - **支持禁用自定义 baseUrl 填写**，
-  - **支持跳链携带 apikey**，跳链携带参数：?settings={"keyVaults":{"common":{"apiKey":"sk-xxxxxx"}}}
+  - **支持跳链携带 apikey**，跳链携带参数：?settings={"keyVaults":{"common":{"apiKey":"sk-xxxxxx","baseUrl":"<https://api.annyun.cn"}}}>, baseUrl 非必须
   - **支持支持左边栏上面和下面添加自定义按钮**，详细参照[参数说明](./Parameters.md)
 
   ![img35](/images/img35.png)

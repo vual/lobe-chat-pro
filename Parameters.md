@@ -18,6 +18,7 @@
 | `checkOrderPath`            | String  | 检查订单状态接口路径                           | `/api/user/order/status?trade_no=` |
 | `disableCustomBaseUrl`      | Boolean | 是否禁用自定义 Base URL                        | `false`                            |
 | `payMethods`                | Array   | 支付方法列表                                   | `["alipay","wxpay",]`              |
+| `disableCanvasModelList`    | Array   | 禁用 canvas 模型，填模型名称数组               | `["midjourney"]`                   |
 
 ### 完整示例
 
