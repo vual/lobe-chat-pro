@@ -1,5 +1,14 @@
 export default {
   AddInpaintArea: '添加重绘区域',
+  Dall: {
+    Model: '模型',
+    Num: '数量',
+    Platform: '平台',
+    Quality: '质量',
+    ResponseFormat: '返回格式',
+    Size: '尺寸',
+    Style: '风格',
+  },
   DeleteFailed: '删除失败！',
   DeleteSuccess: '删除成功！',
   DeleteTips: '确定删除吗？',

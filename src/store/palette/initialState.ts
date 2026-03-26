@@ -1,3 +1,21 @@
+export interface DallEStatus {
+  model: string;
+  n: number;
+  quality: string;
+  response_format: string;
+  size: string;
+  style: string;
+}
+
+export const DALLE_INITIAL_STATUS: DallEStatus = {
+  model: 'gpt-image-1.5',
+  n: 1,
+  quality: 'auto',
+  response_format: 'url',
+  size: '1024x1024',
+  style: 'vivid',
+};
+
 export interface MjStatus {
   accuracy: string; // 画面精度
   action: string; // IMAGINE、BLEND、DESCRIBE、INSIGHTFACE
@@ -27,6 +45,7 @@ export interface MjStatus {
 }
 
 export interface PaletteState {
+  dallEStatus: DallEStatus;
   mjStatus: MjStatus;
   platform: string; // Midjourney Stable-Diffusion Dall-E
 }
@@ -60,6 +79,7 @@ export const MJ_INITIAL_STATUS: MjStatus = {
 } satisfies MjStatus;
 
 export const initialState: PaletteState = {
+  dallEStatus: { ...DALLE_INITIAL_STATUS },
   mjStatus: { ...MJ_INITIAL_STATUS },
   platform: 'Midjourney',
 };

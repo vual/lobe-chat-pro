@@ -47,6 +47,17 @@ const Layout = () => {
             ),
             value: 'Midjourney',
           },
+          {
+            label: (
+              <div style={{ padding: 4 }}>
+                <Avatar size={25} style={{ background: '#10a37f', fontSize: 12 }}>
+                  AI
+                </Avatar>
+                <div>OpenAI</div>
+              </div>
+            ),
+            value: 'OpenAI',
+          },
         ]}
         size="small"
         value={palettePlatsform}

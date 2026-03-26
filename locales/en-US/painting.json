@@ -1,5 +1,14 @@
 {
   "AddInpaintArea": "Add Inpaint Area",
+  "Dall": {
+    "Model": "Model",
+    "Num": "Count",
+    "Platform": "Platform",
+    "Quality": "Quality",
+    "ResponseFormat": "Response Format",
+    "Size": "Size",
+    "Style": "Style"
+  },
   "DeleteFailed": "Delete Failed!",
   "DeleteSuccess": "Delete Successful!",
   "DeleteTips": "Are you sure you want to delete?",

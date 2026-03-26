@@ -3,11 +3,15 @@ import useSWR, { SWRResponse } from 'swr';
 import type { StateCreator } from 'zustand/vanilla';
 
 import { enableAuth } from '@/const/auth';
+import { createHeaderWithAuth } from '@/services/_auth';
+import { API_ENDPOINTS } from '@/services/_url';
+import { initializeWithClientStore } from '@/services/chat/clientModelRuntime';
 import { paintingService } from '@/services/painting';
+import { aiProviderSelectors, getAiInfraStoreState } from '@/store/aiInfra';
 import { buildMjButtons, buildMjParams, buildMjPrompt, fetchToMj } from '@/store/painting/utils';
 import { useUserStore } from '@/store/user';
 import { Painting, Paintings } from '@/types/painting';
-import { fileToBase64 } from '@/utils/fileUtil';
+import { base64ToFile, fileToBase64 } from '@/utils/fileUtil';
 import { setNamespace } from '@/utils/storeDebug';
 
 import type { PaintingStore } from './index';
@@ -24,8 +28,10 @@ export interface PaintingStoreAction {
   fetchMidjourney: (painting: Painting, params: any) => Promise<any>;
   fetchMidjourneyTasks: () => void;
   fetchMidjourneyTasksBatch: () => void;
+  fetchOpenAI: (painting: Painting, params: any) => Promise<any>;
   getPreviewUrl: (keyPath: string) => string;
   queryPaintings: () => Promise<any>;
+  saveImage: (painting: Painting) => Promise<void>;
   updatePainting: (painting: Painting) => Promise<string>;
   updateShowPanel: (showPanel: boolean) => void;
   uploadToDiscord: (fileList: UploadFile[]) => Promise<any>;
@@ -60,6 +66,12 @@ export const createPaintingAction: StateCreator<
     switch (painting.platform) {
       case 'Midjourney': {
         result = await get().fetchMidjourney(painting, params);
+        break;
+      }
+      case 'OpenAI':
+      case 'Flux':
+      case 'Recraft': {
+        result = await get().fetchOpenAI(painting, params);
         break;
       }
       // No default
@@ -513,6 +525,96 @@ export const createPaintingAction: StateCreator<
         set({ isFetching: false });
       }
     }, 10_000);
+  },
+
+  fetchOpenAI: async (p: Painting, _params: any) => {
+    const painting = { ...p };
+    let payload: any = {
+      ...painting.config,
+      prompt: painting.prompt,
+      quality: painting.config.quality || 'auto',
+      size: painting.config.size || '1024x1024',
+    };
+
+    // dall-e-3 doesn't support response_format / style in the same way
+    if (painting.platform === 'OpenAI' && painting.config.model === 'dall-e-3') {
+      delete payload.response_format;
+    }
+
+    const provider = painting.platform.toLowerCase();
+    const enableFetchOnClient = aiProviderSelectors.isProviderFetchOnClient(provider)(
+      getAiInfraStoreState(),
+    );
+
+    let result = 'success';
+    let resJson: any;
+
+    try {
+      if (enableFetchOnClient) {
+        const agentRuntime = initializeWithClientStore({ payload, provider });
+        resJson = await agentRuntime.textToImage(payload);
+      } else {
+        const headers = await createHeaderWithAuth({
+          headers: { 'Content-Type': 'application/json' },
+          payload: { model: payload.model, provider },
+          provider,
+        });
+        const res = await fetch(API_ENDPOINTS.images(provider), {
+          body: JSON.stringify(payload),
+          headers,
+          method: 'POST',
+        });
+        resJson = await res.json();
+      }
+
+      if (resJson?.data && resJson.data.length > 0) {
+        for (const item of resJson.data) {
+          if (item.url && item.url.startsWith('http')) {
+            painting.images.push({ fileId: '', url: item.url });
+          } else {
+            painting.images.push({
+              fileId: '',
+              url: item.b64_json?.startsWith('data:')
+                ? item.b64_json
+                : 'data:image/png;base64,' + item.b64_json,
+            });
+          }
+        }
+        painting.status = 'SUCCESS';
+        painting.progress = '100%';
+        if (resJson.data[0]?.revised_prompt) {
+          painting.description = resJson.data[0].revised_prompt;
+        }
+      } else {
+        result = JSON.stringify(resJson);
+        painting.status = 'FAILURE';
+        painting.failReason = result;
+      }
+    } catch (e) {
+      console.log('OpenAI painting error:', e);
+      result = JSON.stringify(e);
+      painting.status = 'FAILURE';
+      painting.failReason = result;
+    }
+
+    const paintingsMap = { ...get().paintingsMap };
+    paintingsMap[painting.id] = painting;
+    set({ paintingsMap });
+    paintingService.updatePainting(painting);
+
+    if (painting.status === 'SUCCESS') {
+      get().saveImage(painting);
+    }
+
+    return result;
+  },
+
+  saveImage: async (painting: Painting) => {
+    // For URL-based images, store them as-is (no S3 in this project)
+    // Base64 images are already in data-URI form and don't need conversion
+    const paintingsMap = { ...get().paintingsMap };
+    paintingsMap[painting.id] = painting;
+    set({ paintingsMap });
   },
 
   getPreviewUrl: (keyPath) => {
