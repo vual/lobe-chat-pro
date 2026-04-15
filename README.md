@@ -2,6 +2,8 @@
 
 ## 项目介绍
 
+- ### 最近更新：2026-04-15
+
 - ### 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码
 
 - ### 完整的后台管理：
