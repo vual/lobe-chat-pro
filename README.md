@@ -42,7 +42,7 @@
   ![img5](/images/img5.png)
 
 - ### 独立的视频面板：
-  - **视频模型**，google, openai, kling, luma, runway
+  - **视频模型**，doubao, google, openai, kling, luma, runway
   - **参数配置**，更多的自定义参数配置
 
   ![img33](/images/img33.png)
