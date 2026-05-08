@@ -2,7 +2,7 @@
 
 ## 项目介绍
 
-- ### 最近更新：2026-04-15
+- ### 最近更新：2026-05-08
 
 - ### 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码
 
@@ -17,7 +17,7 @@
 
 - ### 强大的无限画布：
   - **画图模型**，google, openai, midjourney, kling, doubao
-  - **视频模型**，google, openai, kling
+  - **视频模型**，google, openai, kling, doubao
   - **连续对话**，在对话中设计、修改图片，用图片生成视频
   - **图片修改**，高清放大、移除背景、提取图层、局部修改，图片扩展、多图扩展
   - **联网搜索**，根据需求搜索网络上的最新内容
