@@ -2,7 +2,7 @@
 
 ## 项目介绍
 
-- ### 最近更新：2026-05-08
+- ### 最近更新：2026-05-21
 
 - ### 基于[lobe-chat](https://github.com/lobehub/lobe-chat)，并定期同步原版代码
 
@@ -110,7 +110,7 @@
     - BACKEND_BASE_URL = 中转站地址，例如：<https://api.annyun.cn>
     - APP_CONFIG = 应用配置相关参数，[参数说明](./Parameters.md)
       loginParams 的登录相关参数，addParams 是登录附加参数，会放到登录报文里，比如同意协议说明 "agreement":true，
-      captchaVerify:true，是开启图形验证码，tokenPage 是中转站的令牌页面路径，默认值 /token， tokenQueryPath 是查询中转站令牌的请求路径，默认值 /api/token?p=1\&size=20
+      captchaVerify:true，是开启图形验证码，tokenPage 是中转站的令牌页面路径，默认值 /console/token， tokenQueryPath 是查询中转站令牌的请求路径，默认值 /api/token?p=1\&size=20
     - NEXT_AUTH_SECRET = 登录密钥，随便填，例如：123456789X
     - NEXT_AUTH_SSO_PROVIDERS = 只能填 annyun
     - KEY_VAULTS_SECRET=bed69c29a04b400fbc7bc3e2fa8d38dd
