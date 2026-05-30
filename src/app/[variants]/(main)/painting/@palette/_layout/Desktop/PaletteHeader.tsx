@@ -58,6 +58,17 @@ const Layout = () => {
             ),
             value: 'OpenAI',
           },
+          {
+            label: (
+              <div style={{ padding: 4 }}>
+                <Avatar size={25} style={{ background: 'deepskyblue', fontSize: 12 }}>
+                  VE
+                </Avatar>
+                <div>Volcengine</div>
+              </div>
+            ),
+            value: 'Volcengine',
+          },
         ]}
         size="small"
         value={palettePlatsform}

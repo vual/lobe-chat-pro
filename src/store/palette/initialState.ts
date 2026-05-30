@@ -44,10 +44,20 @@ export interface MjStatus {
   visualAngles: string; // 视角
 }
 
+export interface VolcengineConfig {
+  guidance_scale: number;
+  model: string;
+  response_format: string; // url, b64_json
+  seed: number;
+  size: string;
+  watermark: boolean;
+}
+
 export interface PaletteState {
   dallEStatus: DallEStatus;
   mjStatus: MjStatus;
   platform: string; // Midjourney Stable-Diffusion Dall-E
+  volcengineConfig: VolcengineConfig;
 }
 
 export const MJ_INITIAL_STATUS: MjStatus = {
@@ -78,8 +88,18 @@ export const MJ_INITIAL_STATUS: MjStatus = {
   visualAngles: '',
 } satisfies MjStatus;
 
+export const VOLCENGINE_INITIAL_CONFIG: VolcengineConfig = {
+  guidance_scale: 3.5,
+  model: 'doubao-seedream-5-0-260128',
+  response_format: 'url',
+  seed: -1,
+  size: '2048x2048',
+  watermark: false,
+};
+
 export const initialState: PaletteState = {
   dallEStatus: { ...DALLE_INITIAL_STATUS },
   mjStatus: { ...MJ_INITIAL_STATUS },
   platform: 'Midjourney',
+  volcengineConfig: { ...VOLCENGINE_INITIAL_CONFIG },
 };

@@ -322,7 +322,25 @@ const ImagesContainer = memo((props: { isMobile: boolean }) => {
           >
             <div className={styles.topInfo}>
               <div className={styles.infoTags}>
-                <Tag color={'cyan'}>{'MJ'}</Tag>
+                <Tag
+                  color={
+                    painting.platform === 'Volcengine'
+                      ? 'deepskyblue'
+                      : painting.platform === 'OpenAI' ||
+                          painting.platform === 'Flux' ||
+                          painting.platform === 'Recraft'
+                        ? 'purple'
+                        : 'cyan'
+                  }
+                >
+                  {painting.platform === 'Volcengine'
+                    ? 'VE'
+                    : painting.platform === 'OpenAI' ||
+                        painting.platform === 'Flux' ||
+                        painting.platform === 'Recraft'
+                      ? 'OA'
+                      : 'MJ'}
+                </Tag>
                 <Tooltip classNames={{ root: styles.toolTips }} title={painting.prompt}>
                   <Tag color={'geekblue'} icon={<InfoCircleOutlined />} />
                 </Tooltip>
