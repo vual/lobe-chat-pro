@@ -6,6 +6,94 @@ const nvidiaChatModels: AIChatModelCard[] = [
       functionCall: true,
       reasoning: true,
     },
+    contextWindowTokens: 204_800,
+    displayName: 'MiniMax-M2.7',
+    id: 'minimaxai/minimax-m2.7',
+    maxOutput: 131_072,
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 204_800,
+    displayName: 'MiniMax-M2.5',
+    id: 'minimaxai/minimax-m2.5',
+    maxOutput: 131_072,
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 131_072,
+    description:
+      'DeepSeek V3.2 is a next-gen reasoning model with stronger complex reasoning and chain-of-thought capabilities.',
+    displayName: 'DeepSeek V3.2',
+    enabled: true,
+    id: 'deepseek-ai/deepseek-v3.2',
+    maxOutput: 65_536,
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 200_000,
+    description:
+      'GLM-4.7 is Zhipu latest flagship model, enhanced for Agentic Coding scenarios with improved coding capabilities.',
+    displayName: 'GLM-4.7',
+    id: 'z-ai/glm4.7',
+    maxOutput: 131_072,
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 200_000,
+    description:
+      "GLM-5 is Zhipu AI's new flagship foundation model for agent engineering, achieving open-source SOTA performance in coding and agent capabilities. It matches Claude Opus 4.5 in performance.",
+    displayName: 'GLM-5',
+    id: 'z-ai/glm5',
+    maxOutput: 131_072,
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 262_144,
+    description:
+      'Kimi K2.5 is the most intelligent Kimi model to date, featuring native multimodal architecture.',
+    displayName: 'Kimi K2.5',
+    enabled: true,
+    id: 'moonshotai/kimi-k2.5',
+    maxOutput: 65_536,
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
     contextWindowTokens: 131_072,
     description:
       'DeepSeek V3.1：下一代推理模型，提升了复杂推理与链路思考能力，适合需要深入分析的任务。',

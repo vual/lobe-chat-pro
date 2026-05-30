@@ -17,6 +17,113 @@ const taichuChatModels: AIChatModelCard[] = [
   },
   {
     abilities: {
+      vision: true,
+    },
+    contextWindowTokens: 32_768,
+    description:
+      'The No-Thinking version of the Taichu4.0-VL 2B model features lower memory usage, a lightweight design, fast response speed, and strong multimodal understanding capabilities.',
+    displayName: 'Taichu4.0-VL-2B-NoThinking',
+    id: 'taichu4_vl_2b_nothinking',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        { name: 'textInput', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 32_768,
+    description:
+      'The Thinking version of the Taichu4.0-VL 3B model efficiently performs multimodal understanding and reasoning tasks, with comprehensive upgrades in visual comprehension, visual localization, OCR recognition, and related capabilities.',
+    displayName: 'Taichu4.0-VL-3B-Thinking',
+    id: 'taichu4_vl_3b',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        { name: 'textInput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      vision: true,
+    },
+    contextWindowTokens: 32_768,
+    description:
+      'The No-Thinking version of the Taichu4.0-VL 32B model is designed for complex image-and-text understanding and visual knowledge QA scenarios, excelling in image captioning, visual question answering, video comprehension, and visual localization tasks.',
+    displayName: 'Taichu4.0-VL-32B-NoThinking',
+    id: 'taichu4_vl_32b_nothinking',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        { name: 'textInput', rate: 0.7, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 7, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 32_768,
+    description:
+      'The Thinking version of the Taichu4.0-VL 32B model is suited for complex multimodal understanding and reasoning tasks, demonstrating outstanding performance in multimodal mathematical reasoning, multimodal agent capabilities, and general image and visual comprehension.',
+    displayName: 'Taichu4.0-VL-32B-Thinking',
+    id: 'taichu4_vl_32b',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        { name: 'textInput', rate: 0.7, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 7, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    contextWindowTokens: 32_768,
+    description:
+      'The Zidong Taichu large language model is a high-performance text-generation model developed using fully domestic full-stack technologies. Through structured compression of a hundred-billion-parameter base model and task-specific optimization, it significantly enhances complex text comprehension and knowledge reasoning capabilities. It excels in scenarios such as long-document analysis, cross-lingual information extraction, and knowledge-constrained generation.',
+    displayName: 'Taichu-LLM-2B',
+    id: 'taichu_llm_2b',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        { name: 'textInput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.9, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    contextWindowTokens: 32_768,
+    description:
+      'The Zidong Taichu large language model is a high-performance text-generation model developed using fully domestic full-stack technologies. Through structured compression of a hundred-billion-parameter base model and task-specific optimization, it significantly enhances complex text comprehension and knowledge reasoning capabilities. It excels in scenarios such as long-document analysis, cross-lingual information extraction, and knowledge-constrained generation.',
+    displayName: 'Taichu-LLM-14B',
+    id: 'taichu_llm_14b',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        { name: 'textInput', rate: 1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
       functionCall: true,
     },
     contextWindowTokens: 32_768,
