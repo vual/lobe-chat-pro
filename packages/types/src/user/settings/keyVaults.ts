@@ -80,6 +80,7 @@ export interface UserKeyVaults extends SearchEngineKeyVaults {
   infiniai?: OpenAICompatibleKeyVault;
   internlm?: OpenAICompatibleKeyVault;
   jina?: OpenAICompatibleKeyVault;
+  kling?: OpenAICompatibleKeyVault;
   lmstudio?: OpenAICompatibleKeyVault;
   lobehub?: any;
   midjourney?: OpenAICompatibleKeyVault;

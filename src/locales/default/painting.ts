@@ -31,6 +31,16 @@ export default {
   ResetTips: '确定重置所有设置？',
   Success: '提交成功',
   Watermark: '水印',
+  kling: {
+    AspectRatio: '图片比例',
+    ClothImage: '衣服图片',
+    HumanImage: '人物图片',
+    ImageAlert: '请上传图片',
+    ImageFidelity: '参考权重',
+    ModeImagine: '图片创作',
+    ModeVirtual: 'AI试衣',
+    Tooltip: '如果上传一张，可以是上装或下装或连体，如果上传两张，必须是一张上装和一张下装。',
+  },
   mj: {
     Accuracy: '画面精度',
     CameraEffects: '相机效果',

@@ -253,6 +253,13 @@ class UploadService {
     return new File([data], filename, { lastModified: Date.now(), type: fileType });
   };
 
+  getFileByUrlWithCORS = async (url: string, filename: string) => {
+    const res = await fetch(API_ENDPOINTS.proxy, { body: url, method: 'POST' });
+    const blob = await res.blob();
+
+    return new File([blob], filename, { lastModified: Date.now(), type: blob.type });
+  };
+
   private getSignedUploadUrl = async (
     file: File,
     options: { directory?: string; pathname?: string } = {},

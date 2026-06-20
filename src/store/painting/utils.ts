@@ -1,6 +1,6 @@
 import { UploadFile } from 'antd';
 
-import { AgentRuntimeError } from '@lobechat/model-runtime';
+import { AgentRuntimeError, ModelProviderKey } from '@lobechat/model-runtime';
 import { ModelProvider } from 'model-bank';
 import { createHeaderWithAuth, createPayloadWithKeyVaults } from '@/services/_auth';
 import { API_ENDPOINTS } from '@/services/_url';
@@ -9,6 +9,7 @@ import { MjStatus } from '@/store/palette/initialState';
 import { useUserStore } from '@/store/user';
 import { ChatErrorType } from '@/types/fetch';
 import { Painting } from '@/types/painting';
+import { encodeJwtToken } from '@/utils/jwt';
 import { createTraceHeader } from '@/utils/trace';
 
 export const buildMjParams = (config: MjStatus) => {
@@ -176,4 +177,61 @@ export const buildMjButtons = (buttons: any) => {
   });
 
   return buttons;
+};
+export const fetchPaintingPlatform = async (options: any, provider: string) => {
+  const userStore = useUserStore.getState();
+  if (userStore.enableAuth() && !userStore.isSignedIn) {
+    throw AgentRuntimeError.createError(ChatErrorType.InvalidAccessCode);
+  }
+
+  const enableFetchOnClient = aiProviderSelectors.isProviderFetchOnClient(provider as ModelProviderKey)(
+    getAiInfraStoreState(),
+  );
+
+  let url = '';
+  let headers = {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+    ...options.headers,
+  } as Record<string, string>;
+
+  if (enableFetchOnClient) {
+    const authPayload: any = createPayloadWithKeyVaults(provider);
+    url = authPayload?.baseURL || '';
+
+    if (!url) {
+      throw AgentRuntimeError.createError(ChatErrorType.InvalidUserKey);
+    }
+
+    url = (url.endsWith('/') ? url.slice(0, -1) : url) + options.path;
+
+    let apiKey = authPayload?.apiKey || '';
+    if (provider === 'kling' && apiKey.includes('@')) {
+      apiKey = await encodeJwtToken(apiKey);
+    }
+
+    headers.Authorization = `Bearer ${apiKey}`;
+  } else {
+    url = API_ENDPOINTS.platformPath(provider, options.path);
+    const traceHeader = createTraceHeader({
+      model: options.model,
+      provider,
+    });
+    const authHeaders = await createHeaderWithAuth({
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json', ...traceHeader },
+      payload: {
+        model: options.model,
+        provider,
+      },
+      provider,
+    });
+
+    headers = authHeaders as Record<string, string>;
+  }
+
+  return fetch(url, {
+    body: options.body,
+    headers,
+    method: options.method,
+  });
 };

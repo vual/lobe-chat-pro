@@ -8,10 +8,24 @@ import { API_ENDPOINTS } from '@/services/_url';
 import { initializeWithClientStore } from '@/services/chat/clientModelRuntime';
 import { paintingService } from '@/services/painting';
 import { aiProviderSelectors, getAiInfraStoreState } from '@/store/aiInfra';
-import { buildMjButtons, buildMjParams, buildMjPrompt, fetchToMj } from '@/store/painting/utils';
+import {
+  buildMjButtons,
+  buildMjParams,
+  buildMjPrompt,
+  fetchPaintingPlatform,
+  fetchToMj,
+} from '@/store/painting/utils';
 import { useUserStore } from '@/store/user';
-import { Painting, Paintings } from '@/types/painting';
-import { base64ToFile, fileToBase64 } from '@/utils/fileUtil';
+import { Painting, PaintingImage, Paintings } from '@/types/painting';
+import {
+  fileToBase64,
+  getLocalFileUrl,
+  getOssFilePreviewUrl,
+  isOssKeyPath,
+  mergeImagesAsBase64,
+  saveImageByBase64,
+  saveImageByUrl,
+} from '@/utils/fileUtil';
 import { setNamespace } from '@/utils/storeDebug';
 
 import type { PaintingStore } from './index';
@@ -25,13 +39,15 @@ const FETCH_PAINTINGS_KEY = 'fetchPaintings';
 export interface PaintingStoreAction {
   createPainting: (painting: Painting, params: any) => Promise<any>;
   deletePainting: (painting: Painting) => Promise<any>;
+  fetchKling: (painting: Painting, params: any) => Promise<any>;
+  fetchKlingTasks: () => void;
   fetchMidjourney: (painting: Painting, params: any) => Promise<any>;
   fetchMidjourneyTasks: () => void;
   fetchMidjourneyTasksBatch: () => void;
   fetchOpenAI: (painting: Painting, params: any) => Promise<any>;
   getPreviewUrl: (keyPath: string) => string;
   queryPaintings: () => Promise<any>;
-  saveImage: (painting: Painting) => Promise<void>;
+  saveImage: (painting: Painting) => Promise<any>;
   updatePainting: (painting: Painting) => Promise<string>;
   updateShowPanel: (showPanel: boolean) => void;
   uploadToDiscord: (fileList: UploadFile[]) => Promise<any>;
@@ -74,6 +90,10 @@ export const createPaintingAction: StateCreator<
         result = await get().fetchOpenAI(painting, params);
         break;
       }
+      case 'Kling': {
+        result = await get().fetchKling(painting, params);
+        break;
+      }
       // No default
     }
 
@@ -104,6 +124,177 @@ export const createPaintingAction: StateCreator<
     return 'success';
   },
 
+  fetchKling: async (painting: Painting, params: any) => {
+    let refrenceImage = '';
+    let clothImage = '';
+
+    if (params.refrenceImage && params.refrenceImage.length > 0) {
+      refrenceImage = await fileToBase64(params.refrenceImage[0].originFileObj as File, true);
+    }
+
+    if (params.clothImage && params.clothImage.length > 0) {
+      if (params.clothImage.length === 1) {
+        clothImage = await fileToBase64(params.clothImage[0].originFileObj as File, true);
+      } else {
+        clothImage = await mergeImagesAsBase64(
+          params.clothImage[0].originFileObj as File,
+          params.clothImage[1].originFileObj as File,
+          true,
+        );
+      }
+    }
+
+    const path =
+      painting.action === 'IMAGINE' ? '/images/generations' : '/images/kolors-virtual-try-on';
+    const method = 'POST';
+    const body = JSON.stringify(
+      painting.action === 'IMAGINE'
+        ? {
+            ...painting.config,
+            image: refrenceImage,
+            negative_prompt: painting.negativePrompt,
+            prompt: painting.prompt,
+          }
+        : {
+            cloth_image: clothImage,
+            human_image: refrenceImage,
+            model_name: painting.config.model,
+          },
+    );
+    const model =
+      painting.action === 'IMAGINE' ? `${painting.config.model}-image` : painting.config.model;
+
+    let result = 'success';
+
+    try {
+      const res = await fetchPaintingPlatform({ body, method, model, path }, 'kling');
+      const resJson = await res.json();
+      const paintingsMap = { ...get().paintingsMap };
+
+      if (res.ok && resJson.code === 0 && resJson.data?.task_id) {
+        const taskId = resJson.data.task_id;
+        painting.taskId = taskId;
+        painting.status = 'SUBMITTED';
+
+        const klingTaskIds = [...get().klingTaskIds, taskId];
+        const taskIdMap = { ...get().taskIdMap, [taskId]: painting.id };
+        paintingsMap[painting.id] = painting;
+        set({ klingTaskIds, paintingsMap, taskIdMap });
+
+        if (!get().isFetchingKling) {
+          get().fetchKlingTasks();
+        }
+      } else {
+        painting.status = 'FAILURE';
+        painting.failReason = JSON.stringify(resJson);
+        paintingsMap[painting.id] = painting;
+        set({ paintingsMap });
+        result = painting.failReason;
+      }
+    } catch (e) {
+      console.log('[Fetch Kling Error]:', e);
+      painting.status = 'FAILURE';
+      painting.failReason = JSON.stringify(e);
+      const paintingsMap = { ...get().paintingsMap, [painting.id]: painting };
+      set({ paintingsMap });
+      result = painting.failReason;
+    }
+
+    paintingService.updatePainting(painting);
+
+    return result;
+  },
+
+  fetchKlingTasks: async () => {
+    set({ isFetchingKling: true });
+    setTimeout(async () => {
+      if (get().klingTaskIds.length <= 0) {
+        set({ isFetchingKling: false });
+        return;
+      }
+
+      try {
+        const fetchTask = async (taskId: string) => {
+          const paintingsMap = { ...get().paintingsMap };
+          const klingTaskIds = [...get().klingTaskIds];
+          const taskIdMap = { ...get().taskIdMap };
+          const paintingId = taskIdMap[taskId];
+          const painting = { ...paintingsMap[paintingId] };
+
+          if (!painting?.id) return;
+
+          const path =
+            (painting.action === 'IMAGINE'
+              ? '/images/generations/'
+              : '/images/kolors-virtual-try-on/') + taskId;
+          const res = await fetchPaintingPlatform(
+            { method: 'GET', model: 'kling-query-task', path },
+            'kling',
+          );
+          const resJson = await res.json();
+          let removeTaskId = false;
+
+          if (res.ok) {
+            if (resJson.code !== 0 || resJson.data?.task_status === 'failed') {
+              painting.status = 'FAILURE';
+              painting.failReason = JSON.stringify(resJson);
+              removeTaskId = true;
+            } else if (resJson.data?.task_status === 'succeed') {
+              painting.status = 'SUCCESS';
+              painting.progress = '100%';
+              painting.images = (resJson.data.task_result?.images || []).map((item: any) => ({
+                fileId: '',
+                url: item.url,
+              }));
+              removeTaskId = true;
+            }
+          }
+
+          if (painting.status !== 'SUCCESS' && painting.status !== 'FAILURE') {
+            painting.status = 'IN_PROGRESS';
+            const currentProgress = Number.parseInt(painting.progress.replace('%', ''), 10) || 0;
+            painting.progress = `${Math.min(currentProgress + 5, 99)}%`;
+          }
+
+          painting.extra.fetchTimes = (painting.extra.fetchTimes || 0) + 1;
+          if (painting.extra.fetchTimes >= 100 && painting.status !== 'SUCCESS') {
+            painting.status = 'FAILURE';
+            painting.failReason = 'fetch task status exceeded times.';
+            removeTaskId = true;
+          }
+
+          if (removeTaskId) {
+            const index = klingTaskIds.indexOf(taskId);
+            if (index >= 0) klingTaskIds.splice(index, 1);
+            delete taskIdMap[taskId];
+          }
+
+          paintingsMap[painting.id] = painting;
+          set({ klingTaskIds, paintingsMap, taskIdMap }, false, n('fetchKlingTasks', resJson));
+
+          if (painting.status === 'SUCCESS' || painting.status === 'FAILURE') {
+            paintingService.updatePainting(painting);
+          }
+
+          if (painting.status === 'SUCCESS') {
+            get().saveImage(painting);
+          }
+        };
+
+        for (const taskId of [...get().klingTaskIds]) {
+          await fetchTask(taskId);
+        }
+      } catch (e) {
+        console.log('[Fetch Kling Tasks Error]:', e);
+      }
+
+      if (get().klingTaskIds.length > 0) {
+        get().fetchKlingTasks();
+      } else {
+        set({ isFetchingKling: false });
+      }
+    }, 10_000);
+  },
   fetchMidjourney: async (painting: Painting, params: any) => {
     const srcBase64Array = [] as string[];
     const tagBase64Array = [] as string[];
@@ -610,11 +801,35 @@ export const createPaintingAction: StateCreator<
   },
 
   saveImage: async (painting: Painting) => {
-    // For URL-based images, store them as-is (no S3 in this project)
-    // Base64 images are already in data-URI form and don't need conversion
-    const paintingsMap = { ...get().paintingsMap };
-    paintingsMap[painting.id] = painting;
-    set({ paintingsMap });
+    const images = [] as PaintingImage[];
+    const keyPathList = [] as string[];
+    let previewMap = get().previewMap;
+
+    for (const image of painting.images) {
+      const imageUrl = image.url.startsWith('http')
+        ? await saveImageByUrl(image.url, 'paintings')
+        : await saveImageByBase64(image.url, 'paintings');
+
+      images.push({ fileId: '', url: imageUrl });
+
+      if (isOssKeyPath(imageUrl)) {
+        keyPathList.push(imageUrl);
+      } else if (imageUrl.startsWith('client-s3')) {
+        previewMap = { ...previewMap, [imageUrl]: await getLocalFileUrl(imageUrl) };
+      }
+    }
+
+    if (keyPathList.length > 0) {
+      previewMap = {
+        ...previewMap,
+        ...(await getOssFilePreviewUrl(keyPathList)),
+      };
+    }
+
+    const newPainting = { ...painting, images };
+    const paintingsMap = { ...get().paintingsMap, [painting.id]: newPainting };
+    set({ paintingsMap, previewMap });
+    paintingService.updatePainting(newPainting);
   },
 
   getPreviewUrl: (keyPath) => {
@@ -633,7 +848,10 @@ export const createPaintingAction: StateCreator<
           ...get().paintingsMap,
         };
         const taskIds = get().taskIds;
+        const klingTaskIds = get().klingTaskIds;
         const taskIdMap = get().taskIdMap;
+        let previewMap = get().previewMap;
+        const keyPathList = [] as string[];
         for (const p of data) {
           paintingsMap[p.id] = p;
           if (!['FAILURE', 'SUCCESS', 'CANCEL'].includes(p.status) && p.taskId) {
@@ -641,11 +859,41 @@ export const createPaintingAction: StateCreator<
             if (p.platform === 'Midjourney' && !taskIds.includes(p.taskId)) {
               taskIds.push(p.taskId);
             }
+            if (p.platform === 'Kling' && !klingTaskIds.includes(p.taskId)) {
+              klingTaskIds.push(p.taskId);
+            }
+          }
+
+          if (p.status === 'SUCCESS' && p.images?.length > 0) {
+            let needToRetrySave = false;
+            for (const image of p.images) {
+              if (
+                isOssKeyPath(image.url) &&
+                !previewMap[image.url] &&
+                !keyPathList.includes(image.url)
+              ) {
+                keyPathList.push(image.url);
+              } else if (image.url.startsWith('client-s3')) {
+                previewMap = { ...previewMap, [image.url]: await getLocalFileUrl(image.url) };
+              } else if (image.url.startsWith('http')) {
+                needToRetrySave = true;
+              }
+            }
+            if (needToRetrySave) {
+              get().saveImage(p);
+            }
           }
         }
 
+        if (keyPathList.length > 0) {
+          previewMap = {
+            ...previewMap,
+            ...(await getOssFilePreviewUrl(keyPathList)),
+          };
+        }
+
         set(
-          { current, paintingsMap, taskIdMap, taskIds },
+          { current, klingTaskIds, paintingsMap, previewMap, taskIdMap, taskIds },
           false,
           n('queryPaintings/onSuccess', data),
         );
@@ -656,6 +904,9 @@ export const createPaintingAction: StateCreator<
           } else {
             get().fetchMidjourneyTasks();
           }
+        }
+        if (klingTaskIds.length > 0 && !get().isFetchingKling) {
+          get().fetchKlingTasks();
         }
       }
       return data.length;

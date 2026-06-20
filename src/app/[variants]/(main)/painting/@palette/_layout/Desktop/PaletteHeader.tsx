@@ -50,6 +50,17 @@ const Layout = () => {
           {
             label: (
               <div style={{ padding: 4 }}>
+                <Avatar size={25} style={{ background: '#111', fontSize: 12 }}>
+                  K
+                </Avatar>
+                <div>Kling</div>
+              </div>
+            ),
+            value: 'Kling',
+          },
+          {
+            label: (
+              <div style={{ padding: 4 }}>
                 <Avatar size={25} style={{ background: '#10a37f', fontSize: 12 }}>
                   AI
                 </Avatar>

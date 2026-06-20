@@ -29,6 +29,7 @@ import HunyuanProvider from './hunyuan';
 import InfiniAIProvider from './infiniai';
 import InternLMProvider from './internlm';
 import JinaProvider from './jina';
+import KlingProvider from './kling';
 import LMStudioProvider from './lmstudio';
 import MidjourneyProvider from './midjourney';
 import MinimaxProvider from './minimax';
@@ -122,6 +123,7 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
   InfiniAIProvider.chatModels,
   QiniuProvider.chatModels,
   VercelAIGatewayProvider.chatModels,
+  KlingProvider.chatModels,
 ].flat();
 
 export const DEFAULT_MODEL_PROVIDER_LIST = [
@@ -192,6 +194,7 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   VercelAIGatewayProvider,
   CerebrasProvider,
   MidjourneyProvider,
+  KlingProvider,
 ];
 
 export const filterEnabledModels = (provider: ModelProviderCard) => {
@@ -232,6 +235,7 @@ export { default as HunyuanProviderCard } from './hunyuan';
 export { default as InfiniAIProviderCard } from './infiniai';
 export { default as InternLMProviderCard } from './internlm';
 export { default as JinaProviderCard } from './jina';
+export { default as KlingProviderCard } from './kling';
 export { default as LMStudioProviderCard } from './lmstudio';
 export { default as LobeHubProviderCard } from './lobehub';
 export { default as MidjourneyProviderCard } from './midjourney';

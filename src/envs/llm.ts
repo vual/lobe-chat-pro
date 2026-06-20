@@ -213,6 +213,10 @@ export const getLLMConfig = () => {
       ENABLED_MIDJOURNEY: z.boolean(),
       MIDJOURNEY_PROXY_URL: z.string().optional(),
       MIDJOURNEY_API_KEY: z.string().optional(),
+
+      ENABLED_KLING: z.boolean(),
+      KLING_PROXY_URL: z.string().optional(),
+      KLING_API_KEY: z.string().optional(),
     },
     runtimeEnv: {
       API_KEY_SELECT_MODE: process.env.API_KEY_SELECT_MODE,
@@ -424,6 +428,10 @@ export const getLLMConfig = () => {
       ENABLED_MIDJOURNEY: process.env.ENABLED_MIDJOURNEY !== '0',
       MIDJOURNEY_PROXY_URL: process.env.MIDJOURNEY_PROXY_URL,
       MIDJOURNEY_API_KEY: process.env.MIDJOURNEY_API_KEY,
+
+      ENABLED_KLING: process.env.ENABLED_KLING !== '0',
+      KLING_PROXY_URL: process.env.KLING_PROXY_URL,
+      KLING_API_KEY: process.env.KLING_API_KEY,
     },
   });
 };

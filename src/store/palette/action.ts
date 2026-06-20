@@ -5,6 +5,8 @@ import type { PaletteStore } from '@/store/palette/index';
 import {
   DALLE_INITIAL_STATUS,
   DallEStatus,
+  KLING_INITIAL_STATUS,
+  KlingStatus,
   MJ_INITIAL_STATUS,
   MjStatus,
   VOLCENGINE_INITIAL_CONFIG,
@@ -18,6 +20,7 @@ export interface PaletteStoreAction {
   resetStatus: (platform: string) => void;
   switchPlatform: (platform: string) => void;
   updateDallEStatus: (updater: (dallEStatus: DallEStatus) => void) => void;
+  updateKlingStatus: (updater: (klingStatus: KlingStatus) => void) => void;
   updateMjStatus: (updater: (mjStatus: MjStatus) => void) => void;
   updateVolcConfig: (updater: (volcengineConfig: VolcengineConfig) => void) => void;
 }
@@ -42,6 +45,10 @@ export const createPaletteAction: StateCreator<
         set({ volcengineConfig: { ...VOLCENGINE_INITIAL_CONFIG } });
         break;
       }
+      case 'Kling': {
+        set({ klingStatus: { ...KLING_INITIAL_STATUS } });
+        break;
+      }
       // No default
     }
   },
@@ -52,6 +59,11 @@ export const createPaletteAction: StateCreator<
     let dallEStatus = { ...get().dallEStatus };
     updater(dallEStatus);
     set({ dallEStatus });
+  },
+  updateKlingStatus(updater: (klingStatus: KlingStatus) => void) {
+    let klingStatus = { ...get().klingStatus };
+    updater(klingStatus);
+    set({ klingStatus });
   },
   updateMjStatus(updater: (mjStatus: MjStatus) => void) {
     let mjStatus = { ...get().mjStatus };
