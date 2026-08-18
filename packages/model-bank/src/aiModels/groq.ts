@@ -4,6 +4,53 @@ import { AIChatModelCard } from '../types/aiModel';
 // https://console.groq.com/docs/models
 
 const groqChatModels: AIChatModelCard[] = [
+{
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 131_072,
+    description: 'Qwen3.6 27B is an open-source dense model with strong performance in reasoning, coding, and general capabilities. It supports thinking mode by default, offering balanced performance and efficiency.',
+    displayName: 'Qwen3.6 27B',
+    enabled: true,
+    id: 'qwen/qwen3.6-27b',
+    maxOutput: 16_384,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 0.6,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-23',
+    settings: {
+      extendParams: ["enableReasoning"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 196_608,
+    description: 'MiniMax M2.7 is a 229B-parameter MoE model (~10B active) built for agentic workflows and real-world software engineering. It interleaves thinking with actions across multi-step tasks and is available on Groq for Enterprise customers.',
+    displayName: 'MiniMax M2.7',
+    id: 'minimaxai/minimax-m2.7',
+    maxOutput: 131_072,
+    releasedAt: '2026-03-18',
+    type: 'chat',
+  },
   {
     contextWindowTokens: 131_072,
     description:

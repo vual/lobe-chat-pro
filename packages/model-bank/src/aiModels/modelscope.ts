@@ -1,6 +1,17 @@
 import { AIChatModelCard } from '../types/aiModel';
 
 const modelscopeChatModels: AIChatModelCard[] = [
+{
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 131_072,
+    displayName: 'DeepSeek V3.2',
+    enabled: true,
+    id: 'deepseek-ai/DeepSeek-V3.2',
+    type: 'chat',
+  },
   {
     abilities: {
       functionCall: true,

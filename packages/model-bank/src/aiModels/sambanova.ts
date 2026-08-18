@@ -1,6 +1,33 @@
 import { AIChatModelCard } from '../types/aiModel';
 
 const sambanovaChatModels: AIChatModelCard[] = [
+{
+    abilities: {
+      vision: true
+    },
+    contextWindowTokens: 4000,
+    description: 'Advanced image reasoning for visual-understanding agent applications.',
+    displayName: 'Meta Llama 3.2 90B Vision Instruct',
+    enabled: true,
+    id: 'Llama-3.2-90B-Vision-Instruct',
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 0.8,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 1.6,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    type: 'chat',
+  },
   {
     abilities: {
       functionCall: true,

@@ -3,6 +3,766 @@ import { imagenGenParameters, nanoBananaParameters } from './google';
 
 // ref: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models
 const vertexaiChatModels: AIChatModelCard[] = [
+{
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3.7 Flash is the next iteration in the Gemini 3 series of highly-capable, natively multimodal, reasoning models, with support for computer use and file search.',
+    displayName: 'Gemini 3.7 Flash',
+    enabled: true,
+    id: 'gemini-3.7-flash',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.15,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'audioInput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 7.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 1
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-08-13',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3.6 Flash balances speed with intelligence for agentic and multimodal tasks, with lower output cost than 3.5 Flash.',
+    displayName: 'Gemini 3.6 Flash',
+    id: 'gemini-3.6-flash',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.15,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'audioInput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 7.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 1
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-07-21',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: "Gemini's most intelligent model built for speed, combining frontier intelligence with superior search and grounding.",
+    displayName: 'Gemini 3.5 Flash',
+    id: 'gemini-3.5-flash',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.15,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'audioInput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 9,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 1
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-05-19',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: "Gemini 3.5 Flash-Lite is Google's fastest, most cost-efficient 3.5 model for high-throughput agentic tasks, document parsing, and simple data extraction.",
+    displayName: 'Gemini 3.5 Flash-Lite',
+    enabled: true,
+    id: 'gemini-3.5-flash-lite',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.03,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 0.3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'audioInput',
+        rate: 0.3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 2.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 1
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-07-21',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      imageOutput: true,
+      reasoning: true,
+      search: true,
+      vision: true
+    },
+    contextWindowTokens: 131_072 + 32_768,
+    description: "Gemini 3.1 Flash Image (Nano Banana 2) is Google's fastest native image generation model with thinking support, conversational image generation and editing.",
+    displayName: 'Nano Banana 2',
+    enabled: true,
+    id: 'gemini-3.1-flash-image-preview',
+    maxOutput: 32_768,
+    pricing: {
+      units: [
+        {
+        name: 'imageOutput',
+        rate: 60,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 0.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-26',
+    settings: {
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3.1 Pro Preview improves on Gemini 3 Pro with enhanced reasoning capabilities and adds medium thinking level support.',
+    displayName: 'Gemini 3.1 Pro Preview',
+    enabled: true,
+    id: 'gemini-3.1-pro-preview',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 0.2,
+        upTo: 200_000
+      }, {
+        rate: 0.4,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 2,
+        upTo: 200_000
+      }, {
+        rate: 4,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 2,
+        upTo: 200_000
+      }, {
+        rate: 4,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'audioInput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 2,
+        upTo: 200_000
+      }, {
+        rate: 4,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 12,
+        upTo: 200_000
+      }, {
+        rate: 18,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 4.5
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-19',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: "Gemini 3.1 Flash-Lite is Google's most cost-efficient multimodal model, optimized for high-volume agentic tasks, translation, and data processing.",
+    displayName: 'Gemini 3.1 Flash-Lite',
+    id: 'gemini-3.1-flash-lite',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.025,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'audioInput_cacheRead',
+        rate: 0.05,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 0.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'audioInput',
+        rate: 0.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheWrite',
+        rate: 1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-05-07',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: "Gemini 3.1 Flash-Lite Preview is Google's most cost-efficient multimodal model, optimized for high-volume agentic tasks, translation, and data processing.",
+    displayName: 'Gemini 3.1 Flash-Lite Preview',
+    id: 'gemini-3.1-flash-lite-preview',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.025,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 0.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'audioInput',
+        rate: 0.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-04',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3 Pro is Google’s most powerful agent and vibe-coding model, delivering richer visuals and deeper interaction on top of state-of-the-art reasoning.',
+    displayName: 'Gemini 3 Pro Preview',
+    id: 'gemini-3-pro-preview',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 0.2,
+        upTo: 200_000
+      }, {
+        rate: 0.4,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 2,
+        upTo: 200_000
+      }, {
+        rate: 4,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 12,
+        upTo: 200_000
+      }, {
+        rate: 18,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 4.5
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-11-18',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3 Flash is the smartest model built for speed, combining cutting-edge intelligence with excellent search grounding.',
+    displayName: 'Gemini 3 Flash Preview',
+    id: 'gemini-3-flash-preview',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.05,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 0.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'audioInput',
+        rate: 1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 1
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-12-17',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      imageOutput: true,
+      reasoning: true,
+      search: true,
+      vision: true
+    },
+    contextWindowTokens: 131_072 + 32_768,
+    description: "Gemini 3 Pro Image (Nano Banana Pro) is Google's image generation model that also supports multimodal dialogue.",
+    displayName: 'Nano Banana Pro',
+    id: 'gemini-3-pro-image-preview',
+    maxOutput: 32_768,
+    pricing: {
+      units: [
+        {
+        name: 'imageOutput',
+        rate: 120,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 12,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-11-20',
+    settings: {
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      imageOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 32_768 + 8192,
+    description: 'Nano Banana is Google’s newest, fastest, and most efficient native multimodal model, enabling conversational image generation and editing.',
+    displayName: 'Nano Banana',
+    id: 'gemini-2.5-flash-image',
+    maxOutput: 8192,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 0.3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 2.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageOutput',
+        rate: 30,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-08-26',
+    type: 'chat',
+  },
   {
     abilities: {
       functionCall: true,

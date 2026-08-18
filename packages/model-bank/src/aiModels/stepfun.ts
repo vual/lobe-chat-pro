@@ -3,6 +3,121 @@ import { AIChatModelCard, AIImageModelCard } from '../types/aiModel';
 // https://platform.stepfun.com/docs/pricing/details
 
 const stepfunChatModels: AIChatModelCard[] = [
+{
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true,
+      video: true
+    },
+    contextWindowTokens: 256_000,
+    description: 'The flagship multimodal reasoning model from StepFun. Building on the high-speed reasoning and tool-calling capabilities of step-3.5-flash, it adds native multimodal input support, enabling direct understanding of images and video content without relying on visual MCPs or additional vision models. The model supports three reasoning levels (low / medium / high), making it a fast and reliable choice for agent workflows, coding tasks, and multimodal applications.',
+    displayName: 'Step 3.7 Flash',
+    enabled: true,
+    id: 'step-3.7-flash',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.27,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 1.35,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 8.1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    settings: {
+      extendParams: ["reasoningEffort"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true
+    },
+    contextWindowTokens: 256_000,
+    description: 'Built on Step 3.5 Flash and optimized for high-frequency agent scenarios, it further improves token efficiency and inference speed while retaining flagship-level reasoning and tool-calling capabilities. It also supports switching to a low-reasoning mode to reduce resource consumption. Additionally, targeted optimizations have been made to enhance compatibility with coding tasks and agent frameworks.',
+    displayName: 'Step 3.5 Flash 2603',
+    id: 'step-3.5-flash-2603',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.14,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.7,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 2.1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    settings: {
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true
+    },
+    contextWindowTokens: 256_000,
+    description: 'Stepfun’s flagship language reasoning model.This model has top-notch reasoning capabilities and fast and reliable execution capabilities.Able to decompose and plan complex tasks, call tools quickly and reliably to perform tasks, and be competent in various complex tasks such as logical reasoning, mathematics, software engineering, and in-depth research.',
+    displayName: 'Step 3.5 Flash',
+    id: 'step-3.5-flash',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.14,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.7,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 2.1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    type: 'chat',
+  },
   {
     abilities: {
       reasoning: true,
@@ -279,6 +394,51 @@ const stepfunChatModels: AIChatModelCard[] = [
 ];
 
 const stepfunImageModels: AIImageModelCard[] = [
+{
+    description: 'A lightweight editing model from Stepfun’s latest iteration that supports both text-to-image generation and image editing within a single model. Despite having fewer than 6 billion parameters, it achieves state-of-the-art performance at its scale, rivaling open-source models in the 12B–20B parameter range across tiers. Each editing task takes only 1–2 seconds, redefining the experience of real-time interactive image editing.',
+    displayName: 'Step Image Edit 2',
+    enabled: true,
+    id: 'step-image-edit-2',
+    parameters: {
+        cfg: {
+        default: 1,
+        max: 10,
+        min: 1,
+        step: 0.1
+      },
+        imageUrl: {
+          default: null
+        },
+        prompt: {
+        default: ''
+      },
+        seed: {
+        default: null
+      },
+        size: {
+        default: '1024x1024',
+        enum: ['1024x1024', '768x1360', '896x1184', '1360x768', '1184x896']
+      },
+        steps: {
+        default: 8,
+        max: 50,
+        min: 1
+      }
+      },
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'imageGeneration',
+        rate: 0.02,
+        strategy: 'fixed',
+        unit: 'image'
+      }
+      ],
+    },
+    releasedAt: '2026-04-28',
+    type: 'image',
+  },
   // https://platform.stepfun.com/docs/llm/image
   {
     description:

@@ -1,6 +1,1229 @@
-import { AIChatModelCard } from '../types/aiModel';
+import { AIChatModelCard, AIImageModelCard } from '../types/aiModel';
 
 const aihubmixModels: AIChatModelCard[] = [
+{
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 1_050_000,
+    description: 'GPT-5.5 is our newest frontier model for the most complex professional work.',
+    displayName: 'GPT-5.5',
+    enabled: true,
+    id: 'gpt-5.5',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 5,
+        upTo: 272_000
+      }, {
+        rate: 10,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 0.5,
+        upTo: 272_000
+      }, {
+        rate: 1,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 30,
+        upTo: 272_000
+      }, {
+        rate: 45,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-23',
+    settings: {
+      extendParams: ["textVerbosity"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 1_050_000,
+    description: 'GPT-5.4 is the frontier model for complex professional work with highest reasoning capability.',
+    displayName: 'GPT-5.4',
+    id: 'gpt-5.4',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 2.5,
+        upTo: 272_000
+      }, {
+        rate: 5,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 0.25,
+        upTo: 272_000
+      }, {
+        rate: 0.5,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 15,
+        upTo: 272_000
+      }, {
+        rate: 22.5,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-05',
+    settings: {
+      extendParams: ["textVerbosity"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.4 mini brings GPT-5.4 strengths to a faster, more efficient model for high-volume coding and agentic workflows.',
+    displayName: 'GPT-5.4 mini',
+    enabled: true,
+    id: 'gpt-5.4-mini',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 0.75,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.075,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 4.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-17',
+    settings: {
+      extendParams: ["textVerbosity"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.4 nano is our lowest-cost GPT-5.4-class model for high-throughput tasks where speed and cost matter most.',
+    displayName: 'GPT-5.4 nano',
+    id: 'gpt-5.4-nano',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 0.2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.02,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 1.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-17',
+    settings: {
+      extendParams: ["textVerbosity"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true
+    },
+    contextWindowTokens: 1_050_000,
+    description: 'GPT-5.4 Pro uses more compute to think harder and provide consistently better answers, available in the Responses API only.',
+    displayName: 'GPT-5.4 Pro',
+    id: 'gpt-5.4-pro',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 30,
+        upTo: 272_000
+      }, {
+        rate: 60,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 180,
+        upTo: 272_000
+      }, {
+        rate: 270,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-05',
+    settings: {
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      vision: true,
+      structuredOutput: true
+    },
+    contextWindowTokens: 128_000,
+    description: 'GPT-5.3 Chat is the latest ChatGPT model used in ChatGPT with improved conversation experiences.',
+    displayName: 'GPT-5.3 Chat',
+    id: 'gpt-5.3-chat-latest',
+    maxOutput: 16_384,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 1.75,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.175,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 14,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-04',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.2 is a flagship model for coding and agentic workflows with stronger reasoning and long-context performance.',
+    displayName: 'GPT-5.2',
+    id: 'gpt-5.2',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 1.75,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.175,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 14,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-12-11',
+    settings: {
+      extendParams: ["textVerbosity"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.2 pro: smarter, more precise GPT-5.2 (Responses API only), for hard problems and longer multi-turn reasoning.',
+    displayName: 'GPT-5.2 pro',
+    id: 'gpt-5.2-pro',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 21,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 168,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-12-11',
+    settings: {
+      extendParams: ["textVerbosity"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      vision: true
+    },
+    contextWindowTokens: 128_000,
+    description: 'GPT-5.2 Chat is the ChatGPT variant (chat-latest) for the latest conversation improvements.',
+    displayName: 'GPT-5.2 Chat',
+    id: 'gpt-5.2-chat-latest',
+    maxOutput: 16_384,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 1.75,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.175,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 14,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-12-11',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      imageOutput: true,
+      reasoning: true,
+      search: true,
+      vision: true
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.1 is the flagship model optimized for coding and agent tasks, with configurable reasoning intensity and longer context.',
+    displayName: 'GPT-5.1',
+    id: 'gpt-5.1',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 1.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.125,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 10,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-11-13',
+    settings: {
+      extendParams: ["textVerbosity"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      vision: true
+    },
+    contextWindowTokens: 128_000,
+    description: 'GPT-5.1 Chat: the ChatGPT variant of GPT-5.1, built for chat scenarios.',
+    displayName: 'GPT-5.1 Chat',
+    id: 'gpt-5.1-chat-latest',
+    maxOutput: 16_384,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 1.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.125,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 10,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-11-13',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      imageOutput: true,
+      reasoning: true,
+      search: true,
+      vision: true
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.1 Codex: GPT-5.1 optimized for agentic coding tasks, for more complex code/agent workflows in the Responses API.',
+    displayName: 'GPT-5.1 Codex',
+    id: 'gpt-5.1-codex',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 1.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.125,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 10,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-11-13',
+    settings: {
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      imageOutput: true,
+      reasoning: true,
+      search: true,
+      vision: true
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.1 Codex mini: smaller, lower-cost Codex variant optimized for agentic coding.',
+    displayName: 'GPT-5.1 Codex mini',
+    id: 'gpt-5.1-codex-mini',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 0.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.025,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-11-13',
+    settings: {
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 2_000_000,
+    description: 'A non-reasoning variant for simple use cases',
+    displayName: 'Grok 4.20 (Non-Reasoning)',
+    enabled: true,
+    id: 'grok-4-20-non-reasoning',
+    maxOutput: 2_000_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 6,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-09',
+    settings: {
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 2_000_000,
+    description: 'Intelligent, blazing-fast model that reasons before responding',
+    displayName: 'Grok 4.20',
+    enabled: true,
+    id: 'grok-4-20-reasoning',
+    maxOutput: 2_000_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 6,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-09',
+    settings: {
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 2_000_000,
+    description: 'A team of 4 or 16 agents, Excels at research use cases, Does not currently support client-side tools. Only supports xAI server side tools (eg X Search, Web Search tools) and remote MCP tools.',
+    displayName: 'Grok 4.20 Multi-Agent',
+    enabled: true,
+    id: 'grok-4.20-multi-agent-0309',
+    maxOutput: 2_000_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 6,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-09',
+    settings: {
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 1_000_000,
+    description: "Claude Opus 4.7 is Anthropic's most capable generally available model for complex reasoning and agentic coding.",
+    displayName: 'Claude Opus 4.7',
+    enabled: true,
+    id: 'claude-opus-4-7',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput_cacheWrite',
+        rate: 6.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-16',
+    settings: {
+      extendParams: ["disableContextCaching"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Claude Opus 4.6 is Anthropic’s most intelligent model for building agents and coding.',
+    displayName: 'Claude Opus 4.6',
+    id: 'claude-opus-4-6',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 10,
+        '5m': 6.25
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-05',
+    settings: {
+      extendParams: ["disableContextCaching"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 200_000,
+    description: 'Claude Opus 4.5 is Anthropic’s flagship model, combining top-tier intelligence with scalable performance for complex, high-quality reasoning tasks.',
+    displayName: 'Claude Opus 4.5',
+    id: 'claude-opus-4-5-20251101',
+    maxOutput: 64_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 10,
+        '5m': 6.25
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-11-24',
+    settings: {
+      extendParams: ["disableContextCaching", "enableReasoning", "reasoningBudgetToken"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Claude Sonnet 4.6 is Anthropic’s best combination of speed and intelligence.',
+    displayName: 'Claude Sonnet 4.6',
+    enabled: true,
+    id: 'claude-sonnet-4-6',
+    maxOutput: 64_000,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 15,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 6,
+        '5m': 3.75
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-17',
+    settings: {
+      extendParams: ["disableContextCaching", "enableReasoning", "reasoningBudgetToken"],
+      searchImpl: 'params'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      imageOutput: true,
+      reasoning: true,
+      search: true,
+      vision: true
+    },
+    contextWindowTokens: 131_072 + 32_768,
+    description: "Gemini 3.1 Flash Image (Nano Banana 2) is Google's fastest native image generation model with thinking support, conversational image generation and editing.",
+    displayName: 'Nano Banana 2',
+    enabled: true,
+    id: 'gemini-3.1-flash-image-preview',
+    maxOutput: 32_768,
+    pricing: {
+      units: [
+        {
+        name: 'imageOutput',
+        rate: 60,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-26',
+    settings: {
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3.1 Pro Preview provides better thinking, improved token efficiency, and a reliable experience optimized for software engineering behavior.',
+    displayName: 'Gemini 3.1 Pro Preview',
+    enabled: true,
+    id: 'gemini-3.1-pro-preview',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 0.2,
+        upTo: 200_000
+      }, {
+        rate: 0.4,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 2,
+        upTo: 200_000
+      }, {
+        rate: 4,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 12,
+        upTo: 200_000
+      }, {
+        rate: 18,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 4.5
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-19',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: "Gemini 3.1 Flash-Lite Preview is Google's most cost-efficient multimodal model, optimized for high-volume agentic tasks, translation, and data processing.",
+    displayName: 'Gemini 3.1 Flash-Lite Preview',
+    id: 'gemini-3.1-flash-lite-preview',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.025,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-04',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3 Pro is Google’s most intelligent model with SOTA reasoning and multimodal understanding, plus strong agent and vibe-coding capabilities.',
+    displayName: 'Gemini 3 Pro Preview',
+    id: 'gemini-3-pro-preview',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 0.2,
+        upTo: 200_000
+      }, {
+        rate: 0.4,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 2,
+        upTo: 200_000
+      }, {
+        rate: 4,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        strategy: 'tiered',
+        tiers: [{
+        rate: 12,
+        upTo: 200_000
+      }, {
+        rate: 18,
+        upTo: 'infinity'
+      }],
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 4.5
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-11-18',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      video: true,
+      vision: true
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3 Flash is the smartest model built for speed, combining cutting-edge intelligence with excellent search grounding.',
+    displayName: 'Gemini 3 Flash Preview',
+    enabled: true,
+    id: 'gemini-3-flash-preview',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.05,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '1h': 1
+      },
+        pricingParams: ['ttl']
+      },
+        name: 'textInput_cacheWrite',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-12-17',
+    settings: {
+      extendParams: ["urlContext"],
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      imageOutput: true,
+      reasoning: true,
+      search: true,
+      vision: true
+    },
+    contextWindowTokens: 131_072 + 32_768,
+    description: 'Gemini 3 Pro Image (Nano Banana Pro) is Google’s image generation model with multimodal chat support.',
+    displayName: 'Nano Banana Pro',
+    id: 'gemini-3-pro-image-preview',
+    maxOutput: 32_768,
+    pricing: {
+      units: [
+        {
+        name: 'imageOutput',
+        rate: 120,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 12,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-11-20',
+    settings: {
+      searchImpl: 'params',
+      searchProvider: 'google'
+    },
+    type: 'chat',
+  },
   {
     abilities: {
       functionCall: true,
@@ -1077,4 +2300,107 @@ const aihubmixModels: AIChatModelCard[] = [
   },
 ];
 
-export default aihubmixModels;
+const aihubmixImageModels: AIImageModelCard[] = [
+{
+    description: "Gemini 3.1 Flash Lite Image (Nano Banana 2 Lite) is Google's fastest and most cost-efficient image generation model, built for high-volume generation and editing.",
+    displayName: 'Nano Banana 2 Lite',
+    enabled: true,
+    id: 'gemini-3.1-flash-lite-image:image',
+    parameters: {
+        aspectRatio: {
+        default: 'auto',
+        enum: ['auto', '1:1', '2:3', '3:2', '3:4', '4:3', '4:5', '5:4', '9:16', '16:9', '21:9', '1:4', '4:1', '1:8', '8:1']
+      },
+        imageUrls: {
+          default: []
+        },
+        prompt: {
+        default: ''
+      }
+      },
+    pricing: {
+      units: [
+        {
+        name: 'imageOutput',
+        rate: 30,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 0.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 0.25,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 1.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-06-30',
+    type: 'image',
+  },
+  {
+    description: "OpenAI's next-generation multimodal image model with native reasoning, up to 4K resolution, near-perfect text rendering, and high-fidelity multilingual support.",
+    displayName: 'GPT Image 2',
+    enabled: true,
+    id: 'gpt-image-2',
+    parameters: {
+        imageUrls: {
+          default: [],
+          maxCount: 1,
+          maxFileSize: 5 * 1024 * 1024
+        },
+        prompt: {
+        default: ''
+      },
+        size: {
+        default: 'auto',
+        enum: ['auto', '1024x1024', '1536x1024', '1024x1536', '2048x2048', '2048x1152', '3840x2160', '2160x3840']
+      }
+      },
+    pricing: {
+      units: [
+        {
+        name: 'textInput',
+        rate: 5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 10,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageInput',
+        rate: 8,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'imageOutput',
+        rate: 30,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-21',
+    type: 'image',
+  },
+];
+
+export const allModels = [...aihubmixModels, ...aihubmixImageModels];
+
+export default allModels;

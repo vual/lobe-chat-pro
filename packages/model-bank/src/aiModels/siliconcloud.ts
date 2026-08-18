@@ -1,7 +1,931 @@
-import { AIChatModelCard, AIImageModelCard } from '../types/aiModel';
+import { AIChatModelCard, AIImageModelCard, AiFullModelCard } from '../types/aiModel';
 
 // https://siliconflow.cn/zh-cn/models
 const siliconcloudChatModels: AIChatModelCard[] = [
+{
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 1_048_576,
+    description: 'LongCat-2.0 is a 1600B MoE language model from Meituan designed for agent development scenarios. It natively supports tool calling, multi-step reasoning, and long-context tasks, with strong performance in code generation, automated workflows, and complex instruction execution. It is deeply integrated with productivity tools including Claude Code, OpenClaw, OpenCode, and Kilo Code.',
+    displayName: 'LongCat-2.0',
+    id: 'meituan-longcat/LongCat-2.0',
+    organization: 'Meituan',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 20,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-06-30',
+    settings: {
+      extendParams: ["enableReasoning"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Nex-N2 is an agentic thinking model that adaptively decides when and how deeply to reason. It handles coding, search, and tool tasks through a unified thinking paradigm with strong generalization capabilities.',
+    displayName: 'Nex-N2-Pro',
+    id: 'nex-agi/Nex-N2-Pro',
+    organization: 'Nex-AGI',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.175,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 1.75,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 7,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-06-03',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 1_048_576,
+    description: "GLM-5.2 is Z.ai's latest flagship model designed for long-horizon task scenarios, offering significant improvements in long-horizon task capabilities compared to GLM-5.1. This 753B MoE model supports a stable 1M-token context window, features stronger programming capabilities, and supports multiple thinking effort levels for a flexible balance between performance and latency.",
+    displayName: 'GLM-5.2',
+    id: 'zai-org/GLM-5.2',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 8,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 28,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-06-17',
+    settings: {
+      extendParams: ["reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Kimi K2.7 Code is an agentic model designed for code tasks from Moonshot AI. Built on Kimi K2.6, it shows significant improvements in real-world long-horizon coding tasks, enhancing end-to-end task completion capabilities in complex software engineering workflows while reducing thinking token usage by about 30% compared to Kimi K2.6.',
+    displayName: 'Kimi-K2.7-Code',
+    id: 'moonshotai/Kimi-K2.7-Code',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 1.3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 6.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 27,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-06-12',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 1_048_576,
+    description: 'DeepSeek-V4-Pro is the flagship MoE language model in the DeepSeek-V4 series, with 1.6T total parameters and 49B active parameters, natively supporting an ultra-long context of 1 million tokens. The model adopts an innovative hybrid attention architecture combining Compressed Sparse Attention (CSA) and Highly Compressed Attention (HCA), requiring only 27% of DeepSeek-V3.2 per-token inference FLOPs and 10% KV cache at 1M context. It also introduces Manifold-Constrained Hyper Connections (mHC) to enhance inter-layer signal propagation stability, and employs the Muon optimizer to accelerate convergence. DeepSeek-V4-Pro is pretrained on over 32T high-quality diverse tokens, with post-training using a two-stage paradigm of independent domain expert cultivation plus online policy distillation for unified integration. Its maximum reasoning intensity mode DeepSeek-V4-Pro-Max achieves top performance on coding benchmarks and significantly narrows the gap with leading closed-source models on reasoning and agentic tasks, making it one of the strongest open-source models today, supporting Non-think, Think High, and Think Max reasoning intensity modes.',
+    displayName: 'DeepSeek V4 Pro',
+    enabled: true,
+    id: 'deepseek-ai/DeepSeek-V4-Pro',
+    organization: 'DeepSeek',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 12,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 24,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-24',
+    settings: {
+      extendParams: ["reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 1_048_576,
+    description: 'DeepSeek-V4-Flash is a preview version of the MoE language model in the DeepSeek-V4 series. The total parameter size is 284B, the activation parameter size is 13B, and it supports 1M tokens ultra-long context.The model uses a hybrid attention architecture that combines CSA and HCA, and introduces mHC and Muon Optimizer to improve long-context reasoning efficiency, training stability, and overall performance.',
+    displayName: 'DeepSeek V4 Flash',
+    enabled: true,
+    id: 'deepseek-ai/DeepSeek-V4-Flash',
+    organization: 'DeepSeek',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.02,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 2,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-24',
+    settings: {
+      extendParams: ["reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Kimi K2.6 is an open-source native multimodal agent model from Moonshot AI, achieving open-source state-of-the-art performance on multiple mainstream benchmarks including HLE (with tools), SWE-Bench Pro, and BrowseComp. The model adopts a MoE architecture with 1T total parameters and 32B active parameters, supports a 256K token context window, and integrates native multimodal capabilities.',
+    displayName: 'Kimi-K2.6 (Pro)',
+    id: 'Pro/moonshotai/Kimi-K2.6',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 1.1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 6.5,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 27,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-21',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3.6-27B is the first open-source medium-sized dense model in the Qwen3.6 series, with key enhancements for code generation, Agent workflows, and real-world development scenarios. Compared to Qwen3.5-27B, this model shows significant improvements in front-end development, repository-level reasoning, tool calling, and complex problem-solving, with newly added historical reasoning capability optimizations.',
+    displayName: 'Qwen3.6 27B',
+    id: 'Qwen/Qwen3.6-27B',
+    organization: 'Qwen',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput',
+        rate: 3,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 18,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-23',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3.6-35B-A3B is a large language model from the Qwen team in the Qwen3.6 series, using a Mixture-of-Experts (MoE) architecture with 35B total parameters and 3B active parameters. It balances efficient inference with excellent performance and supports both thinking and non-thinking modes, allowing flexible switching between fast response and deep reasoning.',
+    displayName: 'Qwen3.6 35B A3B',
+    id: 'Qwen/Qwen3.6-35B-A3B',
+    organization: 'Qwen',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput',
+        rate: 1.8,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 10.8,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-17',
+    settings: {
+      extendParams: ["enableReasoning"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3.5-397B-A17B is the latest vision-language model in the Qwen3.5 series, using a Mixture-of-Experts (MoE) architecture with 397B total parameters and 17B active parameters. It natively supports 256K context length with extensibility to approximately 1M tokens, supports 201 languages, and provides unified vision-language understanding, tool calling, and reasoning capabilities.',
+    displayName: 'Qwen3.5 397B A17B',
+    id: 'Qwen/Qwen3.5-397B-A17B',
+    organization: 'Qwen',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        lookup: {
+        prices: {
+        '[0, 0.128]': 0.8,
+        '[0.128, infinity]': 2
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textInput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '[0, 0.128]': 4.8,
+        '[0.128, infinity]': 12
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textOutput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-16',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3.5-122B-A10B is a native multimodal large language model from the Qwen team with 122B total parameters and only 10B active parameters. It adopts an efficient hybrid architecture combining Gated Delta Networks and Sparse Mixture-of-Experts (MoE), natively supporting 256K context length with extensibility to approximately 1M tokens.',
+    displayName: 'Qwen3.5 122B A10B',
+    id: 'Qwen/Qwen3.5-122B-A10B',
+    organization: 'Qwen',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        lookup: {
+        prices: {
+        '[0, 0.128]': 0.8,
+        '[0.128, infinity]': 2
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textInput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '[0, 0.128]': 6.4,
+        '[0.128, infinity]': 16
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textOutput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-26',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3.5-35B-A3B is a native multimodal large language model from the Qwen team with 35B total parameters and only 3B active parameters. It adopts an efficient hybrid architecture combining Gated Delta Networks and Sparse Mixture-of-Experts (MoE), natively supporting 256K context length with extensibility to approximately 1M tokens.',
+    displayName: 'Qwen3.5 35B A3B',
+    id: 'Qwen/Qwen3.5-35B-A3B',
+    organization: 'Qwen',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        lookup: {
+        prices: {
+        '[0, 0.128]': 0.4,
+        '[0.128, infinity]': 1.6
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textInput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '[0, 0.128]': 3.2,
+        '[0.128, infinity]': 12.8
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textOutput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-25',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3.5-27B is a native multimodal large language model from the Qwen team with 27B parameters. It adopts an efficient hybrid architecture combining Gated Delta Networks and Gated Attention, natively supporting 256K context length with extensibility to approximately 1M tokens.',
+    displayName: 'Qwen3.5 27B',
+    id: 'Qwen/Qwen3.5-27B',
+    organization: 'Qwen',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        lookup: {
+        prices: {
+        '[0, 0.128]': 0.6,
+        '[0.128, infinity]': 1.8
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textInput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '[0, 0.128]': 4.8,
+        '[0.128, infinity]': 14.4
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textOutput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-25',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3.5-9B is a native multimodal large language model from the Qwen team with 9B parameters. As a lightweight Dense model in the Qwen3.5 series, it adopts an efficient hybrid architecture combining Gated Delta Networks and Gated Attention, natively supporting 256K context length with extensibility to approximately 1M tokens.',
+    displayName: 'Qwen3.5 9B',
+    id: 'Qwen/Qwen3.5-9B',
+    organization: 'Qwen',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        lookup: {
+        prices: {
+        '[0, 0.128]': 0.5,
+        '[0.128, infinity]': 1.5
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textInput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '[0, 0.128]': 4,
+        '[0.128, infinity]': 12
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textOutput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-03',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3.5-4B is a native multimodal large language model from the Qwen team with 4B parameters, the most lightweight Dense model in the Qwen3.5 series. It adopts an efficient hybrid architecture combining Gated Delta Networks and Gated Attention, natively supporting 256K context length with extensibility to approximately 1M tokens.',
+    displayName: 'Qwen3.5 4B',
+    id: 'Qwen/Qwen3.5-4B',
+    organization: 'Qwen',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput',
+        rate: 0,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 0,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-03-03',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 192_000,
+    description: 'MiniMax-M2.5 is the latest large language model developed by MiniMax, trained through large-scale reinforcement learning across hundreds of thousands of complex, real-world environments. Featuring an MoE architecture with 229 billion parameters, it achieves industry-leading performance in tasks such as programming, agent tool-calling, search, and office scenarios.',
+    displayName: 'MiniMax-M2.5',
+    id: 'MiniMaxAI/MiniMax-M2.5',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.21,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 2.1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 8.4,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-13',
+    settings: {
+      extendParams: ["reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 192_000,
+    description: 'MiniMax-M2.5 is the latest large language model developed by MiniMax, trained through large-scale reinforcement learning across hundreds of thousands of complex, real-world environments. Featuring an MoE architecture with 229 billion parameters, it achieves industry-leading performance in tasks such as programming, agent tool-calling, search, and office scenarios.',
+    displayName: 'MiniMax-M2.5 (Pro)',
+    id: 'Pro/MiniMaxAI/MiniMax-M2.5',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.21,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 2.1,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 8.4,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-13',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 198_000,
+    description: 'GLM-5.1 is Zhipu’s next-generation flagship agent model for intelligent engineering. It uses a 754B Mixture-of-Experts architecture with native tool calling, prefix completion, FIM support, and a 200K context window for long-horizon workflows.',
+    displayName: 'GLM-5.1 (Pro)',
+    id: 'Pro/zai-org/glm-5.1',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        lookup: {
+        prices: {
+        '[0, 0.032]': 1.3,
+        '[0.032, infinity]': 2
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textInput_cacheRead',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '[0, 0.032]': 6,
+        '[0.032, infinity]': 8
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textInput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '[0, 0.032]': 24,
+        '[0.032, infinity]': 28
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textOutput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-08',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 198_000,
+    description: 'GLM-5.1 is a next-generation flagship model designed for agent engineering, using a Mixture of Experts (MoE) architecture with 754B parameters. It significantly enhances programming capabilities, achieving leading results on SWE-Bench Pro, and substantially outperforms its predecessor on benchmarks like NL2Repo and Terminal-Bench 2.0. Designed for long-duration agent tasks, it handles ambiguous questions with better judgment, decomposes complex tasks, executes experiments, analyzes results, and continuously optimizes through hundreds of iterations and thousands of tool calls.',
+    displayName: 'GLM-5.1 (Pro)',
+    id: 'Pro/zai-org/GLM-5.1',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        lookup: {
+        prices: {
+        '[0, 0.032]': 1.3,
+        '[0.032, infinity]': 2
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textInput_cacheRead',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '[0, 0.032]': 6,
+        '[0.032, infinity]': 8
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textInput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      },
+        {
+        lookup: {
+        prices: {
+        '[0, 0.032]': 24,
+        '[0.032, infinity]': 28
+      },
+        pricingParams: ['textInput']
+      },
+        name: 'textOutput',
+        strategy: 'lookup',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-04-08',
+    settings: {
+      extendParams: ["enableReasoning"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 163_840,
+    description: "DeepSeek-V3.2 is a model that combines high computational efficiency with excellent reasoning and Agent performance. Its approach is based on three major technological breakthroughs: DeepSeek Sparse Attention (DSA), an efficient attention mechanism that significantly reduces computational complexity while maintaining model performance, and is specifically optimized for long-context scenarios; a scalable reinforcement learning framework, through which the model's performance can rival GPT-5, and its high-compute version can rival Gemini-3.0-Pro in reasoning capabilities; and a large-scale Agent task synthesis pipeline, designed to integrate reasoning capabilities into tool-using scenarios, thereby improving instruction-following and generalization abilities in complex interactive environments. The model achieved gold medal results in the 2025 International Mathematical Olympiad (IMO) and International Informatics Olympiad (IOI).",
+    displayName: 'DeepSeek V3.2',
+    id: 'deepseek-ai/DeepSeek-V3.2',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.4,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 4,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 6,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-12-01',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 163_840,
+    description: 'DeepSeek-V3.2 is a model that combines high computational efficiency with excellent reasoning and Agent performance. Its approach is built on three key technological breakthroughs: DeepSeek Sparse Attention (DSA), an efficient attention mechanism that significantly reduces computational complexity while maintaining model performance, and is specifically optimized for long-context scenarios; a scalable reinforcement learning framework through which model performance can rival GPT-5, with its high-compute version matching Gemini-3.0-Pro in reasoning capabilities; and a large-scale Agent task synthesis pipeline aimed at integrating reasoning capabilities into tool use scenarios, thereby improving instruction following and generalization in complex interactive environments. The model achieved gold medal performance in the 2025 International Mathematical Olympiad (IMO) and International Olympiad in Informatics (IOI).',
+    displayName: 'DeepSeek V3.2 (Pro)',
+    id: 'Pro/deepseek-ai/DeepSeek-V3.2',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput_cacheRead',
+        rate: 0.4,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textInput',
+        rate: 4,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 6,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2025-12-01',
+    settings: {
+      extendParams: ["enableReasoning", "reasoningBudgetToken"]
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      vision: true
+    },
+    description: 'PaddleOCR-VL-1.5 is an upgraded version of the PaddleOCR-VL series, achieving 94.5% accuracy on the OmniDocBench v1.5 document parsing benchmark, surpassing leading general large models and specialized document parsing models. It innovatively supports irregular bounding box localization for document elements, handling scanned, tilted, and screen-captured images effectively.',
+    displayName: 'PaddleOCR-VL 1.5',
+    id: 'PaddlePaddle/PaddleOCR-VL-1.5',
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput',
+        rate: 0,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 0,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-01-29',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true
+    },
+    contextWindowTokens: 262_144,
+    description: 'Step 3.5 Flash is the most powerful open-source foundation model from StepFun, using sparse Mixture of Experts (MoE) architecture with 196B total parameters, only 11B active parameters per token. Model supports 256K context window, achieving 100-300 tok/s generation throughput through 3-way Multi-Token Prediction (MTP-3). Excellent performance on programming and Agent tasks, SWE-bench Verified reaches 74.4%.',
+    displayName: 'Step 3.5 Flash',
+    id: 'stepfun-ai/Step-3.5-Flash',
+    settings: {
+      extendParams: ["reasoningBudgetToken"]
+    },
+    pricing: {
+      currency: 'CNY',
+      units: [
+        {
+        name: 'textInput',
+        rate: 0,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      },
+        {
+        name: 'textOutput',
+        rate: 0,
+        strategy: 'fixed',
+        unit: 'millionTokens'
+      }
+      ],
+    },
+    releasedAt: '2026-02-02',
+    type: 'chat',
+  },
   {
     abilities: {
       functionCall: true,
@@ -1837,6 +2761,48 @@ const siliconcloudImageModels: AIImageModelCard[] = [
   },
 ];
 
-export const allModels = [...siliconcloudChatModels, ...siliconcloudImageModels];
+const siliconcloudVideoModels: AiFullModelCard[] = [
+{
+    description: 'Wan2.2-I2V-A14B is one of the first open-source image-to-video (I2V) generation models released by Wan-AI, an AI initiative under Alibaba, to adopt a Mixture of Experts (MoE) architecture. The model focuses on generating smooth and natural dynamic video sequences by combining static images with text prompts. Its core innovation lies in the MoE architecture: a high-noise expert is responsible for handling the coarse structure in the early stages of video generation, while a low-noise expert refines fine-grained details in the later stages. This design improves overall model performance without increasing inference cost. Compared to previous versions, Wan2.2 is trained on a significantly larger dataset, leading to notable improvements in understanding complex motion, aesthetic styles, and semantic content. It produces more stable videos and reduces unrealistic camera movements.',
+    displayName: 'Wan-AI/Wan2.2-I2V-A14B',
+    enabled: true,
+    id: 'Wan-AI/Wan2.2-I2V-A14B',
+    parameters: {
+        imageUrl: {
+          default: null
+        },
+        prompt: {
+        default: ''
+      },
+        seed: {
+        default: null
+      }
+      },
+    releasedAt: '2026-01-28',
+    type: 'text2video',
+  },
+  {
+    description: 'Wan2.2-T2V-A14B is the first open-source video generation model released by Alibaba to adopt a Mixture of Experts (MoE) architecture. The model is designed for text-to-video (T2V) generation tasks and is capable of producing videos up to 5 seconds in length at resolutions of 480P or 720P. By introducing the MoE architecture, the model significantly increases its overall capacity while keeping inference costs nearly unchanged. It includes a high-noise expert that handles the global structure in the early stages of generation, and a low-noise expert that refines fine details in the later stages of the video. In addition, Wan2.2 incorporates carefully curated aesthetic data, with detailed annotations across dimensions such as lighting, composition, and color. This enables more precise and controllable generation of cinematic-quality visuals. Compared to previous versions, the model is trained on a larger dataset, resulting in significantly improved generalization in motion, semantics, and aesthetics, and better handling of complex dynamic effects.',
+    displayName: 'Wan-AI/Wan2.2-T2V-A14B',
+    enabled: true,
+    id: 'Wan-AI/Wan2.2-T2V-A14B',
+    parameters: {
+        prompt: {
+        default: ''
+      },
+        seed: {
+        default: null
+      },
+        size: {
+        default: '1280x720',
+        enum: ['1280x720', '720x1280', '960x960']
+      }
+      },
+    releasedAt: '2026-01-28',
+    type: 'text2video',
+  },
+];
+
+export const allModels = [...siliconcloudChatModels, ...siliconcloudImageModels, ...siliconcloudVideoModels];
 
 export default allModels;

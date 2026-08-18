@@ -223,6 +223,25 @@ const giteeaiChatModels: AIChatModelCard[] = [
 ];
 
 const giteeaiImageModels: AIImageModelCard[] = [
+{
+    description: 'HiDream-E1-Full is an open-source multimodal image editing model from HiDream.ai, based on an advanced Diffusion Transformer architecture and strong language understanding (built-in LLaMA 3.1-8B-Instruct). It supports natural-language-driven image generation, style transfer, local edits, and repainting, with excellent image-text understanding and execution.',
+    displayName: 'HiDream-E1-Full',
+    enabled: true,
+    id: 'HiDream-E1-Full',
+    parameters: {
+        imageUrl: {
+          default: null
+        },
+        prompt: {
+        default: ''
+      },
+        size: {
+        default: '1024x1024',
+        enum: ['1024x1024']
+      }
+      },
+    type: 'image',
+  },
   {
     description:
       'FLUX.1-dev 是由 Black Forest Labs 开发的一款开源 多模态语言模型（Multimodal Language Model, MLLM），专为图文任务优化，融合了图像和文本的理解与生成能力。它建立在先进的大语言模型（如 Mistral-7B）基础上，通过精心设计的视觉编码器与多阶段指令微调，实现了图文协同处理与复杂任务推理的能力。',

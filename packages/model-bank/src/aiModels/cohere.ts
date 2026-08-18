@@ -1,6 +1,21 @@
 import { AIChatModelCard } from '../types/aiModel';
 
 const cohereChatModels: AIChatModelCard[] = [
+{
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true
+    },
+    contextWindowTokens: 128_000,
+    description: "Command A+ is Cohere's first Mixture of Experts model, combining vision input support, agentic, reasoning, and world-class translation capabilities into a single model. It supports 48 languages and can run on 1× B200 or 2× H100 GPUs.",
+    displayName: 'Command A+ 2605',
+    enabled: true,
+    id: 'command-a-plus-05-2026',
+    maxOutput: 64_000,
+    releasedAt: '2026-05-20',
+    type: 'chat',
+  },
   {
     abilities: {
       functionCall: true,
