@@ -31,6 +31,16 @@
   "ResetTips": "Are you sure you want to reset all settings?",
   "Success": "Submission Successful",
   "Watermark": "Watermark",
+  "kling": {
+    "AspectRatio": "Image Aspect Ratio",
+    "ClothImage": "Clothing Image",
+    "HumanImage": "Human Image",
+    "ImageAlert": "Please upload an image",
+    "ImageFidelity": "Reference Weight",
+    "ModeImagine": "Image Creation",
+    "ModeVirtual": "AI Try-On",
+    "Tooltip": "If you upload one image, it can be a top, bottom, or one-piece outfit. If you upload two images, upload one top and one bottom."
+  },
   "mj": {
     "Accuracy": "Image Precision",
     "CameraEffects": "Camera Effects",

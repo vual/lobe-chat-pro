@@ -18,6 +18,7 @@ import {
   InfiniAIProviderCard,
   InternLMProviderCard,
   JinaProviderCard,
+  KlingProviderCard,
   MinimaxProviderCard,
   MistralProviderCard,
   MoonshotProviderCard,
@@ -118,6 +119,7 @@ export const useProviderList = (): ProviderItem[] => {
       AkashChatProviderCard,
       Ai302ProviderCard,
       OllamaCloudProviderCard,
+      KlingProviderCard,
     ],
     [
       AzureProvider,

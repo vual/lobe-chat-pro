@@ -7,6 +7,13 @@ export interface DallEStatus {
   style: string;
 }
 
+export interface KlingStatus {
+  aspect_ratio: string;
+  image_fidelity: number;
+  model: string;
+  n: number;
+}
+
 export const DALLE_INITIAL_STATUS: DallEStatus = {
   model: 'gpt-image-1.5',
   n: 1,
@@ -44,11 +51,29 @@ export interface MjStatus {
   visualAngles: string; // 视角
 }
 
+export interface VolcengineConfig {
+  guidance_scale: number;
+  model: string;
+  response_format: string; // url, b64_json
+  seed: number;
+  size: string;
+  watermark: boolean;
+}
+
 export interface PaletteState {
   dallEStatus: DallEStatus;
+  klingStatus: KlingStatus;
   mjStatus: MjStatus;
   platform: string; // Midjourney Stable-Diffusion Dall-E
+  volcengineConfig: VolcengineConfig;
 }
+
+export const KLING_INITIAL_STATUS: KlingStatus = {
+  aspect_ratio: '16:9',
+  image_fidelity: 0.5,
+  model: 'kling-v2-1',
+  n: 1,
+};
 
 export const MJ_INITIAL_STATUS: MjStatus = {
   accuracy: '',
@@ -78,8 +103,19 @@ export const MJ_INITIAL_STATUS: MjStatus = {
   visualAngles: '',
 } satisfies MjStatus;
 
+export const VOLCENGINE_INITIAL_CONFIG: VolcengineConfig = {
+  guidance_scale: 3.5,
+  model: 'doubao-seedream-5-0-260128',
+  response_format: 'url',
+  seed: -1,
+  size: '2048x2048',
+  watermark: false,
+};
+
 export const initialState: PaletteState = {
   dallEStatus: { ...DALLE_INITIAL_STATUS },
+  klingStatus: { ...KLING_INITIAL_STATUS },
   mjStatus: { ...MJ_INITIAL_STATUS },
   platform: 'Midjourney',
+  volcengineConfig: { ...VOLCENGINE_INITIAL_CONFIG },
 };
