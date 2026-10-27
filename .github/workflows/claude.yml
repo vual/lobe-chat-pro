@@ -32,7 +32,7 @@ jobs:
 
       - name: Run Claude Code
         id: claude
-        uses: anthropics/claude-code-action@beta
+        uses: anthropics/claude-code-action@8041f1d17e0e7d2f2cfe35002962e9f26237c0bb # v1.0.263
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
@@ -51,7 +51,7 @@ jobs:
           # assignee_trigger: "claude-bot"
 
           # Optional: Allow Claude to run specific commands
-          allowed_tools: 'Bash(bun run:*),Bash(pnpm run:*),Bash(npm run:*),Bash(npx:*),Bash(bunx:*),Bash(vitest:*),Bash(rg:*),Bash(find:*),Bash(sed:*),Bash(grep:*),Bash(awk:*),Bash(wc:*),Bash(xargs:*)'
+          claude_args: '--allowedTools "Bash(bun run:*),Bash(pnpm run:*),Bash(npm run:*),Bash(npx:*),Bash(bunx:*),Bash(vitest:*),Bash(rg:*),Bash(find:*),Bash(sed:*),Bash(grep:*),Bash(awk:*),Bash(wc:*),Bash(xargs:*)"'
 
           # Optional: Add custom instructions for Claude to customize its behavior for your project
           # custom_instructions: |
