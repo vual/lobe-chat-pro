@@ -15,7 +15,7 @@ export interface KlingStatus {
 }
 
 export const DALLE_INITIAL_STATUS: DallEStatus = {
-  model: 'gpt-image-1.5',
+  model: 'gpt-image-2.6-sunburst',
   n: 1,
   quality: 'auto',
   response_format: 'url',
